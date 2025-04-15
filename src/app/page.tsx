@@ -27,20 +27,26 @@ export default function Home() {
           <div className="w-1/2">
             <Slideshow />
           </div>
-          <div className="w-1/2">
+          <div className="w-1/2 bg-gray-50 p-6 rounded-lg">
             <h2 className="text-2xl font-bold mb-4">공지사항</h2>
             <ul className="space-y-4">
               {[1, 2, 3].map((item) => (
                 <li key={item} className="border-b pb-2">
-                  <Link href="#" className="hover:text-blue-600">
-                    공지사항 {item}
+                  <Link href="#" className="block hover:text-blue-600">
+                    <div className="flex justify-between items-center">
+                      <span className="font-medium">공지사항 {item}</span>
+                      <span className="text-sm text-gray-500">2024-04-{item}</span>
+                    </div>
+                    <p className="text-gray-600 mt-1 text-sm">공지사항 {item}에 대한 간단한 설명이 들어갑니다.</p>
                   </Link>
                 </li>
               ))}
             </ul>
-            <Link href="/notice" className="mt-4 inline-block text-blue-600 hover:underline">
-              더보기
-            </Link>
+            <div className="mt-2 text-right">
+              <Link href="/notice" className="inline-block text-blue-600 hover:underline">
+                더보기
+              </Link>
+            </div>
           </div>
         </div>
       </section>
