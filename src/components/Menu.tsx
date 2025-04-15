@@ -6,56 +6,56 @@ const Menu = () => {
     {
       title: '병원소개',
       subItems: [
-        '병원장 인사말',
-        '연혁',
-        'HI/비전/미션',
-        '의료진 소개',
-        '시설 현황',
-        '성과',
-        '홍보영상'
+        { name: '병원장 인사말', link: '/greeting' },
+        { name: '연혁', link: '/history' },
+        { name: 'HI/비전/미션', link: '/vision' },
+        { name: '의료진 소개', link: '/doctors' },
+        { name: '시설 현황', link: '/facilities' },
+        { name: '성과', link: '/achievements' },
+        { name: '홍보영상', link: '/promotion' }
       ]
     },
     {
       title: '중점진료분야',
       subItems: [
-        '대장항문센터',
-        '소화기내시경센터',
-        '건강증진센터',
-        '세로움수액/비만센터',
-        '유방갑상선센터',
-        '내과질환센터',
-        '클리닉센터'
+        { name: '대장항문센터', link: '/centers/colorectal' },
+        { name: '소화기내시경센터', link: '/centers/endoscopy' },
+        { name: '건강증진센터', link: '/centers/health' },
+        { name: '세로움수액/비만센터', link: '/centers/obesity' },
+        { name: '유방갑상선센터', link: '/centers/breast' },
+        { name: '내과질환센터', link: '/centers/internal' },
+        { name: '클리닉센터', link: '/centers/clinic' }
       ]
     },
     {
       title: '이용안내',
       subItems: [
-        '진료상담',
-        '오시는길',
-        '층별안내',
-        '주차안내',
-        '비급여항목',
-        '인터넷 증명서 발급'
+        { name: '진료상담', link: '/guide/consultation' },
+        { name: '오시는길', link: '/guide/location' },
+        { name: '층별안내', link: '/guide/floors' },
+        { name: '주차안내', link: '/guide/parking' },
+        { name: '비급여항목', link: '/guide/non-covered' },
+        { name: '인터넷 증명서 발급', link: '/guide/certificate' }
       ]
     },
     {
       title: '소통참여',
       subItems: [
-        '고객의 소리',
-        '자주하는 질문',
-        '후기영상',
-        '의료정보',
-        '이달의 팝업'
+        { name: '고객의 소리', link: '/community/voice' },
+        { name: '자주하는 질문', link: '/community/faq' },
+        { name: '후기영상', link: '/community/reviews' },
+        { name: '의료정보', link: '/community/info' },
+        { name: '이달의 팝업', link: '/community/popup' }
       ]
     },
     {
       title: '정보마당',
       subItems: [
-        '건강정보',
-        '공지사항',
-        '언론보도',
-        '사진게시판',
-        '채용공고'
+        { name: '건강정보', link: '/info/health' },
+        { name: '공지사항', link: '/info/notice' },
+        { name: '언론보도', link: '/info/press' },
+        { name: '사진게시판', link: '/info/photos' },
+        { name: '채용공고', link: '/info/jobs' }
       ]
     }
   ];
@@ -69,12 +69,15 @@ const Menu = () => {
               <button className="px-4 py-2 hover:bg-gray-700 transition-colors duration-200">
                 {item.title}
               </button>
-              <div className="absolute hidden group-hover:block w-48 bg-white text-gray-800 shadow-lg">
-                <ul>
+              <div className="absolute hidden group-hover:block w-48 bg-white text-gray-800 shadow-lg rounded-lg">
+                <ul className="py-2">
                   {item.subItems.map((subItem, subIndex) => (
                     <li key={subIndex}>
-                      <Link href="#" className="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200">
-                        {subItem}
+                      <Link 
+                        href={subItem.link} 
+                        className="block px-4 py-2 hover:bg-blue-500 hover:text-white transition-colors duration-200"
+                      >
+                        {subItem.name}
                       </Link>
                     </li>
                   ))}
