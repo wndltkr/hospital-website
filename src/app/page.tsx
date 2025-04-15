@@ -173,24 +173,84 @@ export default function Home() {
       </section>
 
       {/* Operating Hours Section */}
-      <section className="container mx-auto px-8 mb-12 bg-gray-100 py-8">
-        <div className="grid grid-cols-4 gap-8">
-          <div>
-            <h3 className="text-lg font-bold mb-2">콜센터</h3>
-            <p>24시간 운영</p>
-          </div>
-          <div>
-            <h3 className="text-lg font-bold mb-2">외래진료 시간</h3>
-            <p>평일: 9:00 - 17:00</p>
-            <p>토요일: 9:00 - 13:00</p>
-          </div>
-          <div>
-            <h3 className="text-lg font-bold mb-2">건강증진센터/종합검진센터</h3>
-            <p>평일: 8:00 - 17:00</p>
-          </div>
-          <div>
-            <h3 className="text-lg font-bold mb-2">통합진료실/주사실</h3>
-            <p>평일: 8:00 - 17:00</p>
+      <section className="bg-gray-800 text-white py-12">
+        <div className="container mx-auto px-8">
+          <div className="grid grid-cols-3 gap-12">
+            {/* 연락처 */}
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 mb-4">
+                <span className="text-lg font-bold">콜센터</span>
+                <span className="text-[#4ABAFF] text-lg">053-215-6200</span>
+              </div>
+              <div className="space-y-2">
+                <div>
+                  <div className="font-bold">건강증진센터</div>
+                  <div>053-620-6159</div>
+                  <div>053-620-6160</div>
+                </div>
+                <div>
+                  <div className="font-bold">수액센터</div>
+                  <div>053-620-6170</div>
+                </div>
+                <div>
+                  <div className="font-bold">비만센터</div>
+                  <div>053-620-6175</div>
+                </div>
+              </div>
+            </div>
+
+            {/* 외래진료 */}
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <span className="text-lg font-bold">외래진료</span>
+              </div>
+              <div className="space-y-2">
+                <div>
+                  <div className="text-gray-300">평 일</div>
+                  <div>오전 09:00 ~ 오후 05:00</div>
+                </div>
+                <div>
+                  <div className="text-gray-300">토요일</div>
+                  <div>오전 09:00 ~ 오후 01:00</div>
+                </div>
+                <div>
+                  <div className="text-gray-300">점심시간</div>
+                  <div>오후 12:30 ~ 오후 01:30</div>
+                </div>
+              </div>
+              <div className="mt-6">
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="text-lg font-bold">건강증진센터/종합검진센터</span>
+                </div>
+                <div className="space-y-2">
+                  <div>
+                    <div className="text-gray-300">평 일</div>
+                    <div>오전 08:00~오후 04:00</div>
+                  </div>
+                  <div>
+                    <div className="text-gray-300">토요일</div>
+                    <div>오전 08:00~오후 12:00</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 통합진료실·주사실 */}
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <span className="text-lg font-bold">통합진료실·주사실</span>
+              </div>
+              <div className="space-y-2">
+                <div>
+                  <div className="text-gray-300">평 일</div>
+                  <div>오전 09:00 ~ 오후 05:30</div>
+                </div>
+                <div>
+                  <div className="text-gray-300">토요일</div>
+                  <div>오전 09:00 ~ 오후 01:30</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
