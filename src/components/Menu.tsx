@@ -8,9 +8,9 @@ const Menu = () => {
       subItems: [
         { name: '병원장 인사말', link: '/greeting' },
         { name: '연혁', link: '/history' },
-        { name: 'HI/비전/미션', link: '/vision' },
+        { name: '비전/미션', link: '/vision' },
         { name: '의료진 소개', link: '/doctors' },
-        { name: '시설 현황', link: '/facilities' },
+        { name: '장비소개', link: '/facilities' },
         { name: '성과', link: '/achievements' },
         { name: '홍보영상', link: '/promotion' }
       ]

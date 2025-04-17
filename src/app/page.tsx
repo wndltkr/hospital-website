@@ -39,7 +39,7 @@ export default function Home() {
                     </div>
                     <p className="text-gray-600 mt-1 text-sm">공지사항 {item}에 대한 간단한 설명이 들어갑니다.</p>
                   </Link>
-                </li>
+          </li>
               ))}
             </ul>
             <div className="mt-2 text-right">
@@ -62,7 +62,7 @@ export default function Home() {
                   <Link href="#" className="hover:text-blue-600">
                     언론보도 {item}
                   </Link>
-                </li>
+          </li>
               ))}
             </ul>
             <Link href="/press" className="mt-4 inline-block text-blue-600 hover:underline">
@@ -256,6 +256,6 @@ export default function Home() {
       </section>
 
       <Footer />
-    </main>
+      </main>
   );
 }

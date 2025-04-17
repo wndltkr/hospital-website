@@ -7,17 +7,17 @@ const SideMenu = () => {
     {
       icon: <FaHeadphones className="text-2xl" />,
       text: '고객센터',
-      link: '/customer-service'
+      link: '/community/voice'
     },
     {
       icon: <FaCalendarCheck className="text-2xl" />,
       text: '진료상담',
-      link: '/appointment'
+      link: '/guide/consultation'
     },
     {
       icon: <FaMapMarkerAlt className="text-2xl" />,
       text: '오시는길',
-      link: '/location'
+      link: '/guide/location'
     }
   ];
 
