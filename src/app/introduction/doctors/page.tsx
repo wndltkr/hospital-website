@@ -6,6 +6,7 @@ import Header from '@/components/Header';
 import Menu from '@/components/Menu';
 import SideMenu from '@/components/SideMenu';
 import Footer from '@/components/Footer';
+import { motion } from 'framer-motion';
 
 interface Schedule {
   mon: string;
@@ -92,7 +93,12 @@ export default function DoctorsPage() {
       <SideMenu />
       <main>
         {/* Hero Section */}
-        <section className="relative h-[500px] bg-gradient-to-r from-[#E8F3FF] to-[#F5F9FF] overflow-hidden">
+        <motion.section 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="relative h-[500px] bg-gradient-to-r from-[#E8F3FF] to-[#F5F9FF] overflow-hidden"
+        >
           <div className="container mx-auto px-8 h-full flex items-center">
             <div className="relative z-10">
               <p className="text-[#666] tracking-widest mb-4">SEKANG HOSPITAL</p>
@@ -113,15 +119,25 @@ export default function DoctorsPage() {
               <div className="absolute inset-0 bg-gradient-to-r from-[#E8F3FF] via-transparent to-transparent"></div>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* Department Tabs */}
-        <section className="border-b">
+        <motion.section 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="border-b"
+        >
           <div className="container mx-auto">
             <div className="flex">
-              {departments.map((dept) => (
-                <button
+              {departments.map((dept, index) => (
+                <motion.button
                   key={dept.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
                   className={`px-12 py-4 text-lg font-medium ${
                     activeDepartment === dept.id
                       ? 'bg-[#0099FF] text-white'
@@ -130,19 +146,29 @@ export default function DoctorsPage() {
                   onClick={() => setActiveDepartment(dept.id)}
                 >
                   {dept.name}
-                </button>
+                </motion.button>
               ))}
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* Doctors Grid */}
-        <section className="py-16">
+        <motion.section 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="py-16"
+        >
           <div className="container mx-auto px-8">
             <div className="grid grid-cols-4 gap-8">
-              {doctors.map((doctor) => (
-                <div
+              {doctors.map((doctor, index) => (
+                <motion.div
                   key={doctor.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="cursor-pointer group"
                   onClick={() => setSelectedDoctor(doctor)}
                 >
@@ -155,20 +181,30 @@ export default function DoctorsPage() {
                     />
                   </div>
                   <h3 className="text-xl font-bold">{doctor.name}</h3>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* Selected Doctor Details */}
         {selectedDoctor && (
-          <section className="py-16 bg-gray-50">
+          <motion.section 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="py-16 bg-gray-50"
+          >
             <div className="container mx-auto px-8">
               <div className="bg-white p-8 rounded-2xl shadow-lg">
                 <div className="flex gap-12">
                   {/* Doctor Image */}
-                  <div className="w-1/3">
+                  <motion.div 
+                    initial={{ opacity: 0, x: -30 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8 }}
+                    className="w-1/3"
+                  >
                     <div className="relative aspect-[3/4]">
                       <Image
                         src={selectedDoctor.image}
@@ -177,24 +213,39 @@ export default function DoctorsPage() {
                         className="object-cover rounded-lg"
                       />
                     </div>
-                  </div>
+                  </motion.div>
 
                   {/* Doctor Info */}
-                  <div className="w-2/3">
+                  <motion.div 
+                    initial={{ opacity: 0, x: 30 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8 }}
+                    className="w-2/3"
+                  >
                     <div className="flex items-center gap-4 mb-8">
                       <h2 className="text-2xl font-bold">{selectedDoctor.name}</h2>
                       <span className="text-gray-600">{selectedDoctor.department}</span>
                     </div>
 
                     {/* Tabs */}
-                    <div className="flex gap-4 mb-8">
+                    <motion.div 
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 0.2 }}
+                      className="flex gap-4 mb-8"
+                    >
                       <button className="px-6 py-2 border border-blue-800 text-blue-800 rounded-full">초진 예약</button>
                       <button className="px-6 py-2 border border-blue-800 text-blue-800 rounded-full">재진 예약</button>
                       <button className="px-6 py-2 bg-blue-500 text-white rounded-full">진료 상담</button>
-                    </div>
+                    </motion.div>
 
                     {/* Info Sections */}
-                    <div className="space-y-8">
+                    <motion.div 
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 0.4 }}
+                      className="space-y-8"
+                    >
                       <div>
                         <h3 className="text-lg font-bold mb-2">전문분야</h3>
                         <p>{selectedDoctor.position}</p>
@@ -204,7 +255,14 @@ export default function DoctorsPage() {
                         <h3 className="text-lg font-bold mb-2">주요학력</h3>
                         <ul className="list-disc list-inside space-y-1">
                           {selectedDoctor.education?.map((edu, index) => (
-                            <li key={index}>{edu}</li>
+                            <motion.li 
+                              key={index}
+                              initial={{ opacity: 0, x: -20 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ duration: 0.3, delay: 0.5 + (index * 0.1) }}
+                            >
+                              {edu}
+                            </motion.li>
                           ))}
                         </ul>
                       </div>
@@ -213,16 +271,28 @@ export default function DoctorsPage() {
                         <h3 className="text-lg font-bold mb-2">주요경력</h3>
                         <ul className="list-disc list-inside space-y-1">
                           {selectedDoctor.career?.map((career, index) => (
-                            <li key={index}>{career}</li>
+                            <motion.li 
+                              key={index}
+                              initial={{ opacity: 0, x: -20 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ duration: 0.3, delay: 0.6 + (index * 0.1) }}
+                            >
+                              {career}
+                            </motion.li>
                           ))}
                         </ul>
                       </div>
-                    </div>
-                  </div>
+                    </motion.div>
+                  </motion.div>
                 </div>
 
                 {/* Schedule Table */}
-                <div className="mt-12">
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.8 }}
+                  className="mt-12"
+                >
                   <table className="w-full border-collapse">
                     <thead>
                       <tr className="bg-gray-50">
@@ -277,14 +347,20 @@ export default function DoctorsPage() {
                       </tr>
                     </tbody>
                   </table>
-                </div>
+                </motion.div>
               </div>
             </div>
-          </section>
+          </motion.section>
         )}
 
         {/* Department Group Photo */}
-        <section className="py-16 bg-gray-50">
+        <motion.section 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="py-16 bg-gray-50"
+        >
           <div className="container mx-auto px-8">
             <div className="relative aspect-[16/9]">
               <Image
@@ -295,7 +371,7 @@ export default function DoctorsPage() {
               />
             </div>
           </div>
-        </section>
+        </motion.section>
       </main>
       <Footer />
     </>

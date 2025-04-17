@@ -6,13 +6,13 @@ const Menu = () => {
     {
       title: '병원소개',
       subItems: [
-        { name: '병원장 인사말', link: '/greeting' },
-        { name: '연혁', link: '/history' },
-        { name: '비전/미션', link: '/vision' },
-        { name: '의료진 소개', link: '/doctors' },
-        { name: '장비소개', link: '/facilities' },
-        { name: '성과', link: '/achievements' },
-        { name: '홍보영상', link: '/promotion' }
+        { name: '병원장 인사말', link: '/introduction/greeting' },
+        { name: '연혁', link: '/introduction/history' },
+        { name: '비전/미션', link: '/introduction/vision' },
+        { name: '의료진 소개', link: '/introduction/doctors' },
+        { name: '장비소개', link: '/introduction/facilities' },
+        { name: '성과', link: '/introduction/achievements' },
+        { name: '홍보영상', link: '/introduction/promotion' }
       ]
     },
     {
