@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import Header from '@/components/Header';
 import Menu from '@/components/Menu';
@@ -7,6 +9,7 @@ import Slideshow from '@/components/Slideshow';
 import MonthlyPopup from '@/components/MonthlyPopup';
 import Map from '@/components/Map';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 import { FaHeartbeat, FaQuestionCircle, FaStethoscope, FaCut, FaBone, FaHeart } from 'react-icons/fa';
 
 export default function Home() {
@@ -17,21 +20,47 @@ export default function Home() {
       <SideMenu />
 
       {/* YouTube Video Section */}
-      <section className="w-full aspect-video relative bg-gray-100 flex items-center justify-center mb-12">
+      <motion.section 
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="w-full aspect-video relative bg-gray-100 flex items-center justify-center mb-12"
+      >
         <p className="text-2xl text-gray-500">YouTube 영상이 들어갈 예정입니다</p>
-      </section>
+      </motion.section>
 
       {/* Slideshow and Notice Section */}
       <section className="container mx-auto px-8 mb-12">
-        <div className="flex gap-8">
-          <div className="w-1/2">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="flex gap-8"
+        >
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="w-1/2"
+          >
             <Slideshow />
-          </div>
-          <div className="w-1/2 bg-gray-50 p-6 rounded-lg">
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="w-1/2 bg-gray-50 p-6 rounded-lg"
+          >
             <h2 className="text-2xl font-bold mb-4">공지사항</h2>
             <ul className="space-y-4">
-              {[1, 2, 3].map((item) => (
-                <li key={item} className="border-b pb-2">
+              {[1, 2, 3].map((item, index) => (
+                <motion.li 
+                  key={item} 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.6 + (index * 0.1) }}
+                  className="border-b pb-2"
+                >
                   <Link href="#" className="block hover:text-blue-600">
                     <div className="flex justify-between items-center">
                       <span className="font-medium">공지사항 {item}</span>
@@ -39,104 +68,177 @@ export default function Home() {
                     </div>
                     <p className="text-gray-600 mt-1 text-sm">공지사항 {item}에 대한 간단한 설명이 들어갑니다.</p>
                   </Link>
-          </li>
+                </motion.li>
               ))}
             </ul>
-            <div className="mt-2 text-right">
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.9 }}
+              className="mt-2 text-right"
+            >
               <Link href="/notice" className="inline-block text-blue-600 hover:underline">
                 더보기
               </Link>
-            </div>
-          </div>
-        </div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </section>
 
       {/* Four Column Section */}
       <section className="container mx-auto px-8 mb-12">
-        <div className="grid grid-cols-4 gap-8">
-          <div>
-            <h2 className="text-xl font-bold mb-4">언론보도</h2>
-            <ul className="space-y-4">
-              {[1, 2, 3, 4].map((item) => (
-                <li key={item}>
-                  <Link href="#" className="hover:text-blue-600">
-                    언론보도 {item}
-                  </Link>
-          </li>
-              ))}
-            </ul>
-            <Link href="/press" className="mt-4 inline-block text-blue-600 hover:underline">
-              더보기
-            </Link>
-          </div>
-          <div>
-            <h2 className="text-xl font-bold mb-4">세로움수액/비만센터</h2>
-            <div className="bg-gray-100 h-48 rounded-lg mb-4 flex items-center justify-center">
-              <p className="text-gray-500">센터 소개 이미지</p>
-            </div>
-            <Link href="/weight-loss" className="text-blue-600 hover:underline">
-              더보기
-            </Link>
-          </div>
-          <div>
-            <h2 className="text-xl font-bold mb-4">후기영상</h2>
-            <div className="bg-gray-100 h-48 rounded-lg mb-4 flex items-center justify-center">
-              <p className="text-gray-500">후기 영상</p>
-            </div>
-            <Link href="/reviews" className="text-blue-600 hover:underline">
-              더보기
-            </Link>
-          </div>
-          <div>
-            <h2 className="text-xl font-bold mb-4">의료정보</h2>
-            <div className="bg-gray-100 h-48 rounded-lg mb-4 flex items-center justify-center">
-              <p className="text-gray-500">의료 정보</p>
-            </div>
-            <Link href="/medical-info" className="text-blue-600 hover:underline">
-              더보기
-            </Link>
-          </div>
-        </div>
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="grid grid-cols-4 gap-8"
+        >
+          {[
+            {
+              title: "언론보도",
+              content: (
+                <ul className="space-y-4">
+                  {[1, 2, 3, 4].map((item) => (
+                    <li key={item}>
+                      <Link href="#" className="hover:text-blue-600">
+                        언론보도 {item}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              ),
+              link: "/press"
+            },
+            {
+              title: "세로움수액/비만센터",
+              content: (
+                <div className="bg-gray-100 h-48 rounded-lg mb-4 flex items-center justify-center">
+                  <p className="text-gray-500">센터 소개 이미지</p>
+                </div>
+              ),
+              link: "/weight-loss"
+            },
+            {
+              title: "후기영상",
+              content: (
+                <div className="bg-gray-100 h-48 rounded-lg mb-4 flex items-center justify-center">
+                  <p className="text-gray-500">후기 영상</p>
+                </div>
+              ),
+              link: "/reviews"
+            },
+            {
+              title: "의료정보",
+              content: (
+                <div className="bg-gray-100 h-48 rounded-lg mb-4 flex items-center justify-center">
+                  <p className="text-gray-500">의료 정보</p>
+                </div>
+              ),
+              link: "/medical-info"
+            }
+          ].map((column, index) => (
+            <motion.div 
+              key={column.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+            >
+              <h2 className="text-xl font-bold mb-4">{column.title}</h2>
+              {column.content}
+              <Link href={column.link} className="text-blue-600 hover:underline">
+                더보기
+              </Link>
+            </motion.div>
+          ))}
+        </motion.div>
       </section>
 
       {/* Six Buttons and Achievement Section */}
       <section className="container mx-auto px-8 mb-12">
-        <div className="flex gap-8">
-          <div className="w-1/2">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="flex gap-8"
+        >
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="w-1/2"
+          >
             <div className="grid grid-rows-3 gap-4">
-              <div className="grid grid-cols-2 gap-4">
-                <Link href="/health-info" className="p-4 border rounded-lg hover:bg-gray-100 text-center transition-colors duration-200">
-                  <FaHeartbeat className="text-3xl mx-auto mb-2 text-blue-600" />
-                  건강정보
-                </Link>
-                <Link href="/faq" className="p-4 border rounded-lg hover:bg-gray-100 text-center transition-colors duration-200">
-                  <FaQuestionCircle className="text-3xl mx-auto mb-2 text-blue-600" />
-                  자주하는 질문
-                </Link>
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                <Link href="/anal-fissure" className="p-4 border rounded-lg hover:bg-gray-100 text-center transition-colors duration-200">
-                  <FaStethoscope className="text-3xl mx-auto mb-2 text-blue-600" />
-                  항문거근증후군
-                </Link>
-                <Link href="/pph-surgery" className="p-4 border rounded-lg hover:bg-gray-100 text-center transition-colors duration-200">
-                  <FaCut className="text-3xl mx-auto mb-2 text-blue-600" />
-                  하이브리드PPH치질수술
-                </Link>
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                <Link href="/esd" className="p-4 border rounded-lg hover:bg-gray-100 text-center transition-colors duration-200">
-                  <FaBone className="text-3xl mx-auto mb-2 text-blue-600" />
-                  대장ESD
-                </Link>
-                <Link href="/health-promotion" className="p-4 border rounded-lg hover:bg-gray-100 text-center transition-colors duration-200">
-                  <FaHeart className="text-3xl mx-auto mb-2 text-blue-600" />
-                  건강증진센터
-                </Link>
-              </div>
+              {[
+                [
+                  {
+                    href: "/health-info",
+                    icon: FaHeartbeat,
+                    text: "건강정보"
+                  },
+                  {
+                    href: "/faq",
+                    icon: FaQuestionCircle,
+                    text: "자주하는 질문"
+                  }
+                ],
+                [
+                  {
+                    href: "/anal-fissure",
+                    icon: FaStethoscope,
+                    text: "항문거근증후군"
+                  },
+                  {
+                    href: "/pph-surgery",
+                    icon: FaCut,
+                    text: "하이브리드PPH치질수술"
+                  }
+                ],
+                [
+                  {
+                    href: "/esd",
+                    icon: FaBone,
+                    text: "대장ESD"
+                  },
+                  {
+                    href: "/health-promotion",
+                    icon: FaHeart,
+                    text: "건강증진센터"
+                  }
+                ]
+              ].map((row, rowIndex) => (
+                <motion.div 
+                  key={rowIndex}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.2 + (rowIndex * 0.1) }}
+                  className="grid grid-cols-2 gap-4"
+                >
+                  {row.map((button, index) => (
+                    <Link 
+                      key={button.href}
+                      href={button.href} 
+                      className="p-4 border rounded-lg hover:bg-gray-100 text-center transition-colors duration-200"
+                    >
+                      <button.icon className="text-3xl mx-auto mb-2 text-blue-600" />
+                      {button.text}
+                    </Link>
+                  ))}
+                </motion.div>
+              ))}
             </div>
-          </div>
-          <div className="w-1/2">
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="w-1/2"
+          >
             <div className="bg-gray-100 h-full rounded-lg p-4 flex flex-col justify-between">
               <h2 className="text-xl font-bold mb-4">성과</h2>
               <div className="flex-1 flex items-center justify-center">
@@ -146,31 +248,56 @@ export default function Home() {
                 자세히 보기
               </Link>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
 
       {/* Monthly Popup Section */}
-      <section className="container mx-auto px-8 mb-12">
+      <motion.section 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="container mx-auto px-8 mb-12"
+      >
         <h2 className="text-2xl font-bold mb-4">이달의 팝업</h2>
         <MonthlyPopup />
-      </section>
+      </motion.section>
 
       {/* Fixed Images Section */}
       <section className="container mx-auto px-8 mb-12">
-        <div className="flex gap-4">
-          {[1, 2, 3].map((item) => (
-            <div key={item} className="flex-1 h-32 bg-gray-100 rounded-lg flex items-center justify-center">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="flex gap-4"
+        >
+          {[1, 2, 3].map((item, index) => (
+            <motion.div 
+              key={item}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="flex-1 h-32 bg-gray-100 rounded-lg flex items-center justify-center"
+            >
               <p className="text-gray-500">이미지 {item}</p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </section>
 
       {/* Map Section */}
-      <section className="container mx-auto px-8 mb-12">
+      <motion.section 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="container mx-auto px-8 mb-12"
+      >
         <Map />
-      </section>
+      </motion.section>
 
       {/* Operating Hours Section */}
       <section className="bg-gray-800 text-white py-12">
@@ -256,6 +383,6 @@ export default function Home() {
       </section>
 
       <Footer />
-      </main>
+    </main>
   );
 }

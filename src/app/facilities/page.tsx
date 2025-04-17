@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import Header from '@/components/Header';
 import Menu from '@/components/Menu';
 import SideMenu from '@/components/SideMenu';
@@ -38,15 +39,25 @@ export default function FacilitiesPage() {
         {/* Hero Section */}
         <section className="relative h-[500px] bg-gradient-to-r from-[#E8F3FF] to-[#F5F9FF] overflow-hidden">
           <div className="container mx-auto px-8 h-full flex items-center">
-            <div className="relative z-10">
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="relative z-10"
+            >
               <p className="text-[#666] tracking-widest mb-4">SEKANG HOSPITAL</p>
               <h1 className="text-5xl font-bold mb-6">장비소개</h1>
               <p className="text-lg text-gray-700">
                 세강병원 홈페이지를<br />
                 방문해 주셔서 감사합니다.
               </p>
-            </div>
-            <div className="absolute right-0 top-0 h-full w-1/2">
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, scale: 1.1 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1 }}
+              className="absolute right-0 top-0 h-full w-1/2"
+            >
               <Image
                 src="/images/hospital-building.jpg"
                 alt="세강병원 건물"
@@ -55,43 +66,74 @@ export default function FacilitiesPage() {
                 className="rounded-l-3xl"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-[#E8F3FF] via-transparent to-transparent"></div>
-            </div>
+            </motion.div>
           </div>
         </section>
 
         {/* Equipment Grid Section */}
-        <section className="py-20">
+        <section className="py-20 bg-gray-50">
           <div className="container mx-auto px-8">
             <div className="grid grid-cols-3 gap-8">
-              {equipments.map((equipment) => (
-                <div key={equipment.id} className="bg-white rounded-lg overflow-hidden border">
-                  <div className="relative aspect-square">
+              {equipments.map((equipment, index) => (
+                <motion.div 
+                  key={equipment.id} 
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  className="bg-white rounded-lg overflow-hidden border"
+                >
+                  <motion.div 
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.2 + index * 0.2 }}
+                    className="relative aspect-square"
+                  >
                     <Image
                       src={equipment.image}
                       alt={equipment.name}
                       fill
                       className="object-contain p-8"
                     />
-                  </div>
-                  <div className="p-6">
+                  </motion.div>
+                  <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.4 + index * 0.2 }}
+                    className="p-6"
+                  >
                     <h3 className="text-xl font-bold text-center py-4 bg-[#F4A460] text-white mb-4">
                       {equipment.name}
                     </h3>
                     <p className="text-gray-600 leading-relaxed">
                       {equipment.description}
                     </p>
-                  </div>
-                </div>
+                  </motion.div>
+                </motion.div>
               ))}
             </div>
           </div>
         </section>
 
         {/* YouTube Video Section */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-white">
           <div className="container mx-auto px-8">
-            <div className="max-w-4xl mx-auto">
-              <div className="relative aspect-video">
+            <motion.div 
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="max-w-4xl mx-auto"
+            >
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="relative aspect-video"
+              >
                 <iframe
                   className="absolute inset-0 w-full h-full"
                   src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
@@ -99,15 +141,21 @@ export default function FacilitiesPage() {
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 ></iframe>
-              </div>
-              <div className="text-center mt-8">
+              </motion.div>
+              <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-center mt-8"
+              >
                 <h2 className="text-3xl font-bold mb-4">
                   유방촬영장비를 도입해<br />
                   '유방암 예방'에<br />
                   최선을 다하고 있습니다
                 </h2>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
         </section>
       </main>

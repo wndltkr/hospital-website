@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import Header from '@/components/Header';
 import Menu from '@/components/Menu';
 import SideMenu from '@/components/SideMenu';
@@ -81,15 +82,25 @@ export default function HistoryPage() {
         {/* Hero Section */}
         <section className="relative h-[500px] bg-gradient-to-r from-[#E8F3FF] to-[#F5F9FF] overflow-hidden">
           <div className="container mx-auto px-8 h-full flex items-center">
-            <div className="relative z-10">
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="relative z-10"
+            >
               <p className="text-[#666] tracking-widest mb-4">SEKANG HOSPITAL</p>
               <h1 className="text-4xl font-bold mb-6">연혁</h1>
               <p className="text-lg text-gray-700">
                 세강병원의 발자취를<br />
                 소개합니다.
               </p>
-            </div>
-            <div className="absolute right-0 top-0 h-full w-1/2">
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, scale: 1.1 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1 }}
+              className="absolute right-0 top-0 h-full w-1/2"
+            >
               <Image
                 src="/images/hospital-building.jpg"
                 alt="세강병원 건물"
@@ -98,19 +109,40 @@ export default function HistoryPage() {
                 className="rounded-l-3xl"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-[#E8F3FF] via-transparent to-transparent"></div>
-            </div>
+            </motion.div>
           </div>
         </section>
 
         {/* History Section */}
         <section className="py-20 bg-white">
           <div className="container mx-auto px-8">
-            <h2 className="text-4xl font-bold text-center mb-16">HISTORY</h2>
+            <motion.h2 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-4xl font-bold text-center mb-16"
+            >
+              HISTORY
+            </motion.h2>
             
             {/* Year Tabs */}
-            <div className="grid grid-cols-5 gap-4 mb-12">
-              {yearRanges.slice(0, 5).map((range) => (
-                <div key={range} className="col-span-1">
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="grid grid-cols-5 gap-4 mb-12"
+            >
+              {yearRanges.slice(0, 5).map((range, index) => (
+                <motion.div 
+                  key={range} 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="col-span-1"
+                >
                   <button
                     onClick={() => handleRangeClick(range)}
                     className={`w-full py-4 text-xl font-bold transition-colors
@@ -121,14 +153,27 @@ export default function HistoryPage() {
                   >
                     {range}
                   </button>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
 
             {/* Second Row of Year Tabs */}
-            <div className="grid grid-cols-5 gap-4 mb-20">
-              {yearRanges.slice(5).map((range) => (
-                <div key={range} className="col-span-1">
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="grid grid-cols-5 gap-4 mb-20"
+            >
+              {yearRanges.slice(5).map((range, index) => (
+                <motion.div 
+                  key={range}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="col-span-1"
+                >
                   <button
                     onClick={() => handleRangeClick(range)}
                     className={`w-full py-4 text-xl font-bold transition-colors
@@ -139,35 +184,60 @@ export default function HistoryPage() {
                   >
                     {range}
                   </button>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
 
             {/* History Content */}
-            <div className="bg-gray-50 p-12 rounded-2xl">
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="bg-gray-50 p-12 rounded-2xl"
+            >
               <div className="grid grid-cols-2 gap-12">
-                {years.map((year) => (
-                  <div key={year}>
+                {years.map((year, yearIndex) => (
+                  <motion.div 
+                    key={year}
+                    initial={{ opacity: 0, x: yearIndex % 2 === 0 ? -30 : 30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: yearIndex * 0.2 }}
+                  >
                     <h3 className="text-2xl font-bold mb-8">{year}</h3>
                     <ul className="space-y-6">
                       {Object.entries(currentData[year] || {})
                         .sort((a, b) => Number(b[0]) - Number(a[0]))
-                        .map(([month, content]) => (
-                          <li key={month} className="flex items-start">
+                        .map(([month, content], monthIndex) => (
+                          <motion.li 
+                            key={month} 
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: monthIndex * 0.1 }}
+                            className="flex items-start"
+                          >
                             <span className="text-[#FF6B00] font-bold mr-4">{month}</span>
                             <p className="text-gray-700">{content}</p>
-                          </li>
+                          </motion.li>
                         ))}
                     </ul>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           </div>
         </section>
 
         {/* Main YouTube Section */}
-        <section className="py-20 bg-gray-50">
+        <motion.section 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="py-20 bg-gray-50"
+        >
           <div className="container mx-auto px-8">
             <div className="aspect-w-16 aspect-h-9">
               <iframe
@@ -179,15 +249,28 @@ export default function HistoryPage() {
               ></iframe>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* 40th Anniversary Video Board Section */}
         <section className="py-20 bg-white">
           <div className="container mx-auto px-8">
-            <h2 className="text-4xl font-bold mb-12">[40주년 축하메세지]</h2>
+            <motion.h2 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-4xl font-bold mb-12"
+            >
+              [40주년 축하메세지]
+            </motion.h2>
             
             {selectedVideo ? (
-              <div className="mb-8">
+              <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="mb-8"
+              >
                 <div className="aspect-w-16 aspect-h-9 mb-4">
                   <iframe
                     src={`https://www.youtube.com/embed/${selectedVideo}`}
@@ -203,12 +286,16 @@ export default function HistoryPage() {
                 >
                   목록으로
                 </button>
-              </div>
+              </motion.div>
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {celebrationVideos.map((video) => (
-                  <div
+                {celebrationVideos.map((video, index) => (
+                  <motion.div
                     key={video.id}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
                     onClick={() => handleVideoClick(video.videoId)}
                     className="cursor-pointer group"
                   >
@@ -231,7 +318,7 @@ export default function HistoryPage() {
                     <h3 className="text-xl font-bold group-hover:text-[#FF6B00] transition-colors">
                       {video.title}
                     </h3>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             )}
