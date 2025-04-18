@@ -65,7 +65,7 @@ export default function Home() {
                     <div className="flex justify-between items-center">
                       <span className="font-medium">공지사항 {item}</span>
                       <span className="text-sm text-gray-500">2024-04-{item}</span>
-                    </div>
+        </div>
                     <p className="text-gray-600 mt-1 text-sm">공지사항 {item}에 대한 간단한 설명이 들어갑니다.</p>
                   </Link>
                 </motion.li>
@@ -379,7 +379,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
+    </div>
       </section>
 
       <Footer />
