@@ -742,12 +742,28 @@ export default function HealthPage() {
                 <div className="flex items-start gap-12 mt-20">
                   <div className="flex-1">
                     <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">S E K A N G   H O S P I T A L</p>
-                    <h2 className="text-4xl font-bold mb-8">종합검진 시 주의사항</h2>
-                    <div className="space-y-2">
-                      <p>· 검진 전일 : 저녁식사는 가볍게 드시고 저녁 9시 이후에는 아무것도 드시지 마십시오.</p>
-                      <p>· 검진 당일 : 아침식사는 물론 약, 담배, 커피, 물 등 일체 음식물을 금하고 공복 상태로 오십시오.</p>
-                      <p>· 혈압약, 심장약, 천식약을 드시는 분은 오전 7시에 (물 조금) 드시고 오세요.</p>
-                      <p>· 당뇨약이나 다른 약은 드시지 마십시오.</p>
+                    <h2 className="text-4xl font-bold mb-8">건강검진 검사전날 유의사항</h2>
+                    <div className="space-y-4">
+                      <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">1</div>
+                        <p className="text-gray-800 text-lg">저녁식사는 기름기 없는 음식으로 가볍게 드시고 저녁9시 이후에는 절대 금식하십시오.</p>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">2</div>
+                        <p className="text-gray-800 text-lg">복용중인 약이 있으면 주치의와 상의 후 복용을 중지하여 주시기 바랍니다.</p>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">3</div>
+                        <p className="text-gray-800 text-lg">침 치료, 물리치료, 파스, 연고 등을 금하십시오.</p>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">4</div>
+                        <p className="text-gray-800 text-lg">과음, 과로 및 과격한 운동 등을 금하시고 충분한 수면을 취하시기 바랍니다.</p>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">5</div>
+                        <p className="text-gray-800 text-lg">대변은 기급적 검사전날에 보시어서 채변통에 넣어 오십시오.(공알 크기)</p>
+                      </div>
                     </div>
                   </div>
                   <div className="w-[400px] h-[300px] relative">
@@ -812,8 +828,8 @@ export default function HealthPage() {
                   <div className="relative h-full flex flex-col items-center justify-center text-white px-4">
                     <div className="text-center max-w-4xl mx-auto">
                       <p className="text-4xl font-medium leading-relaxed">
-                        가장 건강할 때 받아야 하는 건강검진<br />
-                        당신의 평생 건강, 세강병원이 함께합니다.
+                        세상을 아름답게 사회를 건강하게!<br />
+                        The Sekang Hospital makes the world a beautiful and healthy society
                       </p>
                     </div>
                   </div>
@@ -882,12 +898,168 @@ export default function HealthPage() {
                   />
                 </div>
               </div>
+
+              <div className="relative w-full h-[400px] mt-20">
+                <div className="absolute inset-0">
+                  <Image
+                    src="/images/centers/quote-bg.jpg"
+                    alt="의사 배경"
+                    fill
+                    className="object-cover brightness-[0.7]"
+                  />
+                </div>
+                <div className="relative h-full flex flex-col items-center justify-center text-white px-4">
+                  <div className="text-center max-w-4xl mx-auto">
+                    <p className="text-4xl font-medium leading-relaxed">
+                      세상을 아름답게 사회를 건강하게!<br />
+                      The Sekang Hospital makes the world a beautiful and healthy society
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="container mx-auto px-4 py-20">
+                <div className="text-center mb-12">
+                  <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">S E K A N G   H O S P I T A L</p>
+                  <h2 className="text-2xl font-bold">건강증진센터 소개영상</h2>
+                </div>
+                <div className="max-w-4xl mx-auto aspect-video">
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src="https://www.youtube.com/embed/VIDEO_ID"
+                    title="건강증진센터 소개영상"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="rounded-lg shadow-lg"
+                  ></iframe>
+                </div>
+              </div>
             </div>
           )}
 
           {activeTab === 'reservation' && (
-            <div className="space-y-0">
-              {/* 예약안내&유의사항 내용 */}
+            <div className="container mx-auto px-4">
+              <div className="flex gap-16">
+                <div className="w-[460px] h-[340px] relative border border-gray-100">
+                  <Image
+                    src="/images/centers/reservation-intro.jpg"
+                    alt="건강증진센터 예약안내"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="flex-1">
+                  <div className="mb-8">
+                    <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">S E K A N G   H O S P I T A L</p>
+                    <h2 className="text-4xl font-bold">건강증진센터 예약안내</h2>
+                  </div>
+                  <p className="text-gray-800 text-lg leading-[1.8]">
+                    2014년부터 내시경(위, 대장) 예약제로 실시합니다.<br />
+                    건강검진은 종합검진, 일반 검진으로 나누어 예약하실 수 있습니다.<br />
+                    종합검진 및 국민건강보험공단 건강검진(일반 검진)은 예약 후 검진하실 수 있습니다.
+                  </p>
+                  <div className="mt-8 space-y-2">
+                    <p className="text-[#0066CC]">건강증진센터 : 053) 620-6159, 6160</p>
+                    <p className="text-[#0066CC]">종합검진센터 : 053) 620-6332, 6333</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-20">
+                <div className="mb-8">
+                  <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">S E K A N G   H O S P I T A L</p>
+                  <h2 className="text-4xl font-bold">건강검진 검사전날 유의사항</h2>
+                </div>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">1</div>
+                    <p className="text-gray-800 text-lg">저녁식사는 기름기 없는 음식으로 가볍게 드시고 저녁9시 이후에는 절대 금식하십시오.</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">2</div>
+                    <p className="text-gray-800 text-lg">복용중인 약이 있으면 주치의와 상의 후 복용을 중지하여 주시기 바랍니다.</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">3</div>
+                    <p className="text-gray-800 text-lg">침 치료, 물리치료, 파스, 연고 등을 금하십시오.</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">4</div>
+                    <p className="text-gray-800 text-lg">과음, 과로 및 과격한 운동 등을 금하시고 충분한 수면을 취하시기 바랍니다.</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">5</div>
+                    <p className="text-gray-800 text-lg">대변은 기급적 검사전날에 보시어서 채변통에 넣어 오십시오.(공알 크기)</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-20">
+                <div className="mb-8">
+                  <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">S E K A N G   H O S P I T A L</p>
+                  <h2 className="text-4xl font-bold">건강검진 검사당일 유의사항</h2>
+                </div>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">1</div>
+                    <p className="text-gray-800 text-lg">예약시간을 지켜 주십시오.</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">2</div>
+                    <p className="text-gray-800 text-lg">아침식사는 아무것도 드시지 마십시오(물, 껌, 담배 포함).</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">3</div>
+                    <p className="text-gray-800 text-lg">가벼운 의치문동이나 양치질은 무방합니다.</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">4</div>
+                    <p className="text-gray-800 text-lg">평소에 안경(콘텍트렌즈 포함)을 착용하시던 분은 반드시 착용하여 주시기 바랍니다.</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">5</div>
+                    <p className="text-gray-800 text-lg">귀중품(예:목걸이, 귀걸이, 반지 등)은 가급적 착용하지 마십시오.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="relative w-full h-[400px] mt-20">
+                <div className="absolute inset-0">
+                  <Image
+                    src="/images/centers/quote-bg.jpg"
+                    alt="의사 배경"
+                    fill
+                    className="object-cover brightness-[0.7]"
+                  />
+                </div>
+                <div className="relative h-full flex flex-col items-center justify-center text-white px-4">
+                  <div className="text-center max-w-4xl mx-auto">
+                    <p className="text-4xl font-medium leading-relaxed">
+                      세상을 아름답게 사회를 건강하게!<br />
+                      The Sekang Hospital makes the world a beautiful and healthy society
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="container mx-auto px-4 py-20">
+                <div className="text-center mb-12">
+                  <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">S E K A N G   H O S P I T A L</p>
+                  <h2 className="text-2xl font-bold">건강증진센터 소개영상</h2>
+                </div>
+                <div className="max-w-4xl mx-auto aspect-video">
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src="https://www.youtube.com/embed/VIDEO_ID"
+                    title="건강증진센터 소개영상"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="rounded-lg shadow-lg"
+                  ></iframe>
+                </div>
+              </div>
             </div>
           )}
         </motion.section>
