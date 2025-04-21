@@ -6,9 +6,11 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next build && next export"
   },
   "dependencies": {
+    "firebase": "^11.6.0",
     "framer-motion": "^12.7.3",
     "next": "15.3.0",
     "react": "^19.0.0",

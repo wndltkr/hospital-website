@@ -331,14 +331,14 @@ export default function EndoscopyPage() {
                 <div className="absolute inset-0 bg-black/50"></div>
                 <div className="container mx-auto px-4 py-20 relative">
                   <div className="max-w-4xl mx-auto text-center text-white">
-                    <div className="text-[80px] text-[#0066CC] opacity-20 font-serif mb-4">"</div>
+                    <div className="text-[80px] text-[#0066CC] opacity-20 font-serif mb-4">&quot;</div>
                     <p className="text-2xl leading-relaxed mb-4">
                       용모상흑은 관상용모상 선종이나 톱니모양 선종이 확인 된 경우
                     </p>
                     <p className="text-2xl leading-relaxed">
                       최소 6개월에서 1년 뒤 다시 한 번 대장내시경 검사를 받아보시기 바랍니다.
                     </p>
-                    <div className="text-[80px] text-[#0066CC] opacity-20 font-serif mt-4">"</div>
+                    <div className="text-[80px] text-[#0066CC] opacity-20 font-serif mt-4">&quot;</div>
                   </div>
                 </div>
               </div>
@@ -672,12 +672,12 @@ export default function EndoscopyPage() {
                 <div className="absolute inset-0 bg-black/50"></div>
                 <div className="container mx-auto px-4 py-20 relative">
                   <div className="max-w-4xl mx-auto text-center text-white">
-                    <div className="text-[80px] text-[#0066CC] opacity-20 font-serif mb-4">"</div>
+                    <div className="text-[80px] text-[#0066CC] opacity-20 font-serif mb-4">&quot;</div>
                     <p className="text-2xl leading-relaxed">
                       세강병원은 풍부한 임상경험을 갖춘 의료진이<br />
                       숙련된 실력과 노하우로 만족스러운 결과를 안겨드립니다.
                     </p>
-                    <div className="text-[80px] text-[#0066CC] opacity-20 font-serif mt-4">"</div>
+                    <div className="text-[80px] text-[#0066CC] opacity-20 font-serif mt-4">&quot;</div>
                   </div>
                 </div>
               </div>

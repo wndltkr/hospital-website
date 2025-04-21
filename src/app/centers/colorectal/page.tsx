@@ -191,8 +191,8 @@ export default function ColorectalPage() {
                     세강병원은 풍부한 임상경험을 갖춘 의료진이<br />
                     숙련된 실력과 노하우로 만족스러운 결과를 안겨드립니다.
                   </div>
-                  <div className="absolute left-12 top-0 text-[120px] text-[#0066CC] opacity-20">"</div>
-                  <div className="absolute right-12 bottom-0 text-[120px] text-[#0066CC] opacity-20">"</div>
+                  <div className="absolute left-12 top-0 text-[120px] text-[#0066CC] opacity-20">&quot;</div>
+                  <div className="absolute right-12 bottom-0 text-[120px] text-[#0066CC] opacity-20">&quot;</div>
                 </div>
               </div>
 

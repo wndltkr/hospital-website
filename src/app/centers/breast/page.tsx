@@ -623,7 +623,7 @@ export default function BreastCenterPage() {
                           <p className="text-gray-700 text-lg leading-relaxed whitespace-pre-line">
                             종양이 클 경우 먼저 선행화학요법을 시행하고 수술을 진행하기도 합니다.
 
-                            수술 방법으로는 크게 전체 제거하는 '유방 전절제술'과 유방을 부분적으로 제거하는 '유방 보존적 절제술' 나눌 수 있습니다.
+                            수술 방법으로는 크게 전체 제거하는 &apos;유방 전절제술&apos;과 유방을 부분적으로 제거하는 &apos;유방 보존적 절제술&apos; 나눌 수 있습니다.
                           </p>
                         </div>
                       </div>
@@ -636,7 +636,7 @@ export default function BreastCenterPage() {
               <div className="relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] w-screen bg-[url('/images/centers/breast-banner.jpg')] bg-cover bg-center mt-32">
                 <div className="w-full h-[240px] flex items-center justify-center bg-black/40">
                   <h2 className="text-white text-3xl font-medium tracking-wider">
-                    "유방암은 치료 후에도 정기 검진이 필수입니다."
+                    &quot;유방암은 치료 후에도 정기 검진이 필수입니다.&quot;
                   </h2>
                 </div>
               </div>

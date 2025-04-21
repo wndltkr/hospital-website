@@ -151,7 +151,7 @@ export default function FacilitiesPage() {
               >
                 <h2 className="text-3xl font-bold mb-4">
                   유방촬영장비를 도입해<br />
-                  '유방암 예방'에<br />
+                  &apos;유방암 예방&apos;에<br />
                   최선을 다하고 있습니다
                 </h2>
               </motion.div>

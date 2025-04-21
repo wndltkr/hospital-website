@@ -82,7 +82,7 @@ export default function GreetingPage() {
                 className="w-2/3"
               >
                 <p className="text-[#2B4B6B] tracking-widest mb-4">SEKANG HOSPITAL</p>
-                <h2 className="text-3xl font-bold text-[#4ABAFF] mb-6">"세강병원은 꿈입없이 발전합니다."</h2>
+                <h2 className="text-3xl font-bold text-[#4ABAFF] mb-6">&quot;세강병원은 꿈입없이 발전합니다.&quot;</h2>
                 <div className="space-y-4 text-gray-700 leading-relaxed">
                   <p>세강병원은 1984년 개원 이후 40여년간 지역민들의 꾸준한 애정과 관심으로 이만큼 성장하였습니다.</p>
                   <p>그에 보답하고자 꾸준히 자동화된 검사기기를 도입하고 정기적인 정도 관리제를 시행하여<br/>반나절 안에 진료부터 진단까지 정확하고 신속하게 결과를 볼 수 있도록 하고 있습니다.</p>
@@ -111,7 +111,7 @@ export default function GreetingPage() {
                 className="w-2/3"
               >
                 <p className="text-[#2B4B6B] tracking-widest mb-4">SEKANG HOSPITAL</p>
-                <h2 className="text-3xl font-bold text-[#4ABAFF] mb-6">"세강병원은 환자를 먼저 생각합니다."</h2>
+                <h2 className="text-3xl font-bold text-[#4ABAFF] mb-6">&quot;세강병원은 환자를 먼저 생각합니다.&quot;</h2>
                 <div className="space-y-4 text-gray-700 leading-relaxed">
                   <p>독수리가 새로운 삶을 맞이하기 위해 고통을 이겨내고 자신의 부리를 쪼아 잘라내듯이</p>
                   <p>세강병원도 온몸을 바쳐 환골탈태하는 아픔을 견디며 더 나은 의료서비스를 위해 새롭게 태어납니다.</p>
@@ -170,7 +170,7 @@ export default function GreetingPage() {
                 className="w-2/3"
               >
                 <p className="text-[#2B4B6B] tracking-widest mb-4">SEKANG HOSPITAL</p>
-                <h2 className="text-3xl font-bold text-[#4ABAFF] mb-6">"세강병원은 여러분의 병원입니다."</h2>
+                <h2 className="text-3xl font-bold text-[#4ABAFF] mb-6">&quot;세강병원은 여러분의 병원입니다.&quot;</h2>
                 <div className="space-y-4 text-gray-700 leading-relaxed">
                   <p>시대의 변화에 맞추어 세강병원은 질병 예방에서부터 치료까지</p>
                   <p>지역인들의 주치의로서의 책임을 다하도록 더욱 더 노력하겠습니다.</p>

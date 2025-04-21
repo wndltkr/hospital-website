@@ -218,7 +218,7 @@ export default function Home() {
                   transition={{ duration: 0.5, delay: 0.2 + (rowIndex * 0.1) }}
                   className="grid grid-cols-2 gap-4"
                 >
-                  {row.map((button, index) => (
+                  {row.map((button) => (
                     <Link 
                       key={button.href}
                       href={button.href} 
