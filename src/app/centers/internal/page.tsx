@@ -323,7 +323,7 @@ export default function InternalMedicineCenterPage() {
                 <div className="container mx-auto px-4">
                   <div className="py-16">
                     <div className="text-center mb-12">
-                      <p className="text-white/80 tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
+                      <p className="text-white tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
                       <h2 className="text-white text-4xl font-bold">고지혈증의 원인</h2>
                     </div>
 
@@ -491,7 +491,7 @@ export default function InternalMedicineCenterPage() {
                       <div className="grid grid-cols-2">
                         {/* 유전적 요인 */}
                         <div className="p-8 border-r border-gray-100">
-                          <h3 className="text-[#0066CC] text-xl font-medium text-center mb-6">유전적 요인</h3>
+                          <h3 className="text-[#0066CC] text-xl font-medium mb-6">유전적 요인</h3>
                           <ul className="space-y-4">
                             <li className="flex items-start gap-2">
                               <span className="text-[#0066CC] font-bold">•</span>
@@ -510,7 +510,7 @@ export default function InternalMedicineCenterPage() {
 
                         {/* 환경적 요인 */}
                         <div className="p-8">
-                          <h3 className="text-[#0066CC] text-xl font-medium text-center mb-6">환경적 요인</h3>
+                          <h3 className="text-[#0066CC] text-xl font-medium mb-6">환경적 요인</h3>
                           <ul className="space-y-4">
                             <li className="flex items-start gap-2">
                               <span className="text-[#0066CC] font-bold">•</span>
@@ -660,19 +660,1176 @@ export default function InternalMedicineCenterPage() {
 
           {activeTab === 'liver' && (
             <div className="container mx-auto px-4">
-              {/* 간질환 content */}
+              <div className="flex items-start gap-16">
+                {/* 이미지 섹션 */}
+                <div className="w-[500px] h-[400px] relative flex-shrink-0">
+                  <Image
+                    src="/images/centers/liver.jpg"
+                    alt="간질환 검사"
+                    fill
+                    className="object-cover rounded-lg border border-gray-100"
+                  />
+                </div>
+                
+                {/* 텍스트 섹션 */}
+                <div className="flex-1">
+                  <div className="mb-8">
+                    <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
+                    <h2 className="text-[#1A1A1A] text-4xl font-bold">지방간</h2>
+                  </div>
+                  <p className="text-gray-700 text-lg leading-relaxed">
+                    간 세포 속에 지방이 많이 축적되어 있는 상태를 말합니다. 간 세포 속에 중성지방이 과도하게 축적되어 있는 상태로, 
+                    비만이나 당뇨병, 과다한 알코올 섭취 등이 주요 원인이 됩니다. 초기에는 특별한 증상이 없어 건강검진에서 우연히 발견되는 경우가 많습니다.
+                  </p>
+                </div>
+              </div>
+
+              {/* 알코올성 지방간 치료법 섹션 */}
+              <div className="relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] w-screen bg-[#0066CC] mt-32">
+                <div className="container mx-auto">
+                  <div className="text-center py-12">
+                    <p className="text-white tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
+                    <h2 className="text-white text-4xl font-bold">알코올성 지방간 치료법</h2>
+                  </div>
+                  <div className="max-w-5xl mx-auto">
+                    <div className="bg-[#0066CC]">
+                      <table className="min-w-full">
+                        <tbody>
+                          <tr className="border-b border-white/10">
+                            <td className="py-6 px-8 w-1/4 text-white text-xl font-medium">생활습관 개선요법</td>
+                            <td className="py-6 px-8 text-white">
+                              금주가 시작과 끝입니다. 초기 지방간은 금주 시 정상 회복 가능성이 높아 가능한 빨리 금주를 시작해야 합니다. 금주가 어렵다면 음주 횟수 및 주량을 줄이려는 노력을 해야 합니다.
+                            </td>
+                          </tr>
+                          <tr>
+                            <td className="py-6 px-8 w-1/4 text-white text-xl font-medium">약물요법</td>
+                            <td className="py-6 px-8 text-white">
+                              항산화제(비타민 E, 비타민 B, C)가 치료제로 사용됩니다. 간세포 보호제인 우루소데옥시콜린산(ursodeoxycholic acid, UDCA)이나 실리마린(silymarin) 등이 효과가 있다는 보고도 있습니다.
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* 비알코올성 지방간 치료법 섹션 */}
+              <div className="relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] w-screen bg-[#1A4B8E] mt-32">
+                <div className="container mx-auto">
+                  <div className="text-center py-12">
+                    <p className="text-white tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
+                    <h2 className="text-white text-4xl font-bold">비알코올성 지방간 치료법</h2>
+                  </div>
+
+                  {/* 생활습관 개선요법 */}
+                  <div className="bg-white">
+                    <div className="flex items-center">
+                      <div className="w-1/2 h-[400px] relative">
+                        <Image
+                          src="/images/centers/liver-lifestyle.jpg"
+                          alt="생활습관 개선요법"
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <div className="w-1/2 p-16">
+                        <h3 className="text-[#1A4B8E] text-2xl font-medium mb-4">생활습관 개선요법</h3>
+                        <p className="text-gray-700 text-lg leading-relaxed">
+                          지방간 환자 70~80%는 비만이고, 그 외에 상당수 환자는 과체중으로 알려져 있습니다. 체중감소는 일율된 감수성을 향상시켜 지방간 초기에 도움을 줍니다. 체중을 6개월에 대략 현재 체중의 10% 감량을 목표로 합니다. 운동요법은 중간 강도의 운동을 주 3회 이상, 1회에 60~90분 정도를 권장합니다.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* 수술적 치료법 */}
+                  <div className="bg-white">
+                    <div className="flex items-center">
+                      <div className="w-1/2 p-16">
+                        <h3 className="text-[#1A4B8E] text-2xl font-medium mb-4">수술적 치료법</h3>
+                        <p className="text-gray-700 text-lg leading-relaxed">
+                          비만수술요법은 고도비만(체질량 지수 {'>'}40Kg/m2)이거나 체질량지수 {'>'}35Kg/m2 이상이면서 당뇨나 고혈압 등 위험인자가 동반된 경우에 권장됩니다.<br/><br/>
+                          - 초기포만감을 유도하여 음식섭취를 줄이는 시술<br/>
+                          - 소장을 우회시켜 흡수 불량을 유도하는 시술<br/>
+                          - 위 두 가지 모두의 효과를 얻기 위한 시술<br/><br/>
+                          비만수술요법 후에 간 기능 수치의 호전과 간 내 지방의 감소는 대부분에서 보고되었으나, 염증과 섬유화의 호전에 대한 결과는 일정치 않습니다. 현재까지의 연구 중에서는 지방간 환자에서는 초기포만감을 유도하여 음식섭취를 줄이는 시술이 비교적 안전한 것으로 알려져 있습니다.
+                        </p>
+                      </div>
+                      <div className="w-1/2 h-[400px] relative">
+                        <Image
+                          src="/images/centers/liver-surgery.jpg"
+                          alt="수술적 치료법"
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* 약물요법 */}
+                  <div className="bg-white">
+                    <div className="flex items-center">
+                      <div className="w-1/2 h-[400px] relative">
+                        <Image
+                          src="/images/centers/liver-medication.jpg"
+                          alt="약물요법"
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <div className="w-1/2 p-16">
+                        <h3 className="text-[#1A4B8E] text-2xl font-medium mb-4">약물요법(당뇨병 치료제 및 인슐린 저항성 개선 약물)</h3>
+                        <p className="text-gray-700 text-lg leading-relaxed">
+                          제2형(성인형) 당뇨병 치료제는 모두 효과가 있는 것으로 여겨집니다. 이 중 인슐린 주사와 인슐린 분비를 자극하는 늘들의 약은 당뇨병 치료제인 설포닐유레아 계열은 작용기전에서 인슐린 분비와 관련되어 효과가 적고, 메트포르민이나 치아졸리딘디온은 좋은 간 내에서 당 생성을 억제하고 인슐린 감수성을 개선시켜 효과가 좋은 것으로 알려져 있습니다.<br/><br/>
+                          그러나 아직까지 우리나라에서는 당뇨병이 없는 지방간 혹은 지방간염 환자에서는 의료보험으로 인정받지 못하여 약값이 비싼 단점이 있습니다.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* 간염 섹션 */}
+              <div className="container mx-auto px-4 mt-32">
+                <div className="flex items-start gap-16">
+                  {/* 이미지 섹션 */}
+                  <div className="w-[500px] h-[400px] relative flex-shrink-0">
+                    <Image
+                      src="/images/centers/liver-hepatitis.jpg"
+                      alt="간염"
+                      fill
+                      className="object-cover rounded-lg border border-gray-100"
+                    />
+                  </div>
+                  
+                  {/* 텍스트 섹션 */}
+                  <div className="flex-1">
+                    <div className="mb-8">
+                      <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
+                      <h2 className="text-[#1A1A1A] text-4xl font-bold">간염</h2>
+                    </div>
+                    <p className="text-gray-700 text-lg leading-relaxed">
+                      B형 간염은 B형 간염 바이러스에 감염되어 생기는 병입니다. 이 바이러스는 간에 주로 감염됩니다. B형 간염 바이러스는, 빠른 속도로 생명을 위협하고, 간의 염증을 일으키며 수도 있지만 대부분의 경우는 서서히 진행됩니다. 우리나라는 B형 간염의 유병률이 높고, 만성 B형 간염은 흔히 간경변증 혹은 간암을 야기할 수 있습니다.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* 만성 B형 간염의 증상 및 특징 섹션 */}
+              <div className="container mx-auto px-4 mt-32">
+                <div className="text-center mb-12">
+                  <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
+                  <h2 className="text-[#1A1A1A] text-4xl font-bold">만성 B형 간염의 증상 및 특징</h2>
+                </div>
+                <div className="max-w-4xl mx-auto">
+                  <ul className="space-y-6">
+                    <li className="flex items-start gap-4">
+                      <div className="w-8 h-8 rounded-full bg-[#0066CC] flex items-center justify-center flex-shrink-0">
+                        <span className="text-white font-medium">1</span>
+                      </div>
+                      <p className="text-gray-700 text-lg leading-relaxed pt-1">
+                        피로감의 지속, 간헐적 황달 증상, 우상복부 통증, 구역, 구토, 식욕감소, 가려움 등 나타납니다.
+                      </p>
+                    </li>
+                    <li className="flex items-start gap-4">
+                      <div className="w-8 h-8 rounded-full bg-[#0066CC] flex items-center justify-center flex-shrink-0">
+                        <span className="text-white font-medium">2</span>
+                      </div>
+                      <p className="text-gray-700 text-lg leading-relaxed pt-1">
+                        급성 간염이 만성 감염이 된 경우 제외하고 대부분 서서히 증상 악화시킵니다.
+                      </p>
+                    </li>
+                    <li className="flex items-start gap-4">
+                      <div className="w-8 h-8 rounded-full bg-[#0066CC] flex items-center justify-center flex-shrink-0">
+                        <span className="text-white font-medium">3</span>
+                      </div>
+                      <p className="text-gray-700 text-lg leading-relaxed pt-1">
+                        무증상 감염부터 만성 쇠약성 질환, 말기 간부전까지 다양한 증상 가져옵니다.
+                      </p>
+                    </li>
+                    <li className="flex items-start gap-4">
+                      <div className="w-8 h-8 rounded-full bg-[#0066CC] flex items-center justify-center flex-shrink-0">
+                        <span className="text-white font-medium">4</span>
+                      </div>
+                      <p className="text-gray-700 text-lg leading-relaxed pt-1">
+                        주산기 감염은 90%, 유년기 감염은 20%, 성인기 감염은 5% 미만 만성 간염으로 이어집니다.
+                      </p>
+                    </li>
+                    <li className="flex items-start gap-4">
+                      <div className="w-8 h-8 rounded-full bg-[#0066CC] flex items-center justify-center flex-shrink-0">
+                        <span className="text-white font-medium">5</span>
+                      </div>
+                      <p className="text-gray-700 text-lg leading-relaxed pt-1">
+                        급성 간염 회복 후 10년 후 B형 간염 바이러스가 검출되기도 합니다.(잠재 감염)
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* 만성 B형 간염 치료의 일반 원칙 섹션 */}
+              <div className="container mx-auto px-4 mt-32">
+                <div className="text-center mb-12">
+                  <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
+                  <h2 className="text-[#1A1A1A] text-4xl font-bold mb-8">만성 B형 간염 치료의 일반 원칙</h2>
+                  <div className="max-w-4xl mx-auto text-left">
+                    <div className="space-y-4">
+                      <div className="flex items-start gap-2">
+                        <span className="text-[#0066CC] mt-1.5">✓</span>
+                        <p className="text-gray-700 text-lg leading-relaxed">
+                          혈액 내 B형 간염 바이러스 상승 정도, 간 효소 수치(ALT)에 따라 치료 대상 결정
+                        </p>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <span className="text-[#0066CC] mt-1.5">✓</span>
+                        <p className="text-gray-700 text-lg leading-relaxed">
+                          B형 간염 치료 약제들(인터페론과 항바이러스제)은 HBV를 완전 제거가 어렵고 장기적인 효과에서 제한점 존재
+                        </p>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <span className="text-[#0066CC] mt-1.5">✓</span>
+                        <p className="text-gray-700 text-lg leading-relaxed">
+                          환자의 연령과 간염의 중증도, 치료 반응 가능성 및 약제사용에 의한 부작용 검토하여 치료 여부 결정
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* 간경변증 섹션 */}
+              <div className="container mx-auto px-4 mt-32">
+                <div className="flex items-start gap-16">
+                  {/* 이미지 섹션 */}
+                  <div className="w-[500px] h-[400px] relative flex-shrink-0">
+                    <Image
+                      src="/images/centers/liver-img06.jpg"
+                      alt="간경변증"
+                      fill
+                      className="object-cover rounded-lg border border-gray-100"
+                    />
+                  </div>
+                  
+                  {/* 텍스트 섹션 */}
+                  <div className="flex-1">
+                    <div className="mb-8">
+                      <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
+                      <h2 className="text-[#1A1A1A] text-4xl font-bold">간경변증</h2>
+                    </div>
+                    <p className="text-gray-700 text-lg leading-relaxed">
+                      간경변증은 만성적인 염증으로 인해 정상적인 간조직이 재생결절(regenerative nodules; 작은 덩어리가 만들어지는 현상) 등의 섬유화 조직으로 바뀌어 간기능이 저하되는 것을 말합니다.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* 간경변증의 원인 섹션 */}
+              <div className="relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] w-screen bg-[#1A4B8E] mt-32">
+                <div className="container mx-auto px-4">
+                  <div className="py-16">
+                    <div className="text-center mb-12">
+                      <p className="text-white tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
+                      <h2 className="text-white text-4xl font-bold">간경변증의 원인</h2>
+                    </div>
+
+                    <div className="max-w-5xl mx-auto">
+                      <div className="bg-white rounded-lg overflow-hidden">
+                        <table className="w-full">
+                          <caption className="sr-only">간경변증의 원인</caption>
+                          <colgroup>
+                            <col style={{width: "30%"}} />
+                            <col style={{width: "70%"}} />
+                          </colgroup>
+                          <tbody>
+                            <tr className="border-b border-gray-100">
+                              <th className="bg-[#F8F9FF] p-8 text-left text-[#1A4B8E] text-xl font-medium">
+                                알코올 섭취
+                              </th>
+                              <td className="p-8 text-gray-700 text-lg leading-relaxed">
+                                알코올은 간에서 아세트알데하이드와 같은 독성 물질로 변환되어 간을 파괴합니다. 손상된 간은 지방산 분해가 어려워 간에 지방을 축적시키게 되고 간 기능을 악화시킵니다. 초기에는 지방간으로 간이 커지지만 결국 간경변증으로 이어지게 됩니다.
+                              </td>
+                            </tr>
+                            <tr>
+                              <th className="bg-[#F8F9FF] p-8 text-left text-[#1A4B8E] text-xl font-medium">
+                                만성 간염
+                              </th>
+                              <td className="p-8 text-gray-700 text-lg leading-relaxed">
+                                B형이나 C형 간염과 같은 만성바이러스성 간염도 간경변증을 일으키는 원인입니다. 만성 C형 간염의 5~20%와 만성 B형 간염의 5~10%는 간경변증으로 발전하게 됩니다. 만성 간염의 기간이 길어질수록 간경변증으로 발전할 위험이 높아집니다.
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* 간암 섹션 */}
+              <div className="container mx-auto px-4 mt-32">
+                <div className="flex items-start gap-16">
+                  {/* 이미지 섹션 */}
+                  <div className="w-[500px] h-[400px] relative flex-shrink-0">
+                    <Image
+                      src="/images/centers/liver-img07.jpg"
+                      alt="간암"
+                      fill
+                      className="object-cover rounded-lg border border-gray-100"
+                    />
+                  </div>
+                  
+                  {/* 텍스트 섹션 */}
+                  <div className="flex-1">
+                    <div className="mb-8">
+                      <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
+                      <h2 className="text-[#1A1A1A] text-4xl font-bold">간암</h2>
+                    </div>
+                    <p className="text-gray-700 text-lg leading-relaxed">
+                      간의 대부분을 차지하는 간 세포에서 기원하는 악성 종양을 말합니다. 간에 생기는 모든 종류의 악성 종양이나 다른 기관의 암이 간에 전이된 전이성 간암까지도 포함하지만, 간세포암종이 간암 중 가장 흔해 보통 간세포암종만을 의미합니다.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* 간암의 주요 원인 섹션 */}
+              <div className="container mx-auto px-4 mt-32">
+                <div className="text-center mb-12">
+                  <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
+                  <h2 className="text-[#1A1A1A] text-4xl font-bold">간암의 주요 원인</h2>
+                </div>
+
+                <div className="max-w-5xl mx-auto">
+                  <div className="overflow-hidden rounded-lg">
+                    <table className="w-full">
+                      <caption className="sr-only">간암의 주요 원인</caption>
+                      <colgroup>
+                        <col style={{width: "25%"}} />
+                        <col style={{width: "25%"}} />
+                        <col style={{width: "25%"}} />
+                        <col style={{width: "25%"}} />
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th className="py-6 text-center text-[#0066CC] text-xl font-medium bg-[#F8F9FF] border border-gray-100">
+                            01. 만성 B형 간염
+                          </th>
+                          <th className="py-6 text-center text-[#0066CC] text-xl font-medium bg-[#F8F9FF] border border-gray-100">
+                            02. C형 간염
+                          </th>
+                          <th className="py-6 text-center text-[#0066CC] text-xl font-medium bg-[#F8F9FF] border border-gray-100">
+                            03. 과음
+                          </th>
+                          <th className="py-6 text-center text-[#0066CC] text-xl font-medium bg-[#F8F9FF] border border-gray-100">
+                            04. 간경변증
+                          </th>
+                        </tr>
+                      </thead>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+              {/* 간암의 검사 섹션 */}
+              <div className="container mx-auto px-4 mt-32">
+                <div className="text-center mb-12">
+                  <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
+                  <h2 className="text-[#1A1A1A] text-4xl font-bold">간암의 검사</h2>
+                </div>
+
+                <div className="max-w-5xl mx-auto">
+                  <div className="overflow-hidden rounded-lg">
+                    <table className="w-full">
+                      <caption className="sr-only">간암의 검사</caption>
+                      <colgroup>
+                        <col style={{width: "33.33%"}} />
+                        <col style={{width: "33.33%"}} />
+                        <col style={{width: "33.33%"}} />
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th className="py-6 text-center text-[#0066CC] text-xl font-medium bg-[#F8F9FF] border border-gray-100">
+                            간암 위험인자가 있을 경우
+                          </th>
+                          <th className="py-6 text-center text-[#0066CC] text-xl font-medium bg-[#F8F9FF] border border-gray-100">
+                            이상 소견이 있을 경우
+                          </th>
+                          <th className="py-6 text-center text-[#0066CC] text-xl font-medium bg-[#F8F9FF] border border-gray-100">
+                            진단이 애매할 경우
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td className="py-8 px-6 text-center text-gray-700 text-lg leading-relaxed border border-gray-100">
+                            정기적인 간암 표지자 검사<br />초음파 검사 시행
+                          </td>
+                          <td className="py-8 px-6 text-center text-gray-700 text-lg leading-relaxed border border-gray-100">
+                            CT, MRI 추가적 검사로<br />정확한 진단
+                          </td>
+                          <td className="py-8 px-6 text-center text-gray-700 text-lg leading-relaxed border border-gray-100">
+                            혈관 조영술, 조직 검사<br />진행하여 진단
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+              {/* 간암의 치료 섹션 */}
+              <div className="relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] w-screen bg-[#1A4B8E] mt-32">
+                <div className="container mx-auto px-4">
+                  <div className="py-16">
+                    <div className="text-center mb-12">
+                      <p className="text-white tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
+                      <h2 className="text-white text-4xl font-bold">간암의 치료</h2>
+                    </div>
+
+                    <div className="max-w-4xl mx-auto">
+                      <ul className="space-y-6">
+                        <li className="flex items-start gap-4">
+                          <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+                            <span className="text-white font-medium">1</span>
+                          </div>
+                          <p className="text-white text-lg leading-relaxed pt-1">
+                            가장 효과적인 치료법은 수술적 절제입니다.
+                          </p>
+                        </li>
+                        <li className="flex items-start gap-4">
+                          <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+                            <span className="text-white font-medium">2</span>
+                          </div>
+                          <p className="text-white text-lg leading-relaxed pt-1">
+                            수술적 절제가 불가능할 경우 간암에 영양분과 산소를 공급하는 혈관을 막는 경동맥 화학색전술
+                          </p>
+                        </li>
+                        <li className="flex items-start gap-4">
+                          <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+                            <span className="text-white font-medium">3</span>
+                          </div>
+                          <p className="text-white text-lg leading-relaxed pt-1">
+                            간암에 알코올을 주입하여 간암 세포를 죽이는 경피적 에탄올 주입술
+                          </p>
+                        </li>
+                        <li className="flex items-start gap-4">
+                          <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+                            <span className="text-white font-medium">4</span>
+                          </div>
+                          <p className="text-white text-lg leading-relaxed pt-1">
+                            고주파를 이용하여 간암을 태우는 고주파 열치료를 진행할 수 있습니다.
+                          </p>
+                        </li>
+                      </ul>
+
+                      <div className="mt-8 p-6 bg-white/10 rounded-lg">
+                        <p className="text-white/90 text-lg leading-relaxed">
+                          또한 의학 기술 발달로 간 기능이 나쁘거나 종양의 개수가 많아 수술적 절제가 어려운 경우 간 이식으로 완치도 기대할 수 있습니다.<br /><br />
+                          한편 간암이 간 밖으로 전이된 경우나 진행된 경우에는 항암제 치료를 고려할 수 있습니다.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* 간암의 예방방법 섹션 */}
+              <div className="container mx-auto px-4 mt-32">
+                <div className="flex items-start gap-16">
+                  {/* 이미지 섹션 */}
+                  <div className="w-[500px] h-[400px] relative flex-shrink-0">
+                    <Image
+                      src="/images/centers/liver-img08.jpg"
+                      alt="간암의 예방방법"
+                      fill
+                      className="object-cover rounded-lg border border-gray-100"
+                    />
+                  </div>
+                  
+                  {/* 텍스트 섹션 */}
+                  <div className="flex-1">
+                    <div className="mb-8">
+                      <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
+                      <h2 className="text-[#1A1A1A] text-4xl font-bold">간암의 예방방법</h2>
+                    </div>
+                    <div className="space-y-6">
+                      <div className="flex items-center gap-4">
+                        <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">
+                          <span className="font-medium">01</span>
+                        </div>
+                        <p className="text-gray-700 text-lg">B형 간염 예방 백신 접종하기</p>
+                      </div>
+                      <div className="flex items-center gap-4">
+                        <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">
+                          <span className="font-medium">02</span>
+                        </div>
+                        <p className="text-gray-700 text-lg">C형 간염 감염 각별히 주의하기</p>
+                      </div>
+                      <div className="flex items-center gap-4">
+                        <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">
+                          <span className="font-medium">03</span>
+                        </div>
+                        <p className="text-gray-700 text-lg">과음하지 않기</p>
+                      </div>
+                      <div className="flex items-center gap-4">
+                        <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">
+                          <span className="font-medium">04</span>
+                        </div>
+                        <p className="text-gray-700 text-lg">위험인자가 있다면 주기적으로 검진하기</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* 유튜브 영상 섹션 */}
+              <div className="container mx-auto px-4 mt-32">
+                <div className="text-center mb-12">
+                  <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
+                  <h2 className="text-[#1A1A1A] text-4xl font-bold">관련 영상</h2>
+                </div>
+
+                <div className="max-w-4xl mx-auto">
+                  <div className="aspect-w-16 aspect-h-9">
+                    <iframe
+                      className="w-full h-full rounded-lg"
+                      src="https://www.youtube.com/embed/VIDEO_ID"
+                      title="간암 관련 영상"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {activeTab === 'kidney' && (
+            <div>
+              {/* 신증후군 섹션 */}
+              <div className="container mx-auto px-4">
+                <div className="flex items-start gap-16">
+                  {/* 이미지 섹션 */}
+                  <div className="w-[500px] h-[400px] relative flex-shrink-0">
+                    <Image
+                      src="/images/centers/nephrotic-img01.jpg"
+                      alt="신증후군"
+                      fill
+                      className="object-cover rounded-lg border border-gray-100"
+                    />
+                  </div>
+                  
+                  {/* 텍스트 섹션 */}
+                  <div className="flex-1">
+                    <div className="mb-8">
+                      <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
+                      <h2 className="text-[#1A1A1A] text-4xl font-bold">신증후군</h2>
+                    </div>
+                    <p className="text-gray-700 text-lg leading-relaxed">
+                      신증후군은 다량의 단백뇨와 저알부민혈증, 부종, 고지혈증 등의 특징을 보이는 질병입니다. 
+                      24시간 동안 성인에게서 소변으로 배설되는 단백질의 양이 3.5g이상이거나, 
+                      소아의 경우 체표면적 1제곱미터당 소변으로 소실되는 단백질 양이 960mg 이상인 경우 
+                      신증후군으로 진단할 수 있습니다.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           )}
 
           {activeTab === 'lung' && (
             <div className="container mx-auto px-4">
-              {/* 폐질환 content */}
-            </div>
-          )}
+              <div className="flex items-start gap-16">
+                {/* 이미지 섹션 */}
+                <div className="w-[500px] h-[400px] relative flex-shrink-0">
+                  <Image
+                    src="/images/centers/asthma-img01.jpg"
+                    alt="천식"
+                    fill
+                    className="object-cover rounded-lg border border-gray-100"
+                  />
+                </div>
+                
+                {/* 텍스트 섹션 */}
+                <div className="flex-1">
+                  <div className="mb-8">
+                    <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
+                    <h2 className="text-[#1A1A1A] text-4xl font-bold">천식</h2>
+                  </div>
+                  <p className="text-gray-700 text-lg leading-relaxed">
+                    만성적인 기도의 알레르기 염증 질환으로 폐 속에 있는 기관지가 때때로 좁아져서 호흡곤란, 기침, 천명(음)(쌕쌕거리거나 휘이~ 혹은 가르랑 가르랑 거리는 거친 숨소리) 등 호흡기 증상이 반복적으로 그리고 갑작스럽게 발작적으로 나타나는 질환입니다.
+                  </p>
+                </div>
+              </div>
 
-          {activeTab === 'kidney' && (
-            <div className="container mx-auto px-4">
-              {/* 신장질환 content */}
+              {/* 천식 치료제 섹션 */}
+              <div className="relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] w-screen bg-[#1A4B8E] mt-32">
+                <div className="container mx-auto px-4">
+                  <div className="py-16">
+                    <div className="text-center mb-12">
+                      <p className="text-white tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
+                      <h2 className="text-white text-4xl font-bold">천식 치료법</h2>
+                    </div>
+
+                    <div className="space-y-8">
+                      {/* 증상 완화제 */}
+                      <div className="bg-white rounded-lg overflow-hidden">
+                        <div className="flex items-center">
+                          <div className="w-1/2 h-[400px] relative">
+                            <Image
+                              src="/images/centers/asthma-img02.jpg"
+                              alt="증상 완화제"
+                              fill
+                              className="object-cover"
+                            />
+                          </div>
+                          <div className="w-1/2 p-12">
+                            <h3 className="text-[#1A4B8E] text-2xl font-medium mb-6">1. 증상 완화제</h3>
+                            <p className="text-gray-700 text-lg mb-6">
+                              기도 폐쇄의 증상을 수분 내에 완화시켜 천식 발작을 멈추게 합니다.
+                            </p>
+                            <div className="space-y-4">
+                              <div>
+                                <p className="text-[#F4B223] font-medium mb-1">☑ 속효성 β2 항진제 :</p>
+                                <p className="text-gray-700">교감신경을 항진시켜 기도를 확장시키는 역할을 하는 약물로, 기도로 직접 흡인하는 약제가 있습니다.</p>
+                              </div>
+                              <div>
+                                <p className="text-[#F4B223] font-medium mb-1">☑ 항콜린제 :</p>
+                                <p className="text-gray-700">부교감신경을 억제시켜 기도의 수축을 막는 역할을 합니다.</p>
+                              </div>
+                              <div>
+                                <p className="text-[#F4B223] font-medium mb-1">☑ 속효성 테오필린 :</p>
+                                <p className="text-gray-700">카페인과 비슷한 약물로 기도를 확장시키는 역할을 합니다.</p>
+                              </div>
+                              <div>
+                                <p className="text-[#F4B223] font-medium mb-1">☑ 경구 및 주사용 스테로이드 :</p>
+                                <p className="text-gray-700">부신피질호르몬이라고도 하는 약물로서 기도의 염증을 가라앉히는 역할을 합니다.</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* 예방 약제 */}
+                      <div className="bg-white rounded-lg overflow-hidden">
+                        <div className="flex items-center">
+                          <div className="w-1/2 p-12">
+                            <h3 className="text-[#1A4B8E] text-2xl font-medium mb-6">2. 예방 약제</h3>
+                            <p className="text-gray-700 text-lg mb-6">
+                              염증을 억제하여 천식 발작을 예방합니다.
+                            </p>
+                            <div className="space-y-4">
+                              <div>
+                                <p className="text-[#F4B223] font-medium mb-1">☑ 흡입용 스테로이드 :</p>
+                                <p className="text-gray-700">입을 통해 기관지로 흡입함으로써 기관지에 직접 작용하는 스테로이드 제제입니다.</p>
+                              </div>
+                              <div>
+                                <p className="text-[#F4B223] font-medium mb-1">☑ 지속성 기관지 확장제 :</p>
+                                <p className="text-gray-700">기관지 수축을 예방하고 확장시키는 역할을 하는 약제입니다.</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="w-1/2 h-[400px] relative">
+                            <Image
+                              src="/images/centers/asthma-img03.jpg"
+                              alt="예방 약제"
+                              fill
+                              className="object-cover"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* 만성폐쇄성폐질환(COPD) 섹션 */}
+              <div className="container mx-auto px-4 mt-32">
+                <div className="flex items-start gap-16">
+                  {/* 텍스트 섹션 */}
+                  <div className="flex-1">
+                    <div className="mb-8">
+                      <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
+                      <h2 className="text-[#1A1A1A] text-4xl font-bold">만성폐쇄성폐질환(COPD)</h2>
+                    </div>
+                    <p className="text-gray-700 text-lg leading-relaxed">
+                      해한 입자(담배가 대표적)나 가스의 흡입에 의해 발생하는 폐의 비정상적인 염증반응과 함께 완전히 가역적이지 않으며 점차 진행하는 기류제한을 특징으로 하는 호흡기 질환입니다.
+                    </p>
+                  </div>
+
+                  {/* 이미지 섹션 */}
+                  <div className="w-[500px] h-[400px] relative flex-shrink-0">
+                    <Image
+                      src="/images/centers/asthma-img04.jpg"
+                      alt="만성폐쇄성폐질환"
+                      fill
+                      className="object-cover rounded-lg border border-gray-100"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* 만성폐쇄성폐질환(COPD) 주요증상 섹션 */}
+              <div className="relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] w-screen bg-[#1A4B8E] mt-32">
+                <div className="container mx-auto px-4">
+                  <div className="py-16">
+                    <div className="text-center mb-12">
+                      <p className="text-white tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
+                      <h2 className="text-white text-4xl font-bold">만성폐쇄성폐질환(COPD) 주요증상</h2>
+                    </div>
+
+                    <div className="max-w-4xl mx-auto">
+                      <ul className="space-y-8">
+                        <li className="flex items-start gap-6">
+                          <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+                            <span className="text-white text-xl font-medium">1</span>
+                          </div>
+                          <div>
+                            <h3 className="text-white text-xl font-medium mb-2">기침</h3>
+                            <p className="text-white/90 text-lg leading-relaxed">
+                              처음에는 간헐적으로 나타나지만 나중에는 매일 나타나며 때로는 온종일 지속되기도 합니다. 그러나 야간에만 기침이 있는 경우는 드뭅니다.
+                            </p>
+                          </div>
+                        </li>
+
+                        <li className="flex items-start gap-6">
+                          <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+                            <span className="text-white text-xl font-medium">2</span>
+                          </div>
+                          <div>
+                            <h3 className="text-white text-xl font-medium mb-2">객담 배출</h3>
+                            <p className="text-white/90 text-lg leading-relaxed">
+                              만성폐쇄성폐질환 환자들에서는 흔히 기침 발작 후에 소량의 끈끈한 객담이 나옵니다.
+                            </p>
+                          </div>
+                        </li>
+
+                        <li className="flex items-start gap-6">
+                          <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+                            <span className="text-white text-xl font-medium">3</span>
+                          </div>
+                          <div>
+                            <h3 className="text-white text-xl font-medium mb-2">호흡곤란</h3>
+                            <p className="text-white/90 text-lg leading-relaxed">
+                              COPD와 관련된 장애 및 불안증의 주된 원인입니다. 호흡곤란은 지속적으로 진행하며 폐기능의 악화로 호흡곤란이 더욱 증가하게 됩니다.
+                            </p>
+                          </div>
+                        </li>
+
+                        <li className="flex items-start gap-6">
+                          <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+                            <span className="text-white text-xl font-medium">4</span>
+                          </div>
+                          <div>
+                            <h3 className="text-white text-xl font-medium mb-2">천명음과 흉부 압박감</h3>
+                            <p className="text-white/90 text-lg leading-relaxed">
+                              비교적 비특이적인 증상이며, 날마다 혹은 하루 중에 다양하게 나타납니다. 천명음이나 흉부 압박감이 없다고 해서 만성폐쇄성폐질환의 진단이 배제되는 것은 아닙니다.
+                            </p>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* 만성폐쇄성폐질환(COPD) 치료 섹션 */}
+              <div className="relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] w-screen bg-[#1A4B8E] mt-32">
+                <div className="container mx-auto px-4">
+                  <div className="py-16">
+                    <div className="max-w-4xl mx-auto text-center">
+                      <p className="text-white tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
+                      <h2 className="text-white text-4xl font-bold mb-12">만성폐쇄성폐질환(COPD) 치료</h2>
+                      <div className="space-y-6">
+                        <div className="flex items-start gap-3">
+                          <span className="text-white text-xl">✓</span>
+                          <p className="text-white/90 text-lg leading-relaxed text-left">
+                            만성폐쇄성폐질환은 치료 자체가 상당히 어렵고 이미 파괴된 폐를 정상으로 되돌릴 수 없습니다.
+                          </p>
+                        </div>
+                        <div className="flex items-start gap-3">
+                          <span className="text-white text-xl">✓</span>
+                          <p className="text-white/90 text-lg leading-relaxed text-left">
+                            금연이 만성폐쇄성폐질환의 예방과 진행을 감소시키는 가장 효과적인 방법입니다.
+                          </p>
+                        </div>
+                        <div className="flex items-start gap-3">
+                          <span className="text-white text-xl">✓</span>
+                          <p className="text-white/90 text-lg leading-relaxed text-left">
+                            현재까지는 흡연을 계속하는 경우 폐 기능이 나빠지는 것을 치료할 수 있는 약제는 없습니다.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* 폐결핵 섹션 */}
+              <div className="container mx-auto px-4 mt-32">
+                <div className="flex items-start gap-16">
+                  {/* 이미지 섹션 */}
+                  <div className="w-[500px] h-[400px] relative flex-shrink-0">
+                    <Image
+                      src="/images/centers/asthma-img05.jpg"
+                      alt="폐결핵"
+                      fill
+                      className="object-cover rounded-lg border border-gray-100"
+                    />
+                  </div>
+                  
+                  {/* 텍스트 섹션 */}
+                  <div className="flex-1">
+                    <div className="mb-8">
+                      <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
+                      <h2 className="text-[#1A1A1A] text-4xl font-bold">폐결핵</h2>
+                    </div>
+                    <p className="text-gray-700 text-lg leading-relaxed mb-8">
+                      결핵은 결핵균에 의해 발생하는 감염성 질환으로, 다른 감염성 질환에 비해 장기적으로 천천히 진행되거나 유지되는 특징이 있습니다. 이 질환은 공기로 퍼져나가며, 폐를 통하여 감염이 시작 되고 폐를 제외한 우리 몸의 여러 장기(예를 들어 뇌, 후두, 뼈, 위장관, 복막, 콩팥) 등을 침범하여 각 기관의 결핵을 유발합니다.
+                    </p>
+                    <p className="text-gray-700 text-lg leading-relaxed">
+                      대부분의 결핵균 감염자들은 증상이 없으며(이를 '잠복결핵, latent tuberculosis'이라고 함), 이들 중 일부분의 사람들만이 병으로서 결핵이 발생합니다. 국제보건기구(World Health Organization: WHO)에 의하면 아직도 전 세계에서 매년 8백만 명이 활동성 결핵에 걸리며, 약 2백만 명이 사망하는 것으로 보고되고 있습니다.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* 폐결핵 초기 증상 섹션 */}
+              <div className="container mx-auto px-4 mt-32">
+                <div className="text-center mb-12">
+                  <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
+                  <h2 className="text-[#1A1A1A] text-4xl font-bold">폐결핵 초기 증상</h2>
+                </div>
+
+                <div className="max-w-6xl mx-auto">
+                  <div className="overflow-hidden rounded-lg">
+                    <table className="w-full">
+                      <caption className="sr-only">폐결핵 초기 증상</caption>
+                      <colgroup>
+                        <col style={{width: "33.33%"}} />
+                        <col style={{width: "33.33%"}} />
+                        <col style={{width: "33.33%"}} />
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th className="py-6 text-center text-[#0066CC] text-xl font-medium bg-[#F8F9FF] border border-gray-100">
+                            01. 3주 혹은 그 이상 지속되는 기침
+                          </th>
+                          <th className="py-6 text-center text-[#0066CC] text-xl font-medium bg-[#F8F9FF] border border-gray-100">
+                            02. 가슴의 통증
+                          </th>
+                          <th className="py-6 text-center text-[#0066CC] text-xl font-medium bg-[#F8F9FF] border border-gray-100">
+                            03. 가래 혹은 피가 섞인 가래를 동반한 기침
+                          </th>
+                        </tr>
+                      </thead>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+              {/* 폐결핵 전신 증상 섹션 */}
+              <div className="relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] w-screen bg-[#1A4B8E] mt-32">
+                <div className="container mx-auto px-4">
+                  <div className="py-16">
+                    <div className="text-center mb-12">
+                      <p className="text-white tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
+                      <h2 className="text-white text-4xl font-bold">폐결핵 전신 증상</h2>
+                    </div>
+
+                    <div className="max-w-6xl mx-auto">
+                      <div className="bg-white rounded-lg overflow-hidden">
+                        <table className="w-full">
+                          <caption className="sr-only">폐결핵 전신 증상</caption>
+                          <colgroup>
+                            <col style={{width: "20%"}} />
+                            <col style={{width: "20%"}} />
+                            <col style={{width: "20%"}} />
+                            <col style={{width: "20%"}} />
+                            <col style={{width: "20%"}} />
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th className="py-6 text-center text-[#0066CC] text-xl font-medium">
+                                01. 체중 감소
+                              </th>
+                              <th className="py-6 text-center text-[#0066CC] text-xl font-medium">
+                                02. 발열
+                              </th>
+                              <th className="py-6 text-center text-[#0066CC] text-xl font-medium">
+                                03. 오한
+                              </th>
+                              <th className="py-6 text-center text-[#0066CC] text-xl font-medium">
+                                04. 밤에 생기는 발한(땀)
+                              </th>
+                              <th className="py-6 text-center text-[#0066CC] text-xl font-medium">
+                                05. 식욕 감소 등
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td colSpan={5} className="py-6 px-4 text-center text-gray-700 text-lg border-t border-gray-100">
+                                ✓ 폐결핵 증상은 개인에 따라 모르고 지낼 수도 있습니다.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td colSpan={5} className="py-6 px-4 text-center text-gray-700 text-lg border-t border-gray-100">
+                                ✓ 간혹 자연 회복이 되기도 하지만 만성적으로 악화되면 기침, 가슴 통증, 피 섞인 가래 등이 동반되기도 합니다.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td colSpan={5} className="py-6 px-4 text-center text-gray-700 text-lg border-t border-gray-100">
+                                ✓ 폐결핵이 아닌 다른 장기의 결핵을 앓고 있는 사람들은 그 장기에 따라 고유한, 다른 증상을 보일 수 있습니다.
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* 폐결핵 진단 섹션 */}
+              <div className="relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] w-screen bg-[#1A4B8E] mt-32">
+                <div className="container mx-auto px-4">
+                  <div className="py-16">
+                    <div className="text-center mb-8">
+                      <p className="text-white tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
+                      <h2 className="text-white text-4xl font-bold mb-4">폐결핵 진단</h2>
+                      <p className="text-white/90 text-lg">
+                        활동성 결핵으로 진단하기 위해서 일반적으로 의료진은 다음과 같은 순서로 검사를 시행합니다.
+                      </p>
+                    </div>
+
+                    <div className="max-w-7xl mx-auto">
+                      <div className="bg-white rounded-lg overflow-hidden">
+                        <table className="w-full">
+                          <caption className="sr-only">폐결핵 진단 과정</caption>
+                          <colgroup>
+                            <col style={{width: "20%"}} />
+                            <col style={{width: "20%"}} />
+                            <col style={{width: "20%"}} />
+                            <col style={{width: "20%"}} />
+                            <col style={{width: "20%"}} />
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th className="p-6 text-center text-[#1A4B8E] text-lg font-medium border-r border-gray-100">
+                                <span className="block text-xl mb-2">01</span>
+                                의학적 병력의<br />확인 후 진찰
+                              </th>
+                              <th className="p-6 text-center text-[#1A4B8E] text-lg font-medium border-r border-gray-100">
+                                <span className="block text-xl mb-2">02</span>
+                                Mantoux 투베르쿨린<br />피부 반응 검사
+                              </th>
+                              <th className="p-6 text-center text-[#1A4B8E] text-lg font-medium border-r border-gray-100">
+                                <span className="block text-xl mb-2">03</span>
+                                흉부 방사선<br />(X-선) 촬영
+                              </th>
+                              <th className="p-6 text-center text-[#1A4B8E] text-lg font-medium border-r border-gray-100">
+                                <span className="block text-xl mb-2">04</span>
+                                미생물학적으로<br />결핵균의 확인
+                              </th>
+                              <th className="p-6 text-center text-[#1A4B8E] text-lg font-medium">
+                                <span className="block text-xl mb-2">05</span>
+                                확인된 결핵균의<br />약제 내성 검사
+                              </th>
+                            </tr>
+                          </thead>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* 폐렴 섹션 */}
+              <div className="container mx-auto px-4 mt-32">
+                <div className="flex items-start gap-16">
+                  {/* 텍스트 섹션 */}
+                  <div className="flex-1">
+                    <div className="mb-8">
+                      <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
+                      <h2 className="text-[#1A1A1A] text-4xl font-bold">폐렴</h2>
+                    </div>
+                    <p className="text-gray-700 text-lg leading-relaxed">
+                      폐렴은 숨을 쉬는 허파에 균이 들어가 염증이 생기는 병으로 세균이 숨을 쉬는 경로 중 호흡세기관지 이하 부위의 폐 조직에 염증 반응과 경화를 일으키는 질환입니다. 기침, 가래, 발열, 호흡곤란을 특징으로 하며 흉부 사진에서 폐렴과 유사한 소견이 있으면 폐렴이란 진단과 더불어 치료를 시작합니다.
+                    </p>
+                  </div>
+
+                  {/* 이미지 섹션 */}
+                  <div className="w-[500px] h-[400px] relative flex-shrink-0">
+                    <Image
+                      src="/images/centers/asthma-img06.jpg"
+                      alt="폐렴"
+                      fill
+                      className="object-cover rounded-lg border border-gray-100"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* 폐렴 원인 섹션 */}
+              <div className="container mx-auto px-4 mt-32">
+                <div className="text-center mb-12">
+                  <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
+                  <h2 className="text-[#1A1A1A] text-4xl font-bold">폐렴 원인</h2>
+                </div>
+
+                <div className="max-w-6xl mx-auto">
+                  <div className="overflow-hidden rounded-lg">
+                    <table className="w-full">
+                      <caption className="sr-only">폐렴 원인</caption>
+                      <colgroup>
+                        <col style={{width: "20%"}} />
+                        <col style={{width: "20%"}} />
+                        <col style={{width: "20%"}} />
+                        <col style={{width: "20%"}} />
+                        <col style={{width: "20%"}} />
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th className="py-6 px-4 text-center text-[#0066CC] text-lg font-medium bg-[#F8F9FF] border border-gray-100">
+                            <span className="block text-xl mb-2">01</span>
+                            세균 및 바이러스에<br />의한 감염
+                          </th>
+                          <th className="py-6 px-4 text-center text-[#0066CC] text-lg font-medium bg-[#F8F9FF] border border-gray-100">
+                            <span className="block text-xl mb-2">02</span>
+                            곰팡이에<br />의한 감염
+                          </th>
+                          <th className="py-6 px-4 text-center text-[#0066CC] text-lg font-medium bg-[#F8F9FF] border border-gray-100">
+                            <span className="block text-xl mb-2">03</span>
+                            화학물질 및 구토물 등<br />이물질 흡인
+                          </th>
+                          <th className="py-6 px-4 text-center text-[#0066CC] text-lg font-medium bg-[#F8F9FF] border border-gray-100">
+                            <span className="block text-xl mb-2">04</span>
+                            가스 흡인
+                          </th>
+                          <th className="py-6 px-4 text-center text-[#0066CC] text-lg font-medium bg-[#F8F9FF] border border-gray-100">
+                            <span className="block text-xl mb-2">05</span>
+                            방사선 치료
+                          </th>
+                        </tr>
+                      </thead>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+              {/* 폐렴 증상 섹션 */}
+              <div className="relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] w-screen bg-[#1A4B8E] mt-32">
+                <div className="container mx-auto px-4">
+                  <div className="py-16">
+                    <div className="text-center mb-12">
+                      <p className="text-white tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
+                      <h2 className="text-white text-4xl font-bold">폐렴 증상</h2>
+                    </div>
+
+                    <div className="max-w-5xl mx-auto">
+                      <div className="bg-white rounded-lg overflow-hidden">
+                        <table className="w-full">
+                          <caption className="sr-only">폐렴 증상</caption>
+                          <colgroup>
+                            <col style={{width: "50%"}} />
+                            <col style={{width: "50%"}} />
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th className="py-6 px-8 text-center text-[#0066CC] text-xl font-medium bg-[#F8F9FF] border-b border-gray-100">
+                                폐 증상
+                              </th>
+                              <th className="py-6 px-8 text-center text-[#0066CC] text-xl font-medium bg-[#F8F9FF] border-b border-gray-100">
+                                전신 증상
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td className="p-8 align-top">
+                                <div className="space-y-2">
+                                  <p className="flex items-start gap-2 text-gray-700">
+                                    <span className="text-[#0066CC]">☑</span>
+                                    기침
+                                  </p>
+                                  <p className="flex items-start gap-2 text-gray-700">
+                                    <span className="text-[#0066CC]">☑</span>
+                                    가래
+                                  </p>
+                                  <p className="flex items-start gap-2 text-gray-700">
+                                    <span className="text-[#0066CC]">☑</span>
+                                    호흡곤란
+                                  </p>
+                                  <div className="mt-6 pt-4 border-t border-gray-100">
+                                    <p className="text-gray-600 text-sm mb-2">
+                                      ※ 끈적하고 고름 같은 가래
+                                    </p>
+                                    <p className="text-gray-600 text-sm">
+                                      ※ 때에 따라 피가 묻어 나오기도 함
+                                    </p>
+                                  </div>
+                                </div>
+                              </td>
+                              <td className="p-8 align-top">
+                                <div className="space-y-2">
+                                  <p className="flex items-start gap-2 text-gray-700">
+                                    <span className="text-[#0066CC]">☑</span>
+                                    발열, 오한
+                                  </p>
+                                  <p className="flex items-start gap-2 text-gray-700">
+                                    <span className="text-[#0066CC]">☑</span>
+                                    구역, 구토, 설사
+                                  </p>
+                                  <p className="flex items-start gap-2 text-gray-700">
+                                    <span className="text-[#0066CC]">☑</span>
+                                    두통
+                                  </p>
+                                  <p className="flex items-start gap-2 text-gray-700">
+                                    <span className="text-[#0066CC]">☑</span>
+                                    피로감
+                                  </p>
+                                  <p className="flex items-start gap-2 text-gray-700">
+                                    <span className="text-[#0066CC]">☑</span>
+                                    근육통
+                                  </p>
+                                  <p className="flex items-start gap-2 text-gray-700">
+                                    <span className="text-[#0066CC]">☑</span>
+                                    관절통
+                                  </p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* 유튜브 영상 섹션 */}
+              <div className="container mx-auto px-4 mt-32 mb-32">
+                <div className="text-center mb-12">
+                  <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
+                  <h2 className="text-[#1A1A1A] text-4xl font-bold">관련 영상</h2>
+                </div>
+
+                <div className="max-w-4xl mx-auto">
+                  <div className="aspect-w-16 aspect-h-9">
+                    <iframe
+                      className="w-full h-full rounded-lg"
+                      src="https://www.youtube.com/embed/VIDEO_ID"
+                      title="폐렴 관련 영상"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
+
+              {/* 다음 섹션 */}
+              {/* ... existing code ... */}
             </div>
           )}
         </motion.section>
