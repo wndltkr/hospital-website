@@ -1488,7 +1488,7 @@ export default function InternalMedicineCenterPage() {
                       결핵은 결핵균에 의해 발생하는 감염성 질환으로, 다른 감염성 질환에 비해 장기적으로 천천히 진행되거나 유지되는 특징이 있습니다. 이 질환은 공기로 퍼져나가며, 폐를 통하여 감염이 시작 되고 폐를 제외한 우리 몸의 여러 장기(예를 들어 뇌, 후두, 뼈, 위장관, 복막, 콩팥) 등을 침범하여 각 기관의 결핵을 유발합니다.
                     </p>
                     <p className="text-gray-700 text-lg leading-relaxed">
-                      대부분의 결핵균 감염자들은 증상이 없으며(이를 '잠복결핵, latent tuberculosis'이라고 함), 이들 중 일부분의 사람들만이 병으로서 결핵이 발생합니다. 국제보건기구(World Health Organization: WHO)에 의하면 아직도 전 세계에서 매년 8백만 명이 활동성 결핵에 걸리며, 약 2백만 명이 사망하는 것으로 보고되고 있습니다.
+                      대부분의 결핵균 감염자들은 증상이 없으며(이를 &apos;잠복결핵, latent tuberculosis&apos;이라고 함), 이들 중 일부분의 사람들만이 병으로서 결핵이 발생합니다. 국제보건기구(World Health Organization: WHO)에 의하면 아직도 전 세계에서 매년 8백만 명이 활동성 결핵에 걸리며, 약 2백만 명이 사망하는 것으로 보고되고 있습니다.
                     </p>
                   </div>
                 </div>
