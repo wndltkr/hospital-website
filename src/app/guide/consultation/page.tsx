@@ -43,6 +43,7 @@ export default function ConsultationPage() {
     <>
       <Header />
       <Menu />
+      <SideMenu />
       <div className="min-h-screen bg-white">
         {/* Banner Section */}
         <div className="relative h-[600px]">

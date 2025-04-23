@@ -6,7 +6,6 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Menu from '@/components/Menu';
 import SideMenu from '@/components/SideMenu';
-import Script from 'next/script';
 import { useEffect } from 'react';
 
 // Kakao 맵 타입 선언
