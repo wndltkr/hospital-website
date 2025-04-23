@@ -1652,7 +1652,7 @@ export default function InternalMedicineCenterPage() {
                         <tbody>
                           <tr>
                             <td className="p-8 text-center text-white/90 text-lg italic">
-                              "각 치료법 별로 장단점이 있으므로 담당 의사와 상의 후 개인에게 가장 적합한 방법을 선택해야 합니다."
+                              &quot;각 치료법 별로 장단점이 있으므로 담당 의사와 상의 후 개인에게 가장 적합한 방법을 선택해야 합니다.&quot;
                             </td>
                           </tr>
                         </tbody>
