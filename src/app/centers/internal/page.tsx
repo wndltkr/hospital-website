@@ -669,7 +669,7 @@ export default function InternalMedicineCenterPage() {
                     fill
                     className="object-cover rounded-lg border border-gray-100"
                   />
-                </div>
+            </div>
                 
                 {/* 텍스트 섹션 */}
                 <div className="flex-1">
@@ -925,7 +925,7 @@ export default function InternalMedicineCenterPage() {
 
               {/* 간경변증의 원인 섹션 */}
               <div className="relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] w-screen bg-[#1A4B8E] mt-32">
-                <div className="container mx-auto px-4">
+            <div className="container mx-auto px-4">
                   <div className="py-16">
                     <div className="text-center mb-12">
                       <p className="text-white tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
@@ -1058,19 +1058,6 @@ export default function InternalMedicineCenterPage() {
                           </th>
                         </tr>
                       </thead>
-                      <tbody>
-                        <tr>
-                          <td className="py-8 px-6 text-center text-gray-700 text-lg leading-relaxed border border-gray-100">
-                            정기적인 간암 표지자 검사<br />초음파 검사 시행
-                          </td>
-                          <td className="py-8 px-6 text-center text-gray-700 text-lg leading-relaxed border border-gray-100">
-                            CT, MRI 추가적 검사로<br />정확한 진단
-                          </td>
-                          <td className="py-8 px-6 text-center text-gray-700 text-lg leading-relaxed border border-gray-100">
-                            혈관 조영술, 조직 검사<br />진행하여 진단
-                          </td>
-                        </tr>
-                      </tbody>
                     </table>
                   </div>
                 </div>
@@ -1206,7 +1193,7 @@ export default function InternalMedicineCenterPage() {
           {activeTab === 'kidney' && (
             <div>
               {/* 신증후군 섹션 */}
-              <div className="container mx-auto px-4">
+            <div className="container mx-auto px-4">
                 <div className="flex items-start gap-16">
                   {/* 이미지 섹션 */}
                   <div className="w-[500px] h-[400px] relative flex-shrink-0">
@@ -1233,6 +1220,659 @@ export default function InternalMedicineCenterPage() {
                   </div>
                 </div>
               </div>
+
+              {/* 신증후군 종류 섹션 */}
+              <div className="relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] w-screen bg-[#1A4B8E] mt-32">
+                <div className="container mx-auto px-4">
+                  <div className="py-16">
+                    <div className="text-center mb-12">
+                      <p className="text-white/80 tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
+                      <h2 className="text-white text-4xl font-bold">신증후군 종류</h2>
+                    </div>
+
+                    <div className="max-w-5xl mx-auto">
+                      <div className="bg-white rounded-lg overflow-hidden">
+                        <table className="w-full">
+                          <caption className="sr-only">신증후군 종류</caption>
+                          <colgroup>
+                            <col style={{width: "50%"}} />
+                            <col style={{width: "50%"}} />
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th className="py-6 px-8 text-center text-[#0066CC] text-xl font-medium bg-[#F8F9FF] border-b border-gray-100">
+                                일차성 신증후군
+                              </th>
+                              <th className="py-6 px-8 text-center text-[#0066CC] text-xl font-medium bg-[#F8F9FF] border-b border-gray-100">
+                                이차성 신증후군
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td className="p-8 text-center text-gray-700 text-lg leading-relaxed">
+                                신장 자체의 이상(여러 형태의 사구체신염)으로 발생
+                              </td>
+                              <td className="p-8 text-center text-gray-700 text-lg leading-relaxed">
+                                간염, 악성종양, 루푸스 등과 같은 전신 질환에 의해 발생
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* 신증후군 증상 섹션 */}
+              <div className="relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] w-screen mt-32">
+                <div className="relative">
+                  {/* 배경 이미지 */}
+                  <div className="absolute inset-0">
+                    <Image
+                      src="/images/centers/nephrotic-symptoms-bg.jpg"
+                      alt="신증후군 증상 배경"
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-black/50"></div>
+                  </div>
+
+                  <div className="container mx-auto px-4 relative">
+                    <div className="py-16">
+                      <div className="max-w-4xl mx-auto text-center">
+                        <p className="text-white/80 tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
+                        <h2 className="text-white text-4xl font-bold mb-12">신증후군 증상</h2>
+                        <div className="space-y-6">
+                          <p className="flex items-center justify-center gap-3 text-white text-lg">
+                            <span className="text-[#0066CC] font-bold">✓</span>
+                            단백뇨에 의해 소변에서 거품이 나타남
+                          </p>
+                          <p className="flex items-center justify-center gap-3 text-white text-lg">
+                            <span className="text-[#0066CC] font-bold">✓</span>
+                            저알부민혈증에 의해 부종 발생
+                          </p>
+                          <p className="flex items-center justify-center gap-3 text-white text-lg">
+                            <span className="text-[#0066CC] font-bold">✓</span>
+                            원인 질환에 따라 신장 기능이 급격히 혹은 천천히 감소함
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* 신증후군 치료 섹션 */}
+              <div className="relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] w-screen bg-[#1A4B8E] mt-32">
+                <div className="container mx-auto px-4">
+                  <div className="py-16">
+                    <div className="text-center mb-12">
+                      <p className="text-white/80 tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
+                      <h2 className="text-white text-4xl font-bold">신증후군 치료</h2>
+                    </div>
+
+                    <div className="max-w-7xl mx-auto">
+                      <div className="bg-white rounded-lg overflow-hidden">
+                        <table className="w-full">
+                          <caption className="sr-only">신증후군 치료</caption>
+                          <colgroup>
+                            <col style={{width: "33.33%"}} />
+                            <col style={{width: "33.33%"}} />
+                            <col style={{width: "33.33%"}} />
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th className="py-6 px-8 text-center text-[#0066CC] text-xl font-medium bg-[#F8F9FF] border-b border-gray-100">
+                                안지오텐신 전환효소<br />억제제(ACE)
+                              </th>
+                              <th className="py-6 px-8 text-center text-[#0066CC] text-xl font-medium bg-[#F8F9FF] border-b border-gray-100">
+                                이뇨제
+                              </th>
+                              <th className="py-6 px-8 text-center text-[#0066CC] text-xl font-medium bg-[#F8F9FF] border-b border-gray-100">
+                                면역억제제
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td className="p-8 text-center text-gray-700 text-lg leading-relaxed">
+                                사구체 내부 압력을 낮춰<br />단백뇨 감소
+                              </td>
+                              <td className="p-8 text-center text-gray-700 text-lg leading-relaxed">
+                                부종에 대한 일반적 요법
+                              </td>
+                              <td className="p-8 text-center text-gray-700 text-lg leading-relaxed">
+                                원인 질환에 대한 확실한 진단 후<br />스테로이드 등의 면역억제제 사용
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* 만성 신부전 섹션 */}
+              <div className="container mx-auto px-4 mt-32">
+                {/* 이미지와 설명 */}
+                <div className="flex items-start gap-16">
+                  {/* 텍스트 섹션 */}
+                  <div className="flex-1">
+                    <div className="mb-8">
+                      <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
+                      <h2 className="text-[#1A1A1A] text-4xl font-bold">만성 신부전</h2>
+                    </div>
+                    <p className="text-gray-700 text-lg leading-relaxed">
+                      3개월 이상 신장이 손상되어 있거나 신장 기능 감소가 지속적으로 나타나는 것을 말합니다. 
+                      만성 신부전은 신장의 손상 정도와 기능의 감소 정도에 따라 5단계로 나뉘며, 
+                      5단계에는 투석, 신장이식과 같은 신장 대체 요법이 필요합니다.
+                    </p>
+                  </div>
+
+                  {/* 이미지 섹션 */}
+                  <div className="w-[500px] h-[400px] relative flex-shrink-0">
+                    <Image
+                      src="/images/centers/nephrotic-img02.jpg"
+                      alt="만성 신부전"
+                      fill
+                      className="object-cover rounded-lg border border-gray-100"
+                    />
+                  </div>
+                </div>
+
+                {/* 단계별 표 */}
+                <div className="mt-16">
+                  <div className="overflow-hidden rounded-lg border border-gray-200">
+                    <table className="w-full">
+                      <caption className="sr-only">만성 신부전 단계</caption>
+                      <colgroup>
+                        <col style={{width: "20%"}} />
+                        <col style={{width: "60%"}} />
+                        <col style={{width: "20%"}} />
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th className="py-4 px-6 text-center text-[#0066CC] text-lg font-medium bg-[#F8F9FF] border-b border-gray-100">단계</th>
+                          <th className="py-4 px-6 text-center text-[#0066CC] text-lg font-medium bg-[#F8F9FF] border-b border-gray-100">비고</th>
+                          <th className="py-4 px-6 text-center text-[#0066CC] text-lg font-medium bg-[#F8F9FF] border-b border-gray-100">사구체여과율</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-gray-200">
+                        <tr>
+                          <td className="py-4 px-6 text-center text-gray-700">높은 위험군</td>
+                          <td className="py-4 px-6 text-left text-gray-700">콩팥질환의 위험요소(예 : 당뇨병, 고혈압, 가족력, 고령)</td>
+                          <td className="py-4 px-6 text-center text-gray-700">90 이상</td>
+                        </tr>
+                        <tr>
+                          <td className="py-4 px-6 text-center text-gray-700">1</td>
+                          <td className="py-4 px-6 text-left text-gray-700">콩팥손상(단백뇨)과 정상 사구체여과율</td>
+                          <td className="py-4 px-6 text-center text-gray-700">90 이상</td>
+                        </tr>
+                        <tr>
+                          <td className="py-4 px-6 text-center text-gray-700">2</td>
+                          <td className="py-4 px-6 text-left text-gray-700">콩팥손상과 경도의 사구체여과율 감소</td>
+                          <td className="py-4 px-6 text-center text-gray-700">60 ~ 89</td>
+                        </tr>
+                        <tr>
+                          <td className="py-4 px-6 text-center text-gray-700">3</td>
+                          <td className="py-4 px-6 text-left text-gray-700">중등도의 사구체여과율 감소</td>
+                          <td className="py-4 px-6 text-center text-gray-700">30 ~ 59</td>
+                        </tr>
+                        <tr>
+                          <td className="py-4 px-6 text-center text-gray-700">4</td>
+                          <td className="py-4 px-6 text-left text-gray-700">고도의 사구체여과율 감소</td>
+                          <td className="py-4 px-6 text-center text-gray-700">15 ~ 29</td>
+                        </tr>
+                        <tr>
+                          <td className="py-4 px-6 text-center text-gray-700">5</td>
+                          <td className="py-4 px-6 text-left text-gray-700">신부전(투석이나 콩팥이식이 필요함)</td>
+                          <td className="py-4 px-6 text-center text-gray-700">15 미만</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+              {/* 만성 신부전 원인 섹션 */}
+              <div className="relative w-full bg-[url('/images/centers/nephrotic-bg2.jpg')] bg-cover bg-center mt-32">
+                <div className="absolute inset-0 bg-[#1A4B8E]/90"></div>
+                <div className="relative container mx-auto px-4 py-24">
+                  <div className="max-w-3xl mx-auto text-center">
+                    <p className="text-white tracking-[0.2em] text-sm mb-2">SEKANG HOSPITAL</p>
+                    <h2 className="text-white text-4xl font-bold mb-12">만성 신부전 원인</h2>
+                    <div className="space-y-6 text-white/90 text-lg leading-relaxed">
+                      <p className="flex items-start justify-center gap-3">
+                        <span className="text-white flex-shrink-0">✓</span>
+                        <span>만성 신부전의 원인은 지역 및 나이 등에 따라 다릅니다.</span>
+                      </p>
+                      <p className="flex items-start justify-center gap-3">
+                        <span className="text-white flex-shrink-0">✓</span>
+                        <span>한국에서의 주된 발병 원인은 당뇨병성 신장질환(41%), 고혈압(16%), 사구체신염(14%) 등으로 알려져 있습니다.</span>
+                      </p>
+                      <p className="flex items-start justify-center gap-3">
+                        <span className="text-white flex-shrink-0">✓</span>
+                        <span>그 밖의 원인으로는 다낭성 신질환과 기타 요로질환이 있습니다.</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* 만성 신부전 증상 섹션 */}
+              <div className="relative w-full bg-[#1A4B8E] mt-32 py-24">
+                <div className="container mx-auto px-4">
+                  <div className="text-center mb-16">
+                    <p className="text-white tracking-[0.2em] text-sm mb-2">SEKANG HOSPITAL</p>
+                    <h2 className="text-white text-4xl font-bold">만성 신부전 증상</h2>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-8 max-w-6xl mx-auto">
+                    {/* 초기 증상 */}
+                    <div className="bg-white rounded-lg overflow-hidden">
+                      <div className="h-[300px] relative">
+                        <Image
+                          src="/images/centers/nephrotic-img03.jpg"
+                          alt="만성 신부전 초기 증상"
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <div className="p-8">
+                        <h3 className="text-[#1A4B8E] text-2xl font-bold mb-6">초기</h3>
+                        <div className="space-y-4">
+                          <p className="flex items-start gap-2 text-gray-700">
+                            <span className="text-[#1A4B8E] flex-shrink-0">☑</span>
+                            <span>별다른 이상 증상을 느끼지 못 함</span>
+                          </p>
+                          <p className="flex items-start gap-2 text-gray-700">
+                            <span className="text-[#1A4B8E] flex-shrink-0">☑</span>
+                            <span>신장 기능 저하에 따른 요독 증상 동반</span>
+                          </p>
+                          <p className="flex items-start gap-2 text-gray-700">
+                            <span className="text-[#1A4B8E] flex-shrink-0">☑</span>
+                            <span>피곤함, 가려움증, 식욕부진 등</span>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* 말기 증상 */}
+                    <div className="bg-white rounded-lg overflow-hidden">
+                      <div className="h-[300px] relative">
+                        <Image
+                          src="/images/centers/nephrotic-img04.jpg"
+                          alt="만성 신부전 말기 증상"
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <div className="p-8">
+                        <h3 className="text-[#1A4B8E] text-2xl font-bold mb-6">말기</h3>
+                        <div className="space-y-4">
+                          <p className="flex items-start gap-2 text-gray-700">
+                            <span className="text-[#1A4B8E] flex-shrink-0">☑</span>
+                            <span>호흡곤란, 식욕부진, 구토 등이 심해짐</span>
+                          </p>
+                          <p className="flex items-start gap-2 text-gray-700">
+                            <span className="text-[#1A4B8E] flex-shrink-0">☑</span>
+                            <span>투석, 신장이식 치료 없이 정상 생활이 어려워짐</span>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* 만성 신부전 진단 및 검사 섹션 */}
+              <div className="container mx-auto px-4 mt-32">
+                <div className="text-center mb-12">
+                  <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-2">SEKANG HOSPITAL</p>
+                  <h2 className="text-[#1A1A1A] text-4xl font-bold">만성 신부전 진단 및 검사</h2>
+                </div>
+
+                <div className="max-w-7xl mx-auto">
+                  <div className="overflow-hidden rounded-lg border border-gray-200">
+                    <table className="w-full">
+                      <caption className="sr-only">만성 신부전 진단 및 검사</caption>
+                      <colgroup>
+                        <col style={{width: "14.28%"}} />
+                        <col style={{width: "14.28%"}} />
+                        <col style={{width: "14.28%"}} />
+                        <col style={{width: "14.28%"}} />
+                        <col style={{width: "14.28%"}} />
+                        <col style={{width: "14.28%"}} />
+                        <col style={{width: "14.28%"}} />
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th className="p-6 text-center text-[#0066CC] text-lg font-medium bg-[#F8F9FF] border-b border-gray-100">
+                            <span className="block text-xl mb-2">01</span>
+                            당뇨, 고혈압<br />병력 확인
+                          </th>
+                          <th className="p-6 text-center text-[#0066CC] text-lg font-medium bg-[#F8F9FF] border-b border-gray-100">
+                            <span className="block text-xl mb-2">02</span>
+                            현재 건강<br />상태 확인
+                          </th>
+                          <th className="p-6 text-center text-[#0066CC] text-lg font-medium bg-[#F8F9FF] border-b border-gray-100">
+                            <span className="block text-xl mb-2">03</span>
+                            약물 복용 이력,<br />가족력 등 문진
+                          </th>
+                          <th className="p-6 text-center text-[#0066CC] text-lg font-medium bg-[#F8F9FF] border-b border-gray-100">
+                            <span className="block text-xl mb-2">04</span>
+                            혈액검사
+                          </th>
+                          <th className="p-6 text-center text-[#0066CC] text-lg font-medium bg-[#F8F9FF] border-b border-gray-100">
+                            <span className="block text-xl mb-2">05</span>
+                            소변검사
+                          </th>
+                          <th className="p-6 text-center text-[#0066CC] text-lg font-medium bg-[#F8F9FF] border-b border-gray-100">
+                            <span className="block text-xl mb-2">06</span>
+                            신장 초음파<br />검사
+                          </th>
+                          <th className="p-6 text-center text-[#0066CC] text-lg font-medium bg-[#F8F9FF] border-b border-gray-100">
+                            <span className="block text-xl mb-2">07</span>
+                            신장 조직검사
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td colSpan={7} className="p-4 text-center text-[#FF4444] text-base border-b border-gray-100">
+                            ※ 혈액검사 : 신장 기능을 평가하는 혈액 내 크레아티닌(creatinine) 및 요소질소(urea nitrogen) 수치, 전해질 농도와 산-염기 상태 측정
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colSpan={7} className="p-4 text-center text-[#FF4444] text-base border-b border-gray-100">
+                            ※ 소변검사 : 원인 질환 추정을 위해 진행하며 단백뇨 및 소변의 다른 이상 소견에 대해 검사
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colSpan={7} className="p-4 text-center text-[#FF4444] text-base">
+                            ※ 신장 초음파 검사 : 신장 크기 및 요로 폐쇄 징후 등을 확인
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+              {/* 만성 신부전 치료 섹션 */}
+              <div className="relative w-full bg-[url('/images/centers/nephrotic-bg3.jpg')] bg-cover bg-center mt-32">
+                <div className="absolute inset-0 bg-[#1A4B8E]/90"></div>
+                <div className="relative container mx-auto px-4 py-24">
+                  <div className="max-w-4xl mx-auto">
+                    <div className="text-center mb-12">
+                      <p className="text-white tracking-[0.2em] text-sm mb-2">SEKANG HOSPITAL</p>
+                      <h2 className="text-white text-4xl font-bold">만성 신부전 치료</h2>
+                    </div>
+
+                    <div className="bg-white/10 backdrop-blur-sm rounded-lg overflow-hidden">
+                      <table className="w-full">
+                        <caption className="sr-only">만성 신부전 치료 방법</caption>
+                        <thead>
+                          <tr>
+                            <th className="p-6 text-white text-xl font-medium border-b border-white/10">
+                              <div className="flex items-start gap-3">
+                                <span className="text-white flex-shrink-0">✓</span>
+                                <span>신장 기능 악화를 억제하는 것이 중요</span>
+                              </div>
+                            </th>
+                          </tr>
+                          <tr>
+                            <th className="p-6 text-white text-xl font-medium border-b border-white/10">
+                              <div className="flex items-start gap-3">
+                                <span className="text-white flex-shrink-0">✓</span>
+                                <span>고혈압, 당뇨, 고지혈증의 철저한 관리</span>
+                              </div>
+                            </th>
+                          </tr>
+                          <tr>
+                            <th className="p-6 text-white text-xl font-medium border-b border-white/10">
+                              <div className="flex items-start gap-3">
+                                <span className="text-white flex-shrink-0">✓</span>
+                                <span>신장에 해로운 약물 피하기</span>
+                              </div>
+                            </th>
+                          </tr>
+                          <tr>
+                            <th className="p-6 text-white text-xl font-medium border-b border-white/10">
+                              <div className="flex items-start gap-3">
+                                <span className="text-white flex-shrink-0">✓</span>
+                                <span>혈액투석, 복막투석, 신장 이식</span>
+                              </div>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td className="p-8 text-center text-white/90 text-lg italic">
+                              "각 치료법 별로 장단점이 있으므로 담당 의사와 상의 후 개인에게 가장 적합한 방법을 선택해야 합니다."
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* 다음 섹션 */}
+              {/* ... existing code ... */}
+
+              {/* 단백뇨 섹션 */}
+              <div className="container mx-auto px-4 mt-32">
+                <div className="flex items-start gap-16">
+                  {/* 텍스트 섹션 */}
+                  <div className="flex-1">
+                    <div className="mb-8">
+                      <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
+                      <h2 className="text-[#1A1A1A] text-4xl font-bold">단백뇨</h2>
+                    </div>
+                    <p className="text-gray-700 text-lg leading-relaxed">
+                      소변에 단백질이 섞여 나오는 것을 단백뇨라고 하는데, 정상 소변에도 어느 정도 단백이 포함될 수 있으므로, 
+                      성인인 경우 하루 500mg 이상, 소아는 1시간 동안 체표면적 1제곱미터당 4mg 이상의 단백질이 배설될 때 
+                      명백한 단백뇨라고 합니다.
+                    </p>
+                  </div>
+
+                  {/* 이미지 섹션 */}
+                  <div className="w-[500px] h-[400px] relative flex-shrink-0">
+                    <Image
+                      src="/images/centers/nephrotic-img05.jpg"
+                      alt="단백뇨 검사"
+                      fill
+                      className="object-cover rounded-lg border border-gray-100 shadow-lg"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* 다음 섹션 */}
+              {/* ... existing code ... */}
+
+              {/* 단백뇨 종류 섹션 */}
+              <div className="relative w-full bg-[#1A4B8E] mt-32">
+                <div className="container mx-auto px-4 py-24">
+                  <div className="max-w-6xl mx-auto">
+                    <div className="text-center mb-12">
+                      <p className="text-white tracking-[0.2em] text-sm mb-2">SEKANG HOSPITAL</p>
+                      <h2 className="text-white text-4xl font-bold">단백뇨 종류</h2>
+                    </div>
+
+                    <div className="bg-white rounded-lg overflow-hidden">
+                      <table className="w-full">
+                        <caption className="sr-only">단백뇨 종류</caption>
+                        <colgroup>
+                          <col style={{width: "30%"}} />
+                          <col style={{width: "70%"}} />
+                        </colgroup>
+                        <tbody className="divide-y divide-gray-200">
+                          <tr>
+                            <th className="p-6 text-left text-[#1A4B8E] text-xl font-medium bg-[#F8F9FF]">
+                              미세단백뇨
+                            </th>
+                            <td className="p-6 text-gray-700">
+                              <div className="flex items-start gap-2">
+                                <span className="text-[#1A4B8E] flex-shrink-0">✓</span>
+                                <span>당뇨병, 고혈압, 사구체 신염에 의한 초기 신장 질환</span>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th rowSpan={4} className="p-6 text-left text-[#1A4B8E] text-xl font-medium bg-[#F8F9FF] align-top">
+                              기능성 단백뇨
+                            </th>
+                            <td className="p-6 text-gray-700">
+                              <div className="flex items-start gap-2">
+                                <span className="text-[#1A4B8E] flex-shrink-0">✓</span>
+                                <span>격렬한 운동을 한 직후</span>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td className="p-6 text-gray-700">
+                              <div className="flex items-start gap-2">
+                                <span className="text-[#1A4B8E] flex-shrink-0">✓</span>
+                                <span>발열을 동반한 경우</span>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td className="p-6 text-gray-700">
+                              <div className="flex items-start gap-2">
+                                <span className="text-[#1A4B8E] flex-shrink-0">✓</span>
+                                <span>오전에는 없지만, 오후에만 단백뇨가 검출되는 경우(기립성 단백뇨)</span>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td className="p-6 text-gray-700">
+                              <div className="flex items-start gap-2">
+                                <span className="text-[#1A4B8E] flex-shrink-0">✓</span>
+                                <span>요로 감염을 동반한 경우</span>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* 다음 섹션 */}
+
+              {/* 혈뇨 섹션 */}
+              <div className="container mx-auto px-4 mt-32">
+                <div className="max-w-7xl mx-auto">
+                  <div className="text-center mb-12">
+                    <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-2">SEKANG HOSPITAL</p>
+                    <h2 className="text-4xl font-bold">혈뇨</h2>
+                  </div>
+
+                  <div className="flex flex-col lg:flex-row items-center gap-16">
+                    <div className="flex-1 space-y-8">
+                      <p className="text-lg leading-relaxed text-gray-700">
+                        혈뇨는 소변에 비정상적인 양의 적혈구가 섞여 배설되는 것으로, 약물이나 음식의 영향으로 단순히 소변이 붉게 보이는 현상과는 다릅니다. 눈으로 색깔 변화를 알아볼 수 있을 정도의 혈뇨를 육안적 혈뇨, 현미경으로만 보이는 것을 현미경적 혈뇨라고 합니다.
+                      </p>
+                    </div>
+
+                    <div className="lg:w-[500px] lg:h-[400px] flex-shrink-0">
+                      <div className="relative w-full h-full rounded-lg overflow-hidden shadow-lg border border-gray-200">
+                        <Image
+                          src="/images/centers/nephrotic-img06.jpg"
+                          alt="혈뇨 검사"
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* 다음 섹션 */}
+
+              {/* 혈뇨 원인 섹션 */}
+              <div className="container mx-auto px-4 mt-32">
+                <div className="max-w-7xl mx-auto">
+                  <div className="text-center mb-12">
+                    <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-2">SEKANG HOSPITAL</p>
+                    <h2 className="text-4xl font-bold">혈뇨 원인</h2>
+                  </div>
+
+                  <div className="bg-white rounded-lg overflow-hidden shadow-lg">
+                    <table className="w-full">
+                      <caption className="sr-only">혈뇨 원인</caption>
+                      <thead>
+                        <tr className="bg-[#F8F9FF]">
+                          <th className="p-6 text-center text-[#0066CC] font-medium border-b border-gray-200 w-[14.28%]">
+                            <span className="text-xl mb-2 block">01</span>
+                            <span>생리</span>
+                          </th>
+                          <th className="p-6 text-center text-[#0066CC] font-medium border-b border-gray-200 w-[14.28%]">
+                            <span className="text-xl mb-2 block">02</span>
+                            <span>감염<br/>(요로감염, 전립선염 등)</span>
+                          </th>
+                          <th className="p-6 text-center text-[#0066CC] font-medium border-b border-gray-200 w-[14.28%]">
+                            <span className="text-xl mb-2 block">03</span>
+                            <span>알레르기</span>
+                          </th>
+                          <th className="p-6 text-center text-[#0066CC] font-medium border-b border-gray-200 w-[14.28%]">
+                            <span className="text-xl mb-2 block">04</span>
+                            <span>운동 및 외상</span>
+                          </th>
+                          <th className="p-6 text-center text-[#0066CC] font-medium border-b border-gray-200 w-[14.28%]">
+                            <span className="text-xl mb-2 block">05</span>
+                            <span>다량의 칼슘,<br/>요산 배설</span>
+                          </th>
+                          <th className="p-6 text-center text-[#0066CC] font-medium border-b border-gray-200 w-[14.28%]">
+                            <span className="text-xl mb-2 block">06</span>
+                            <span>종양</span>
+                          </th>
+                          <th className="p-6 text-center text-[#0066CC] font-medium border-b border-gray-200 w-[14.28%]">
+                            <span className="text-xl mb-2 block">07</span>
+                            <span>요석</span>
+                          </th>
+                        </tr>
+                        <tr>
+                          <td colSpan={7} className="p-6 text-center text-red-500 border-b border-gray-200">
+                            ※ 일시적 혈뇨는 흔하지만 지속적이거나 혈뇨의 양이 많을 때 정밀 검사가 필요합니다.
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colSpan={7} className="p-6 text-center text-red-500">
+                            ※ 정밀 검사에도 원인 불명인 경우가 15% 정도입니다. 이 경우 정기적인 외래 진료를 통해 꾸준히 관찰해야 합니다.
+                          </td>
+                        </tr>
+                      </thead>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+              {/* 유튜브 섹션 */}
+              <div className="container mx-auto px-4 mt-32">
+                <div className="max-w-4xl mx-auto">
+                  <div className="aspect-w-16 aspect-h-9">
+                    <iframe
+                      className="w-full h-full rounded-2xl"
+                      src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+                      title="혈뇨 관련 영상"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* 다음 섹션 */}
             </div>
           )}
 
