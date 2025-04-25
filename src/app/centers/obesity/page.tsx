@@ -7,6 +7,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Menu from '@/components/Menu';
 import PageBanner from '@/components/PageBanner';
+import YouTubeSection from '@/components/YouTubeSection';
 
 export default function ObesityPage() {
   const [activeTab, setActiveTab] = useState('iv');
@@ -611,55 +612,28 @@ export default function ObesityPage() {
               </div>
 
               {/* YouTube Section 1 */}
-              <div className="mt-32">
-                <div className="mb-12 text-center">
-                  <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">S E K A N G   H O S P I T A L</p>
-                  <h2 className="text-4xl font-bold">세로움 수액센터 소개영상</h2>
-                </div>
-                <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-                  <iframe
-                    className="absolute top-0 left-0 w-full h-full rounded-2xl"
-                    src="https://www.youtube.com/embed/VIDEO_ID_1"
-                    title="세로움 수액센터 소개영상"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
-                </div>
-              </div>
+              <YouTubeSection
+                  videoId="VIDEO_ID"
+                  title="세로움 수액센터 소개영상"
+                  sectionSubtitle="SEKANG HOSPITAL"
+                  sectionTitle="세로움 수액센터 소개영상"
+                />
 
               {/* YouTube Section 2 */}
-              <div className="mt-32">
-                <div className="mb-12 text-center">
-                  <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">S E K A N G   H O S P I T A L</p>
-                  <h2 className="text-4xl font-bold">세로움 수액센터 시설안내</h2>
-                </div>
-                <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-                  <iframe
-                    className="absolute top-0 left-0 w-full h-full rounded-2xl"
-                    src="https://www.youtube.com/embed/VIDEO_ID_2"
-                    title="세로움 수액센터 시설안내"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
-                </div>
-              </div>
+              <YouTubeSection
+                  videoId="VIDEO_ID"
+                  title="세로움 수액센터 시설안내"
+                  sectionSubtitle="SEKANG HOSPITAL"
+                  sectionTitle="세로움 수액센터 시설안내"
+                />
 
               {/* YouTube Section 3 */}
-              <div className="mt-32 mb-32">
-                <div className="mb-12 text-center">
-                  <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">S E K A N G   H O S P I T A L</p>
-                  <h2 className="text-4xl font-bold">세로움 수액센터 치료후기</h2>
-                </div>
-                <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-                  <iframe
-                    className="absolute top-0 left-0 w-full h-full rounded-2xl"
-                    src="https://www.youtube.com/embed/VIDEO_ID_3"
-                    title="세로움 수액센터 치료후기"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
-                </div>
-              </div>
+              <YouTubeSection
+                  videoId="VIDEO_ID"
+                  title="세로움 수액센터 치료후기"
+                  sectionSubtitle="SEKANG HOSPITAL"
+                  sectionTitle="세로움 수액센터 치료후기"
+                />
             </div>
           )}
 
@@ -989,55 +963,28 @@ export default function ObesityPage() {
               </div>
 
               {/* YouTube Section 1 */}
-              <div className="mt-32">
-                <div className="mb-12 text-center">
-                  <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">S E K A N G   H O S P I T A L</p>
-                  <h2 className="text-4xl font-bold">세로움 비만센터 소개영상</h2>
-                </div>
-                <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-                  <iframe
-                    className="absolute top-0 left-0 w-full h-full rounded-2xl"
-                    src="https://www.youtube.com/embed/VIDEO_ID_1"
-                    title="세로움 비만센터 소개영상"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
-                </div>
-              </div>
+              <YouTubeSection
+                  videoId="VIDEO_ID"
+                  title="세로움 비만센터 소개영상"
+                  sectionSubtitle="SEKANG HOSPITAL"
+                  sectionTitle="세로움 비만센터 소개영상"
+                />
 
               {/* YouTube Section 2 */}
-              <div className="mt-32">
-                <div className="mb-12 text-center">
-                  <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">S E K A N G   H O S P I T A L</p>
-                  <h2 className="text-4xl font-bold">세로움 비만센터 시설안내</h2>
-                </div>
-                <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-                  <iframe
-                    className="absolute top-0 left-0 w-full h-full rounded-2xl"
-                    src="https://www.youtube.com/embed/VIDEO_ID_2"
-                    title="세로움 비만센터 시설안내"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
-                </div>
-              </div>
+              <YouTubeSection
+                  videoId="VIDEO_ID"
+                  title="세로움 비만센터 시설안내"
+                  sectionSubtitle="SEKANG HOSPITAL"
+                  sectionTitle="세로움 비만센터 시설안내"
+                />
 
               {/* YouTube Section 3 */}
-              <div className="mt-32 mb-32">
-                <div className="mb-12 text-center">
-                  <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">S E K A N G   H O S P I T A L</p>
-                  <h2 className="text-4xl font-bold">세로움 비만센터 치료후기</h2>
-                </div>
-                <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-                  <iframe
-                    className="absolute top-0 left-0 w-full h-full rounded-2xl"
-                    src="https://www.youtube.com/embed/VIDEO_ID_3"
-                    title="세로움 비만센터 치료후기"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
-                </div>
-              </div>
+              <YouTubeSection
+                  videoId="VIDEO_ID"
+                  title="세로움 비만센터 치료후기"
+                  sectionSubtitle="SEKANG HOSPITAL"
+                  sectionTitle="세로움 비만센터 치료후기"
+                />
             </>
           )}
         </motion.section>

@@ -7,6 +7,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Menu from '@/components/Menu';
 import PageBanner from '@/components/PageBanner';
+import YouTubeSection from '@/components/YouTubeSection';
 
 export default function EndoscopyPage() {
   const [activeTab, setActiveTab] = useState('colonoscopy');
@@ -519,23 +520,12 @@ export default function EndoscopyPage() {
               </div>
 
               {/* 유튜브 섹션 */}
-              <div className="w-full bg-[#F4F4F5]">
-                <div className="container mx-auto px-4 py-20">
-                  <h2 className="text-[#0066CC] tracking-[0.2em] text-base text-center">SEKANG HOSPITAL</h2>
-                  <h3 className="text-[32px] font-bold text-center mb-12">내시경 점막하 절제술 영상</h3>
-                  <div className="max-w-6xl mx-auto">
-                    <div className="w-full h-[600px]">
-                      <iframe 
-                        className="w-full h-full rounded-lg"
-                        src="https://www.youtube.com/embed/VIDEO_ID"
-                        title="내시경 점막하 절제술 영상"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      ></iframe>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <YouTubeSection
+          videoId="VIDEO_ID"
+          title="내시경 점막하 절제술 영상"
+          sectionSubtitle="SEKANG HOSPITAL"
+          sectionTitle="내시경 점막하 절제술 영상"
+        />
             </div>
           )}
 
@@ -758,23 +748,12 @@ export default function EndoscopyPage() {
               </div>
 
               {/* 유튜브 섹션 */}
-              <div className="w-full bg-[#F4F4F5]">
-                <div className="container mx-auto px-4 py-20">
-                  <h2 className="text-[#0066CC] tracking-[0.2em] text-base text-center">SEKANG HOSPITAL</h2>
-                  <h3 className="text-[32px] font-bold text-center mb-12">위내시경점막하 절제술 영상</h3>
-                  <div className="max-w-6xl mx-auto">
-                    <div className="w-full h-[600px]">
-                      <iframe 
-                        className="w-full h-full rounded-lg"
-                        src="https://www.youtube.com/embed/VIDEO_ID"
-                        title="위내시경점막하 절제술 영상"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      ></iframe>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <YouTubeSection
+                videoId="VIDEO_ID"
+                title="위내시경점막하 절제술 영상"
+                sectionSubtitle="SEKANG HOSPITAL"
+                sectionTitle="위내시경점막하 절제술 영상"
+              />
             </div>
           )}
         </motion.section>

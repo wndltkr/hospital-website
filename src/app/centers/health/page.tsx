@@ -7,6 +7,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Menu from '@/components/Menu';
 import PageBanner from '@/components/PageBanner';
+import YouTubeSection from '@/components/YouTubeSection';
 
 export default function HealthPage() {
   const [activeTab, setActiveTab] = useState('intro');
@@ -214,23 +215,12 @@ export default function HealthPage() {
           )}
 
           {activeTab === 'intro' && (
-            <div className="container mx-auto px-4 py-20">
-              <div className="text-center mb-12">
-                <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">S E K A N G   H O S P I T A L</p>
-                <h2 className="text-2xl font-bold">건강증진센터 소개영상</h2>
-              </div>
-              <div className="max-w-4xl mx-auto aspect-video">
-                <iframe
-                  width="100%"
-                  height="100%"
-                  src="https://www.youtube.com/embed/VIDEO_ID"
-                  title="건강증진센터 소개영상"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="rounded-lg shadow-lg"
-                ></iframe>
-              </div>
-            </div>
+            <YouTubeSection
+            videoId="VIDEO_ID"
+            title="건강증진센터 소개영상"
+            sectionSubtitle="SEKANG HOSPITAL"
+            sectionTitle="건강증진센터 소개영상"
+          />
           )}
 
           {activeTab === 'checkup' && (
@@ -822,24 +812,6 @@ export default function HealthPage() {
                     </div>
                   </div>
                 </div>
-
-                <div className="container mx-auto px-4 py-20">
-                  <div className="text-center mb-12">
-                    <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">S E K A N G   H O S P I T A L</p>
-                    <h2 className="text-2xl font-bold">건강증진센터 소개영상</h2>
-                  </div>
-                  <div className="max-w-4xl mx-auto aspect-video">
-                    <iframe
-                      width="100%"
-                      height="100%"
-                      src="https://www.youtube.com/embed/VIDEO_ID"
-                      title="건강증진센터 소개영상"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="rounded-lg shadow-lg"
-                    ></iframe>
-                  </div>
-                </div>
               </div>
             </>
           )}
@@ -906,23 +878,12 @@ export default function HealthPage() {
                 </div>
               </div>
 
-              <div className="container mx-auto px-4 py-20">
-                <div className="text-center mb-12">
-                  <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">S E K A N G   H O S P I T A L</p>
-                  <h2 className="text-2xl font-bold">건강증진센터 소개영상</h2>
-                </div>
-                <div className="max-w-4xl mx-auto aspect-video">
-                  <iframe
-                    width="100%"
-                    height="100%"
-                    src="https://www.youtube.com/embed/VIDEO_ID"
-                    title="건강증진센터 소개영상"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="rounded-lg shadow-lg"
-                  ></iframe>
-                </div>
-              </div>
+              <YouTubeSection
+                  videoId="VIDEO_ID"
+                  title="건강증진센터 소개영상"
+                  sectionSubtitle="SEKANG HOSPITAL"
+                  sectionTitle="건강증진센터 소개영상"
+                />
             </div>
           )}
 
@@ -1031,23 +992,12 @@ export default function HealthPage() {
                 </div>
               </div>
 
-              <div className="container mx-auto px-4 py-20">
-                <div className="text-center mb-12">
-                  <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">S E K A N G   H O S P I T A L</p>
-                  <h2 className="text-2xl font-bold">건강증진센터 소개영상</h2>
-                </div>
-                <div className="max-w-4xl mx-auto aspect-video">
-                  <iframe
-                    width="100%"
-                    height="100%"
-                    src="https://www.youtube.com/embed/VIDEO_ID"
-                    title="건강증진센터 소개영상"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="rounded-lg shadow-lg"
-                  ></iframe>
-                </div>
-              </div>
+              <YouTubeSection
+                  videoId="VIDEO_ID"
+                  title="건강증진센터 소개영상"
+                  sectionSubtitle="SEKANG HOSPITAL"
+                  sectionTitle="건강증진센터 소개영상"
+                />
             </div>
           )}
         </motion.section>

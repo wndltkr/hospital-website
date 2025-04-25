@@ -8,6 +8,7 @@ import Menu from '@/components/Menu';
 import SideMenu from '@/components/SideMenu';
 import Footer from '@/components/Footer';
 import PageBanner from '@/components/PageBanner';
+import YouTubeSection from '@/components/YouTubeSection';
 
 const achievements = [
   {
@@ -113,42 +114,10 @@ export default function AchievementsPage() {
         </section>
 
         {/* YouTube Section */}
-        <section className="py-20 bg-gray-50">
-          <div className="container mx-auto px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="max-w-4xl mx-auto"
-            >
-              <div className="relative aspect-video mb-8 rounded-2xl overflow-hidden shadow-2xl">
-                <iframe
-                  className="absolute inset-0 w-full h-full"
-                  src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-                  title="세강병원 성과"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="text-center"
-              >
-                <h2 className="text-3xl font-bold mb-4">
-                  세강병원의 발자취
-                </h2>
-                <p className="text-gray-600 text-lg">
-                  40년간 이어온 신뢰와 혁신,<br />
-                  세강병원이 걸어온 길을 소개합니다.
-                </p>
-              </motion.div>
-            </motion.div>
-          </div>
-        </section>
+        <YouTubeSection
+          videoId="VIDEO_ID"
+          title="김정균 세강병원 병원장 인사말"
+        />
       </main>
       <Footer />
     </>

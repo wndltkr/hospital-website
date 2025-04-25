@@ -8,6 +8,7 @@ import Menu from '@/components/Menu';
 import SideMenu from '@/components/SideMenu';
 import Footer from '@/components/Footer';
 import PageBanner from '@/components/PageBanner';
+import YouTubeSection from '@/components/YouTubeSection';
 
 export default function GreetingPage() {
   return (
@@ -174,25 +175,10 @@ export default function GreetingPage() {
         </section>
 
         {/* YouTube Video Section */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-8">
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="aspect-w-16 aspect-h-9"
-            >
-              <iframe
-                src="https://www.youtube.com/embed/VIDEO_ID"
-                title="김정균 세강병원 병원장 인사말"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="w-full h-[600px]"
-              ></iframe>
-            </motion.div>
-          </div>
-        </section>
+        <YouTubeSection
+          videoId="VIDEO_ID"
+          title="김정균 세강병원 병원장 인사말"
+        />
       </main>
       <Footer />
     </>

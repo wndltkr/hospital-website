@@ -7,6 +7,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Menu from '@/components/Menu';
 import PageBanner from '@/components/PageBanner';
+import YouTubeSection from '@/components/YouTubeSection';
 
 export default function ColorectalPage() {
   const [activeTab, setActiveTab] = useState('levator');
@@ -184,25 +185,12 @@ export default function ColorectalPage() {
                 </div>
               </div>
 
-              {/* 유튜브 섹션 */}
-              <div className="w-full bg-white">
-                <div className="container mx-auto px-4">
-                  <h2 className="text-[#0066CC] tracking-[0.2em] text-base">SEKANG HOSPITAL</h2>
-                  <h3 className="text-[32px] font-bold">항문거근증후군 영상</h3>
-                  <div className="mt-6 aspect-video w-full">
-                    <iframe
-                      width="100%"
-                      height="100%"
-                      src="https://www.youtube.com/embed/VIDEO_ID"
-                      title="항문거근증후군 설명 영상"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="rounded-lg"
-                    ></iframe>
-                  </div>
-                </div>
-              </div>
+              <YouTubeSection
+          videoId="VIDEO_ID"
+          title="항문거근증후군 영상"
+          sectionSubtitle="SEKANG HOSPITAL"
+          sectionTitle="병원장 인사말 영상"
+        />
             </div>
           )}
           {activeTab === 'hemorrhoid' && (
@@ -564,24 +552,12 @@ export default function ColorectalPage() {
               </div>
 
               {/* 유튜브 섹션 */}
-              <div className="w-full bg-white">
-                <div className="container mx-auto px-4 py-20">
-                  <h2 className="text-[#0066CC] tracking-[0.2em] text-base">SEKANG HOSPITAL</h2>
-                  <h3 className="text-[32px] font-bold">하이브리드 PPH치질수술 영상</h3>
-                  <div className="mt-6 aspect-video w-full">
-                    <iframe
-                      width="100%"
-                      height="100%"
-                      src="https://www.youtube.com/embed/VIDEO_ID"
-                      title="하이브리드 PPH치질수술 설명 영상"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="rounded-lg"
-                    ></iframe>
-                  </div>
-                </div>
-              </div>
+              <YouTubeSection
+          videoId="VIDEO_ID"
+          title="하이브리드 PPH치질수술 영상"
+          sectionSubtitle="SEKANG HOSPITAL"
+          sectionTitle="하이브리드 PPH치질수술 영상"
+        />
             </div>
           )}
           {activeTab === 'fistula' && (
@@ -669,24 +645,12 @@ export default function ColorectalPage() {
               </div>
 
               {/* 유튜브 섹션 */}
-              <div className="w-full bg-white">
-                <div className="container mx-auto px-4 py-20">
-                  <h2 className="text-[#0066CC] tracking-[0.2em] text-base">SEKANG HOSPITAL</h2>
-                  <h3 className="text-[32px] font-bold">치루/농양 영상</h3>
-                  <div className="mt-6 aspect-video w-full">
-                    <iframe
-                      width="100%"
-                      height="100%"
-                      src="https://www.youtube.com/embed/VIDEO_ID"
-                      title="치루/농양 설명 영상"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="rounded-lg"
-                    ></iframe>
-                  </div>
-                </div>
-              </div>
+              <YouTubeSection
+                videoId="VIDEO_ID"
+                title="치루/농양 영상"
+                sectionSubtitle="SEKANG HOSPITAL"
+                sectionTitle="치루/농양 영상"
+              />
             </div>
           )}
           {activeTab === 'fissure' && (
@@ -837,24 +801,12 @@ export default function ColorectalPage() {
               </div>
 
               {/* 유튜브 섹션 */}
-              <div className="w-full bg-white">
-                <div className="container mx-auto px-4 py-20">
-                  <h2 className="text-[#0066CC] tracking-[0.2em] text-base">SEKANG HOSPITAL</h2>
-                  <h3 className="text-[32px] font-bold">치열 영상</h3>
-                  <div className="mt-6 aspect-video w-full">
-                    <iframe
-                      width="100%"
-                      height="100%"
-                      src="https://www.youtube.com/embed/VIDEO_ID"
-                      title="치열 설명 영상"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="rounded-lg"
-                    ></iframe>
-                  </div>
-                </div>
-              </div>
+              <YouTubeSection
+                videoId="VIDEO_ID"
+                title="치열 영상"
+                sectionSubtitle="SEKANG HOSPITAL"
+                sectionTitle="치열 영상"
+              />
             </div>
           )}
         </motion.section>

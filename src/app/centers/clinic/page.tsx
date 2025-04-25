@@ -7,6 +7,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Menu from '@/components/Menu';
 import PageBanner from '@/components/PageBanner';
+import YouTubeSection from '@/components/YouTubeSection';
 
 export default function ClinicCenterPage() {
   const [activeTab, setActiveTab] = useState('gallbladder');
@@ -903,19 +904,11 @@ export default function ClinicCenterPage() {
               </div>
 
               {/* 유튜브 섹션 */}
-              <div className="container mx-auto px-4 mt-32 mb-32">
-                <div className="max-w-4xl mx-auto">
-                  <div className="aspect-w-16 aspect-h-9">
-                    <iframe 
-                      className="w-full h-full rounded-lg shadow-lg"
-                      src="https://www.youtube.com/embed/VIDEO_ID"
-                      title="충수염 관련 영상"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    ></iframe>
-                  </div>
-                </div>
-              </div>
+              <YouTubeSection
+                  videoId="VIDEO_ID"
+                  title="건강증진센터 소개영상"
+                  sectionSubtitle="SEKANG HOSPITAL"
+                />
             </div>
           )}
         </motion.section>

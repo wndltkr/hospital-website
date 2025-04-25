@@ -7,6 +7,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Menu from '@/components/Menu';
 import PageBanner from '@/components/PageBanner';
+import YouTubeSection from '@/components/YouTubeSection';
 
 export default function InternalMedicineCenterPage() {
   const [activeTab, setActiveTab] = useState('hypertension');
@@ -381,24 +382,11 @@ export default function InternalMedicineCenterPage() {
               </div>
 
               {/* 유튜브 영상 섹션 */}
-              <div className="container mx-auto px-4 mt-32">
-                <div className="text-center mb-12">
-                  <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
-                  <h2 className="text-[#1A1A1A] text-4xl font-bold">관련 영상</h2>
-                </div>
-
-                <div className="max-w-4xl mx-auto">
-                  <div className="aspect-w-16 aspect-h-9">
-                    <iframe
-                      className="w-full h-full rounded-lg"
-                      src="https://www.youtube.com/embed/VIDEO_ID"
-                      title="고혈압/고지혈증 관련 영상"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    ></iframe>
-                  </div>
-                </div>
-              </div>
+              <YouTubeSection
+                  videoId="VIDEO_ID"
+                  title="관련영상"
+                  sectionSubtitle="SEKANG HOSPITAL"
+                />
             </div>
           )}
 
@@ -625,24 +613,11 @@ export default function InternalMedicineCenterPage() {
               </div>
 
               {/* 유튜브 영상 섹션 */}
-              <div className="container mx-auto px-4 mt-32">
-                <div className="text-center mb-12">
-                  <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
-                  <h2 className="text-[#1A1A1A] text-4xl font-bold">관련 영상</h2>
-                </div>
-
-                <div className="max-w-4xl mx-auto">
-                  <div className="aspect-w-16 aspect-h-9">
-                    <iframe
-                      className="w-full h-full rounded-lg"
-                      src="https://www.youtube.com/embed/VIDEO_ID"
-                      title="당뇨병 관련 영상"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    ></iframe>
-                  </div>
-                </div>
-              </div>
+              <YouTubeSection
+                  videoId="VIDEO_ID"
+                  title="건강증진센터 소개영상"
+                  sectionSubtitle="SEKANG HOSPITAL"
+                />
             </div>
           )}
 
@@ -1157,24 +1132,11 @@ export default function InternalMedicineCenterPage() {
               </div>
 
               {/* 유튜브 영상 섹션 */}
-              <div className="container mx-auto px-4 mt-32">
-                <div className="text-center mb-12">
-                  <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
-                  <h2 className="text-[#1A1A1A] text-4xl font-bold">관련 영상</h2>
-                </div>
-
-                <div className="max-w-4xl mx-auto">
-                  <div className="aspect-w-16 aspect-h-9">
-                    <iframe
-                      className="w-full h-full rounded-lg"
-                      src="https://www.youtube.com/embed/VIDEO_ID"
-                      title="간암 관련 영상"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    ></iframe>
-                  </div>
-                </div>
-              </div>
+              <YouTubeSection
+                  videoId="VIDEO_ID"
+                  title="건강증진센터 소개영상"
+                  sectionSubtitle="SEKANG HOSPITAL"
+                />
             </div>
           )}
 
@@ -1846,19 +1808,11 @@ export default function InternalMedicineCenterPage() {
               </div>
 
               {/* 유튜브 섹션 */}
-              <div className="container mx-auto px-4 mt-32">
-                <div className="max-w-4xl mx-auto">
-                  <div className="aspect-w-16 aspect-h-9">
-                    <iframe
-                      className="w-full h-full rounded-2xl"
-                      src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-                      title="혈뇨 관련 영상"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
-                  </div>
-                </div>
-              </div>
+              <YouTubeSection
+                  videoId="VIDEO_ID"
+                  title="건강증진센터 소개영상"
+                  sectionSubtitle="SEKANG HOSPITAL"
+                />
 
               {/* 다음 섹션 */}
             </div>
@@ -2437,24 +2391,11 @@ export default function InternalMedicineCenterPage() {
               </div>
 
               {/* 유튜브 영상 섹션 */}
-              <div className="container mx-auto px-4 mt-32 mb-32">
-                <div className="text-center mb-12">
-                  <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
-                  <h2 className="text-[#1A1A1A] text-4xl font-bold">관련 영상</h2>
-                </div>
-
-                <div className="max-w-4xl mx-auto">
-                  <div className="aspect-w-16 aspect-h-9">
-                    <iframe
-                      className="w-full h-full rounded-lg"
-                      src="https://www.youtube.com/embed/VIDEO_ID"
-                      title="폐렴 관련 영상"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    ></iframe>
-                  </div>
-                </div>
-              </div>
+              <YouTubeSection
+                  videoId="VIDEO_ID"
+                  title="건강증진센터 소개영상"
+                  sectionSubtitle="SEKANG HOSPITAL"
+                />
 
               {/* 다음 섹션 */}
               {/* ... existing code ... */}

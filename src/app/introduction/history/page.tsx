@@ -8,6 +8,7 @@ import Menu from '@/components/Menu';
 import SideMenu from '@/components/SideMenu';
 import Footer from '@/components/Footer';
 import PageBanner from '@/components/PageBanner';
+import YouTubeSection from '@/components/YouTubeSection';
 
 type HistoryData = {
   [key: string]: {
@@ -207,25 +208,10 @@ export default function HistoryPage() {
         </section>
 
         {/* Main YouTube Section */}
-        <motion.section 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="py-20 bg-gray-50"
-        >
-          <div className="container mx-auto px-8">
-            <div className="aspect-w-16 aspect-h-9">
-              <iframe
-                src="https://www.youtube.com/embed/MAIN_VIDEO_ID"
-                title="세강병원 40년사"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="w-full h-[600px] rounded-2xl"
-              ></iframe>
-            </div>
-          </div>
-        </motion.section>
+        <YouTubeSection
+          videoId="VIDEO_ID"
+          title="연혁 영상"
+        />
 
         {/* 40th Anniversary Video Board Section */}
         <section className="py-20 bg-white">

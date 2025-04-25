@@ -7,6 +7,7 @@ import SideMenu from '@/components/SideMenu';
 import { useState } from 'react';
 import { FaSearch, FaPen, FaYoutube } from 'react-icons/fa';
 import PageBanner from '@/components/PageBanner';
+import YouTubeSection from '@/components/YouTubeSection';
 
 // 임시 게시글 데이터
 const DUMMY_POSTS = [
@@ -136,36 +137,11 @@ export default function ConsultationPage() {
               </div>
 
               {/* YouTube Section */}
-              <div className="bg-white rounded-lg shadow-lg p-6">
-                <div className="flex items-center gap-3 mb-6">
-                  <FaYoutube className="text-3xl text-red-600" />
-                  <h2 className="text-2xl font-bold text-gray-800">세강병원 유튜브</h2>
-                </div>
-                <div className="grid grid-cols-2 gap-6">
-                  <div className="aspect-video">
-                    <iframe
-                      width="100%"
-                      height="100%"
-                      src="https://www.youtube.com/embed/VIDEO_ID_1"
-                      title="세강병원 소개"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    ></iframe>
-                  </div>
-                  <div className="aspect-video">
-                    <iframe
-                      width="100%"
-                      height="100%"
-                      src="https://www.youtube.com/embed/VIDEO_ID_2"
-                      title="의료진 인터뷰"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    ></iframe>
-                  </div>
-                </div>
-              </div>
+              <YouTubeSection
+                  videoId="VIDEO_ID"
+                  title="건강증진센터 소개영상"
+                  sectionSubtitle="SEKANG HOSPITAL"
+                />
             </div>
           </div>
         </div>

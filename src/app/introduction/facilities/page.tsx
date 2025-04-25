@@ -8,6 +8,7 @@ import Menu from '@/components/Menu';
 import SideMenu from '@/components/SideMenu';
 import Footer from '@/components/Footer';
 import PageBanner from '@/components/PageBanner';
+import YouTubeSection from '@/components/YouTubeSection';
 
 const equipments = [
   {
@@ -93,47 +94,10 @@ export default function FacilitiesPage() {
           </div>
         </section>
 
-        {/* YouTube Video Section */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-8">
-            <motion.div 
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="max-w-4xl mx-auto"
-            >
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                className="relative aspect-video"
-              >
-                <iframe
-                  className="absolute inset-0 w-full h-full"
-                  src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-                  title="세강병원 유방암 예방"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </motion.div>
-              <motion.div 
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-center mt-8"
-              >
-                <h2 className="text-3xl font-bold mb-4">
-                  유방촬영장비를 도입해<br />
-                  &apos;유방암 예방&apos;에<br />
-                  최선을 다하고 있습니다
-                </h2>
-              </motion.div>
-            </motion.div>
-          </div>
-        </section>
+        <YouTubeSection
+          videoId="VIDEO_ID"
+          title="장비소개 영상"
+        />
       </main>
       <Footer />
     </>
