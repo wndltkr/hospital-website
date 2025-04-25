@@ -1,11 +1,11 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Menu from '@/components/Menu';
 import SideMenu from '@/components/SideMenu';
+import PageBanner from '@/components/PageBanner';
 import { useState } from 'react';
 
 // 임시 데이터
@@ -64,52 +64,15 @@ export default function JobsPage() {
       <Header />
       <Menu />
       
-      {/* Banner Section */}
-      <div className="relative h-[600px]">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <Image
-            src="/images/info/jobs-bg.jpg"
-            alt="채용공고 배경"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-black/40"></div>
-        </div>
-
-        {/* Content */}
-        <div className="relative container mx-auto px-4 h-full flex flex-col justify-center">
-          <div className="max-w-4xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.65, delay: 0.2 }}
-            >
-              <p className="text-white/80 tracking-[0.2em] text-sm mb-4">SEKANG HOSPITAL</p>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.65, delay: 0.4 }}
-            >
-              <h1 className="text-white text-5xl font-bold mb-8">채용공고</h1>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.65, delay: 0.6 }}
-            >
-              <p className="text-white text-2xl font-medium">
-                세강병원과 함께<br />
-                더 나은 미래를 만들어갈<br />
-                인재를 기다립니다.
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </div>
+      <PageBanner
+        title="채용공고"
+        description={[
+          "세강병원과 함께",
+          "더 나은 미래를 만들어갈",
+          "인재를 기다립니다."
+        ]}
+        backgroundImage="/images/info/info-vis.jpg"
+      />
 
       {/* Main Content Section */}
       <div className="container mx-auto px-4 py-16">

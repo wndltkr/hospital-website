@@ -72,7 +72,7 @@ export default function PressPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/images/info/press-bg.jpg"
+            src="/images/info/info-vis.jpg"
             alt="언론보도 배경"
             fill
             className="object-cover"

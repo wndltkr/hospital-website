@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import Menu from '@/components/Menu';
 import SideMenu from '@/components/SideMenu';
 import { useState } from 'react';
+import PageBanner from '@/components/PageBanner';
 
 // 임시 데이터
 const videoReviews = [
@@ -68,50 +69,14 @@ export default function ReviewsPage() {
       <Menu />
       
       {/* Banner Section */}
-      <div className="relative h-[600px]">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <Image
-            src="/images/community/reviews-bg.jpg"
-            alt="후기 배경"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-black/40"></div>
-        </div>
-
-        {/* Content */}
-        <div className="relative container mx-auto px-4 h-full flex flex-col justify-center">
-          <div className="max-w-4xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.65, delay: 0.2 }}
-            >
-              <p className="text-white/80 tracking-[0.2em] text-sm mb-4">SEKANG HOSPITAL</p>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.65, delay: 0.4 }}
-            >
-              <h1 className="text-white text-5xl font-bold mb-8">후기영상</h1>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.65, delay: 0.6 }}
-            >
-              <p className="text-white text-2xl font-medium">
-                세강병원을 이용하신<br />
-                환자분들의 생생한 이야기를 들려드립니다.
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </div>
+      <PageBanner
+        title="후기영상"
+        description={[
+          "세강병원을 이용하신",
+          "환자분들의 생생한 이야기를 들려드립니다"
+        ]}
+        backgroundImage="/images/guide/guide-vis.jpg"
+      />
 
       {/* Main Content Section */}
       <div className="container mx-auto px-4 py-16">

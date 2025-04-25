@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import Menu from '@/components/Menu';
 import SideMenu from '@/components/SideMenu';
 import { useState } from 'react';
+import PageBanner from '@/components/PageBanner';
 
 // 임시 데이터
 const medicalVideos = [
@@ -68,50 +69,14 @@ export default function MedicalInfoPage() {
       <Menu />
       
       {/* Banner Section */}
-      <div className="relative h-[600px]">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <Image
-            src="/images/community/info-bg.jpg"
-            alt="의료정보 배경"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-black/40"></div>
-        </div>
-
-        {/* Content */}
-        <div className="relative container mx-auto px-4 h-full flex flex-col justify-center">
-          <div className="max-w-4xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.65, delay: 0.2 }}
-            >
-              <p className="text-white/80 tracking-[0.2em] text-sm mb-4">SEKANG HOSPITAL</p>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.65, delay: 0.4 }}
-            >
-              <h1 className="text-white text-5xl font-bold mb-8">의료정보</h1>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.65, delay: 0.6 }}
-            >
-              <p className="text-white text-2xl font-medium">
-                건강한 의료 문화 실현을 위해<br />
-                올바른 정보를 제공합니다.
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </div>
+      <PageBanner
+        title="의료정보"
+        description={[
+          "건강한 의료 문화 실현을 위해",
+          "올바른 정보를 제공합니다"
+        ]}
+        backgroundImage="/images/guide/guide-vis.jpg"
+      />
 
       {/* Main Content Section */}
       <div className="container mx-auto px-4 py-16">

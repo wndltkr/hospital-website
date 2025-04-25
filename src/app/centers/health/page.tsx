@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Menu from '@/components/Menu';
+import PageBanner from '@/components/PageBanner';
 
 export default function HealthPage() {
   const [activeTab, setActiveTab] = useState('intro');
@@ -22,28 +23,15 @@ export default function HealthPage() {
       <Header />
       <Menu />
       <div className="min-h-screen bg-white">
-        {/* Banner Section */}
-        <div className="relative h-[400px] bg-gradient-to-r from-[#F8F9FF] to-[#F1F4FF]">
-          <div className="container mx-auto px-4 h-full flex items-center">
-            <div className="max-w-2xl">
-              <p className="text-[#0066CC] tracking-widest mb-4">SEKANG HOSPITAL</p>
-              <h1 className="text-5xl font-bold mb-6">건강증진센터</h1>
-              <p className="text-lg text-gray-600">
-                세강병원 건강증진센터는<br />
-                최신 의료장비와 우수한 의료진으로<br />
-                고객의 건강한 삶을 약속드립니다.
-              </p>
-            </div>
-            <div className="absolute right-0 top-0 h-full w-1/2">
-              <Image
-                src="/images/centers/health-banner.jpg"
-                alt="건강증진센터"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
-        </div>
+      <PageBanner
+        title="건강증진센터"
+        description={[
+          "세강병원 건강증진센터는",
+          "최신 의료장비와 우수한 의료진으로",
+          "고객의 건강한 삶을 약속드립니다"
+        ]}
+        backgroundImage="/images/guide/guide-vis.jpg"
+      />
 
         {/* Tab Navigation */}
         <div className="container mx-auto">

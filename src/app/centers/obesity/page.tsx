@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Menu from '@/components/Menu';
+import PageBanner from '@/components/PageBanner';
 
 export default function ObesityPage() {
   const [activeTab, setActiveTab] = useState('iv');
@@ -20,28 +21,15 @@ export default function ObesityPage() {
       <Header />
       <Menu />
       <div className="min-h-screen bg-white">
-        {/* Banner Section */}
-        <div className="relative h-[400px] bg-gradient-to-r from-[#F8F9FF] to-[#F1F4FF]">
-          <div className="container mx-auto px-4 h-full flex items-center">
-            <div className="max-w-2xl">
-              <p className="text-[#0066CC] tracking-widest mb-4">SEKANG HOSPITAL</p>
-              <h1 className="text-5xl font-bold mb-6">세로움수액/비만센터</h1>
-              <p className="text-lg text-gray-600">
-                세강병원 세로움수액/비만센터는<br />
-                체계적인 관리와 치료로<br />
-                건강한 삶을 약속드립니다.
-              </p>
-            </div>
-            <div className="absolute right-0 top-0 h-full w-1/2">
-              <Image
-                src="/images/centers/obesity-banner.jpg"
-                alt="세로움수액/비만센터"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
-        </div>
+      <PageBanner
+        title="세로움수액/비만센터"
+        description={[
+          "세강병원 세로움수액/비만센터는",
+          "체계적인 관리와 치료로",
+          "건강한 삶을 약속드립니다"
+        ]}
+        backgroundImage="/images/guide/guide-vis.jpg"
+      />
 
         {/* Tab Navigation */}
         <div className="container mx-auto">

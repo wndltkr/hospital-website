@@ -7,6 +7,7 @@ import Header from '@/components/Header';
 import Menu from '@/components/Menu';
 import SideMenu from '@/components/SideMenu';
 import Footer from '@/components/Footer';
+import PageBanner from '@/components/PageBanner';
 
 type HistoryData = {
   [key: string]: {
@@ -79,39 +80,14 @@ export default function HistoryPage() {
       <Menu />
       <SideMenu />
       <main>
-        {/* Hero Section */}
-        <section className="relative h-[500px] bg-gradient-to-r from-[#E8F3FF] to-[#F5F9FF] overflow-hidden">
-          <div className="container mx-auto px-8 h-full flex items-center">
-            <motion.div 
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="relative z-10"
-            >
-              <p className="text-[#666] tracking-widest mb-4">SEKANG HOSPITAL</p>
-              <h1 className="text-4xl font-bold mb-6">연혁</h1>
-              <p className="text-lg text-gray-700">
-                세강병원의 발자취를<br />
-                소개합니다.
-              </p>
-            </motion.div>
-            <motion.div 
-              initial={{ opacity: 0, scale: 1.1 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1 }}
-              className="absolute right-0 top-0 h-full w-1/2"
-            >
-              <Image
-                src="/images/hospital-building.jpg"
-                alt="세강병원 건물"
-                fill
-                style={{ objectFit: 'cover' }}
-                className="rounded-l-3xl"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#E8F3FF] via-transparent to-transparent"></div>
-            </motion.div>
-          </div>
-        </section>
+      <PageBanner
+        title="연혁"
+        description={[
+          "세강병원의 발자취를",
+          "소개합니다"
+        ]}
+        backgroundImage="/images/guide/guide-vis.jpg"
+      />
 
         {/* History Section */}
         <section className="py-20 bg-white">

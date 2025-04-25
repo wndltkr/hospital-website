@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import Menu from '@/components/Menu';
 import SideMenu from '@/components/SideMenu';
 import { useState } from 'react';
+import PageBanner from '@/components/PageBanner';
 
 interface FloorInfo {
   floor: string;
@@ -81,50 +82,14 @@ export default function FloorsPage() {
       <Menu />
       <div className="min-h-screen bg-white">
         {/* Banner Section */}
-        <div className="relative h-[600px]">
-          {/* Background Image */}
-          <div className="absolute inset-0">
-            <Image
-              src="/images/guide/floors-bg.jpg"
-              alt="층별안내 배경"
-              fill
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-black/40"></div>
-          </div>
-
-          {/* Content */}
-          <div className="relative container mx-auto px-4 h-full flex flex-col justify-center">
-            <div className="max-w-4xl">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.65, delay: 0.2 }}
-              >
-                <p className="text-white/80 tracking-[0.2em] text-sm mb-4">SEKANG HOSPITAL</p>
-              </motion.div>
-              
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.65, delay: 0.4 }}
-              >
-                <h1 className="text-white text-5xl font-bold mb-8">층별안내</h1>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.65, delay: 0.6 }}
-              >
-                <p className="text-white text-2xl font-medium">
-                  세상을 아름답게<br />
-                  사회를 건강하게!
-                </p>
-              </motion.div>
-            </div>
-          </div>
-        </div>
+        <PageBanner
+        title="층별안내"
+        description={[
+          "세상을 아름답게",
+          "사회를 건강하게"
+        ]}
+        backgroundImage="/images/guide/guide-vis.jpg"
+      />
 
         {/* Main Content Section */}
         <div className="container mx-auto px-4 py-16">

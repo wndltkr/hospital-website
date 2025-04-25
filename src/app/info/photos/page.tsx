@@ -108,7 +108,7 @@ export default function PhotosPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/images/info/photos-bg.jpg"
+            src="/images/info/info-vis.jpg"
             alt="사진게시판 배경"
             fill
             className="object-cover"

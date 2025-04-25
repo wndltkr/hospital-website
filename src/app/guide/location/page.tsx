@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import Menu from '@/components/Menu';
 import SideMenu from '@/components/SideMenu';
 import { useEffect } from 'react';
+import PageBanner from '@/components/PageBanner';
 
 // Kakao 맵 타입 선언
 declare global {
@@ -54,50 +55,14 @@ export default function LocationPage() {
       <Menu />
       <div className="min-h-screen bg-white">
         {/* Banner Section */}
-        <div className="relative h-[600px]">
-          {/* Background Image */}
-          <div className="absolute inset-0">
-            <Image
-              src="/images/guide/location-bg.jpg"
-              alt="오시는길 배경"
-              fill
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-black/40"></div>
-          </div>
-
-          {/* Content */}
-          <div className="relative container mx-auto px-4 h-full flex flex-col justify-center">
-            <div className="max-w-4xl">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.65, delay: 0.2 }}
-              >
-                <p className="text-white/80 tracking-[0.2em] text-sm mb-4">SEKANG HOSPITAL</p>
-              </motion.div>
-              
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.65, delay: 0.4 }}
-              >
-                <h1 className="text-white text-5xl font-bold mb-8">오시는길</h1>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.65, delay: 0.6 }}
-              >
-                <p className="text-white text-2xl font-medium">
-                  세상을 아름답게<br />
-                  사회를 건강하게!
-                </p>
-              </motion.div>
-            </div>
-          </div>
-        </div>
+        <PageBanner
+        title="오시는길"
+        description={[
+          "세상을 아름답게",
+          "사회를 건강하게"
+        ]}
+        backgroundImage="/images/guide/guide-vis.jpg"
+      />
 
         <SideMenu />
         {/* Main Content Section */}

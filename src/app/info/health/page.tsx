@@ -78,7 +78,7 @@ export default function HealthInfoPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/images/info/health-bg.jpg"
+            src="/images/info/info-vis.jpg"
             alt="건강정보 배경"
             fill
             className="object-cover"

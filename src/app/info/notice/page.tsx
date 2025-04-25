@@ -59,7 +59,7 @@ export default function NoticePage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/images/info/notice-bg.jpg"
+            src="/images/info/info-vis.jpg"
             alt="공지사항 배경"
             fill
             className="object-cover"

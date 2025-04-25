@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Menu from '@/components/Menu';
+import PageBanner from '@/components/PageBanner';
 
 export default function EndoscopyPage() {
   const [activeTab, setActiveTab] = useState('colonoscopy');
@@ -20,27 +21,14 @@ export default function EndoscopyPage() {
       <Header />
       <Menu />
       <div className="min-h-screen bg-white">
-        {/* Banner Section */}
-        <div className="relative h-[400px] bg-gradient-to-r from-[#F8F9FF] to-[#F1F4FF]">
-          <div className="container mx-auto px-4 h-full flex items-center">
-            <div className="max-w-2xl">
-              <p className="text-[#0066CC] tracking-widest mb-4">SEKANG HOSPITAL</p>
-              <h1 className="text-5xl font-bold mb-6">소화기내시경센터</h1>
-              <p className="text-lg text-gray-600">
-                건강검진의 첫걸음,<br />
-                세강병원과 함께 하세요!
-              </p>
-            </div>
-            <div className="absolute right-0 top-0 h-full w-1/2">
-              <Image
-                src="/images/centers/endoscopy-banner.jpg"
-                alt="소화기내시경센터"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
-        </div>
+      <PageBanner
+        title="소화기내시경센터"
+        description={[
+          "건강검진의 첫걸음",
+          "세강병원과 함께 하세요!"
+        ]}
+        backgroundImage="/images/guide/guide-vis.jpg"
+      />
 
         {/* Tab Navigation */}
         <div className="container mx-auto">
