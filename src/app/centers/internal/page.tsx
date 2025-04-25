@@ -1023,14 +1023,14 @@ export default function InternalMedicineCenterPage() {
                     <div className="text-center mb-12">
                       <p className="text-white tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
                       <h2 className="text-white text-4xl font-bold">간암의 치료</h2>
-                    </div>
+                </div>
 
-                    <div className="max-w-4xl mx-auto">
+                <div className="max-w-4xl mx-auto">
                       <ul className="space-y-6">
                         <li className="flex items-start gap-4">
                           <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
                             <span className="text-white font-medium">1</span>
-                          </div>
+                  </div>
                           <p className="text-white text-lg leading-relaxed pt-1">
                             가장 효과적인 치료법은 수술적 절제입니다.
                           </p>
@@ -1038,7 +1038,7 @@ export default function InternalMedicineCenterPage() {
                         <li className="flex items-start gap-4">
                           <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
                             <span className="text-white font-medium">2</span>
-                          </div>
+                </div>
                           <p className="text-white text-lg leading-relaxed pt-1">
                             수술적 절제가 불가능할 경우 간암에 영양분과 산소를 공급하는 혈관을 막는 경동맥 화학색전술
                           </p>
@@ -1046,7 +1046,7 @@ export default function InternalMedicineCenterPage() {
                         <li className="flex items-start gap-4">
                           <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
                             <span className="text-white font-medium">3</span>
-                          </div>
+              </div>
                           <p className="text-white text-lg leading-relaxed pt-1">
                             간암에 알코올을 주입하여 간암 세포를 죽이는 경피적 에탄올 주입술
                           </p>
@@ -1819,7 +1819,7 @@ export default function InternalMedicineCenterPage() {
                     fill
                     className="object-cover rounded-lg border border-gray-100"
                   />
-                </div>
+            </div>
                 
                 {/* 텍스트 섹션 */}
                 <div className="flex-1">
@@ -1835,7 +1835,7 @@ export default function InternalMedicineCenterPage() {
 
               {/* 천식 치료제 섹션 */}
               <div className="relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] w-screen bg-[#1A4B8E] mt-32">
-                <div className="container mx-auto px-4">
+            <div className="container mx-auto px-4">
                   <div className="py-16">
                     <div className="text-center mb-12">
                       <p className="text-white tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
