@@ -5,7 +5,7 @@ import Footer from '@/components/Footer';
 import Menu from '@/components/Menu';
 import SideMenu from '@/components/SideMenu';
 import { useState } from 'react';
-import { FaSearch, FaPen, FaYoutube } from 'react-icons/fa';
+import { FaSearch, FaPen } from 'react-icons/fa';
 import PageBanner from '@/components/PageBanner';
 import YouTubeSection from '@/components/YouTubeSection';
 

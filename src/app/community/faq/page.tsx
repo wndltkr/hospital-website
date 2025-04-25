@@ -7,8 +7,9 @@ import Menu from '@/components/Menu';
 import SideMenu from '@/components/SideMenu';
 import { useState } from 'react';
 import PageBanner from '@/components/PageBanner';
+import TabNavigation from '@/components/TabNavigation';
 
-const centers = [
+const tabs = [
   { id: 'colon', name: '대장항문센터' },
   { id: 'endoscopy', name: '소화기내시경센터' },
   { id: 'health', name: '건강증진센터' },
@@ -235,32 +236,19 @@ export default function FAQPage() {
       />
 
       {/* Tab Navigation */}
-      <div className="sticky top-0 bg-white shadow-sm z-10">
-        <div className="container mx-auto px-4">
-          <div className="flex overflow-x-auto no-scrollbar">
-            {centers.map((center) => (
-              <button
-                key={center.id}
-                onClick={() => setActiveTab(center.id)}
-                className={`flex-shrink-0 px-8 py-6 text-base font-medium border-b-2 transition-colors whitespace-nowrap hover:bg-gray-50
-                  ${activeTab === center.id
-                    ? 'border-blue-500 text-blue-600'
-                    : 'border-transparent text-gray-600 hover:text-gray-900 hover:border-gray-300'
-                  }`}
-              >
-                {center.name}
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
+      <TabNavigation
+          tabs={tabs}
+          activeTab={activeTab}
+          onTabChange={setActiveTab}
+          className="mb-8"
+        />
 
       {/* Main Content Section */}
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-5xl mx-auto">
           <div className="bg-white rounded-lg shadow-sm p-6">
             <h2 className="text-xl font-bold text-gray-900 mb-6">
-              {centers.find(c => c.id === activeTab)?.name} 자주하는 질문
+              {tabs.find(c => c.id === activeTab)?.name} 자주하는 질문
             </h2>
             
             {/* FAQ Accordion */}

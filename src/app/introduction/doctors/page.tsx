@@ -8,6 +8,7 @@ import SideMenu from '@/components/SideMenu';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
 import PageBanner from '@/components/PageBanner';
+import TabNavigation from '@/components/TabNavigation';
 
 interface Schedule {
   mon: string;
@@ -30,7 +31,7 @@ interface Doctor {
   schedule?: Schedule;
 }
 
-const departments = [
+const tabs = [
   { id: 'internal', name: '내과', isActive: true },
   { id: 'surgery', name: '외과', isActive: false },
   { id: 'neurology', name: '신경외과', isActive: false },
@@ -85,7 +86,7 @@ const doctors: Doctor[] = [
 
 export default function DoctorsPage() {
   const [selectedDoctor, setSelectedDoctor] = useState<Doctor | null>(null);
-  const [activeDepartment, setActiveDepartment] = useState('internal');
+  const [activeTab, setActiveTab] = useState('internal');
 
   return (
     <>
@@ -103,35 +104,12 @@ export default function DoctorsPage() {
       />
 
         {/* Department Tabs */}
-        <motion.section 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="border-b"
-        >
-          <div className="container mx-auto">
-            <div className="flex">
-              {departments.map((dept, index) => (
-                <motion.button
-                  key={dept.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className={`px-12 py-4 text-lg font-medium ${
-                    activeDepartment === dept.id
-                      ? 'bg-[#0099FF] text-white'
-                      : 'text-gray-600 hover:bg-gray-100'
-                  }`}
-                  onClick={() => setActiveDepartment(dept.id)}
-                >
-                  {dept.name}
-                </motion.button>
-              ))}
-            </div>
-          </div>
-        </motion.section>
+        <TabNavigation
+          tabs={tabs}
+          activeTab={activeTab}
+          onTabChange={setActiveTab}
+          className="mb-8"
+        />
 
         {/* Doctors Grid */}
         <motion.section 

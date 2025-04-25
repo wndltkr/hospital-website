@@ -8,6 +8,7 @@ import Footer from '@/components/Footer';
 import Menu from '@/components/Menu';
 import PageBanner from '@/components/PageBanner';
 import YouTubeSection from '@/components/YouTubeSection';
+import TabNavigation from '@/components/TabNavigation';
 
 export default function EndoscopyPage() {
   const [activeTab, setActiveTab] = useState('colonoscopy');
@@ -32,23 +33,12 @@ export default function EndoscopyPage() {
       />
 
         {/* Tab Navigation */}
-        <div className="container mx-auto">
-          <div className="flex border-b">
-            {tabs.map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`py-4 px-8 text-lg font-medium transition-colors ${
-                  activeTab === tab.id
-                    ? 'border-b-2 border-[#0066CC] text-[#0066CC]'
-                    : 'text-gray-500 hover:text-gray-700'
-                }`}
-              >
-                {tab.name}
-              </button>
-            ))}
-          </div>
-        </div>
+        <TabNavigation
+          tabs={tabs}
+          activeTab={activeTab}
+          onTabChange={setActiveTab}
+          className="mb-8"
+        />
 
         {/* Content Section */}
         <motion.section

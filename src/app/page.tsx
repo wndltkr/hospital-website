@@ -11,6 +11,7 @@ import Map from '@/components/Map';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { FaHeartbeat, FaQuestionCircle, FaStethoscope, FaCut, FaBone, FaHeart } from 'react-icons/fa';
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -108,7 +109,7 @@ export default function Home() {
                   ))}
                 </ul>
               ),
-              link: "/press"
+              link: "/info/press"
             },
             {
               title: "세로움수액/비만센터",
@@ -117,7 +118,7 @@ export default function Home() {
                   <p className="text-gray-500">센터 소개 이미지</p>
                 </div>
               ),
-              link: "/weight-loss"
+              link: "/centers/obesity"
             },
             {
               title: "후기영상",
@@ -126,7 +127,7 @@ export default function Home() {
                   <p className="text-gray-500">후기 영상</p>
                 </div>
               ),
-              link: "/reviews"
+              link: "/community/reviews"
             },
             {
               title: "의료정보",
@@ -135,7 +136,7 @@ export default function Home() {
                   <p className="text-gray-500">의료 정보</p>
                 </div>
               ),
-              link: "/medical-info"
+              link: "/community/info"
             }
           ].map((column, index) => (
             <motion.div 
@@ -169,42 +170,42 @@ export default function Home() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="w-1/2"
+            className="w-2/3"
           >
             <div className="grid grid-rows-3 gap-4">
               {[
                 [
                   {
-                    href: "/health-info",
+                    href: "/info/health",
                     icon: FaHeartbeat,
                     text: "건강정보"
                   },
                   {
-                    href: "/faq",
+                    href: "/community/faq",
                     icon: FaQuestionCircle,
                     text: "자주하는 질문"
                   }
                 ],
                 [
                   {
-                    href: "/anal-fissure",
+                    href: "/centers/colorectal",
                     icon: FaStethoscope,
                     text: "항문거근증후군"
                   },
                   {
-                    href: "/pph-surgery",
+                    href: "/centers/colorectal",
                     icon: FaCut,
                     text: "하이브리드PPH치질수술"
                   }
                 ],
                 [
                   {
-                    href: "/esd",
+                    href: "/centers/endoscopy",
                     icon: FaBone,
                     text: "대장ESD"
                   },
                   {
-                    href: "/health-promotion",
+                    href: "/centers/health",
                     icon: FaHeart,
                     text: "건강증진센터"
                   }
@@ -239,15 +240,19 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="w-1/2"
           >
-            <div className="bg-gray-100 h-full rounded-lg p-4 flex flex-col justify-between">
-              <h2 className="text-xl font-bold mb-4">성과</h2>
-              <div className="flex-1 flex items-center justify-center">
-                <p className="text-gray-500">성과 통계</p>
+            <Link href="/introduction/achievements" className="block h-full">
+              <div className="h-full rounded-lg overflow-hidden relative group">
+                <div className="relative w-full h-full">
+                  <Image
+                    src="/images/main/result-img03_240621.jpg"
+                    alt="세강병원 성과"
+                    fill
+                    className="object-contain transition-transform duration-300 group-hover:scale-105"
+                    priority
+                  />
+                </div>
               </div>
-              <Link href="/achievements" className="text-blue-600 hover:underline">
-                자세히 보기
-              </Link>
-            </div>
+            </Link>
           </motion.div>
         </motion.div>
       </section>
