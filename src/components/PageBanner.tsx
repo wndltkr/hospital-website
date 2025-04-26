@@ -28,7 +28,7 @@ export default function PageBanner({
           fill
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0"></div>
       </div>
 
       {/* Content */}
@@ -39,7 +39,7 @@ export default function PageBanner({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, delay: 0.2 }}
           >
-            <p className="text-white/80 tracking-[0.2em] text-sm mb-4">{subtitle}</p>
+            <p className="text-blue/80 tracking-[0.2em] text-sm mb-4">{subtitle}</p>
           </motion.div>
           
           <motion.div
@@ -47,7 +47,7 @@ export default function PageBanner({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, delay: 0.4 }}
           >
-            <h1 className="text-white text-5xl font-bold mb-8">{title}</h1>
+            <h1 className="text-black text-5xl font-bold mb-8">{title}</h1>
           </motion.div>
 
           <motion.div
@@ -55,7 +55,7 @@ export default function PageBanner({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, delay: 0.6 }}
           >
-            <p className="text-white text-2xl font-medium">
+            <p className="text-black text-2xl font-medium">
               {descriptionLines.map((line, index) => (
                 <span key={index}>
                   {line}

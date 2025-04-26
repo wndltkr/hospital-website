@@ -87,7 +87,7 @@ export default function HistoryPage() {
           "세강병원의 발자취를",
           "소개합니다"
         ]}
-        backgroundImage="/images/guide/guide-vis.jpg"
+        backgroundImage="/images/about/about-vis.jpg"
       />
 
         {/* History Section */}

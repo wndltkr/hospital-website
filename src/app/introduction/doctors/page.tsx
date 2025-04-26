@@ -100,7 +100,7 @@ export default function DoctorsPage() {
           "세강병원 홈페이지를",
           "방문해 주셔서 감사합니다"
         ]}
-        backgroundImage="/images/guide/guide-vis.jpg"
+        backgroundImage="/images/about/about-vis.jpg"
       />
 
         {/* Department Tabs */}

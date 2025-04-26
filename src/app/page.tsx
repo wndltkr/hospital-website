@@ -78,7 +78,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.9 }}
               className="mt-2 text-right"
             >
-              <Link href="/notice" className="inline-block text-blue-600 hover:underline">
+              <Link href="/info/notice" className="inline-block text-blue-600 hover:underline">
                 더보기
               </Link>
             </motion.div>
@@ -305,86 +305,86 @@ export default function Home() {
       </motion.section>
 
       {/* Operating Hours Section */}
-      <section className="bg-gray-800 text-white py-12">
+      <section className="bg-gradient-to-r from-blue-900 to-blue-800 text-white py-12">
         <div className="container mx-auto px-8">
           <div className="grid grid-cols-3 gap-12">
-            {/* 연락처 */}
-            <div className="space-y-2">
-              <div className="flex items-center gap-2 mb-4">
-                <span className="text-lg font-bold">콜센터</span>
-                <span className="text-[#4ABAFF] text-lg">053-215-6200</span>
-              </div>
-              <div className="space-y-2">
-                <div>
-                  <div className="font-bold">건강증진센터</div>
-                  <div>053-620-6159</div>
-                  <div>053-620-6160</div>
+            {/* 콜센터 */}
+            <div className="space-y-6">
+              <div className="space-y-4">
+                <div className="flex items-center gap-3 pb-3 border-b border-blue-400">
+                  <h3 className="text-2xl font-bold">콜센터</h3>
+                  <span className="text-[#4ABAFF] text-2xl font-bold">053-215-6200</span>
                 </div>
-                <div>
-                  <div className="font-bold">수액센터</div>
-                  <div>053-620-6170</div>
-                </div>
-                <div>
-                  <div className="font-bold">비만센터</div>
-                  <div>053-620-6175</div>
+                <div className="space-y-4">
+                  <div className="space-y-2">
+                    <h4 className="text-lg font-bold text-blue-200">건강증진센터</h4>
+                    <div className="space-y-1">
+                      <p className="font-medium">053-620-6159</p>
+                      <p className="font-medium">053-620-6160</p>
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <h4 className="text-lg font-bold text-blue-200">수액센터</h4>
+                    <p className="font-medium">053-620-6170</p>
+                  </div>
+                  <div className="space-y-2">
+                    <h4 className="text-lg font-bold text-blue-200">비만센터</h4>
+                    <p className="font-medium">053-620-6175</p>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* 외래진료 */}
-            <div>
-              <div className="flex items-center gap-2 mb-4">
-                <span className="text-lg font-bold">외래진료</span>
-              </div>
-              <div className="space-y-2">
-                <div>
-                  <div className="text-gray-300">평 일</div>
-                  <div>오전 09:00 ~ 오후 05:00</div>
-                </div>
-                <div>
-                  <div className="text-gray-300">토요일</div>
-                  <div>오전 09:00 ~ 오후 01:00</div>
-                </div>
-                <div>
-                  <div className="text-gray-300">점심시간</div>
-                  <div>오후 12:30 ~ 오후 01:30</div>
-                </div>
-              </div>
-              <div className="mt-6">
-                <div className="flex items-center gap-2 mb-4">
-                  <span className="text-lg font-bold">건강증진센터/종합검진센터</span>
-                </div>
-                <div className="space-y-2">
-                  <div>
-                    <div className="text-gray-300">평 일</div>
-                    <div>오전 08:00~오후 04:00</div>
+            <div className="space-y-6">
+              <div className="space-y-4">
+                <h3 className="text-2xl font-bold pb-3 border-b border-blue-400">외래진료</h3>
+                <div className="space-y-4">
+                  <div className="space-y-2">
+                    <h4 className="text-lg text-blue-200">평 일</h4>
+                    <p className="font-medium">오전 09:00 ~ 오후 05:00</p>
                   </div>
-                  <div>
-                    <div className="text-gray-300">토요일</div>
-                    <div>오전 08:00~오후 12:00</div>
+                  <div className="space-y-2">
+                    <h4 className="text-lg text-blue-200">토요일</h4>
+                    <p className="font-medium">오전 09:00 ~ 오후 01:00</p>
+                  </div>
+                  <div className="space-y-2">
+                    <h4 className="text-lg text-blue-200">점심시간</h4>
+                    <p className="font-medium">오후 12:30 ~ 오후 01:30</p>
+                  </div>
+                </div>
+              </div>
+              <div className="space-y-4">
+                <h3 className="text-2xl font-bold pb-3 border-b border-blue-400">건강증진센터/종합검진센터</h3>
+                <div className="space-y-4">
+                  <div className="space-y-2">
+                    <h4 className="text-lg text-blue-200">평 일</h4>
+                    <p className="font-medium">오전 08:00~오후 04:00</p>
+                  </div>
+                  <div className="space-y-2">
+                    <h4 className="text-lg text-blue-200">토요일</h4>
+                    <p className="font-medium">오전 08:00~오후 12:00</p>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* 통합진료실·주사실 */}
-            <div>
-              <div className="flex items-center gap-2 mb-4">
-                <span className="text-lg font-bold">통합진료실·주사실</span>
-              </div>
-              <div className="space-y-2">
-                <div>
-                  <div className="text-gray-300">평 일</div>
-                  <div>오전 09:00 ~ 오후 05:30</div>
+            <div className="space-y-4">
+              <h3 className="text-2xl font-bold pb-3 border-b border-blue-400">통합진료실·주사실</h3>
+              <div className="space-y-4">
+                <div className="space-y-2">
+                  <h4 className="text-lg text-blue-200">평 일</h4>
+                  <p className="font-medium">오전 09:00 ~ 오후 05:30</p>
                 </div>
-                <div>
-                  <div className="text-gray-300">토요일</div>
-                  <div>오전 09:00 ~ 오후 01:30</div>
+                <div className="space-y-2">
+                  <h4 className="text-lg text-blue-200">토요일</h4>
+                  <p className="font-medium">오전 09:00 ~ 오후 01:30</p>
                 </div>
               </div>
             </div>
           </div>
-    </div>
+        </div>
       </section>
 
       <Footer />

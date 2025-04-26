@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 const Menu = () => {
   const menuItems = [
@@ -61,33 +62,41 @@ const Menu = () => {
   ];
 
   return (
-    <nav className="bg-gray-800 text-white relative z-50">
+    <motion.nav 
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="bg-gradient-to-r from-[#B8D8EB] to-[#9CC7E5] text-gray-700 sticky top-0 z-50 shadow-lg"
+    >
       <div className="container mx-auto px-8">
-        <ul className="flex space-x-8 py-4">
-          {menuItems.map((item, index) => (
-            <li key={index} className="group relative">
-              <button className="px-4 py-2 hover:bg-gray-700 transition-colors duration-200">
-                {item.title}
-              </button>
-              <div className="absolute hidden group-hover:block w-48 bg-white text-gray-800 shadow-lg rounded-lg">
-                <ul className="py-2">
-                  {item.subItems.map((subItem, subIndex) => (
-                    <li key={subIndex}>
-                      <Link 
-                        href={subItem.link} 
-                        className="block px-4 py-2 hover:bg-blue-500 hover:text-white transition-colors duration-200"
-                      >
-                        {subItem.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </li>
-          ))}
-        </ul>
+        <div className="max-w-5xl mx-auto">
+          <ul className="flex justify-center space-x-16 py-5">
+            {menuItems.map((item, index) => (
+              <li key={index} className="group relative">
+                <button className="text-lg font-medium px-2 py-1 hover:text-[#4A90BE] transition-colors duration-200 relative">
+                  {item.title}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#4A90BE] group-hover:w-full transition-all duration-300"></span>
+                </button>
+                <div className="absolute invisible opacity-0 translate-y-[-10px] group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 -left-8 mt-1 min-w-[200px] bg-white text-gray-700 shadow-xl rounded-lg overflow-hidden border-t-2 border-[#4A90BE]">
+                  <ul className="py-2">
+                    {item.subItems.map((subItem, subIndex) => (
+                      <li key={subIndex}>
+                        <Link 
+                          href={subItem.link} 
+                          className="block px-6 py-2.5 text-[15px] hover:bg-[#EDF5FA] hover:text-[#4A90BE] transition-colors duration-200 whitespace-nowrap"
+                        >
+                          {subItem.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 
