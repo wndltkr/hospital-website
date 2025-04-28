@@ -25,9 +25,11 @@ export default function Home() {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="w-full aspect-video relative bg-gray-100 flex items-center justify-center mb-12"
+        className="w-[80%] mx-auto bg-gray-100 py-12 mb-12"
       >
-        <p className="text-2xl text-gray-500">YouTube 영상이 들어갈 예정입니다</p>
+        <div className="h-[500px] relative flex items-center justify-center">
+          <p className="text-2xl text-gray-500">YouTube 영상이 들어갈 예정입니다</p>
+        </div>
       </motion.section>
 
       {/* Slideshow and Notice Section */}
