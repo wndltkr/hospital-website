@@ -45,7 +45,7 @@ export default function GreetingPage() {
                 className="w-1/3"
               >
                 <Image
-                  src="/images/director.jpg"
+                  src="/images/about/about-img01.jpg"
                   alt="병원장"
                   width={400}
                   height={500}
@@ -60,10 +60,11 @@ export default function GreetingPage() {
                 className="w-2/3"
               >
                 <p className="text-[#2B4B6B] tracking-widest mb-4">SEKANG HOSPITAL</p>
-                <h2 className="text-3xl font-bold text-[#4ABAFF] mb-6">&quot;세강병원은 꿈입없이 발전합니다.&quot;</h2>
+                <h2 className="text-3xl font-bold text-[#4ABAFF] mb-6">&quot;세강병원은 끊임없이 발전합니다.&quot;</h2>
                 <div className="space-y-4 text-gray-700 leading-relaxed">
                   <p>세강병원은 1984년 개원 이후 40여년간 지역민들의 꾸준한 애정과 관심으로 이만큼 성장하였습니다.</p>
-                  <p>그에 보답하고자 꾸준히 자동화된 검사기기를 도입하고 정기적인 정도 관리제를 시행하여<br/>반나절 안에 진료부터 진단까지 정확하고 신속하게 결과를 볼 수 있도록 하고 있습니다.</p>
+                  <p>그에 보답하고자 꾸준히 자동화된 검사기기를 도입하고 정기적인 정도 관리제를 시행하여<br/>
+                  반나절 안에 진료부터 진단까지 정확하고 신속하게 결과를 볼 수 있도록 하고 있습니다.</p>
                   <p>또한 우수한 의료진을 확보하고 해외파견교육을 통해 진료의 전문화를 이루고자 전력을 다하여 왔습니다.</p>
                 </div>
               </motion.div>
@@ -104,7 +105,7 @@ export default function GreetingPage() {
                 className="w-1/3"
               >
                 <Image
-                  src="/images/medical-consultation.jpg"
+                  src="/images/about/about-img02.jpg"
                   alt="의료 상담"
                   width={400}
                   height={300}
@@ -133,7 +134,7 @@ export default function GreetingPage() {
                 className="w-1/3"
               >
                 <Image
-                  src="/images/medical-service.jpg"
+                  src="/images/about/about-img03.jpg"
                   alt="의료 서비스"
                   width={400}
                   height={300}
@@ -159,8 +160,8 @@ export default function GreetingPage() {
         </section>
 
         {/* Nurse Team Section */}
-        <section className="relative py-32 bg-[url('/images/nurse-team-bg.jpg')] bg-cover bg-center">
-          <div className="absolute inset-0 bg-black/50"></div>
+        <section className="relative py-32 bg-[url('/images/about/about_fot_img.jpg')] bg-cover bg-center">
+          <div className="absolute inset-0 "></div>
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect } from 'react';
+import Script from 'next/script';
 
 declare global {
   interface Window {
@@ -46,45 +47,41 @@ declare global {
 
 const Map = () => {
   useEffect(() => {
-    const script = document.createElement('script');
-    script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_MAP_API_KEY}&autoload=false`;
-    script.async = true;
+    if (typeof window !== 'undefined' && window.kakao) {
+      const container = document.getElementById('map');
+      if (!container) return;
 
-    document.head.appendChild(script);
+      const options = {
+        center: new window.kakao.maps.LatLng(35.8714354, 128.601445), // 세강병원 좌표
+        level: 3
+      };
+      const map = new window.kakao.maps.Map(container, options);
 
-    script.onload = () => {
-      window.kakao.maps.load(() => {
-        const container = document.getElementById('map');
-        if (!container) return;
-
-        const options = {
-          center: new window.kakao.maps.LatLng(37.5665, 126.9780),
-          level: 3,
-        };
-
-        const map = new window.kakao.maps.Map(container, options);
-
-        const marker = new window.kakao.maps.Marker({
-          position: options.center,
-        });
-
-        marker.setMap(map);
-
-        const infoWindow = new window.kakao.maps.InfoWindow({
-          content: '<div style="padding:5px;">세강병원</div>',
-          position: options.center,
-        });
-
-        infoWindow.open(map, marker);
+      // 마커 생성
+      const markerPosition = new window.kakao.maps.LatLng(35.8714354, 128.601445);
+      const marker = new window.kakao.maps.Marker({
+        position: markerPosition
       });
-    };
+      marker.setMap(map);
 
-    return () => {
-      document.head.removeChild(script);
-    };
+      // 인포윈도우 생성
+      const infowindow = new window.kakao.maps.InfoWindow({
+        content: '<div style="padding:5px;">세강병원</div>',
+        position: markerPosition
+      });
+      infowindow.open(map, marker);
+    }
   }, []);
 
-  return <div id="map" className="w-full h-[400px]"></div>;
+  return (
+    <>
+      <Script
+        strategy="afterInteractive"
+        src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_MAP_API_KEY}&autoload=false`}
+      />
+      <div id="map" className="w-full h-[400px] rounded-lg"></div>
+    </>
+  );
 };
 
 export default Map; 
