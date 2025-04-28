@@ -9,6 +9,7 @@ import Menu from '@/components/Menu';
 import PageBanner from '@/components/PageBanner';
 import YouTubeSection from '@/components/YouTubeSection';
 import TabNavigation from '@/components/TabNavigation';
+import InfoSection from '@/components/InfoSection';
 
 export default function ColorectalPage() {
   const [activeTab, setActiveTab] = useState('levator');
@@ -52,34 +53,17 @@ export default function ColorectalPage() {
           {activeTab === 'levator' && (
             <div className="space-y-0">
               {/* 항문거근증후군 설명 섹션 */}
-              <div className="w-full">
-                <div className="container mx-auto px-4">
-                  <div className="flex gap-8">
-                    <div className="w-[400px] flex-shrink-0">
-                      <Image
-                        src="/images/centers/levator-syndrome.jpg"
-                        alt="항문거근증후군"
-                        width={400}
-                        height={300}
-                        className="w-full"
-                        priority
-                      />
-                    </div>
-                    <div className="flex-1">
-                      <h2 className="text-[#0066CC] tracking-[0.2em] text-base">SEKANG HOSPITAL</h2>
-                      <h3 className="text-[32px] font-bold">항문거근증후군</h3>
-                      <div className="mt-4">
-                        <p className="text-lg">
-                          골반이 약해진 사람들에게 잘 생기는 병입니다.
-                        </p>
-                        <p className="text-lg mt-2">
-                          항문을 둘러싸는 근육이자 항문 괄약근 중에서도 가장 깊은 곳에 있는 항문 거근에 이상이 생겨 발생하는 질환입니다.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <InfoSection
+                image="/images/centers/anus-img01.jpg"
+                alt="항문거근증후군"
+                title="항문거근증후군"
+                subtitle="SEKANG HOSPITAL"
+                descriptions={[
+                  "골반이 약해진 사람들에게 잘 생기는 병입니다.",
+                  "항문을 둘러싸는 근육이자 항문 괄약근 중에서도 가장 깊은 곳에 있는 항문 거근에 이상이 생겨 발생하는 질환입니다."
+                ]}
+                imagePosition="left" // 또는 "right"
+              />
 
               {/* 항문거근증후군 원인 섹션 */}
               <div className="w-full bg-white">
@@ -108,34 +92,19 @@ export default function ColorectalPage() {
               </div>
 
               {/* 항문거근증후군 검사 섹션 */}
-              <div className="w-full bg-white">
-                <div className="container mx-auto px-4">
-                  <h2 className="text-[#0066CC] tracking-[0.2em] text-base">SEKANG HOSPITAL</h2>
-                  <h3 className="text-[32px] font-bold">항문거근증후군 검사</h3>
-                  <div className="flex gap-8 mt-6">
-                    <div className="flex-1">
-                      <p className="text-lg mb-4">
-                        정확한 진단을 위해선 몇 가지 조건이 충족되어야 합니다.
-                      </p>
-                      <p className="text-lg mb-4">
-                        만성적이거나 반복적인 직장통과 치핵, 근육 내 농양, 염증성 장 질환 등 직장통의 다른 원인이 배제된 뒤여야 가능합니다.
-                      </p>
-                      <p className="text-lg">
-                        임상 치료 경험이 적거나 관련 전문의가 아니면 쉽게 진단을 내리지 못하지만 경험이 풍부한 전문의의 경우 검사로 골반 근육의 수축 정도를 체크하면 바로 알 수 있는 심리도 어려운 질환입니다.
-                      </p>
-                    </div>
-                    <div className="w-[400px] flex-shrink-0">
-                      <Image
-                        src="/images/centers/levator-examination.jpg"
-                        alt="항문거근증후군 검사"
-                        width={400}
-                        height={300}
-                        className="w-full"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <InfoSection
+                image="/images/centers/anus-img02.jpg"
+                alt="항문거근증후군 검사"
+                title="항문거근증후군 검사"
+                subtitle="SEKANG HOSPITAL"
+                descriptions={[
+                  "정확한 진단을 위해선 몇 가지 조건이 충족되어야 합니다.",
+                  "만성적이거나 반복적인 직장통과 치핵, 근육 내 농양, 염증성 장 질환 등 직장통의 다른 원인이 배제된 뒤여야 가능합니다.",
+                  "임상 치료 경험이 적거나 관련 전문의가 아니면 쉽게 진단을 내리지 못하지만 경험이 풍부한 전문의의 경우 검사로 골반 근육의 수축 정도를 체크하면 바로 알 수 있는 심리도 어려운 질환입니다."
+                ]}
+                imagePosition="right" // 또는 "right"
+              />
+              
 
               {/* 항문거근증후군 치료 섹션 */}
               <div className="w-full bg-white">
@@ -186,45 +155,18 @@ export default function ColorectalPage() {
           {activeTab === 'hemorrhoid' && (
             <div className="space-y-0">
               {/* 치핵(치질) 설명 섹션 */}
-              <div className="w-full">
-                <div className="container mx-auto px-4">
-                  <div className="flex gap-8">
-                    <div className="w-[400px] flex-shrink-0">
-                      <Image
-                        src="/images/centers/hemorrhoid.jpg"
-                        alt="치핵(치질)"
-                        width={400}
-                        height={300}
-                        className="w-full"
-                        priority
-                      />
-                    </div>
-                    <div className="flex-1">
-                      <h2 className="text-[#0066CC] tracking-[0.2em] text-base">SEKANG HOSPITAL</h2>
-                      <h3 className="text-[32px] font-bold">치핵(치질)</h3>
-                      <div className="mt-4">
-                        <p className="text-lg">
-                          항문 안쪽의 혈관이 늘어나서 그것을 덮고 있는 점막이 함께 늘어져 빠져나온 상태를 말합니다.
-                        </p>
-                        <div className="mt-4">
-                          <div className="flex items-start gap-3">
-                            <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[#0066CC] text-white flex items-center justify-center mt-1">
-                              1
-                            </div>
-                            <p className="text-lg">내치핵 : 항문지상선 안쪽에 발생하는 치핵, 일반적인 치핵 항문관 안쪽의 구성조이 반복적인 손상으로 탄력을 잃어버리고, 점차 바깥쪽으로 탈출되는 질환</p>
-                          </div>
-                          <div className="flex items-start gap-3 mt-3">
-                            <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[#0066CC] text-white flex items-center justify-center mt-1">
-                              2
-                            </div>
-                            <p className="text-lg">외치핵 : 지상선 바깥쪽에 발생하는 치핵으로 대개는 항문주위의 정맥이 피떡이 되어 항문 밖에 절액이 고여 등증을 유발하는 혈전성 치핵</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <InfoSection
+                image="/images/centers/anus-img02.jpg"
+                alt="치핵(치질)"
+                title="치핵(치질)"
+                subtitle="SEKANG HOSPITAL"
+                descriptions={[
+                  "항문 안쪽의 혈관이 늘어나서 그것을 덮고 있는 점막이 함께 늘어져 빠져나온 상태를 말합니다.",
+                  "내치핵 : 항문지상선 안쪽에 발생하는 치핵, 일반적인 치핵 항문관 안쪽의 구성조이 반복적인 손상으로 탄력을 잃어버리고, 점차 바깥쪽으로 탈출되는 질환",
+                  "외치핵 : 지상선 바깥쪽에 발생하는 치핵으로 대개는 항문주위의 정맥이 피떡이 되어 항문 밖에 절액이 고여 등증을 유발하는 혈전성 치핵"
+                ]}
+                imagePosition="left" // 또는 "right"
+              />
               
               {/* 치핵(치질) 증상 섹션 */}
               <div className="w-full bg-white">
@@ -323,43 +265,17 @@ export default function ColorectalPage() {
               </div>
 
               {/* 치핵(치질) 치료 섹션 */}
-              <div className="w-full bg-white">
-                <div className="container mx-auto px-4">
-                  <div className="flex gap-8">
-                    <div className="flex-1">
-                      <h2 className="text-[#0066CC] tracking-[0.2em] text-base">SEKANG HOSPITAL</h2>
-                      <h3 className="text-[32px] font-bold">치핵(치질)의 치료</h3>
-                      <div className="mt-8 space-y-6">
-                        <div>
-                          <div className="flex items-start gap-4">
-                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center mt-1">
-                              1
-                            </div>
-                            <span className="text-lg font-medium">임시치료 : 적절한 용법과 용량으로 밴드결찰술, 적외선 또는 고무 전기를 이용한 치핵쇄약술, 레이저를 이용한 소작술 이러한 치료들은 거의 당일치료가 가능하지만 완벽하게 없앨 수 없어, 근본적인 치료가 될 수 없어 재발하는 극존율 발생합니다.</span>
-                          </div>
-                        </div>
-                        <div>
-                          <div className="flex items-start gap-4">
-                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center mt-1">
-                              2
-                            </div>
-                            <span className="text-lg font-medium">근본치료 : 핵을 뿌리째 잘라내서 치체해야 하는 수술적 치료입니다.</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="w-[400px] flex-shrink-0">
-                      <Image
-                        src="/images/centers/hemorrhoid-treatment.jpg"
-                        alt="치핵(치질)의 치료"
-                        width={400}
-                        height={300}
-                        className="w-full"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <InfoSection
+                image="/images/centers/anus-img02.jpg"
+                alt="치핵(치질)의 치료"
+                title="치핵(치질)의 치료"
+                subtitle="SEKANG HOSPITAL"
+                descriptions={[
+                  "임시치료 : 적외선 응고법, 밴드결찰술, 직류 혹은 교류 전기를 이용한 치핵소작술, 레이저를 이용한 소작술 이러한 치료들은 커진 덩어리를 어느 정도까지 줄일 수는 있지만 완벽하게 없앨 수 없으며, 근본적인 치료가 될 수 없어 재발하는 악순환 발생합니다.",
+                  "근본치료 : 핵을 뿌리째 뽑는 유일한 방법은 의사가 눈으로 보면서 치핵 덩어리를 세밀히 절제해내는 것 입니다."
+                ]}
+                imagePosition="left" // 또는 "right"
+              />
 
               {/* 치핵수술 전문의 섹션 */}
               <div className="w-full bg-[#F4F4F5]">
@@ -455,24 +371,16 @@ export default function ColorectalPage() {
               {/* 하이브리드 PPH 치질수술 섹션 */}
               <div className="w-full">
                 <div className="container mx-auto px-4 py-20">
-                  <div className="flex gap-8">
-                    <div className="w-[400px] flex-shrink-0">
-                      <Image
-                        src="/images/centers/hybrid-pph.jpg"
-                        alt="하이브리드 PPH치질수술"
-                        width={400}
-                        height={300}
-                        className="w-full"
-                      />
-                    </div>
-                    <div className="flex-1">
-                      <h2 className="text-[#0066CC] tracking-[0.2em] text-base">SEKANG HOSPITAL</h2>
-                      <h3 className="text-[32px] font-bold">하이브리드 PPH치질수술</h3>
-                      <p className="text-lg mt-4">
-                        기존 치질 수술과 단점을 획기적으로 해결해 준는 새로운 치질 수술법입니다. 늘어진 내치핵과 점막주름을 원형으로 절제하고 동시에 봉합하는 자동 문합기로 제거해 주는 수술법입니다.
-                      </p>
-                    </div>
-                  </div>
+                <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="하이브리드 PPH 치질수술"
+                  title="하이브리드 PPH 치질수술"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "기존 치질 수술과 단점을 획기적으로 해결해 준는 새로운 치질 수술법입니다. 늘어진 내치핵과 점막주름을 원형으로 절제하고 동시에 봉합하는 자동 문합기로 제거해 주는 수술법입니다."
+                  ]}
+                  imagePosition="left" // 또는 "right"
+                />
 
                   <div className="mt-12">
                     <table className="w-full border-collapse">
@@ -500,19 +408,17 @@ export default function ColorectalPage() {
               </div>
 
               {/* 하이브리드 PPH치질수술과 기존 치질 수술의 차이점 섹션 */}
-              <div className="w-full">
-                <div className="container mx-auto px-4 py-20">
-                  <h2 className="text-[#0066CC] tracking-[0.2em] text-base">SEKANG HOSPITAL</h2>
-                  <h3 className="text-[32px] font-bold">하이브리드 PPH치질수술과 기존 치질<br />수술의 차이점</h3>
-                  
-                  <p className="text-lg mt-4">
-                    기존 치질 수술은 항문 안쪽에서 치핵을 절제했지만 하이브리드 PPH치질수술은 치상선보다 더 안쪽에서 절제와 봉합이 이루어지기 때문에 기존 수술보다 통증이 매우 적고 회복도 빠른 편입니다.
-                  </p>
-                  <p className="text-lg mt-4">
-                    하이브리드 PPH치질수술의 보험 적용이 확대되어 현저한 비용 부담이 줄어들었습니다.
-                  </p>
-                </div>
-              </div>
+              <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="하이브리드 PPH치질수술과 기존 치질 수술의 차이점"
+                  title="하이브리드 PPH치질수술과 기존 치질 수술의 차이점"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "기존 치질 수술은 항문 안팎에서 치핵을 절제했지만 하이브리드 PPH치질수술은 치상선보다 더 안쪽의 신경 분포가 거의 없는 위치에서 절제와 봉합이 이루어지기 때문에 기존 수술보다 통증이 적고 회복이 빨라 수술 후 만족도가 매우 높습니다.",
+                    "하이브리드 PPH치질수술의 보험 적용이 확대되어 환자분 비용 부담이 줄어들었습니다."
+                  ]}
+                  imagePosition="right" // 또는 "right"
+                />
 
               {/* 하이브리드 PPH치질수술 과정 섹션 */}
               <div className="w-full">
@@ -553,59 +459,30 @@ export default function ColorectalPage() {
           {activeTab === 'fistula' && (
             <div className="space-y-0">
               {/* 항문주위농양 섹션 */}
-              <div className="w-full">
-                <div className="container mx-auto px-4">
-                  <div className="flex gap-8">
-                    <div className="w-[400px] flex-shrink-0">
-                      <Image
-                        src="/images/centers/anal-abscess.jpg"
-                        alt="항문주위농양"
-                        width={400}
-                        height={300}
-                        className="w-full"
-                        priority
-                      />
-                    </div>
-                    <div className="flex-1">
-                      <h2 className="text-[#0066CC] tracking-[0.2em] text-base">SEKANG HOSPITAL</h2>
-                      <h3 className="text-[32px] font-bold">항문주위농양</h3>
-                      <p className="text-lg mt-4">
-                        항문 안쪽에 있는 항문샘들이 동해서 점막주름에 고름이 잡히는 것을 말합니다. 거의 대부분 치루로 진행됩니다.
-                      </p>
-                      <p className="text-lg mt-4">
-                        주요 증상 : 항문 주위 통증의 심화 및 물살이를 동반합니다.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="항문주위농양"
+                  title="항문주위농양"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "항문 안쪽에 있는 항문샘들이 동해서 점막주름에 고름이 잡히는 것을 말합니다. 거의 대부분 치루로 진행됩니다.",
+                    "주요 증상 : 항문 주위 통증의 심화 및 물살이를 동반합니다."
+                  ]}
+                  imagePosition="left" // 또는 "right"
+                />
 
               {/* 치루 섹션 */}
-              <div className="w-full">
-                <div className="container mx-auto px-4">
-                  <div className="flex gap-8">
-                    <div className="w-[400px] flex-shrink-0">
-                      <Image
-                        src="/images/centers/anal-fistula.jpg"
-                        alt="치루"
-                        width={400}
-                        height={300}
-                        className="w-full"
-                      />
-                    </div>
-                    <div className="flex-1">
-                      <h2 className="text-[#0066CC] tracking-[0.2em] text-base">SEKANG HOSPITAL</h2>
-                      <h3 className="text-[32px] font-bold">치루</h3>
-                      <p className="text-lg mt-4">
-                        항문 안쪽에서 항문 주위 피부까지 구멍이 생겨 고름이 나오는 상태를 말합니다. 대부분 항문주위농양에서 진행됩니다.
-                      </p>
-                      <p className="text-lg mt-4">
-                        주요 증상 : 항문 주위의 분비물과 통증이 반복적으로 발생합니다.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="치루"
+                  title="치루"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "항문 안쪽에서 항문 주위 피부까지 구멍이 생겨 고름이 나오는 상태를 말합니다. 대부분 항문주위농양에서 진행됩니다.",
+                    "주요 증상 : 항문 주위의 분비물과 통증이 반복적으로 발생합니다."
+                  ]}
+                  imagePosition="right" // 또는 "right"
+                />
 
               {/* 치루 방법 섹션 */}
               <div className="w-full">
@@ -646,32 +523,17 @@ export default function ColorectalPage() {
           {activeTab === 'fissure' && (
             <div className="space-y-0">
               {/* 치열 설명 섹션 */}
-              <div className="w-full">
-                <div className="container mx-auto px-4">
-                  <div className="flex gap-8">
-                    <div className="w-[400px] flex-shrink-0">
-                      <Image
-                        src="/images/centers/anal-fissure.jpg"
-                        alt="치열"
-                        width={400}
-                        height={300}
-                        className="w-full"
-                        priority
-                      />
-                    </div>
-                    <div className="flex-1">
-                      <h2 className="text-[#0066CC] tracking-[0.2em] text-base">SEKANG HOSPITAL</h2>
-                      <h3 className="text-[32px] font-bold">치열</h3>
-                      <p className="text-lg mt-4">
-                        항문관막구이 심화화되어 종아지면서 변을 볼 때 찢어지는 병입니다.
-                      </p>
-                      <p className="text-lg mt-4">
-                        감각이 예민한 부위가 찢어지기 때문에 변을 볼 때 통증과 출혈이 나타나고 생각하시면 됩니다. 통계적으로 나와 있진 않지만 오래된 치루에서는 염이 발생하는 것으로 알려져 있습니다.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="치열"
+                  title="치열"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "항문괄약근이 섬유화되어 좁아지면서 변을 볼 때 찢어지는 병입니다.",
+                    "감각이 예민한 부위가 찢어지기 때문에 변을 볼 때 통증과 출혈이 나타납니다. 이런 증상이 반복된다면 항문을 넓혀주는 수술을 받으시는 것이 좋습니다."
+                  ]}
+                  imagePosition="left" // 또는 "right"
+                />
 
               {/* 치열의 치료 섹션 */}
               <div className="w-full">
@@ -780,15 +642,17 @@ export default function ColorectalPage() {
               </div>
 
               {/* 만성 치열 섹션 */}
-              <div className="w-full bg-[#F4F4F5]">
-                <div className="container mx-auto px-4 py-20">
-                  <h2 className="text-[#0066CC] tracking-[0.2em] text-base">SEKANG HOSPITAL</h2>
-                  <h3 className="text-[32px] font-bold">만성 치열</h3>
-                  <p className="text-lg mt-4">
-                    이미 항문내괄약근의 변화가 있는 상태이기 때문에 근본적인 해결을 위해서 심화된 내괄약근을 부분절개하는 부분적 내괄약근 절개술이 필요합니다.
-                  </p>
-                </div>
-              </div>
+              <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="만성 치열"
+                  title="만성 치열"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "이미 항문내괄약근의 변화가 와 있는 상태이기 때문에 근본적인 해결을 위해서 섬유화된 내괄약근의 부분절단이 필요합니다.",
+                    <><span className="text-blue-600">※ 내괄약근 절단술 (섬유화되어 신전성(탄력)을 잃고 좁아져 있는 내괄약근을 부분적으로 잘라주는 방법)</span></>
+                  ]}
+                  imagePosition="left" // 또는 "right"
+                />
 
               {/* 유튜브 섹션 */}
               <YouTubeSection

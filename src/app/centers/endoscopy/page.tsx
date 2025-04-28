@@ -9,6 +9,7 @@ import Menu from '@/components/Menu';
 import PageBanner from '@/components/PageBanner';
 import YouTubeSection from '@/components/YouTubeSection';
 import TabNavigation from '@/components/TabNavigation';
+import InfoSection from '@/components/InfoSection';
 
 export default function EndoscopyPage() {
   const [activeTab, setActiveTab] = useState('colonoscopy');
@@ -50,32 +51,17 @@ export default function EndoscopyPage() {
           {activeTab === 'colonoscopy' && (
             <div className="space-y-0">
               {/* 대장내시경 설명 섹션 */}
-              <div className="w-full">
-                <div className="container mx-auto px-4">
-                  <div className="flex gap-8">
-                    <div className="w-[400px] flex-shrink-0">
-                      <Image
-                        src="/images/centers/colonoscopy.jpg"
-                        alt="대장내시경"
-                        width={400}
-                        height={300}
-                        className="w-full"
-                        priority
-                      />
-                    </div>
-                    <div className="flex-1">
-                      <h2 className="text-[#0066CC] tracking-[0.2em] text-base">SEKANG HOSPITAL</h2>
-                      <h3 className="text-[32px] font-bold">대장내시경</h3>
-                      <p className="text-lg mt-4 leading-relaxed text-gray-800">
-                        항문으로 내시경이라는 특수한 카메라를 삽입하여 대장 내부 및 대장과 인접한 소장의 말단 부위까지를 관찰하는 검사로 대장암과 염증성 장질환의 진단에 매우 중요한 검사입니다.
-                      </p>
-                      <p className="text-lg mt-6 leading-relaxed text-gray-800">
-                        대장내시경은 검사 소견이 정상이라면 3년 후, 용종이 발견되어 절제술을 받은 경우라면 선종의 종류에 따라 6개월~1년 주기로 검사를 진행해야 합니다.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="대장 내시경"
+                  title="대장 내시경"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "항문으로 내시경이라는 특수한 카메라를 삽입하여 대장 내부 및 대장과 인접한 소장의 말단 부위까지를 관찰하는 검사로 대장암과 염증성 장질환의 진단에 매우 중요한 검사입니다.",
+                    "대장내시경은 검사 소견이 정상이라면 3년 후, 용종이 발견되어 절제술을 받은 경우라면 선종의 종류에 따라 6개월~1년 주기로 검사를 진행해야 합니다."
+                  ]}
+                  imagePosition="left" // 또는 "right"
+                />
 
               {/* 대장내시경 검사가 필요한 경우 섹션 */}
               <div className="w-full bg-[#F4F4F5]">
@@ -164,77 +150,29 @@ export default function EndoscopyPage() {
               </div>
 
               {/* CO2 무통 대장내시경 섹션 */}
-              <div className="w-full bg-[#F4F4F5]">
-                <div className="container mx-auto px-4 py-20">
-                  <div className="flex gap-12 items-start max-w-6xl mx-auto">
-                    <div className="flex-1">
-                      <h2 className="text-[#0066CC] tracking-[0.2em] text-base">SEKANG HOSPITAL</h2>
-                      <h3 className="text-[32px] font-bold mb-6">CO2를 이용한 무통 방식으로 진행</h3>
-                      <h4 className="text-[32px] font-bold mb-8">대장내시경</h4>
-                      <p className="text-lg leading-relaxed text-gray-800 mb-12">
-                        대장내시경 검사 시 일반 공기 대신 의료용 이산화탄소(CO2)를 주입하여 환자의 불편함과 통증을 줄이고 빠른 회복을 돕는 대장내시경 검사 방법입니다.
-                      </p>
-                      <div className="w-full border rounded-lg overflow-hidden">
-                        <table className="w-full">
-                          <thead>
-                            <tr className="bg-gray-50">
-                              <th className="py-4 px-6 text-center text-lg font-medium text-gray-800 border-b w-1/2">일반 공기</th>
-                              <th className="py-4 px-6 text-center text-lg font-medium text-[#0066CC] border-b w-1/2">의료용 이산화탄소(CO2)</th>
-                            </tr>
-                          </thead>
-                          <tbody className="divide-y">
-                            <tr>
-                              <td className="py-4 px-6">검사 후 복통과 복부팽만감 발생</td>
-                              <td className="py-4 px-6 text-[#0066CC]">수면대장내시경</td>
-                            </tr>
-                            <tr>
-                              <td className="py-4 px-6">장 내막으로의 빠른 흡수</td>
-                              <td className="py-4 px-6 text-[#0066CC]">복통 및 불편함 감소</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                    <div className="w-[400px] flex-shrink-0">
-                      <Image
-                        src="/images/centers/co2-colonoscopy.jpg"
-                        alt="CO2 대장내시경"
-                        width={400}
-                        height={400}
-                        className="w-full rounded-lg"
-                        priority
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="CO2를 이용한 무통 방식으로 진행 대장내시경"
+                  title="CO2를 이용한 무통 방식으로 진행 대장내시경"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "대장내시경 검사 시 일반 공기 대신 의료용 이산화탄소(CO2)를 주입하여 환자의 불편함과 통증을 줄이고 빠른 회복을 돕는 대장내시경 검사 방법입니다."
+                  ]}
+                  imagePosition="right" // 또는 "right"
+                />
 
               {/* CO2의 장점 섹션 */}
-              <div className="w-full bg-white">
-                <div className="container mx-auto px-4 py-20">
-                  <div className="flex gap-12 items-start max-w-6xl mx-auto">
-                    <div className="w-[400px] flex-shrink-0">
-                      <Image
-                        src="/images/centers/co2-advantages.jpg"
-                        alt="의료용 이산화탄소의 장점"
-                        width={400}
-                        height={400}
-                        className="w-full rounded-lg"
-                        priority
-                      />
-                    </div>
-                    <div className="flex-1">
-                      <h2 className="text-[32px] font-bold mb-8">의료용 이산화탄소(CO2)의 장점</h2>
-                      <p className="text-lg leading-relaxed text-gray-800 mb-6">
-                        검사 시 주입되는 일반 공기는 검사 후 복통과 더불어 복부팽만감, 지속적인 가스 배출 등의 불편함을 초래했습니다.
-                      </p>
-                      <p className="text-lg leading-relaxed text-gray-800">
-                        그러나 의료용 이산화탄소(CO2)는 약 30분~1시간이라는 짧은 시간 안에 장 내벽에 흡수되어 기존 대장내시경 검사에 따른 불편함이 크게 개선됐습니다.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="의료용 이산화탄소(CO2)의 장점"
+                  title="의료용 이산화탄소(CO2)의 장점"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "검사 시 주입되는 일반 공기는 검사 후 복통과 더불어 복부팽만감, 지속적 가스 배출 등의 불편함을 초래했습니다.",
+                    "그러나 의료용 이산화탄소(CO2)는 약 30분~1시간이라는 짧은 시간 안에 장 내벽에 흡수되어 기존 대장내시경 검사에 따른 불편함이 크게 개선됐습니다."
+                  ]}
+                  imagePosition="left" // 또는 "right"
+                />
 
               {/* 대장용종의 종류 섹션 */}
               <div className="w-full bg-[#F4F4F5]">
@@ -382,32 +320,16 @@ export default function EndoscopyPage() {
               </div>
 
               {/* 대장암 섹션 */}
-              <div className="w-full bg-white">
-                <div className="container mx-auto px-4 py-20">
-                  <div className="flex gap-12 items-start max-w-6xl mx-auto">
-                    <div className="flex-1">
-                      <h2 className="text-[#0066CC] tracking-[0.2em] text-base">SEKANG HOSPITAL</h2>
-                      <h3 className="text-[32px] font-bold mb-8">대장암</h3>
-                      <p className="text-lg leading-relaxed text-gray-800 mb-6">
-                        충수, 맹장, 결장, 직장, 항문관 등으로 나누는 대장 중에서도 맹장과 결장, 직장에 생기는 악성 종양을 보고 대장암이라고 합니다.
-                      </p>
-                      <p className="text-lg leading-relaxed text-gray-800">
-                        대부분은 점막의 샘세포에 생기는 암이고 이 외에도 림프종이나 악성 유암종, 평활근육종 등이 원발성으로 생기기도 합니다.
-                      </p>
-                    </div>
-                    <div className="w-[400px] flex-shrink-0">
-                      <Image
-                        src="/images/centers/colon-cancer.jpg"
-                        alt="대장암"
-                        width={400}
-                        height={400}
-                        className="w-full rounded-lg"
-                        priority
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="대장암"
+                  title="대장암"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "충수, 맹장, 결장, 직장, 항문관 등으로 나뉘는 대장 중에서도 맹장과 결장, 직장에 생기는 악성 종양을 보고 대장암이라고 합니다. 대부분은 점막의 샘세포에 생기는 암이고 이 외에도 림프종이나 악성 유암종, 평활근육종 등이 원발성으로 생기기도 합니다."
+                  ]}
+                  imagePosition="right" // 또는 "right"
+                />
 
               {/* 대장암 치료방법 섹션 */}
               <div className="w-full bg-[#F4F4F5]">
@@ -484,30 +406,17 @@ export default function EndoscopyPage() {
               </div>
 
               {/* 내시경 점막하 절제술 섹션 */}
-              <div className="w-full bg-white">
-                <div className="container mx-auto px-4 py-20">
-                  <div className="flex gap-12 items-start max-w-6xl mx-auto">
-                    <div className="w-[400px] flex-shrink-0">
-                      <Image
-                        src="/images/centers/esd.jpg"
-                        alt="내시경 점막하 절제술"
-                        width={400}
-                        height={300}
-                        className="w-full rounded-lg"
-                        priority
-                      />
-                    </div>
-                    <div className="flex-1">
-                      <h2 className="text-[#0066CC] tracking-[0.2em] text-base">SEKANG HOSPITAL</h2>
-                      <h3 className="text-[32px] font-bold">내시경 점막하 절제술</h3>
-                      <h4 className="text-[32px] font-bold mb-8">(endoscopic submucosal dissection, ESD)</h4>
-                      <p className="text-lg leading-relaxed text-gray-800">
-                        ESD는 수술을 하지 않고도 조기 대장암을 치료할 수 있는 최신 내시경 치료법으로 점막 밑에 약물을 주입하여 병변을 부풀린 후 내시경을 통해 삽입한 특수 절개도를 절개한 후 점막하층을 박리하여 병변을 제거하는 방법입니다.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="내시경 점막하 절제술"
+                  title="내시경 점막하 절제술"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "ESD는 수술을 하지 않고도 조기 대장암을 치료할 수 있는 최신 내시경 치료법으로 점막 밑에 약물을 주입하여 병변을 부풀린 후 내시경을 통해 삽입한 특수 절개도를 절개한 후 점막하층을 박리하여 병변을 제거하는 방법입니다."
+                  ]}
+                  imagePosition="left" // 또는 "right"
+                />
+
 
               {/* 유튜브 섹션 */}
               <YouTubeSection
@@ -522,32 +431,17 @@ export default function EndoscopyPage() {
           {activeTab === 'gastroscopy' && (
             <div className="space-y-0">
               {/* 위내시경 설명 섹션 */}
-              <div className="w-full">
-                <div className="container mx-auto px-4">
-                  <div className="flex gap-12 items-start max-w-6xl mx-auto">
-                    <div className="w-[400px] flex-shrink-0">
-                      <Image
-                        src="/images/centers/gastroscopy.jpg"
-                        alt="위내시경"
-                        width={400}
-                        height={300}
-                        className="w-full rounded-lg"
-                        priority
-                      />
-                    </div>
-                    <div className="flex-1">
-                      <h2 className="text-[#0066CC] tracking-[0.2em] text-base">SEKANG HOSPITAL</h2>
-                      <h3 className="text-[32px] font-bold">위내시경</h3>
-                      <p className="text-lg leading-relaxed text-gray-800 mt-8">
-                        위내시경은 상부 위장관 내시경 검사로 식도와 위는 물론 십이지장에 발생하는 여러 종류의 질환 (예:위암, 위궤양, 십이지장궤양, 식도염, 위염 등)을 진단하는데 있어 가장 기본적인 검사입니다.
-                      </p>
-                      <p className="text-lg leading-relaxed text-gray-800 mt-6">
-                        위내시경은 위암 조기발견을 위해 가장 중요한 검사이며, 각종 위장 질환을 정확하고 빠르게 진단하여 빠른 치료를 가능하게 합니다.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="위내시경"
+                  title="위내시경"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "위내시경은 상부 위장관 내시경 검사로 식도와 위는 물론 십이지장에 발생하는 여러 종류의 질환 (예:위암, 위궤양, 십이지장궤양, 식도염, 위염 등)을 진단하는데 있어 가장 기본적인 검사입니다.",
+                    "위내시경은 위암 조기발견을 위해 가장 중요한 검사이며, 각종 위장 질환을 정확하고 빠르게 진단하여 빠른 치료를 가능하게 합니다."
+                  ]}
+                  imagePosition="left" // 또는 "right"
+                />
 
               {/* 위내시경 검사 전&후 주의사항 섹션 */}
               <div className="w-full bg-[#F4F4F5]">
@@ -608,32 +502,17 @@ export default function EndoscopyPage() {
               </div>
 
               {/* 위내시경의 진단 - 치료내시경 섹션 */}
-              <div className="w-full bg-white">
-                <div className="container mx-auto px-4 py-20">
-                  <div className="flex gap-12 items-start max-w-6xl mx-auto">
-                    <div className="flex-1">
-                      <h2 className="text-[#0066CC] tracking-[0.2em] text-base">SEKANG HOSPITAL</h2>
-                      <h3 className="text-[32px] font-bold mb-8">위내시경의 진단 - 치료내시경</h3>
-                      <p className="text-lg leading-relaxed text-gray-800 mb-6">
-                        과거에는 단순히 진단을 위한 내시경이었지만 지금은 가장 기본적인 검사입니다.
-                      </p>
-                      <p className="text-lg leading-relaxed text-gray-800">
-                        위내시경은 위암 조기 발견을 위해 가장 중요한 검사이며, 각종 위장 질환 (식도염, 위도염, 위궤양, 십이지장궤양)을 정확하고 빠르게 진단하여 빠른 치료를 가능하게 합니다.
-                      </p>
-                    </div>
-                    <div className="w-[400px] flex-shrink-0">
-                      <Image
-                        src="/images/centers/gastroscopy-treatment.jpg"
-                        alt="치료내시경"
-                        width={400}
-                        height={300}
-                        className="w-full rounded-lg"
-                        priority
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="위내시경의 진단 - 치료내시경"
+                  title="위내시경의 진단 - 치료내시경"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "과거에는 단순히 진단을 위한 내시경이었지만 지금은 진단뿐만 아니라내시경 장비 및 시술의 발전으로 내시경적 수술적 치료가 가능해지고 있습니다.",
+                    "응급지혈술, 점막절제술, 이물제거술, 조기암수술등의 치료내시경이 시술 되고 있습니다."
+                  ]}
+                  imagePosition="right" // 또는 "right"
+                />
 
               {/* 인용구 섹션 */}
               <div className="w-full bg-[url('/images/centers/gastroscopy-bg.jpg')] bg-cover bg-center relative">

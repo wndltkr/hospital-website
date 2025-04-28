@@ -9,6 +9,7 @@ import Menu from '@/components/Menu';
 import PageBanner from '@/components/PageBanner';
 import YouTubeSection from '@/components/YouTubeSection';
 import TabNavigation from '@/components/TabNavigation';
+import InfoSection from '@/components/InfoSection';
 
 export default function ObesityPage() {
   const [activeTab, setActiveTab] = useState('iv');
@@ -49,26 +50,17 @@ export default function ObesityPage() {
         >
           {activeTab === 'iv' && (
             <div className="container mx-auto px-4">
-              <div className="flex gap-16">
-                <div className="w-[460px] h-[340px] relative border border-gray-100">
-                  <Image
-                    src="/images/centers/iv-intro.jpg"
-                    alt="수액 프로그램"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="flex-1">
-                  <div className="mb-8">
-                    <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">S E K A N G   H O S P I T A L</p>
-                    <h2 className="text-4xl font-bold">수액 프로그램</h2>
-                  </div>
-                  <p className="text-gray-800 text-lg leading-[1.8]">
-                    환자 개인별 상태에 따라 부족한 영양성분을 선택하여 체내에 빠르게 공급합니다. 영양과 면역력 저하가 원인이 되어 발생할 수 있는 각종 질환들을 미리 예방하고 신체 균형을 맞춰 더 건강한 삶을 유지하실 수 있습니다.<br /><br />
-                    세로움 수액센터에서는 환자 증상에 맞는 체계적이고 안전한 진료 환경 속에서 환자별 맞춤 특탁 솔루션을 제공하여 삶의 에너지를 보충해드리고 있습니다.
-                  </p>
-                </div>
-              </div>
+              <InfoSection
+                image="/images/centers/anus-img02.jpg"
+                alt="수액 프로그램"
+                title="수액 프로그램"
+                subtitle="SEKANG HOSPITAL"
+                descriptions={[
+                  "환자 개인별 상태에 따라 부족한 영양성분을 선택하여 체내에 빠르게 공급합니다. 영양과 면역력 저하가 원인이 되어 발생할 수 있는 각종 질환들을 미리 예방하고 신체 균형을 맞춰 더 건강한 삶을 유지하실 수 있습니다.",
+                  "세로움 수액센터에서는 환자 증상에 맞는 체계적이고 안전한 진료 환경 속에서 환자별 맞춤 특탁 솔루션을 제공하여 삶의 에너지를 보충해드리고 있습니다."
+                ]}
+                imagePosition="left" // 또는 "right"
+              />
 
               <div className="mt-20">
                 <div className="mb-12 text-center">
@@ -629,28 +621,17 @@ export default function ObesityPage() {
           {activeTab === 'obesity' && (
             <>
               <div className="container mx-auto px-4">
-                <div className="flex gap-16">
-                  <div className="w-[460px] h-[340px] relative border border-gray-100">
-                    <Image
-                      src="/images/centers/obesity-intro.jpg"
-                      alt="세로움 비만센터"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="flex-1">
-                    <div className="mb-8">
-                      <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">S E K A N G   H O S P I T A L</p>
-                      <h2 className="text-4xl font-bold">세로움 비만센터</h2>
-                    </div>
-                    <p className="text-gray-800 text-lg leading-[1.8]">
-                      질병관리청에 따르면 2023년 기준 우리나라 30~50대 2명 중 1명이 비만이라고 나타났습니다.<br />
-                      매년 약 5.4% 증가하고 있습니다.<br /><br />
-                      비만은 고혈압, 당뇨병 등을 비롯하여 만성질환의 원인이고,<br />
-                      사람마다 가지 질환이 다르기 때문에 이제는 단순관리가 아닌 치료의 차원에서 접근해야 합니다.
-                    </p>
-                  </div>
-                </div>
+              <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="세로움 비만센터"
+                  title="세로움 비만센터"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "질병관리청에 따르면 2023년 기준 우리나라 30~50대 2명 중 1명이 비만이라고 나타났습니다.매년 약 5.4% 증가하고 있습니다.",
+                    "비만은 비만성 질환의 원인이 되어 체중 증가, 비만 증가, 비만 관련 질환 발생 가능성 증가, 삶의 질 저하 등 다양한 문제를 야기합니다."
+                  ]}
+                  imagePosition="left" // 또는 "right"
+                />
 
                 {/* 비만 기준 섹션 */}
                 <div className="mt-20">

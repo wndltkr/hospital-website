@@ -9,7 +9,7 @@ import Menu from '@/components/Menu';
 import PageBanner from '@/components/PageBanner';
 import YouTubeSection from '@/components/YouTubeSection';
 import TabNavigation from '@/components/TabNavigation';
-
+import InfoSection from '@/components/InfoSection';
 export default function HealthPage() {
   const [activeTab, setActiveTab] = useState('intro');
 
@@ -50,28 +50,16 @@ export default function HealthPage() {
           className="py-12"
         >
           {activeTab === 'intro' && (
-            <div className="container mx-auto px-4">
-              <div className="flex gap-16">
-                <div className="w-[460px] h-[340px] relative border border-gray-100">
-                  <Image
-                    src="/images/centers/health-intro.jpg"
-                    alt="건강증진센터"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="flex-1">
-                  <div className="mb-8">
-                    <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">S E K A N G   H O S P I T A L</p>
-                    <h2 className="text-4xl font-bold">건강증진센터</h2>
-                  </div>
-                  <p className="text-gray-800 text-lg leading-[1.8]">
-                    보다 건강한 삶을 위해 질병의 예방과 조기 발견을 목적으로 심사하게 되는 검진 프로그램을 담당하는 건강증진센터입니다.<br /><br />
-                    건강검진은 건강하실 때 정기적으로 받으시는 것이 좋습니다.
-                  </p>
-                </div>
-              </div>
-            </div>
+            <InfoSection
+              image="/images/centers/anus-img02.jpg"
+              alt="건강증진센터"
+              title="건강증진센터"
+              subtitle="SEKANG HOSPITAL"
+              descriptions={[
+                "보다 건강한 삶을 위해 질병의 예방과 조기 발견을 목적으로 실시하게 되는 검진 프로그램을 담당하는 건강증진센터입니다. 건강검진은 건강하실 때 정기적으로 받으시는 것이 좋습니다."
+              ]}
+              imagePosition="left" // 또는 "right"
+            />
           )}
 
           {activeTab === 'intro' && (
@@ -214,27 +202,16 @@ export default function HealthPage() {
 
           {activeTab === 'checkup' && (
             <>
-              <div className="container mx-auto px-4">
-                <div className="flex gap-16">
-                  <div className="w-[460px] h-[340px] relative border border-gray-100">
-                    <Image
-                      src="/images/centers/checkup-intro.jpg"
-                      alt="종합검진"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="flex-1">
-                    <div className="mb-8">
-                      <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">S E K A N G   H O S P I T A L</p>
-                      <h2 className="text-4xl font-bold">세강병원 종합검진</h2>
-                    </div>
-                    <p className="text-gray-800 text-lg leading-[1.8]">
-                      양질의 의료서비스를 제공하는 세강병원의 기본 종합검진 항목을 소개합니다.
-                    </p>
-                  </div>
-                </div>
-              </div>
+            <InfoSection
+              image="/images/centers/anus-img02.jpg"
+              alt="세강병원 종합검진"
+              title="세강병원 종합검진"
+              subtitle="SEKANG HOSPITAL"
+              descriptions={[
+                "양질의 의료서비스를 제공하는 세강병원의 기본 종합검진 항목을 소개합니다."
+              ]}
+              imagePosition="left" // 또는 "right"
+            />
 
               <div className="container mx-auto px-4 mt-20">
                 <div className="mb-8">
@@ -685,26 +662,60 @@ export default function HealthPage() {
               </div>
 
               <div className="container mx-auto px-4 mt-20">
-                <div className="flex items-start gap-12">
-                  <div className="w-[400px] h-[300px] relative">
-                    <Image
-                      src="/images/centers/checkup-guide.jpg"
-                      alt="종합검진 안내"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="flex-1">
-                    <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">S E K A N G   H O S P I T A L</p>
-                    <h2 className="text-4xl font-bold mb-8">종합검진 안내</h2>
-                    <div className="space-y-2">
-                      <p>· 검진 요일 : 월요일 ~ 토요일</p>
-                      <p>· 평일 : 오전 8시 ~ 오후 4시</p>
-                      <p>· 토요일 : 오전 8시 ~ 오후 12시</p>
-                      <p className="text-sm text-gray-500 mt-4">※ 예약을 하시면 보다 편리하게 검진 받으실 수 있습니다.</p>
-                    </div>
-                  </div>
-                </div>
+              <InfoSection
+                image="/images/centers/anus-img02.jpg"
+                alt="종합검진 안내"
+                title="종합검진 안내"
+                subtitle="SEKANG HOSPITAL"
+                descriptions={[
+                  "검진 요일 : 월요일 ~ 토요일",
+                  "평일 : 오전 8시 ~ 오후 4시",
+                  "토요일 : 오전 8시 ~ 오후 12시",
+                  "※ 예약을 하시면 보다 편리하게 검진 받으실 수 있습니다."
+                ]}
+                imagePosition="left" // 또는 "right"
+              />
+
+              <InfoSection
+                image="/images/centers/anus-img02.jpg"
+                alt="종합검진 시 주의사항"
+                title="종합검진 시 주의사항"
+                subtitle="SEKANG HOSPITAL"
+                descriptions={[
+                  "검진 전일 : 저녁식사는 가볍게 드시고 저녁 9시 이후에는 아무것도 드시지 마십시오.",
+                  "평검진 당일 : 아침식사는 물론 약, 담배, 커피, 물 등 일체 음식물을 금하고 공복 상태로 오십시오.",
+                  "혈압약, 심장약, 천식약을 드시는 분은 오전 7시에 (물 조금) 드시고 오세요.",
+                  "당뇨약이나 다른 약은 드시지 마십시오."
+                ]}
+                imagePosition="right" // 또는 "right"
+              />
+
+              <InfoSection
+                image="/images/centers/anus-img02.jpg"
+                alt="검진결과 이상 시 관리사항"
+                title="검진결과 이상 시 관리사항"
+                subtitle="SEKANG HOSPITAL"
+                descriptions={[
+                  "유소견자에 대해서는 처방전 발급 및 치료",
+                  "조직 검사 및 용종 제거 즉시 시술",
+                  "검사 결과 사후 시스템에서 지속적인 관리"
+                ]}
+                imagePosition="left" // 또는 "right"
+              />
+
+              <InfoSection
+                image="/images/centers/anus-img02.jpg"
+                alt="검진 결과 통보 및 상담"
+                title="검진 결과 통보 및 상담"
+                subtitle="SEKANG HOSPITAL"
+                descriptions={[
+                  "당일 검사 결과 검진 전문의와 상담",
+                  "종합 검사 결과 등기우편 발송",
+                  "※ 오후에 상담 및 내원하시면 더욱 편리하게 받으실 수 있습니다."
+                ]}
+                imagePosition="right" // 또는 "right"
+              />
+
 
                 <div className="flex items-start gap-12 mt-20">
                   <div className="flex-1">
@@ -743,46 +754,6 @@ export default function HealthPage() {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-12 mt-20">
-                  <div className="w-[400px] h-[300px] relative">
-                    <Image
-                      src="/images/centers/checkup-management.jpg"
-                      alt="검진결과 이상 시 관리사항"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="flex-1">
-                    <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">S E K A N G   H O S P I T A L</p>
-                    <h2 className="text-4xl font-bold mb-8">검진결과 이상 시 관리사항</h2>
-                    <div className="space-y-2">
-                      <p>· 우소견자에 대해서는 전문적인 발급 및 치료</p>
-                      <p>· 조직 검사 및 용종 제거 즉시 시술</p>
-                      <p>· 검사 결과 사후 시스템에서 지속적인 관리</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-12 mt-20">
-                  <div className="flex-1">
-                    <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">S E K A N G   H O S P I T A L</p>
-                    <h2 className="text-4xl font-bold mb-8">검진 결과 통보 및 상담</h2>
-                    <div className="space-y-2">
-                      <p>· 당일 검사 결과 검진 전문의와 상담</p>
-                      <p>· 종합 검사 결과 등기우편 발송</p>
-                      <p className="text-sm text-gray-500 mt-4">※ 오후에 상담 및 내원하시면 더욱 편리하게 받으실 수 있습니다.</p>
-                    </div>
-                  </div>
-                  <div className="w-[400px] h-[300px] relative">
-                    <Image
-                      src="/images/centers/checkup-result.jpg"
-                      alt="검진 결과 통보 및 상담"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                </div>
-
                 <div className="relative w-full h-[400px] mt-20">
                   <div className="absolute inset-0">
                     <Image
@@ -807,46 +778,28 @@ export default function HealthPage() {
 
           {activeTab === 'custom' && (
             <div className="container mx-auto px-4">
-              <div className="flex gap-16">
-                <div className="w-[460px] h-[340px] relative border border-gray-100">
-                  <Image
-                    src="/images/centers/custom-intro.jpg"
-                    alt="공무원, 교직원 특별 종합검진"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="flex-1">
-                  <div className="mb-8">
-                    <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">S E K A N G   H O S P I T A L</p>
-                    <h2 className="text-4xl font-bold">공무원, 교직원 특별 종합검진</h2>
-                  </div>
-                  <p className="text-gray-800 text-lg leading-[1.8]">
-                    공무원, 교직원을 대상으로 국민건강보험공단 검진과 병행하여 여러 정밀 건강진단 항목을 선택하여 검진을 시행하는 프로그램입니다.
-                  </p>
-                </div>
-              </div>
+              <InfoSection
+                image="/images/centers/anus-img02.jpg"
+                alt="공무원, 교직원 특별 종합검진"
+                title="공무원, 교직원 특별 종합검진"
+                subtitle="SEKANG HOSPITAL"
+                descriptions={[
+                  "공무원, 교직원을 대상으로 국민건강보험공단 검진과 병행하여 여러 정밀 건강진단 항목을 선택하여 검진을 시행하는 프로그램입니다."
+                ]}
+                imagePosition="left" // 또는 "right"
+              />
 
-              <div className="flex gap-16 mt-20">
-                <div className="flex-1">
-                  <div className="mb-8">
-                    <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">S E K A N G   H O S P I T A L</p>
-                    <h2 className="text-4xl font-bold">기업임직원 맞춤형 검진</h2>
-                  </div>
-                  <p className="text-gray-800 text-lg leading-[1.8]">
-                    기업체 임직원을 대상으로 기본 건강진단과 여러 정밀진단 항목들로 구성된 프로그램입니다.<br />
-                    검진 기업별로 다양한 검진 프로그램이 정해집니다.
-                  </p>
-                </div>
-                <div className="w-[460px] h-[340px] relative border border-gray-100">
-                  <Image
-                    src="/images/centers/custom-corporate.jpg"
-                    alt="기업임직원 맞춤형 검진"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </div>
+              <InfoSection
+                image="/images/centers/anus-img02.jpg"
+                alt="기업임직원 맞춤형 검진"
+                title="기업임직원 맞춤형 검진"
+                subtitle="SEKANG HOSPITAL"
+                descriptions={[
+                  "기업체 임직원을 대상으로 기본 건강진단과 여러 정밀진단 항목들로 구성된 프로그램입니다.",
+                  "검진 기업별로 다양한 검진 프로그램이 정해집니다."
+                ]}
+                imagePosition="right" // 또는 "right"
+              />
 
               <div className="relative w-full h-[400px] mt-20">
                 <div className="absolute inset-0">
@@ -878,31 +831,20 @@ export default function HealthPage() {
 
           {activeTab === 'reservation' && (
             <div className="container mx-auto px-4">
-              <div className="flex gap-16">
-                <div className="w-[460px] h-[340px] relative border border-gray-100">
-                  <Image
-                    src="/images/centers/reservation-intro.jpg"
-                    alt="건강증진센터 예약안내"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="flex-1">
-                  <div className="mb-8">
-                    <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">S E K A N G   H O S P I T A L</p>
-                    <h2 className="text-4xl font-bold">건강증진센터 예약안내</h2>
-                  </div>
-                  <p className="text-gray-800 text-lg leading-[1.8]">
-                    2014년부터 내시경(위, 대장) 예약제로 실시합니다.<br />
-                    건강검진은 종합검진, 일반 검진으로 나누어 예약하실 수 있습니다.<br />
-                    종합검진 및 국민건강보험공단 건강검진(일반 검진)은 예약 후 검진하실 수 있습니다.
-                  </p>
-                  <div className="mt-8 space-y-2">
-                    <p className="text-[#0066CC]">건강증진센터 : 053) 620-6159, 6160</p>
-                    <p className="text-[#0066CC]">종합검진센터 : 053) 620-6332, 6333</p>
-                  </div>
-                </div>
-              </div>
+              <InfoSection
+                image="/images/centers/anus-img02.jpg"
+                alt="건강증진센터 예약안내"
+                title="건강증진센터 예약안내"
+                subtitle="SEKANG HOSPITAL"
+                descriptions={[
+                  "2014년부터 내시경(위, 대장) 예약제로 실시합니다.",
+                  "건강검진은 종합검진, 일반 검진으로 나누어 예약하실 수 있습니다.",
+                  "종합검진 및 국민건강보험공단 건강검진(일반 검진)은 예약 후 검진하실 수 있습니다.",
+                  "건강검진센터 : 053) 620-6159, 6160",
+                  "종합검진센터 : 053) 620-6332, 6333"
+                ]}
+                imagePosition="left" // 또는 "right"
+              />
 
               <div className="mt-20">
                 <div className="mb-8">
