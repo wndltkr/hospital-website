@@ -243,7 +243,7 @@ export default function InternalMedicineCenterPage() {
               <div className="container mx-auto px-4 mt-32">
               <InfoSection
                   image="/images/centers/anus-img02.jpg"
-                  alt="고지혈증"
+                      alt="고지혈증"
                   title="고지혈증"
                   subtitle="SEKANG HOSPITAL"
                   descriptions={[
@@ -341,7 +341,7 @@ export default function InternalMedicineCenterPage() {
             <div className="container mx-auto px-4">
               <InfoSection
                   image="/images/centers/anus-img02.jpg"
-                  alt="당뇨병"
+                    alt="당뇨병"
                   title="당뇨병"
                   subtitle="SEKANG HOSPITAL"
                   descriptions={[
@@ -1602,7 +1602,7 @@ export default function InternalMedicineCenterPage() {
                     <div className="text-center mb-12">
                       <p className="text-white tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
                       <h2 className="text-white text-4xl font-bold">천식 치료법</h2>
-                    </div>
+            </div>
 
                     <div className="space-y-8">
                       {/* 증상 완화제 */}
@@ -1691,7 +1691,7 @@ export default function InternalMedicineCenterPage() {
 
               {/* 만성폐쇄성폐질환(COPD) 주요증상 섹션 */}
               <div className="relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] w-screen bg-[#1A4B8E] mt-32">
-                <div className="container mx-auto px-4">
+            <div className="container mx-auto px-4">
                   <div className="py-16">
                     <div className="text-center mb-12">
                       <p className="text-white tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>

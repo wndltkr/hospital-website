@@ -10,6 +10,7 @@ import PageBanner from '@/components/PageBanner';
 import YouTubeSection from '@/components/YouTubeSection';
 import TabNavigation from '@/components/TabNavigation';
 import InfoSection from '@/components/InfoSection';
+import BannerSection from '@/components/BannerSection';
 
 export default function ColorectalPage() {
   const [activeTab, setActiveTab] = useState('levator');
@@ -66,30 +67,16 @@ export default function ColorectalPage() {
               />
 
               {/* 항문거근증후군 원인 섹션 */}
-              <div className="w-full bg-white">
-                <div className="container mx-auto px-4">
-                  <h2 className="text-[#0066CC] tracking-[0.2em] text-base">SEKANG HOSPITAL</h2>
-                  <h3 className="text-[32px] font-bold">항문거근증후군 원인</h3>
-                  <div className="mt-6">
-                    <div className="flex items-start">
-                      <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[#0066CC] text-white flex items-center justify-center mr-3">
-                        1
-                      </div>
-                      <p className="text-lg flex-1">
-                        출산 경험이 많거나 반복적으로 주운 곳에 오랫동안 쪼그려 앉아 있는 등, 골반을 많이 쓰는 여성들에게 많이 나타납니다.
-                      </p>
-                    </div>
-                    <div className="flex items-start mt-3">
-                      <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[#0066CC] text-white flex items-center justify-center mr-3">
-                        2
-                      </div>
-                      <p className="text-lg flex-1">
-                        의자에 앉을 때 엉덩이를 빼고 앉는 습관이 있는 경우 골반 근육이 이래로 내려 앉아 항문거근증후군이 생기게 될 가능성이 높아집니다.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <BannerSection
+          backgroundImage="/images/about/about_fot_img.jpg"
+          title={[
+            "항문거근증후군 원인"
+          ]}
+          description={[
+            "출산 경험이 많거나 반복적으로 주운 곳에 오랫동안 쪼그려 앉아 있는 등, 골반을 많이 쓰는 여성들에게 많이 나타납니다.",
+            "의자에 앉을 때 엉덩이를 빼고 앉는 습관이 있는 경우 골반 근육이 이래로 내려 앉아 항문거근증후군이 생기게 될 가능성이 높아집니다."
+          ]}
+        />
 
               {/* 항문거근증후군 검사 섹션 */}
               <InfoSection
@@ -133,16 +120,14 @@ export default function ColorectalPage() {
               </div>
 
               {/* 인용구 섹션 */}
-              <div className="w-full bg-[#F4F4F5]">
-                <div className="container mx-auto px-4 py-20 relative">
-                  <div className="text-[32px] font-medium text-center leading-relaxed">
-                    세강병원은 풍부한 임상경험을 갖춘 의료진이<br />
-                    숙련된 실력과 노하우로 만족스러운 결과를 안겨드립니다.
-                  </div>
-                  <div className="absolute left-12 top-0 text-[120px] text-[#0066CC] opacity-20">&quot;</div>
-                  <div className="absolute right-12 bottom-0 text-[120px] text-[#0066CC] opacity-20">&quot;</div>
-                </div>
-              </div>
+              <BannerSection
+          backgroundImage="/images/about/about_fot_img.jpg"
+          title={[
+            "세강병원은 풍부한 임상경험을 갖춘 의료진이",
+            "숙련된 실력과 노하우로 만족스러운 결과를 안겨드립니다."
+          ]}
+          description=""
+        />
 
               <YouTubeSection
           videoId="VIDEO_ID"
@@ -278,32 +263,17 @@ export default function ColorectalPage() {
               />
 
               {/* 치핵수술 전문의 섹션 */}
-              <div className="w-full bg-[#F4F4F5]">
-                <div className="container mx-auto px-4 py-20">
-                  <h2 className="text-[#0066CC] tracking-[0.2em] text-base">SEKANG HOSPITAL</h2>
-                  <h3 className="text-[32px] font-bold mb-8">치핵수술을 대장항문 전문 의사에게 맡겨야 합니다.</h3>
-                  <div className="space-y-4">
-                    <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center">
-                        1
-                      </div>
-                      <p className="text-lg flex-1">치핵 덩어리와 주위의 경계가 뚜렷하지 않아 무조건 다 잘라내면 원하지 않은 부위까지 어디를 얼마만큼 절과하고 남겨야 할지를 결정하는 것이 매우 어렵습니다.</p>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center">
-                        2
-                      </div>
-                      <p className="text-lg flex-1">또 치핵 수술 후에도 항문 기능이 잘 유지되도록 해야 하므로 경험이 없거나 의사는 조금만 절과하는 소극적 수술을 하기 쉽고 이로 인해 재발하는 가능성이 높아집니다.</p>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center">
-                        3
-                      </div>
-                      <p className="text-lg flex-1">치핵 수술은 절제 후 정밀하게 성형을 해주어야 합니다. 그렇지 않을 경우 수술 후 항문이 깨끗하게 되지 않습니다.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <BannerSection
+          backgroundImage="/images/about/about_fot_img.jpg"
+          title={[
+            "치핵수술을 대장항문 전문 의사에게 맡겨야 합니다."
+          ]}
+          description={[
+            "치핵 덩어리와 주위의 경계가 뚜렷하지 않아 무조건 다 잘라내면 원하지 않은 부위까지 어디를 얼마만큼 절과하고 남겨야 할지를 결정하는 것이 매우 어렵습니다.",
+            "또 치핵 수술 후에도 항문 기능이 잘 유지되도록 해야 하므로 경험이 없거나 의사는 조금만 절과하는 소극적 수술을 하기 쉽고 이로 인해 재발하는 가능성이 높아집니다.",
+            "치핵 수술은 절제 후 정밀하게 성형을 해주어야 합니다. 그렇지 않을 경우 수술 후 항문이 깨끗하게 되지 않습니다."
+          ]}
+        />
 
               {/* PPH 수술 섹션 */}
               <div className="w-full bg-[#0066CC]">
@@ -485,31 +455,19 @@ export default function ColorectalPage() {
                 />
 
               {/* 치루 방법 섹션 */}
-              <div className="w-full">
-                <div className="container mx-auto px-4">
-                  <h2 className="text-[#0066CC] tracking-[0.2em] text-base">SEKANG HOSPITAL</h2>
-                  <h3 className="text-[32px] font-bold">치루 방법</h3>
-                  
-                  <div className="mt-8">
-                    <table className="w-full border-collapse">
-                      <tbody>
-                        <tr className="border-t border-gray-200">
-                          <td className="py-4 px-6 w-40 text-lg font-medium">수술 전</td>
-                          <td className="py-4 px-6">탈출된 점막과 치핵 조직을 확인하고 절제할 위치를 정확히 파악합니다.</td>
-                        </tr>
-                        <tr className="border-t border-gray-200">
-                          <td className="py-4 px-6 w-40 text-lg font-medium">수술 과정</td>
-                          <td className="py-4 px-6">PPH 스테이플러 장치를 이용하여 불필요한 항문 조직과 치핵을 제거하고 다시 재조정</td>
-                        </tr>
-                        <tr className="border-t border-gray-200">
-                          <td className="py-4 px-6 w-40 text-lg font-medium">수술 후</td>
-                          <td className="py-4 px-6">항문 조직을 다시 원래대로 원형으로 회복시켜 줍니다.</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
+              <BannerSection
+          backgroundImage="/images/about/about_fot_img.jpg"
+          title={[
+            "치료방법"
+          ]}
+          description={[
+            "항문주위농양과 치루의 치료는 수술을 통해서만 가능합니다.",
+            "그 중에서도 항문주위농양은 응급수술을 받으셔야 합니다.",
+            "치루는 간혹 암으로 진행된다고 알려져 있기 때문에 발견하시면 빨리 수술을 받으시는 것이 좋습니다.",
+            "치루 수술은 수술 경험이 많은 숙련된 의사에게 맡겨야 합니다.",
+            "치루 수술은 항문 기능을 잘 유지하는 것이 중요하므로 복잡하고 세밀한 기술이 필요합니다."
+          ]}
+        />
 
               {/* 유튜브 섹션 */}
               <YouTubeSection
@@ -536,18 +494,14 @@ export default function ColorectalPage() {
                 />
 
               {/* 치열의 치료 섹션 */}
-              <div className="w-full">
-                <div className="container mx-auto px-4">
-                  <h2 className="text-[#0066CC] tracking-[0.2em] text-base">SEKANG HOSPITAL</h2>
-                  <h3 className="text-[32px] font-bold">치열의 치료</h3>
-                  <p className="text-lg mt-4">
-                    급성이나 만성 치열에서의 심한 통증을 줄이기 위해서는 진통제 복용과 적절한 용법과 용량으로 매우 국소적 적용이 필요합니다.
-                  </p>
-                  <p className="text-lg mt-4">
-                    매우 국소치료가 포함된 치열 연고를 사용하기도 합니다.
-                  </p>
-                </div>
-              </div>
+              <BannerSection
+          backgroundImage="/images/about/about_fot_img.jpg"
+          title={[
+            "치열의 치료"
+          ]}
+          description="급성이나 만성 치열에서의 심한 통증을 줄이기 위해서는 진통제 복용과 좌욕을 하는 것이 좋습니다.
+          때론 국소마취제가 포함된 치질 연고를 사용하기도 합니다."
+        />
 
               {/* 급성 치열 섹션 */}
               <div className="w-full bg-[#0066CC]">

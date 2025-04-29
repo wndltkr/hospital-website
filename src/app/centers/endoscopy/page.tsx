@@ -10,6 +10,7 @@ import PageBanner from '@/components/PageBanner';
 import YouTubeSection from '@/components/YouTubeSection';
 import TabNavigation from '@/components/TabNavigation';
 import InfoSection from '@/components/InfoSection';
+import BannerSection from '@/components/BannerSection';
 
 export default function EndoscopyPage() {
   const [activeTab, setActiveTab] = useState('colonoscopy');
@@ -63,57 +64,21 @@ export default function EndoscopyPage() {
                   imagePosition="left" // 또는 "right"
                 />
 
-              {/* 대장내시경 검사가 필요한 경우 섹션 */}
-              <div className="w-full bg-[#F4F4F5]">
-                <div className="container mx-auto px-4 py-20">
-                  <h2 className="text-[#0066CC] tracking-[0.2em] text-base">SEKANG HOSPITAL</h2>
-                  <h3 className="text-[32px] font-bold mb-12">대장내시경 검사가 필요한 경우</h3>
-                  <div className="grid grid-cols-1 gap-4">
-                    <div className="flex items-start gap-4">
-                      <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">
-                        1
-                      </div>
-                      <p className="text-lg mt-1">40대 이상 성인 중 대장내시경을 안 받아본 분</p>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">
-                        2
-                      </div>
-                      <p className="text-lg mt-1">배변 시 출혈이 있는 경우</p>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">
-                        3
-                      </div>
-                      <p className="text-lg mt-1">하루 3회 이상 대변을 보는 경우</p>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">
-                        4
-                      </div>
-                      <p className="text-lg mt-1">변비, 설사를 자주하는 경우</p>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">
-                        5
-                      </div>
-                      <p className="text-lg mt-1">점액변이 나오거나 대변이 가늘어진 경우</p>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">
-                        6
-                      </div>
-                      <p className="text-lg mt-1">부모나 형제 중 대장암이 있을 경우(20~30대도 권장)</p>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">
-                        7
-                      </div>
-                      <p className="text-lg mt-1">이유 없이 복통이나 원인 모를 빈혈이 지속될 경우</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+<BannerSection
+          backgroundImage="/images/about/about_fot_img.jpg"
+          title={[
+            "대장내시경 검사가 필요한 경우"
+          ]}
+          description={[
+            "40대 이상 성인 중 대장내시경을 안 받아본 분",
+            "배변 시 출혈이 있는 경우",
+            "하루 3회 이상 대변을 보는 경우",
+            "변비, 설사를 자주하는 경우",
+            "점액변이 나오거나 대변이 가늘어진 경우",
+            "부모나 형제 중 대장암이 있을 경우(20~30대도 권장)",
+            "이유 없이 복통이나 원인 모를 빈혈이 지속될 경우"
+          ]}
+        />
 
               {/* 대장내시경 검사 전&후 주의사항 섹션 */}
               <div className="w-full bg-white">
@@ -244,21 +209,13 @@ export default function EndoscopyPage() {
               </div>
 
               {/* 용종 관련 인용구 섹션 */}
-              <div className="w-full bg-[url('/images/centers/colonoscopy-bg.jpg')] bg-cover bg-center relative">
-                <div className="absolute inset-0 bg-black/50"></div>
-                <div className="container mx-auto px-4 py-20 relative">
-                  <div className="max-w-4xl mx-auto text-center text-white">
-                    <div className="text-[80px] text-[#0066CC] opacity-20 font-serif mb-4">&quot;</div>
-                    <p className="text-2xl leading-relaxed mb-4">
-                      용모상흑은 관상용모상 선종이나 톱니모양 선종이 확인 된 경우
-                    </p>
-                    <p className="text-2xl leading-relaxed">
-                      최소 6개월에서 1년 뒤 다시 한 번 대장내시경 검사를 받아보시기 바랍니다.
-                    </p>
-                    <div className="text-[80px] text-[#0066CC] opacity-20 font-serif mt-4">&quot;</div>
-                  </div>
-                </div>
-              </div>
+              <BannerSection
+                backgroundImage="/images/about/about_fot_img.jpg"
+                title={[
+                  "용모상흑은 관상용모상 선종이나 톱니모양 선종이 확인 된 경우",
+                  "최소 6개월에서 1년 뒤 다시 한 번 대장내시경 검사를 받아보시기 바랍니다."
+                ]}
+              />
 
               {/* 용종절제술 섹션 */}
               <div className="w-full bg-[#0066CC]">
@@ -515,19 +472,13 @@ export default function EndoscopyPage() {
                 />
 
               {/* 인용구 섹션 */}
-              <div className="w-full bg-[url('/images/centers/gastroscopy-bg.jpg')] bg-cover bg-center relative">
-                <div className="absolute inset-0 bg-black/50"></div>
-                <div className="container mx-auto px-4 py-20 relative">
-                  <div className="max-w-4xl mx-auto text-center text-white">
-                    <div className="text-[80px] text-[#0066CC] opacity-20 font-serif mb-4">&quot;</div>
-                    <p className="text-2xl leading-relaxed">
-                      세강병원은 풍부한 임상경험을 갖춘 의료진이<br />
-                      숙련된 실력과 노하우로 만족스러운 결과를 안겨드립니다.
-                    </p>
-                    <div className="text-[80px] text-[#0066CC] opacity-20 font-serif mt-4">&quot;</div>
-                  </div>
-                </div>
-              </div>
+              <BannerSection
+                backgroundImage="/images/about/about_fot_img.jpg"
+                title={[
+                  "세강병원은 풍부한 임상경험을 갖춘 의료진이",
+                  "숙련된 실력과 노하우로 만족스러운 결과를 안겨드립니다."
+                ]}
+              />
 
               {/* 위내시경 점막하 절제술 섹션 */}
               <div className="w-full bg-[#0066CC]">

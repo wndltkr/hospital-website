@@ -5,14 +5,13 @@ import Image from 'next/image';
 
 interface BannerSectionProps {
   backgroundImage: string;
-  subtitle: string;
-  title: string;
-  description: string;
+  title: string[];
+  description?: string | string[];
 }
 
-const BannerSection = ({ backgroundImage, subtitle, title, description }: BannerSectionProps) => {
+const BannerSection = ({ backgroundImage, title, description }: BannerSectionProps) => {
   return (
-    <div className="relative h-[400px] w-full">
+    <div className="relative min-h-[400px] w-full pt-20 pb-12">
       {/* 배경 이미지 */}
       <div className="absolute inset-0 z-0">
         <div className="relative w-full h-full">
@@ -26,44 +25,66 @@ const BannerSection = ({ backgroundImage, subtitle, title, description }: Banner
         </div>
       </div>
       
-      {/* 오버레이 */}
-      
       {/* 컨텐츠 */}
-      <div className="relative h-full flex items-center justify-center z-20">
+      <div className="relative flex items-center justify-center z-20">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-center gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-white text-center"
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-white text-center"
+          >
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+              className="text-lg md:text-xl font-light mb-2 text-[#87CEEB]"
             >
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.2, duration: 0.8 }}
-                className="text-lg md:text-xl font-light mb-2"
-              >
-                {subtitle}
-              </motion.p>
+              SEKANG HOSPITAL
+            </motion.p>
+            {title.map((line, index) => (
               <motion.h1
+                key={index}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 0.4, duration: 0.8 }}
+                transition={{ delay: 0.2 * (index + 1), duration: 0.8 }}
                 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4"
               >
-                {title}
+                {line}
               </motion.h1>
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.6, duration: 0.8 }}
-                className="text-base md:text-lg font-light"
-              >
-                {description}
-              </motion.p>
-            </motion.div>
-          </div>
+            ))}
+            {description && (
+              Array.isArray(description) ? (
+                <div className="flex flex-col items-start max-w-3xl mx-auto space-y-4 mt-8">
+                  {description.map((desc, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.2 * (title.length + index + 1), duration: 0.8 }}
+                      className="flex items-start gap-4"
+                    >
+                      <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#87CEEB] flex items-center justify-center text-base">
+                        {index + 1}
+                      </div>
+                      <p className="text-xl md:text-2xl font-normal text-left flex-1">
+                        {desc}
+                      </p>
+                    </motion.div>
+                  ))}
+                </div>
+              ) : (
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.2 * (title.length + 1), duration: 0.8 }}
+                  className="text-xl md:text-2xl font-normal mt-8"
+                >
+                  {description}
+                </motion.p>
+              )
+            )}
+          </motion.div>
         </div>
       </div>
     </div>
