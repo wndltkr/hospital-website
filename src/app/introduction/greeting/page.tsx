@@ -163,7 +163,6 @@ export default function GreetingPage() {
         {/* Nurse Team Section */}
         <BannerSection
           backgroundImage="/images/about/about_fot_img.jpg"
-          subtitle="SEKANG HOSPITAL"
           title={["세강병원은 자동화 검사기기, 정기적 정도 관리제 시행,"]}
           description="양질의 의료서비스를 통해 여러분의 건강 지킴이가 되고자 합니다."
         />
