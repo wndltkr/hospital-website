@@ -9,6 +9,7 @@ import Menu from '@/components/Menu';
 import PageBanner from '@/components/PageBanner';
 import YouTubeSection from '@/components/YouTubeSection';
 import TabNavigation from '@/components/TabNavigation';
+import InfoSection from '@/components/InfoSection';
 
 export default function ClinicCenterPage() {
   const [activeTab, setActiveTab] = useState('gallbladder');
@@ -52,28 +53,16 @@ export default function ClinicCenterPage() {
           {/* Tab content will be added here */}
           {activeTab === 'gallbladder' && (
             <div className="container mx-auto px-4">
-              <div className="flex items-start gap-16">
-                {/* 이미지 섹션 */}
-                <div className="w-[500px] h-[400px] relative flex-shrink-0">
-                  <Image
-                    src="/images/centers/gall-img01.jpg"
-                    alt="담석증"
-                    fill
-                    className="object-cover rounded-lg border border-gray-100"
-                  />
-                </div>
-                
-                {/* 텍스트 섹션 */}
-                <div className="flex-1">
-                  <div className="mb-8">
-                    <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
-                    <h2 className="text-[#1A1A1A] text-4xl font-bold">담석증</h2>
-                  </div>
-                  <p className="text-gray-700 text-lg leading-relaxed">
-                    여러 원인들로 인해 담즙내 구성 성분이 응결되거나 부착됨으로써 형성되는 결정성 구조물로 담낭으로 생긴 경우를 담석이라 합니다. 담석증을 일으키는 원인이 되는 음식은 콜레스테롤 함량이 많은 지방식이라고 알려져 있습니다.
-                  </p>
-                </div>
-              </div>
+              <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="담석증"
+                  title="담석증"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "여러 원인들로 인해 담즙내 구성 성분이 응결되거나 부착됨으로써 형성되는 결정성 구조물로 담낭으로 생긴 경우를 담석이라 합니다. 담석증을 일으키는 원인이 되는 음식은 콜레스테롤 함량이 많은 지방식이라고 알려져 있습니다.",
+                  ]}
+                  imagePosition="left" // 또는 "right"
+                />
 
               {/* 담석증 증상 섹션 */}
               <div className="relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] w-screen bg-[#1A4B8E] mt-32">
@@ -183,30 +172,16 @@ export default function ClinicCenterPage() {
               </div>
 
               {/* 담낭염 섹션 */}
-              <div className="container mx-auto px-4 mt-32">
-                <div className="flex items-start gap-16">
-                  {/* 텍스트 섹션 */}
-                  <div className="flex-1">
-                    <div className="mb-8">
-                      <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
-                      <h2 className="text-[#1A1A1A] text-4xl font-bold">담낭염</h2>
-                    </div>
-                    <p className="text-gray-700 text-lg leading-relaxed">
-                      담석, 수술 후 협착, 종양 등의 원인으로완전 혹은 불완전한 협착이 발생하여 혈류나 담관을 통해 장내 세균이 담즙 내에서 증식하면서 담낭(쓸개)에 염증을 일으키는 질환을 급성 담낭염이라고 합니다.
-                    </p>
-                  </div>
-
-                  {/* 이미지 섹션 */}
-                  <div className="w-[500px] h-[400px] relative flex-shrink-0">
-                    <Image
-                      src="/images/centers/gall-img02.jpg"
-                      alt="담낭염"
-                      fill
-                      className="object-cover rounded-lg border border-gray-100"
-                    />
-                  </div>
-                </div>
-              </div>
+              <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="담낭염"
+                  title="담낭염"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "담석, 수술 후 협착, 종양 등의 원인으로완전 혹은 불완전한 협착이 발생하여 혈류나 담관을 통해 장내 세균이 담즙 내에서 증식하면서 담낭(쓸개)에 염증을 일으키는 질환을 급성 담낭염이라고 합니다.",
+                  ]}
+                  imagePosition="left" // 또는 "right"
+                />
 
               {/* 담낭염 원인 섹션 */}
               <div className="relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] w-screen bg-[#1A4B8E] mt-32">
@@ -351,30 +326,16 @@ export default function ClinicCenterPage() {
               </div>
 
               {/* 담낭용종 섹션 */}
-              <div className="container mx-auto px-4 mt-32">
-                <div className="flex items-start gap-16">
-                  {/* 텍스트 섹션 */}
-                  <div className="flex-1">
-                    <div className="mb-8">
-                      <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
-                      <h2 className="text-[#1A1A1A] text-4xl font-bold">담낭용종</h2>
-                    </div>
-                    <p className="text-gray-700 text-lg leading-relaxed">
-                      건강검진상 발견되는 용종은 크기가 작고, 증상이 없는 경우가 대부분이기 때문에 용종의 크기와 초음파상 용종의 모습으로 쉽게 감별을 할 수 있습니다. 담낭용종은 콜레스테롤 용종과 선종의 감별이 가장 중요하며 선종은 전암병변으로 수술을 해야 합니다.
-                    </p>
-                  </div>
-
-                  {/* 이미지 섹션 */}
-                  <div className="w-[500px] h-[400px] relative flex-shrink-0">
-                    <Image
-                      src="/images/centers/gall-img03.jpg"
-                      alt="담낭용종"
-                      fill
-                      className="object-cover rounded-lg border border-gray-100"
-                    />
-                  </div>
-                </div>
-              </div>
+              <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="담낭용종"
+                  title="담낭용종"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "건강검진상 발견되는 용종은 크기가 작고, 증상이 없는 경우가 대부분이기 때문에 용종의 크기와 초음파상 용종의 모습으로 쉽게 감별을 할 수 있습니다. 담낭용종은 콜레스테롤 용종과 선종의 감별이 가장 중요하며 선종은 전암병변으로 수술을 해야 합니다.",
+                  ]}
+                  imagePosition="right" // 또는 "right"
+                />
 
               {/* 담낭용종 치료 섹션 */}
               <div className="relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] w-screen bg-[#1A4B8E] mt-32">
@@ -417,79 +378,36 @@ export default function ClinicCenterPage() {
               </div>
 
               {/* 복강경 수술 섹션 */}
-              <div className="container mx-auto px-4 mt-32">
-                <div className="max-w-7xl mx-auto">
-                  <div className="text-center mb-12">
-                    <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-4">SEKANG HOSPITAL</p>
-                    <h2 className="text-4xl font-bold">복강경 수술</h2>
-                  </div>
-
-                  <div className="flex flex-col items-center">
-                    {/* 이미지 섹션 */}
-                    <div className="w-full h-[500px] relative mb-12">
-                      <Image
-                        src="/images/centers/gall-img04.jpg"
-                        alt="복강경 수술"
-                        fill
-                        className="object-cover rounded-lg"
-                      />
-                    </div>
-
-                    {/* 텍스트 섹션 */}
-                    <div className="max-w-4xl text-center">
-                      <p className="text-gray-700 text-lg leading-relaxed mb-8">
-                        전통적으로 복부에 큰 절개창을 열고 시행하는 개복 수술과 달리, 복부에 0.5~1.5cm 크기의 작은 구멍(절개창)을 여러 개 내고, 그 안으로 비디오 카메라와 각종 기구들을 넣고 시행하는 수술 방법입니다.
-                      </p>
-                      <p className="text-gray-700 text-lg leading-relaxed mb-8">
-                        절개창 크기가 작아 수술 상처가 미용적으로 보기 좋고, 창상으로 인한 통증이 훨씬 적은 편입니다. 또한 빠른 회복 속도를 보여 재원기간이 짧고, 일상생활로 빠르게 복귀할 수 있다는 장점이 있습니다.
-                      </p>
-                      <p className="text-gray-700 text-lg leading-relaxed">
-                        다만, 각 수술에 따라 입원 기간 및 회복 기간은 다릅니다. 복강경 담낭절제술의 경우, 일반적으로 수술 후 1~2일 정도 입원 기간이 필요하고 복강경 췌장절제술은 수술 후 3~4일 정도의 입원이 필요합니다.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="복강경 수술"
+                  title="복강경 수술"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "전통적으로 복부에 큰 절개창을 열고 시행하는 개복 수술과 달리, 복부에 0.5~1.5cm 크기의 작은 구멍(절개창)을 여러 개 내고, 그 안으로 비디오 카메라와 각종 기구들을 넣고 시행하는 수술 방법입니다.",
+                    "절개창 크기가 작아 수술 상처가 미용적으로 보기 좋고, 창상으로 인한 통증이 훨씬 적은 편입니다. 또한 빠른 회복 속도를 보여 재원기간이 짧고, 일상생활로 빠르게 복귀할 수 있다는 장점이 있습니다.",
+                    "다만, 각 수술에 따라 입원 기간 및 회복 기간은 다릅니다. 복강경 담낭절제술의 경우, 일반적으로 수술 후 1~2일 정도 입원 기간이 필요하고 복강경 췌장절제술은 수술 후 3~4일 정도의 입원이 필요합니다."
+                  ]}
+                  imagePosition="right" // 또는 "right"
+                />
             </div>
           )}
           {activeTab === 'brain' && (
             <div className="container mx-auto px-4">
               {/* 목 디스크 및 목 관절의 질환 섹션 */}
-              <div className="container mx-auto px-4 mt-8">
-                <div className="flex items-start gap-16">
-                  {/* 텍스트 섹션 */}
-                  <div className="flex-1">
-                    <div className="mb-8">
-                      <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
-                      <h2 className="text-[#1A1A1A] text-4xl font-bold">목 디스크 및 목 관절의 질환</h2>
-                    </div>
-                    <div className="space-y-6 text-gray-700 text-lg leading-relaxed">
-                      <p>
-                        목은 7개의 척추뼈로 구성되어 있으며, 상부의 무거운 머리를 지탱하고 있으며, 우리몸의 어떤 척추관절부보다 관절의 운동범위가 넓어 대부분의 회전 운동이 일어나는 중요한 척추관절부위입니다.
-                      </p>
-                      <p>
-                        그러나 허리관절에 비하여 퇴행성 관절의 변화는 드물게 나타나나 목 디스크등 목관절의 이상으로 초래되는 질환들도 상당히 많은 것이 사실입니다.
-                      </p>
-                      <p>
-                        허리디스크와 마찬가지로 목디스크도 순간적인 외상 등에 의해 탈출되는 경우는 드물고 어느 정도 디스크 자체에 퇴행성 변화가 온 뒤에 부적절한 자세나 지속적인 스트레스 등이 가해질 때 수핵 탈출 즉, 디스크 탈출이 일어나게 되며 허리 디스크와는 달리 상하지의 마비까지도 초래될 수 있는 질환입니다.
-                      </p>
-                      <p>
-                        가장 많은 발생 빈도를 보이는 목디스크는 제5-6번 경추부이며 그 다음으로 제6-7번 경추부입니다.
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* 이미지 섹션 */}
-                  <div className="w-[500px] h-[600px] relative flex-shrink-0">
-                    <Image
-                      src="/images/centers/brain-img01.jpg"
-                      alt="목 디스크 및 목 관절의 질환"
-                      fill
-                      className="object-cover rounded-lg border border-gray-100"
-                    />
-                  </div>
-                </div>
-              </div>
+              <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="목 디스크 및 목 관절의 질환"
+                  title="목 디스크 및 목 관절의 질환"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "목은 7개의 척추뼈로 구성되어 있으며, 상부의 무거운 머리를 지탱하고 있으며, 우리몸의 어떤 척추관절부보다 관절의 운동범위가 넓어 대부분의 회전 운동이 일어나는 중요한 척추관절부위입니다.",
+                    "그러나 허리관절에 비하여 퇴행성 관절의 변화는 드물게 나타나나 목 디스크등 목관절의 이상으로 초래되는 질환들도 상당히 많은 것이 사실입니다.",
+                    "허리디스크와 마찬가지로 목디스크도 순간적인 외상 등에 의해 탈출되는 경우는 드물고 어느 정도 디스크 자체에 퇴행성 변화가 온 뒤에 부적절한 자세나 지속적인 스트레스 등이 가해질 때 수핵 탈출 즉, 디스크 탈출이 일어나게 되며 허리 디스크와는 달리 상하지의 마비까지도 초래될 수 있는 질환입니다.",
+                    "가장 많은 발생 빈도를 보이는 목디스크는 제5-6번 경추부이며 그 다음으로 제6-7번 경추부입니다."
+                  ]}
+                  imagePosition="left" // 또는 "right"
+                />
 
               {/* 목 디스크 및 목 관절 질환 증상 섹션 */}
               <div className="relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] w-screen bg-[#1A4B8E] mt-32">
@@ -623,28 +541,16 @@ export default function ClinicCenterPage() {
           {activeTab === 'hernia' && (
             <div className="container mx-auto px-4">
               {/* 탈장 소개 섹션 */}
-              <div className="flex items-start gap-16">
-                {/* 이미지 섹션 */}
-                <div className="w-[500px] h-[400px] relative flex-shrink-0">
-                  <Image
-                    src="/images/centers/hernia-img01.jpg"
-                    alt="탈장"
-                    fill
-                    className="object-cover rounded-lg border border-gray-100"
-                  />
-                </div>
-
-                {/* 텍스트 섹션 */}
-                <div className="flex-1">
-                  <div className="mb-8">
-                    <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
-                    <h2 className="text-[#1A1A1A] text-4xl font-bold">탈장</h2>
-                  </div>
-                  <p className="text-gray-700 text-lg leading-relaxed">
-                    탈장이란 신체의 장기가 제자리에 있지 않고 다른 조직을 통해 돌출되거나 빠져 나오는 증상을 말합니다. 신체 어느 곳에나 생길 수 있지만 대부분 복벽에서 발생하는데, 복벽 탈장은 복강을 둘러싼 근육과 근막 사이에 복막이 주머니 모양으로 돌출되어 비정상적인 형태를 이루는 상태입니다.
-                  </p>
-                </div>
-              </div>
+              <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="탈장"
+                  title="탈장"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "탈장이란 신체의 장기가 제자리에 있지 않고 다른 조직을 통해 돌출되거나 빠져 나오는 증상을 말합니다. 신체 어느 곳에나 생길 수 있지만 대부분 복벽에서 발생하는데, 복벽 탈장은 복강을 둘러싼 근육과 근막 사이에 복막이 주머니 모양으로 돌출되어 비정상적인 형태를 이루는 상태입니다."
+                  ]}
+                  imagePosition="left" // 또는 "right"
+                />
 
               {/* 탈장 종류 섹션 */}
               <div className="relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] w-screen bg-[#1A4B8E] mt-32">
@@ -784,28 +690,16 @@ export default function ClinicCenterPage() {
           {activeTab === 'appendicitis' && (
             <div className="container mx-auto px-4">
               {/* 충수염 소개 섹션 */}
-              <div className="flex items-start gap-16">
-                {/* 텍스트 섹션 */}
-                <div className="flex-1">
-                  <div className="mb-8">
-                    <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
-                    <h2 className="text-[#1A1A1A] text-4xl font-bold">충수염</h2>
-                  </div>
-                  <p className="text-gray-700 text-lg leading-relaxed">
-                    급성충수염은 충수에 생긴 급성 염증을 말하며, 어떤 원인에 의해 충수의 입구가 막혀 충수가 부어 오르고 혈류가 차단되면서 염증이 심해져가는 병으로 치료하지 않으면 천공으로 인한 복막염을 유발할 수 있습니다.
-                  </p>
-                </div>
-
-                {/* 이미지 섹션 */}
-                <div className="w-[500px] h-[400px] relative flex-shrink-0">
-                  <Image
-                    src="/images/centers/app-img01.jpg"
-                    alt="충수염"
-                    fill
-                    className="object-cover rounded-lg border border-gray-100"
-                  />
-                </div>
-              </div>
+              <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="충수염"
+                  title="충수염"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "급성충수염은 충수에 생긴 급성 염증을 말하며, 어떤 원인에 의해 충수의 입구가 막혀 충수가 부어 오르고 혈류가 차단되면서 염증이 심해져가는 병으로 치료하지 않으면 천공으로 인한 복막염을 유발할 수 있습니다."
+                  ]}
+                  imagePosition="left" // 또는 "right"
+                />
 
               {/* 급성충수염 증상 섹션 */}
               <div className="relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] w-screen bg-[#1A4B8E] mt-32">

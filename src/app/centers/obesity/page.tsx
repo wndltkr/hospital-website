@@ -854,81 +854,57 @@ export default function ObesityPage() {
 
                 <div className="space-y-16">
                   {/* 바이오 포톤 */}
-                  <div className="flex items-center gap-16">
-                    <div className="w-[500px] h-[500px] relative flex-shrink-0">
-                      <Image
-                        src="/images/centers/equipment-1.jpg"
-                        alt="바이오 포톤 PDP 전신등"
-                        fill
-                        className="object-cover rounded-lg"
-                      />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-[#0066CC] text-3xl font-bold mb-6">바이오 포톤(Bio photon) PDP 전신등</h3>
-                      <div className="space-y-6 text-gray-600 leading-relaxed text-lg">
-                        <p>강력한 생육광선 연에너지를 인체 전신에 집중하게 전달(복사)시키는 1도씨의 새로운 개념의 전신 사우나등입니다.</p>
-                        <p>상승된 체온을 유랫동안 유지시켜 배열구의 일종인 림프구 기능과 면역력을 높여 줍니다. 세지방 분해 및 스트레스를 경감시키고 신진대사 증진 및 지방과 노폐물을 빠르게 분해, 분출시켜 줍니다.</p>
-                        <p>혈관과 림프계신 및 세포의 재생 및 활성화를 시켜주고 젖산을 빠르게 감소시켜 피로회복 효과를 증진시킵니다.</p>
-                      </div>
-                    </div>
-                  </div>
+                  <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="바이오 포톤(Bio photon) PDP 전신돔"
+                  title="바이오 포톤(Bio photon) PDP 전신돔"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "강력한 생육광선 연에너지를 인체 전신에 집중하게 전달(복사)시키는 1도씨의 새로운 개념의 전신 사우나등입니다.",
+                    "상승된 체온을 유랫동안 유지시켜 배열구의 일종인 림프구 기능과 면역력을 높여 줍니다. 세지방 분해 및 스트레스를 경감시키고 신진대사 증진 및 지방과 노폐물을 빠르게 분해, 분출시켜 줍니다.",
+                    "혈관과 림프계신 및 세포의 재생 및 활성화를 시켜주고 젖산을 빠르게 감소시켜 피로회복 효과를 증진시킵니다."
+                  ]}
+                  imagePosition="left" // 또는 "right"
+                />
 
                   {/* 저주파 SSondar Smaster */}
-                  <div className="flex items-center gap-16 flex-row-reverse">
-                    <div className="w-[500px] h-[500px] relative flex-shrink-0">
-                      <Image
-                        src="/images/centers/equipment-2.jpg"
-                        alt="저주파 SSondar Smaster"
-                        fill
-                        className="object-cover rounded-lg"
-                      />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-[#0066CC] text-3xl font-bold mb-6">저주파 SSondar Smaster</h3>
-                      <div className="space-y-6 text-gray-600 leading-relaxed text-lg">
-                        <p>저주파 비만 치료기는 살을 빼고자 하는 부위에 저주파를 흘려보내 지방 세포를 자극하고 지방세포 크기를 줄이는 부분비만 관리법입니다.</p>
-                        <p>지방 세포 크기 감소, 피부 탄력 증진, 근육이완, 혈액, 림프액 순환 촉진, 신진대사 활성화에 효과적입니다.</p>
-                      </div>
-                    </div>
-                  </div>
+                  <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="저주파 SSondar Smaster"
+                  title="저주파 SSondar Smaster"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "저주파 비만 치료기는 살을 빼고자 하는 부위에 저주파를 흘려보내 지방 세포를 자극하고 지방세포 크기를 줄이는 부분비만 관리법입니다.",
+                    "지방 세포 크기 감소, 피부 탄력 증진, 근육이완, 혈액, 림프액 순환 촉진, 신진대사 활성화에 효과적입니다."
+                  ]}
+                  imagePosition="right" // 또는 "right"
+                />
 
                   {/* 메조건 SSondar Meso2 */}
-                  <div className="flex items-center gap-16">
-                    <div className="w-[500px] h-[500px] relative flex-shrink-0">
-                      <Image
-                        src="/images/centers/equipment-3.jpg"
-                        alt="메조건 SSondar Meso2"
-                        fill
-                        className="object-cover rounded-lg"
-                      />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-[#0066CC] text-3xl font-bold mb-6">메조건 SSondar Meso2</h3>
-                      <div className="space-y-6 text-gray-600 leading-relaxed text-lg">
-                        <p>비만관리를 위한 정확한 약물주입과 동증이 거의 없는 메조건입니다.</p>
-                        <p>약물손실 최소화 시스템을 도입, 피부에 직접 닿지 않아 피부의 자극을 줄이고 환자의 피부 두께에 따라 시술하도록 설계되었습니다.</p>
-                      </div>
-                    </div>
-                  </div>
+                  <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="메조건 SSondar Meso2"
+                  title="메조건 SSondar Meso2"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "비만관리를 위한 정확한 약물주입과 동증이 거의 없는 메조건입니다.",
+                    "약물손실 최소화 시스템을 도입, 피부에 직접 닿지 않아 피부의 자극을 줄이고 환자의 피부 두께에 따라 시술하도록 설계되었습니다."
+                  ]}
+                  imagePosition="left" // 또는 "right"
+                />
 
                   {/* 카복시 테라피 */}
-                  <div className="flex items-center gap-16 flex-row-reverse">
-                    <div className="w-[500px] h-[500px] relative flex-shrink-0">
-                      <Image
-                        src="/images/centers/equipment-4.jpg"
-                        alt="카복시 테라피"
-                        fill
-                        className="object-cover rounded-lg"
-                      />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-[#0066CC] text-3xl font-bold mb-6">카복시 테라피</h3>
-                      <div className="space-y-6 text-gray-600 leading-relaxed text-lg">
-                        <p>이산화탄소를 피부에 주입하여 혈액순환을 촉진시키고 산소공급을 증가시켜 셀룰라이트 분해, 피부탄력, 지방분해에 효과적인 시술입니다.</p>
-                        <p>지방분해 및 셀룰라이트 개선, 혈액순환 개선, 피부재생 및 탄력증진에 효과가 있습니다.</p>
-                      </div>
-                    </div>
-                  </div>
+                  <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="카복시 테라피"
+                  title="카복시 테라피"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "이산화탄소를 피부에 주입하여 혈액순환을 촉진시키고 산소공급을 증가시켜 셀룰라이트 분해, 피부탄력, 지방분해에 효과적인 시술입니다.",
+                    "지방분해 및 셀룰라이트 개선, 혈액순환 개선, 피부재생 및 탄력증진에 효과가 있습니다.",
+                  ]}
+                  imagePosition="right" // 또는 "right"
+                />
                 </div>
               </div>
 

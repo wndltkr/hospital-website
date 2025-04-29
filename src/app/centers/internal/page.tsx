@@ -9,6 +9,7 @@ import Menu from '@/components/Menu';
 import PageBanner from '@/components/PageBanner';
 import YouTubeSection from '@/components/YouTubeSection';
 import TabNavigation from '@/components/TabNavigation';
+import InfoSection from '@/components/InfoSection';
 
 export default function InternalMedicineCenterPage() {
   const [activeTab, setActiveTab] = useState('hypertension');
@@ -53,26 +54,22 @@ export default function InternalMedicineCenterPage() {
           {/* Tab content will be added here */}
           {activeTab === 'hypertension' && (
             <div className="container mx-auto px-4">
+              <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="고혈압"
+                  title="고혈압"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "혈압은 심장이 박동할 때 동맥 혈관에 흐르는 혈압의 압력입니다. 고혈압은 혈압이 올라가서 내려가지 않아 140/90mmHg이상으로 높은 상태가 계속되는 상태를 말합니다.",
+                  ]}
+                  imagePosition="left" // 또는 "right"
+                />
               <div className="flex items-start gap-16">
-                {/* 이미지 섹션 */}
-                <div className="w-[500px] h-[400px] relative flex-shrink-0">
-                  <Image
-                    src="/images/centers/hypertension.jpg"
-                    alt="고혈압 검사"
-                    fill
-                    className="object-cover rounded-lg border border-gray-100"
-                  />
-                </div>
+               
                 
                 {/* 텍스트 섹션 */}
                 <div className="flex-1">
-                  <div className="mb-8">
-                    <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
-                    <h2 className="text-[#1A1A1A] text-4xl font-bold">고혈압</h2>
-                  </div>
-                  <p className="text-gray-700 text-lg leading-relaxed">
-                    혈압은 심장이 박동할 때 동맥 혈관에 흐르는 혈압의 압력입니다. 고혈압은 혈압이 올라가서 내려가지 않아 140/90mmHg이상으로 높은 상태가 계속되는 상태를 말합니다.
-                  </p>
+                  
 
                   {/* 혈압 분류표 */}
                   <div className="mt-16">
@@ -170,43 +167,17 @@ export default function InternalMedicineCenterPage() {
 
               {/* 고혈압 치료법 섹션 */}
               <div className="container mx-auto px-4 mt-32">
-                <div className="flex items-start justify-between gap-16">
-                  {/* 텍스트 섹션 */}
-                  <div className="flex-1">
-                    <div className="mb-8">
-                      <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
-                      <h2 className="text-[#1A1A1A] text-4xl font-bold">고혈압 치료법</h2>
-                    </div>
-                    <div className="space-y-4">
-                      <div className="flex items-start gap-2">
-                        <svg className="w-5 h-5 mt-1 text-[#0066CC] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                        </svg>
-                        <p className="text-gray-700 text-lg leading-relaxed">
-                          혈압이 높은 사람은 보통의 사람들에 비해 원신 수명이 짧으므로 반드시 적극적으로 치료해야 합니다.
-                        </p>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <svg className="w-5 h-5 mt-1 text-[#0066CC] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                        </svg>
-                        <p className="text-gray-700 text-lg leading-relaxed">
-                          고혈압의 치료에는 체중조절, 식이요법, 운동과 적절한 약물 등이 있지만 가장 중요한 것은 현재 본인의 혈압과 치료의사의 지시입니다.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* 이미지 섹션 */}
-                  <div className="w-[500px] h-[400px] relative flex-shrink-0">
-                    <Image
-                      src="/images/centers/hypertension-treatment.jpg"
-                      alt="고혈압 치료"
-                      fill
-                      className="object-cover rounded-lg"
-                    />
-                  </div>
-                </div>
+              <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="고혈압 치료법"
+                  title="고혈압 치료법"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "혈압이 높은 사람은 보통의 사람들에 비해 원신 수명이 짧으므로 반드시 적극적으로 치료해야 합니다.",
+                    "고혈압의 치료에는 체중조절, 식이요법, 운동과 적절한 약물 등이 있지만 가장 중요한 것은 현재 본인의 혈압과 치료의사의 지시입니다."
+                  ]}
+                  imagePosition="right" // 또는 "right"
+                />
               </div>
 
               {/* 고혈압 예방 수칙 섹션 */}
@@ -270,31 +241,17 @@ export default function InternalMedicineCenterPage() {
 
               {/* 고지혈증 섹션 */}
               <div className="container mx-auto px-4 mt-32">
-                <div className="flex items-start gap-16">
-                  {/* 이미지 섹션 */}
-                  <div className="w-[500px] h-[400px] relative flex-shrink-0">
-                    <Image
-                      src="/images/centers/hyperlipidemia.jpg"
-                      alt="고지혈증"
-                      fill
-                      className="object-cover rounded-lg border border-gray-100"
-                    />
-                  </div>
-                  
-                  {/* 텍스트 섹션 */}
-                  <div className="flex-1">
-                    <div className="mb-8">
-                      <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
-                      <h2 className="text-[#1A1A1A] text-4xl font-bold">고지혈증</h2>
-                    </div>
-                    <p className="text-gray-700 text-lg leading-relaxed mb-6">
-                      고지혈증은 혈액 내 지방성분이 많은 이상으로 많은 지방성분이 혈액 내에 존재하면서 혈관벽에 쌓여 혈관벽에 염증을 일으키고 그 결과 심혈관계질환을 일으키는 상태를 이상지질혈증이라고 합니다.
-                    </p>
-                    <p className="text-gray-700 text-lg leading-relaxed">
-                      고지혈증은 현증 콜레스테롤이나 중증 콜레스테롤이 동맥경화를 일으키는 주요원인이 될 수 있습니다.
-                    </p>
-                  </div>
-                </div>
+              <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="고지혈증"
+                  title="고지혈증"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "고지혈증은 혈액 내 지방성분이 많은 이상으로 많은 지방성분이 혈액 내에 존재하면서 혈관벽에 쌓여 혈관벽에 염증을 일으키고 그 결과 심혈관계질환을 일으키는 상태를 이상지질혈증이라고 합니다.",
+                    "고지혈증은 현증 콜레스테롤이나 중증 콜레스테롤이 동맥경화를 일으키는 주요원인이 될 수 있습니다."
+                  ]}
+                  imagePosition="left" // 또는 "right"
+                />
               </div>
 
               {/* 고지혈증의 원인 섹션 */}
@@ -382,31 +339,17 @@ export default function InternalMedicineCenterPage() {
 
           {activeTab === 'diabetes' && (
             <div className="container mx-auto px-4">
-              <div className="flex items-start gap-16">
-                {/* 이미지 섹션 */}
-                <div className="w-[500px] h-[400px] relative flex-shrink-0">
-                  <Image
-                    src="/images/centers/diabetes.jpg"
-                    alt="당뇨병"
-                    fill
-                    className="object-cover rounded-lg border border-gray-100"
-                  />
-                </div>
-                
-                {/* 텍스트 섹션 */}
-                <div className="flex-1">
-                  <div className="mb-8">
-                    <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
-                    <h2 className="text-[#1A1A1A] text-4xl font-bold">당뇨병</h2>
-                  </div>
-                  <p className="text-gray-700 text-lg leading-relaxed mb-6">
-                    당뇨병은 우리나라 성인의 약 10%가 걸릴 정도로 흔한 성인병입니다. 최근 서구화된 식습관, 운동 부족에 의한 비만 인구의 증가.
-                  </p>
-                  <p className="text-gray-700 text-lg leading-relaxed">
-                    인구·경화 등의 환경적인 요인이 당뇨병환자를 급격하게 증가시키고 있습니다. 당뇨병의 정확한 원인 이해가 당뇨병 예방의 첫걸음입니다.
-                  </p>
-                </div>
-              </div>
+              <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="당뇨병"
+                  title="당뇨병"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "당뇨병은 우리나라 성인의 약 10%가 걸릴 정도로 흔한 성인병입니다. 최근 서구화된 식습관, 운동 부족에 의한 비만 인구의 증가.",
+                    "인구·경화 등의 환경적인 요인이 당뇨병환자를 급격하게 증가시키고 있습니다. 당뇨병의 정확한 원인 이해가 당뇨병 예방의 첫걸음입니다."
+                  ]}
+                  imagePosition="left" // 또는 "right"
+                />
 
               {/* 당뇨병이란? 섹션 */}
               <div className="relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] w-screen mt-32">
@@ -510,36 +453,23 @@ export default function InternalMedicineCenterPage() {
               <div className="container mx-auto px-4 mt-32">
                 <div className="flex items-start gap-16">
                   {/* 이미지 섹션 */}
-                  <div className="w-[500px] h-[400px] relative flex-shrink-0">
-                    <Image
-                      src="/images/centers/diabetes-test.jpg"
-                      alt="당뇨병 검사"
-                      fill
-                      className="object-cover rounded-lg border border-gray-100"
-                    />
-                  </div>
+                  
 
                   {/* 텍스트 섹션 */}
                   <div className="flex-1">
-                    <div className="mb-8">
-                      <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
-                      <h2 className="text-[#1A1A1A] text-4xl font-bold">당뇨병 검사방법</h2>
-                    </div>
+                  <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="당뇨병 검사방법"
+                  title="당뇨병 검사방법"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "요당검사 소변에서 당의 존재를 알아보는 방법으로 검사 결과 양성으로 나오면 혈당 검사를 하여 정확한 진단을 받아야 합니다.",
+                    "당뇨병의 진단에 있어 혈당치의 기준은 공복 혈당치 126mg/dl 이상, 식후 2시간 혈당치 200mg/dl이상이 기준입니다."
+                  ]}
+                  imagePosition="left" // 또는 "right"
+                />
 
-                    <div className="space-y-6">
-                      <div className="flex items-start gap-2">
-                        <span className="text-[#0066CC] font-bold text-lg">•</span>
-                        <p className="text-gray-700 text-lg">
-                          소변에서 당의 존재를 알아보는 방법으로 검사 결과 양성으로 나오면서 혈당치도 정상 이상으로 나오면 당뇨병이라고 합니다.
-                        </p>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <span className="text-[#0066CC] font-bold text-lg">•</span>
-                        <p className="text-gray-700 text-lg">
-                          당뇨병의 진단에 있어 혈당치의 기준은 공복 혈당치 126mg/dl 이상, 식후 2시간 혈당치 200mg/dl이상이 기준입니다.
-                        </p>
-                      </div>
-                    </div>
+                    
 
                     {/* 혈당 수치표 */}
                     <div className="mt-8 overflow-hidden rounded-lg border border-gray-200">
@@ -613,29 +543,16 @@ export default function InternalMedicineCenterPage() {
 
           {activeTab === 'liver' && (
             <div className="container mx-auto px-4">
-              <div className="flex items-start gap-16">
-                {/* 이미지 섹션 */}
-                <div className="w-[500px] h-[400px] relative flex-shrink-0">
-                  <Image
-                    src="/images/centers/liver.jpg"
-                    alt="간질환 검사"
-                    fill
-                    className="object-cover rounded-lg border border-gray-100"
-                  />
-            </div>
-                
-                {/* 텍스트 섹션 */}
-                <div className="flex-1">
-                  <div className="mb-8">
-                    <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
-                    <h2 className="text-[#1A1A1A] text-4xl font-bold">지방간</h2>
-                  </div>
-                  <p className="text-gray-700 text-lg leading-relaxed">
-                    간 세포 속에 지방이 많이 축적되어 있는 상태를 말합니다. 간 세포 속에 중성지방이 과도하게 축적되어 있는 상태로, 
-                    비만이나 당뇨병, 과다한 알코올 섭취 등이 주요 원인이 됩니다. 초기에는 특별한 증상이 없어 건강검진에서 우연히 발견되는 경우가 많습니다.
-                  </p>
-                </div>
-              </div>
+              <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="지방간"
+                  title="지방간"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "간 세포 속에 지방이 많이 축적되어 있는 상태를 말합니다. 간 세포 속에 중성지방이 과도하게 축적되어 있는 상태로, 비만이나 당뇨병, 과다한 알코올 섭취 등이 주요 원인이 됩니다. 초기에는 특별한 증상이 없어 건강검진에서 우연히 발견되는 경우가 많습니다."
+                  ]}
+                  imagePosition="left" // 또는 "right"
+                />
 
               {/* 알코올성 지방간 치료법 섹션 */}
               <div className="relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] w-screen bg-[#0066CC] mt-32">
@@ -743,30 +660,16 @@ export default function InternalMedicineCenterPage() {
               </div>
 
               {/* 간염 섹션 */}
-              <div className="container mx-auto px-4 mt-32">
-                <div className="flex items-start gap-16">
-                  {/* 이미지 섹션 */}
-                  <div className="w-[500px] h-[400px] relative flex-shrink-0">
-                    <Image
-                      src="/images/centers/liver-hepatitis.jpg"
-                      alt="간염"
-                      fill
-                      className="object-cover rounded-lg border border-gray-100"
-                    />
-                  </div>
-                  
-                  {/* 텍스트 섹션 */}
-                  <div className="flex-1">
-                    <div className="mb-8">
-                      <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
-                      <h2 className="text-[#1A1A1A] text-4xl font-bold">간염</h2>
-                    </div>
-                    <p className="text-gray-700 text-lg leading-relaxed">
-                      B형 간염은 B형 간염 바이러스에 감염되어 생기는 병입니다. 이 바이러스는 간에 주로 감염됩니다. B형 간염 바이러스는, 빠른 속도로 생명을 위협하고, 간의 염증을 일으키며 수도 있지만 대부분의 경우는 서서히 진행됩니다. 우리나라는 B형 간염의 유병률이 높고, 만성 B형 간염은 흔히 간경변증 혹은 간암을 야기할 수 있습니다.
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="간염"
+                  title="간염"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "B형 간염은 B형 간염 바이러스에 감염되어 생기는 병입니다. 이 바이러스는 간에 주로 감염됩니다. B형 간염 바이러스는, 빠른 속도로 생명을 위협하고, 간의 염증을 일으키며 수도 있지만 대부분의 경우는 서서히 진행됩니다. 우리나라는 B형 간염의 유병률이 높고, 만성 B형 간염은 흔히 간경변증 혹은 간암을 야기할 수 있습니다."
+                  ]}
+                  imagePosition="left" // 또는 "right"
+                />
 
               {/* 만성 B형 간염의 증상 및 특징 섹션 */}
               <div className="container mx-auto px-4 mt-32">
@@ -851,30 +754,16 @@ export default function InternalMedicineCenterPage() {
               </div>
 
               {/* 간경변증 섹션 */}
-              <div className="container mx-auto px-4 mt-32">
-                <div className="flex items-start gap-16">
-                  {/* 이미지 섹션 */}
-                  <div className="w-[500px] h-[400px] relative flex-shrink-0">
-                    <Image
-                      src="/images/centers/liver-img06.jpg"
-                      alt="간경변증"
-                      fill
-                      className="object-cover rounded-lg border border-gray-100"
-                    />
-                  </div>
-                  
-                  {/* 텍스트 섹션 */}
-                  <div className="flex-1">
-                    <div className="mb-8">
-                      <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
-                      <h2 className="text-[#1A1A1A] text-4xl font-bold">간경변증</h2>
-                    </div>
-                    <p className="text-gray-700 text-lg leading-relaxed">
-                      간경변증은 만성적인 염증으로 인해 정상적인 간조직이 재생결절(regenerative nodules; 작은 덩어리가 만들어지는 현상) 등의 섬유화 조직으로 바뀌어 간기능이 저하되는 것을 말합니다.
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="간경변증"
+                  title="간경변증"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "간경변증은 만성적인 염증으로 인해 정상적인 간조직이 재생결절(regenerative nodules; 작은 덩어리가 만들어지는 현상) 등의 섬유화 조직으로 바뀌어 간기능이 저하되는 것을 말합니다."
+                  ]}
+                  imagePosition="left" // 또는 "right"
+                />
 
               {/* 간경변증의 원인 섹션 */}
               <div className="relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] w-screen bg-[#1A4B8E] mt-32">
@@ -919,30 +808,16 @@ export default function InternalMedicineCenterPage() {
               </div>
 
               {/* 간암 섹션 */}
-              <div className="container mx-auto px-4 mt-32">
-                <div className="flex items-start gap-16">
-                  {/* 이미지 섹션 */}
-                  <div className="w-[500px] h-[400px] relative flex-shrink-0">
-                    <Image
-                      src="/images/centers/liver-img07.jpg"
-                      alt="간암"
-                      fill
-                      className="object-cover rounded-lg border border-gray-100"
-                    />
-                  </div>
-                  
-                  {/* 텍스트 섹션 */}
-                  <div className="flex-1">
-                    <div className="mb-8">
-                      <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
-                      <h2 className="text-[#1A1A1A] text-4xl font-bold">간암</h2>
-                    </div>
-                    <p className="text-gray-700 text-lg leading-relaxed">
-                      간의 대부분을 차지하는 간 세포에서 기원하는 악성 종양을 말합니다. 간에 생기는 모든 종류의 악성 종양이나 다른 기관의 암이 간에 전이된 전이성 간암까지도 포함하지만, 간세포암종이 간암 중 가장 흔해 보통 간세포암종만을 의미합니다.
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="간암"
+                  title="간암"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "간의 대부분을 차지하는 간 세포에서 기원하는 악성 종양을 말합니다. 간에 생기는 모든 종류의 악성 종양이나 다른 기관의 암이 간에 전이된 전이성 간암까지도 포함하지만, 간세포암종이 간암 중 가장 흔해 보통 간세포암종만을 의미합니다."
+                  ]}
+                  imagePosition="left" // 또는 "right"
+                />
 
               {/* 간암의 주요 원인 섹션 */}
               <div className="container mx-auto px-4 mt-32">
@@ -1073,53 +948,19 @@ export default function InternalMedicineCenterPage() {
               </div>
 
               {/* 간암의 예방방법 섹션 */}
-              <div className="container mx-auto px-4 mt-32">
-                <div className="flex items-start gap-16">
-                  {/* 이미지 섹션 */}
-                  <div className="w-[500px] h-[400px] relative flex-shrink-0">
-                    <Image
-                      src="/images/centers/liver-img08.jpg"
-                      alt="간암의 예방방법"
-                      fill
-                      className="object-cover rounded-lg border border-gray-100"
-                    />
-                  </div>
-                  
-                  {/* 텍스트 섹션 */}
-                  <div className="flex-1">
-                    <div className="mb-8">
-                      <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
-                      <h2 className="text-[#1A1A1A] text-4xl font-bold">간암의 예방방법</h2>
-                    </div>
-                    <div className="space-y-6">
-                      <div className="flex items-center gap-4">
-                        <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">
-                          <span className="font-medium">01</span>
-                        </div>
-                        <p className="text-gray-700 text-lg">B형 간염 예방 백신 접종하기</p>
-                      </div>
-                      <div className="flex items-center gap-4">
-                        <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">
-                          <span className="font-medium">02</span>
-                        </div>
-                        <p className="text-gray-700 text-lg">C형 간염 감염 각별히 주의하기</p>
-                      </div>
-                      <div className="flex items-center gap-4">
-                        <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">
-                          <span className="font-medium">03</span>
-                        </div>
-                        <p className="text-gray-700 text-lg">과음하지 않기</p>
-                      </div>
-                      <div className="flex items-center gap-4">
-                        <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">
-                          <span className="font-medium">04</span>
-                        </div>
-                        <p className="text-gray-700 text-lg">위험인자가 있다면 주기적으로 검진하기</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="간암의 예방방법"
+                  title="간암의 예방방법"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "B형 간염 예방 백신 접종하기",
+                    "C형 간염 감염 각별히 주의하기",
+                    "과음하지 않기",
+                    "위험인자가 있다면 주기적으로 검진하기",
+                  ]}
+                  imagePosition="left" // 또는 "right"
+                />
 
               {/* 유튜브 영상 섹션 */}
               <YouTubeSection
@@ -1134,31 +975,16 @@ export default function InternalMedicineCenterPage() {
             <div>
               {/* 신증후군 섹션 */}
             <div className="container mx-auto px-4">
-                <div className="flex items-start gap-16">
-                  {/* 이미지 섹션 */}
-                  <div className="w-[500px] h-[400px] relative flex-shrink-0">
-                    <Image
-                      src="/images/centers/nephrotic-img01.jpg"
-                      alt="신증후군"
-                      fill
-                      className="object-cover rounded-lg border border-gray-100"
-                    />
-                  </div>
-                  
-                  {/* 텍스트 섹션 */}
-                  <div className="flex-1">
-                    <div className="mb-8">
-                      <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
-                      <h2 className="text-[#1A1A1A] text-4xl font-bold">신증후군</h2>
-                    </div>
-                    <p className="text-gray-700 text-lg leading-relaxed">
-                      신증후군은 다량의 단백뇨와 저알부민혈증, 부종, 고지혈증 등의 특징을 보이는 질병입니다. 
-                      24시간 동안 성인에게서 소변으로 배설되는 단백질의 양이 3.5g이상이거나, 
-                      소아의 경우 체표면적 1제곱미터당 소변으로 소실되는 단백질 양이 960mg 이상인 경우 
-                      신증후군으로 진단할 수 있습니다.
-                    </p>
-                  </div>
-                </div>
+            <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="신증후군"
+                  title="신증후군"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "신증후군은 다량의 단백뇨와 저알부민혈증, 부종, 고지혈증 등의 특징을 보이는 질병입니다. 24시간 동안 성인에게서 소변으로 배설되는 단백질의 양이 3.5g이상이거나, 소아의 경우 체표면적 1제곱미터당 소변으로 소실되는 단백질 양이 960mg 이상인 경우 신증후군으로 진단할 수 있습니다.",
+                  ]}
+                  imagePosition="left" // 또는 "right"
+                />
               </div>
 
               {/* 신증후군 종류 섹션 */}
@@ -1298,30 +1124,16 @@ export default function InternalMedicineCenterPage() {
               {/* 만성 신부전 섹션 */}
               <div className="container mx-auto px-4 mt-32">
                 {/* 이미지와 설명 */}
-                <div className="flex items-start gap-16">
-                  {/* 텍스트 섹션 */}
-                  <div className="flex-1">
-                    <div className="mb-8">
-                      <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
-                      <h2 className="text-[#1A1A1A] text-4xl font-bold">만성 신부전</h2>
-                    </div>
-                    <p className="text-gray-700 text-lg leading-relaxed">
-                      3개월 이상 신장이 손상되어 있거나 신장 기능 감소가 지속적으로 나타나는 것을 말합니다. 
-                      만성 신부전은 신장의 손상 정도와 기능의 감소 정도에 따라 5단계로 나뉘며, 
-                      5단계에는 투석, 신장이식과 같은 신장 대체 요법이 필요합니다.
-                    </p>
-                  </div>
-
-                  {/* 이미지 섹션 */}
-                  <div className="w-[500px] h-[400px] relative flex-shrink-0">
-                    <Image
-                      src="/images/centers/nephrotic-img02.jpg"
-                      alt="만성 신부전"
-                      fill
-                      className="object-cover rounded-lg border border-gray-100"
-                    />
-                  </div>
-                </div>
+                <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="만성 신부전"
+                  title="만성 신부전"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "3개월 이상 신장이 손상되어 있거나 신장 기능 감소가 지속적으로 나타나는 것을 말합니다. 만성 신부전은 신장의 손상 정도와 기능의 감소 정도에 따라 5단계로 나뉘며, 5단계에는 투석, 신장이식과 같은 신장 대체 요법이 필요합니다.",
+                  ]}
+                  imagePosition="right" // 또는 "right"
+                />
 
                 {/* 단계별 표 */}
                 <div className="mt-16">
@@ -1602,36 +1414,17 @@ export default function InternalMedicineCenterPage() {
                 </div>
               </div>
 
-              {/* 다음 섹션 */}
-              {/* ... existing code ... */}
-
               {/* 단백뇨 섹션 */}
-              <div className="container mx-auto px-4 mt-32">
-                <div className="flex items-start gap-16">
-                  {/* 텍스트 섹션 */}
-                  <div className="flex-1">
-                    <div className="mb-8">
-                      <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
-                      <h2 className="text-[#1A1A1A] text-4xl font-bold">단백뇨</h2>
-                    </div>
-                    <p className="text-gray-700 text-lg leading-relaxed">
-                      소변에 단백질이 섞여 나오는 것을 단백뇨라고 하는데, 정상 소변에도 어느 정도 단백이 포함될 수 있으므로, 
-                      성인인 경우 하루 500mg 이상, 소아는 1시간 동안 체표면적 1제곱미터당 4mg 이상의 단백질이 배설될 때 
-                      명백한 단백뇨라고 합니다.
-                    </p>
-                  </div>
-
-                  {/* 이미지 섹션 */}
-                  <div className="w-[500px] h-[400px] relative flex-shrink-0">
-                    <Image
-                      src="/images/centers/nephrotic-img05.jpg"
-                      alt="단백뇨 검사"
-                      fill
-                      className="object-cover rounded-lg border border-gray-100 shadow-lg"
-                    />
-                  </div>
-                </div>
-              </div>
+              <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="단백뇨"
+                  title="단백뇨"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "소변에 단백질이 섞여 나오는 것을 단백뇨라고 하는데, 정상 소변에도 어느 정도 단백이 포함될 수 있으므로, 성인인 경우 하루 500mg 이상, 소아는 1시간 동안 체표면적 1제곱미터당 4mg 이상의 단백질이 배설될 때 명백한 단백뇨라고 합니다.",
+                  ]}
+                  imagePosition="right" // 또는 "right"
+                />
 
               {/* 다음 섹션 */}
               {/* ... existing code ... */}
@@ -1709,35 +1502,16 @@ export default function InternalMedicineCenterPage() {
               {/* 다음 섹션 */}
 
               {/* 혈뇨 섹션 */}
-              <div className="container mx-auto px-4 mt-32">
-                <div className="max-w-7xl mx-auto">
-                  <div className="text-center mb-12">
-                    <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-2">SEKANG HOSPITAL</p>
-                    <h2 className="text-4xl font-bold">혈뇨</h2>
-                  </div>
-
-                  <div className="flex flex-col lg:flex-row items-center gap-16">
-                    <div className="flex-1 space-y-8">
-                      <p className="text-lg leading-relaxed text-gray-700">
-                        혈뇨는 소변에 비정상적인 양의 적혈구가 섞여 배설되는 것으로, 약물이나 음식의 영향으로 단순히 소변이 붉게 보이는 현상과는 다릅니다. 눈으로 색깔 변화를 알아볼 수 있을 정도의 혈뇨를 육안적 혈뇨, 현미경으로만 보이는 것을 현미경적 혈뇨라고 합니다.
-                      </p>
-                    </div>
-
-                    <div className="lg:w-[500px] lg:h-[400px] flex-shrink-0">
-                      <div className="relative w-full h-full rounded-lg overflow-hidden shadow-lg border border-gray-200">
-                        <Image
-                          src="/images/centers/nephrotic-img06.jpg"
-                          alt="혈뇨 검사"
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* 다음 섹션 */}
+              <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="혈뇨"
+                  title="혈뇨"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "혈뇨는 소변에 비정상적인 양의 적혈구가 섞여 배설되는 것으로, 약물이나 음식의 영향으로 단순히 소변이 붉게 보이는 현상과는 다릅니다. 눈으로 색깔 변화를 알아볼 수 있을 정도의 혈뇨를 육안적 혈뇨, 현미경으로만 보이는 것을 현미경적 혈뇨라고 합니다.",
+                  ]}
+                  imagePosition="right" // 또는 "right"
+                />
 
               {/* 혈뇨 원인 섹션 */}
               <div className="container mx-auto px-4 mt-32">
@@ -1810,28 +1584,16 @@ export default function InternalMedicineCenterPage() {
 
           {activeTab === 'lung' && (
             <div className="container mx-auto px-4">
-              <div className="flex items-start gap-16">
-                {/* 이미지 섹션 */}
-                <div className="w-[500px] h-[400px] relative flex-shrink-0">
-                  <Image
-                    src="/images/centers/asthma-img01.jpg"
-                    alt="천식"
-                    fill
-                    className="object-cover rounded-lg border border-gray-100"
-                  />
-            </div>
-                
-                {/* 텍스트 섹션 */}
-                <div className="flex-1">
-                  <div className="mb-8">
-                    <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
-                    <h2 className="text-[#1A1A1A] text-4xl font-bold">천식</h2>
-                  </div>
-                  <p className="text-gray-700 text-lg leading-relaxed">
-                    만성적인 기도의 알레르기 염증 질환으로 폐 속에 있는 기관지가 때때로 좁아져서 호흡곤란, 기침, 천명(음)(쌕쌕거리거나 휘이~ 혹은 가르랑 가르랑 거리는 거친 숨소리) 등 호흡기 증상이 반복적으로 그리고 갑작스럽게 발작적으로 나타나는 질환입니다.
-                  </p>
-                </div>
-              </div>
+              <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="천식"
+                  title="천식"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "만성적인 기도의 알레르기 염증 질환으로 폐 속에 있는 기관지가 때때로 좁아져서 호흡곤란, 기침, 천명(음)(쌕쌕거리거나 휘이~ 혹은 가르랑 가르랑 거리는 거친 숨소리) 등 호흡기 증상이 반복적으로 그리고 갑작스럽게 발작적으로 나타나는 질환입니다.",
+                  ]}
+                  imagePosition="left" // 또는 "right"
+                />
 
               {/* 천식 치료제 섹션 */}
               <div className="relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] w-screen bg-[#1A4B8E] mt-32">
@@ -1916,30 +1678,16 @@ export default function InternalMedicineCenterPage() {
               </div>
 
               {/* 만성폐쇄성폐질환(COPD) 섹션 */}
-              <div className="container mx-auto px-4 mt-32">
-                <div className="flex items-start gap-16">
-                  {/* 텍스트 섹션 */}
-                  <div className="flex-1">
-                    <div className="mb-8">
-                      <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
-                      <h2 className="text-[#1A1A1A] text-4xl font-bold">만성폐쇄성폐질환(COPD)</h2>
-                    </div>
-                    <p className="text-gray-700 text-lg leading-relaxed">
-                      해한 입자(담배가 대표적)나 가스의 흡입에 의해 발생하는 폐의 비정상적인 염증반응과 함께 완전히 가역적이지 않으며 점차 진행하는 기류제한을 특징으로 하는 호흡기 질환입니다.
-                    </p>
-                  </div>
-
-                  {/* 이미지 섹션 */}
-                  <div className="w-[500px] h-[400px] relative flex-shrink-0">
-                    <Image
-                      src="/images/centers/asthma-img04.jpg"
-                      alt="만성폐쇄성폐질환"
-                      fill
-                      className="object-cover rounded-lg border border-gray-100"
-                    />
-                  </div>
-                </div>
-              </div>
+              <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="만성폐쇄성폐질환(COPD)"
+                  title="만성폐쇄성폐질환(COPD)"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "해한 입자(담배가 대표적)나 가스의 흡입에 의해 발생하는 폐의 비정상적인 염증반응과 함께 완전히 가역적이지 않으며 점차 진행하는 기류제한을 특징으로 하는 호흡기 질환입니다.",
+                  ]}
+                  imagePosition="right" // 또는 "right"
+                />
 
               {/* 만성폐쇄성폐질환(COPD) 주요증상 섹션 */}
               <div className="relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] w-screen bg-[#1A4B8E] mt-32">
@@ -2038,33 +1786,17 @@ export default function InternalMedicineCenterPage() {
               </div>
 
               {/* 폐결핵 섹션 */}
-              <div className="container mx-auto px-4 mt-32">
-                <div className="flex items-start gap-16">
-                  {/* 이미지 섹션 */}
-                  <div className="w-[500px] h-[400px] relative flex-shrink-0">
-                    <Image
-                      src="/images/centers/asthma-img05.jpg"
-                      alt="폐결핵"
-                      fill
-                      className="object-cover rounded-lg border border-gray-100"
-                    />
-                  </div>
-                  
-                  {/* 텍스트 섹션 */}
-                  <div className="flex-1">
-                    <div className="mb-8">
-                      <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
-                      <h2 className="text-[#1A1A1A] text-4xl font-bold">폐결핵</h2>
-                    </div>
-                    <p className="text-gray-700 text-lg leading-relaxed mb-8">
-                      결핵은 결핵균에 의해 발생하는 감염성 질환으로, 다른 감염성 질환에 비해 장기적으로 천천히 진행되거나 유지되는 특징이 있습니다. 이 질환은 공기로 퍼져나가며, 폐를 통하여 감염이 시작 되고 폐를 제외한 우리 몸의 여러 장기(예를 들어 뇌, 후두, 뼈, 위장관, 복막, 콩팥) 등을 침범하여 각 기관의 결핵을 유발합니다.
-                    </p>
-                    <p className="text-gray-700 text-lg leading-relaxed">
-                      대부분의 결핵균 감염자들은 증상이 없으며(이를 &apos;잠복결핵, latent tuberculosis&apos;이라고 함), 이들 중 일부분의 사람들만이 병으로서 결핵이 발생합니다. 국제보건기구(World Health Organization: WHO)에 의하면 아직도 전 세계에서 매년 8백만 명이 활동성 결핵에 걸리며, 약 2백만 명이 사망하는 것으로 보고되고 있습니다.
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="폐결핵"
+                  title="폐결핵"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "결핵은 결핵균에 의해 발생하는 감염성 질환으로, 다른 감염성 질환에 비해 장기적으로 천천히 진행되거나 유지되는 특징이 있습니다. 이 질환은 공기로 퍼져나가며, 폐를 통하여 감염이 시작 되고 폐를 제외한 우리 몸의 여러 장기(예를 들어 뇌, 후두, 뼈, 위장관, 복막, 콩팥) 등을 침범하여 각 기관의 결핵을 유발합니다.",
+                    "대부분의 결핵균 감염자들은 증상이 없으며(이를 '잠복결핵, latent tuberculosis'이라고 함), 이들 중 일부분의 사람들만이 병으로서 결핵이 발생합니다. 국제보건기구(World Health Organization: WHO)에 의하면 아직도 전 세계에서 매년 8백만 명이 활동성 결핵에 걸리며, 약 2백만 명이 사망하는 것으로 보고되고 있습니다."
+                  ]}
+                  imagePosition="left" // 또는 "right"
+                />
 
               {/* 폐결핵 초기 증상 섹션 */}
               <div className="container mx-auto px-4 mt-32">
@@ -2218,30 +1950,17 @@ export default function InternalMedicineCenterPage() {
               </div>
 
               {/* 폐렴 섹션 */}
-              <div className="container mx-auto px-4 mt-32">
-                <div className="flex items-start gap-16">
-                  {/* 텍스트 섹션 */}
-                  <div className="flex-1">
-                    <div className="mb-8">
-                      <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
-                      <h2 className="text-[#1A1A1A] text-4xl font-bold">폐렴</h2>
-                    </div>
-                    <p className="text-gray-700 text-lg leading-relaxed">
-                      폐렴은 숨을 쉬는 허파에 균이 들어가 염증이 생기는 병으로 세균이 숨을 쉬는 경로 중 호흡세기관지 이하 부위의 폐 조직에 염증 반응과 경화를 일으키는 질환입니다. 기침, 가래, 발열, 호흡곤란을 특징으로 하며 흉부 사진에서 폐렴과 유사한 소견이 있으면 폐렴이란 진단과 더불어 치료를 시작합니다.
-                    </p>
-                  </div>
+              <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="폐렴"
+                  title="폐렴"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "폐렴은 숨을 쉬는 허파에 균이 들어가 염증이 생기는 병으로 세균이 숨을 쉬는 경로 중 호흡세기관지 이하 부위의 폐 조직에 염증 반응과 경화를 일으키는 질환입니다. 기침, 가래, 발열, 호흡곤란을 특징으로 하며 흉부 사진에서 폐렴과 유사한 소견이 있으면 폐렴이란 진단과 더불어 치료를 시작합니다.",
+                  ]}
+                  imagePosition="right" // 또는 "right"
+                />
 
-                  {/* 이미지 섹션 */}
-                  <div className="w-[500px] h-[400px] relative flex-shrink-0">
-                    <Image
-                      src="/images/centers/asthma-img06.jpg"
-                      alt="폐렴"
-                      fill
-                      className="object-cover rounded-lg border border-gray-100"
-                    />
-                  </div>
-                </div>
-              </div>
 
               {/* 폐렴 원인 섹션 */}
               <div className="container mx-auto px-4 mt-32">

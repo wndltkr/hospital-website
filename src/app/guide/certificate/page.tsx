@@ -8,6 +8,7 @@ import Menu from '@/components/Menu';
 import SideMenu from '@/components/SideMenu';
 import { useState } from 'react';
 import PageBanner from '@/components/PageBanner';
+import InfoSection from '@/components/InfoSection';
 export default function CertificatePage() {
   const [activeTab, setActiveTab] = useState<'first' | 'cost'>('first');
 
@@ -71,56 +72,16 @@ export default function CertificatePage() {
         <div className="max-w-7xl mx-auto">
           {activeTab === 'first' ? (
             <div className="space-y-16">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                {/* Text Content */}
-                <div className="order-2 lg:order-1">
-                  <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.65, delay: 0.2 }}
-                    className="text-[#0066CC] text-sm tracking-[0.2em] mb-4"
-                  >
-                    SEKANG HOSPITAL
-                  </motion.p>
-                  <motion.h3
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.65, delay: 0.3 }}
-                    className="text-3xl font-bold text-gray-900 mb-8"
-                  >
-                    제증명/의무기록 사본 발급 안내
-                  </motion.h3>
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.65, delay: 0.4 }}
-                    className="text-gray-600 leading-relaxed text-lg"
-                  >
-                    <p>
-                      환자의 개인정보 보호를 위해서 의료기관은 의무기록의 비밀을 유지할 책임이 있으므로, 
-                      모든 증명서 발급은 의료법에 따라 원칙적으로 환자 본인이 직접 내원하셔야 하지만 
-                      부득이한 경우 대리인이 오실 때는 구비서류를 지참 하셔야 합니다.
-                    </p>
-                  </motion.div>
-                </div>
-
-                {/* Image */}
-                <div className="order-1 lg:order-2">
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.65, delay: 0.1 }}
-                    className="relative h-[400px] rounded-lg overflow-hidden"
-                  >
-                    <Image
-                      src="/images/guide/record-img01.jpg"
-                      alt="제증명/의무기록 사본 발급 안내"
-                      fill
-                      className="object-cover"
-                    />
-                  </motion.div>
-                </div>
-              </div>
+              <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="제증명/의무기록 사본 발급 안내"
+                  title="제증명/의무기록 사본 발급 안내"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "환자의 개인정보 보호를 위해서 의료기관은 의무기록의 비밀을 유지할 책임이 있으므로, 모든 증명서 발급은 의료법에 따라 원칙적으로 환자 본인이 직접 내원하셔야 하지만 부득이한 경우 대리인이 오실 때는 구비서류를 지참 하셔야 합니다."
+                  ]}
+                  imagePosition="right" // 또는 "right"
+                />
 
               {/* Medical Record Copy Guide Section */}
               <div className="bg-[#F8F9FF] rounded-2xl p-12">
@@ -265,52 +226,16 @@ export default function CertificatePage() {
             </div>
           ) : (
             <div className="space-y-16">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                {/* Text Content */}
-                <div className="order-2 lg:order-1">
-                  <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.65, delay: 0.2 }}
-                    className="text-[#0066CC] text-sm tracking-[0.2em] mb-4"
-                  >
-                    SEKANG HOSPITAL
-                  </motion.p>
-                  <motion.h3
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.65, delay: 0.3 }}
-                    className="text-3xl font-bold text-gray-900 mb-8"
-                  >
-                    증명서 발급 수수료
-                  </motion.h3>
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.65, delay: 0.4 }}
-                    className="text-gray-600 leading-relaxed text-lg"
-                  >
-                    <p>보건복지부 제정 / 2017년 9월 21일 시행</p>
-                  </motion.div>
-                </div>
-
-                {/* Image */}
-                <div className="order-1 lg:order-2">
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.65, delay: 0.1 }}
-                    className="relative h-[400px] rounded-lg overflow-hidden"
-                  >
-                    <Image
-                      src="/images/guide/record-img02.jpg"
-                      alt="증명서 발급 수수료 안내"
-                      fill
-                      className="object-cover"
-                    />
-                  </motion.div>
-                </div>
-              </div>
+              <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="증명서 발급 수수료"
+                  title="증명서 발급 수수료"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "보건복지부 제정 / 2017년 9월 21일 시행"
+                  ]}
+                  imagePosition="left" // 또는 "right"
+                />
 
               {/* Fee Table Section */}
               <div className="bg-white rounded-2xl p-12">

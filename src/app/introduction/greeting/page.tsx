@@ -9,6 +9,7 @@ import SideMenu from '@/components/SideMenu';
 import Footer from '@/components/Footer';
 import PageBanner from '@/components/PageBanner';
 import YouTubeSection from '@/components/YouTubeSection';
+import BannerSection from '@/components/BannerSection';
 
 export default function GreetingPage() {
   return (
@@ -160,20 +161,12 @@ export default function GreetingPage() {
         </section>
 
         {/* Nurse Team Section */}
-        <section className="relative py-32 bg-[url('/images/about/about_fot_img.jpg')] bg-cover bg-center">
-          <div className="absolute inset-0 "></div>
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
-            className="container mx-auto px-8 relative z-10 text-center text-white"
-          >
-            <p className="text-center mb-4">SEKANG HOSPITAL</p>
-            <h2 className="text-4xl font-bold mb-6">세강병원은 자동화 검사기기, 정기적 정도 관리제 시행,</h2>
-            <p className="text-2xl">양질의 의료서비스를 통해 여러분의 건강 지킴이가 되고자 합니다.</p>
-          </motion.div>
-        </section>
+        <BannerSection
+          backgroundImage="/images/about/about_fot_img.jpg"
+          subtitle="SEKANG HOSPITAL"
+          title="세강병원은 자동화 검사기기, 정기적 정도 관리제 시행,"
+          description="양질의 의료서비스를 통해 여러분의 건강 지킴이가 되고자 합니다."
+        />
 
         {/* YouTube Video Section */}
         <YouTubeSection

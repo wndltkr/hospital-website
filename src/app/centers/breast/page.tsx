@@ -8,6 +8,7 @@ import Footer from '@/components/Footer';
 import Menu from '@/components/Menu';
 import PageBanner from '@/components/PageBanner';
 import TabNavigation from '@/components/TabNavigation';
+import InfoSection from '@/components/InfoSection';
 
 export default function BreastCenterPage() {
   const [activeTab, setActiveTab] = useState('thyroid');
@@ -48,27 +49,18 @@ export default function BreastCenterPage() {
         >
           {activeTab === 'thyroid' && (
             <div className="container mx-auto px-4">
-              <div className="flex gap-12">
-                <div className="w-[300px] h-[300px] relative border border-gray-100 flex-shrink-0">
-                  <Image
-                    src="/images/centers/thyroid-detail.jpg"
-                    alt="갑상선 상세"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="flex-1">
-                  <div className="mb-8">
-                    <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">S E K A N G   H O S P I T A L</p>
-                    <h2 className="text-4xl font-bold">갑상선</h2>
-                  </div>
-                  <p className="text-gray-800 text-lg leading-[1.8] whitespace-pre-line">
-                    갑상선은 목 중앙에 튀어나온 물렁뼈 아래쪽에 위치하며 숨골(기관)의 주위를 양쪽으로 둘러싸고 있어 나비가 날개를 편 것과 흡사한 모양을 가집니다.
-
-                    또 숨을 쉬는 기도를 감싸고 있는 나비넥타이 모양을 갖고 있는 내분비기관으로서 몸의 에너지 대사를 조절하는 갑상선 호르몬을 만들고 저장하며 혈액 내 분비하는 역할을 담당합니다. 이와 함께 대사 과정을 촉진시켜 신체가 평균으로 하는 에너지를 공급하고 소비시키게 됩니다.
-                  </p>
-                </div>
-              </div>
+              <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="갑상선"
+                  title="갑상선"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "갑상선은 목 중앙에 튀어나온 물렁뼈 아래쪽에 위치하며 숨골(기관)의 주위를 양쪽으로 둘러싸고 있어 나비가 날개를 편 것과 흡사한 모양을 가집니다.",
+                    "숨을 쉬는 기도를 감싸고 있는 나비넥타이 모양을 갖고 있는 내분비기관으로서 몸의 에너지 대사를 조절하는 갑상선 호르몬을 만들고 저장하며 혈액 내 분비하는 역할을 담당합니다.",
+                    "이와 함께 대사 과정을 촉진시켜 신체가 평균으로 하는 에너지를 공급하고 소비시키게 됩니다.",
+                  ]}
+                  imagePosition="left" // 또는 "right"
+                />
 
               {/* 갑상선 질환의 종류 섹션 */}
               <div className="relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] w-screen bg-[#1A4B8E] mt-32">
@@ -305,27 +297,17 @@ export default function BreastCenterPage() {
 
           {activeTab === 'breast' && (
             <div className="container mx-auto px-4">
-              <div className="flex gap-16 items-center">
-                <div className="w-[500px] h-[400px] relative flex-shrink-0">
-                  <Image
-                    src="/images/centers/breast-intro.jpg"
-                    alt="유방암"
-                    fill
-                    className="object-cover rounded-lg"
-                  />
-                </div>
-                <div className="flex-1">
-                  <div className="mb-8">
-                    <p className="text-[#1A4B8E] tracking-[0.2em] text-sm mb-1">S E K A N G   H O S P I T A L</p>
-                    <h2 className="text-[#1A1A1A] text-4xl font-bold">유방암</h2>
-                  </div>
-                  <p className="text-gray-700 text-lg leading-relaxed whitespace-pre-line">
-                    유방암이란 유방 안에 있는 양성 종양과 반대로 유방 밖으로 퍼져 생명을 위협할 수 있는 악성 종양을 말합니다. 유방에 있는 여러 세포들은 모두 다 암세포에서 발생한 것을 알립니다.
-
-                    유방암은 암이 기원한 세포가 무엇인지, 침윤 정도 등에 따라 다양한 종류로 나뉩니다. 침윤성 유관암, 침윤성 소엽암, 유관 상피내암, 소엽 상피내암, 유방 파제트병, 기타 침윤성 유방암 등이 있습니다.
-                  </p>
-                </div>
-              </div>
+              <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="유방암"
+                  title="유방암"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "유방암이란 유방 안에 있는 양성 종양과 반대로 유방 밖으로 퍼져 생명을 위협할 수 있는 악성 종양을 말합니다. 유방에 있는 여러 세포들은 모두 다 암세포에서 발생한 것을 알립니다.",
+                    "유방암은 암이 기원한 세포가 무엇인지, 침윤 정도 등에 따라 다양한 종류로 나뉩니다. 침윤성 유관암, 침윤성 소엽암, 유관 상피내암, 소엽 상피내암, 유방 파제트병, 기타 침윤성 유방암 등이 있습니다.",
+                  ]}
+                  imagePosition="left" // 또는 "right"
+                />
 
               {/* 유방암의 원인 및 위험요인 섹션 */}
               <div className="relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] w-screen bg-[#1A4B8E] mt-32">
