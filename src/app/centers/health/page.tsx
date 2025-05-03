@@ -10,6 +10,7 @@ import PageBanner from '@/components/PageBanner';
 import YouTubeSection from '@/components/YouTubeSection';
 import TabNavigation from '@/components/TabNavigation';
 import InfoSection from '@/components/InfoSection';
+import BannerSection from '@/components/BannerSection';
 export default function HealthPage() {
   const [activeTab, setActiveTab] = useState('intro');
 
@@ -50,6 +51,7 @@ export default function HealthPage() {
           className="py-12"
         >
           {activeTab === 'intro' && (
+            <>
             <InfoSection
               image="/images/centers/anus-img02.jpg"
               alt="건강증진센터"
@@ -60,9 +62,6 @@ export default function HealthPage() {
               ]}
               imagePosition="left" // 또는 "right"
             />
-          )}
-
-          {activeTab === 'intro' && (
             <div className="container mx-auto px-4 mt-20">
               <div className="space-y-16">
                 <div className="flex items-center gap-12">
@@ -114,9 +113,6 @@ export default function HealthPage() {
                 </div>
               </div>
             </div>
-          )}
-
-          {activeTab === 'intro' && (
             <div className="container mx-auto px-4 mt-20">
               <div className="space-y-16">
                 <div className="flex items-center gap-12">
@@ -168,37 +164,23 @@ export default function HealthPage() {
                 </div>
               </div>
             </div>
-          )}
-
-          {activeTab === 'intro' && (
-            <div className="relative w-full h-[400px] mt-20 bg-[#F8F9FF]">
-              <div className="absolute inset-0">
-                <Image
-                  src="/images/centers/doctor-bg.jpg"
-                  alt="의사 배경"
-                  fill
-                  className="object-cover brightness-[0.7]"
-                />
-              </div>
-              <div className="relative h-full flex flex-col items-center justify-center text-white px-4">
-                <div className="text-center max-w-4xl mx-auto">
-                  <p className="text-4xl font-medium leading-relaxed">
-                    가장 건강할 때 받아야 하는 건강검진<br />
-                    당신의 평생 건강, 세강병원이 함께합니다.
-                  </p>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {activeTab === 'intro' && (
-            <YouTubeSection
+            <BannerSection
+            backgroundImage="/images/about/about_fot_img.jpg"
+            title={[
+              "가장 건강할 때 받아야 하는 건강검진",
+              "당신의 평생 건강, 세강병원이 함께합니다."
+            ]}
+          />
+                      <YouTubeSection
             videoId="VIDEO_ID"
             title="건강증진센터 소개영상"
             sectionSubtitle="SEKANG HOSPITAL"
             sectionTitle="건강증진센터 소개영상"
           />
+            </>
           )}
+
+
 
           {activeTab === 'checkup' && (
             <>
@@ -661,7 +643,7 @@ export default function HealthPage() {
                 </div>
               </div>
 
-              <div className="container mx-auto px-4 mt-20">
+              <div>
               <InfoSection
                 image="/images/centers/anus-img02.jpg"
                 alt="종합검진 안내"
@@ -716,68 +698,19 @@ export default function HealthPage() {
                 imagePosition="right" // 또는 "right"
               />
 
-
-                <div className="flex items-start gap-12 mt-20">
-                  <div className="flex-1">
-                    <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">S E K A N G   H O S P I T A L</p>
-                    <h2 className="text-4xl font-bold mb-8">건강검진 검사전날 유의사항</h2>
-                    <div className="space-y-4">
-                      <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">1</div>
-                        <p className="text-gray-800 text-lg">저녁식사는 기름기 없는 음식으로 가볍게 드시고 저녁9시 이후에는 절대 금식하십시오.</p>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">2</div>
-                        <p className="text-gray-800 text-lg">복용중인 약이 있으면 주치의와 상의 후 복용을 중지하여 주시기 바랍니다.</p>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">3</div>
-                        <p className="text-gray-800 text-lg">침 치료, 물리치료, 파스, 연고 등을 금하십시오.</p>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">4</div>
-                        <p className="text-gray-800 text-lg">과음, 과로 및 과격한 운동 등을 금하시고 충분한 수면을 취하시기 바랍니다.</p>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">5</div>
-                        <p className="text-gray-800 text-lg">대변은 기급적 검사전날에 보시어서 채변통에 넣어 오십시오.(공알 크기)</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="w-[400px] h-[300px] relative">
-                    <Image
-                      src="/images/centers/checkup-caution.jpg"
-                      alt="종합검진 시 주의사항"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                </div>
-
-                <div className="relative w-full h-[400px] mt-20">
-                  <div className="absolute inset-0">
-                    <Image
-                      src="/images/centers/quote-bg.jpg"
-                      alt="의사 배경"
-                      fill
-                      className="object-cover brightness-[0.7]"
-                    />
-                  </div>
-                  <div className="relative h-full flex flex-col items-center justify-center text-white px-4">
-                    <div className="text-center max-w-4xl mx-auto">
-                      <p className="text-4xl font-medium leading-relaxed">
-                        세상을 아름답게 사회를 건강하게!<br />
-                        The Sekang Hospital makes the world a beautiful and healthy society
-                      </p>
-                    </div>
-                  </div>
-                </div>
+              <BannerSection
+                backgroundImage="/images/about/about_fot_img.jpg"
+                title={[
+                  "가장 건강할 때 받아야 하는 건강검진",
+                  "당신의 평생 건강, 세강병원이 함께합니다."
+                ]}
+              />
               </div>
             </>
           )}
 
           {activeTab === 'custom' && (
-            <div className="container mx-auto px-4">
+            <div>
               <InfoSection
                 image="/images/centers/anus-img02.jpg"
                 alt="공무원, 교직원 특별 종합검진"
@@ -801,24 +734,13 @@ export default function HealthPage() {
                 imagePosition="right" // 또는 "right"
               />
 
-              <div className="relative w-full h-[400px] mt-20">
-                <div className="absolute inset-0">
-                  <Image
-                    src="/images/centers/quote-bg.jpg"
-                    alt="의사 배경"
-                    fill
-                    className="object-cover brightness-[0.7]"
-                  />
-                </div>
-                <div className="relative h-full flex flex-col items-center justify-center text-white px-4">
-                  <div className="text-center max-w-4xl mx-auto">
-                    <p className="text-4xl font-medium leading-relaxed">
-                      세상을 아름답게 사회를 건강하게!<br />
-                      The Sekang Hospital makes the world a beautiful and healthy society
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <BannerSection
+                backgroundImage="/images/about/about_fot_img.jpg"
+                title={[
+                  "가장 건강할 때 받아야 하는 건강검진",
+                  "당신의 평생 건강, 세강병원이 함께합니다."
+                ]}
+              />
 
               <YouTubeSection
                   videoId="VIDEO_ID"
@@ -830,7 +752,7 @@ export default function HealthPage() {
           )}
 
           {activeTab === 'reservation' && (
-            <div className="container mx-auto px-4">
+            <div>
               <InfoSection
                 image="/images/centers/anus-img02.jpg"
                 alt="건강증진센터 예약안내"
@@ -904,24 +826,14 @@ export default function HealthPage() {
                 </div>
               </div>
 
-              <div className="relative w-full h-[400px] mt-20">
-                <div className="absolute inset-0">
-                  <Image
-                    src="/images/centers/quote-bg.jpg"
-                    alt="의사 배경"
-                    fill
-                    className="object-cover brightness-[0.7]"
-                  />
-                </div>
-                <div className="relative h-full flex flex-col items-center justify-center text-white px-4">
-                  <div className="text-center max-w-4xl mx-auto">
-                    <p className="text-4xl font-medium leading-relaxed">
-                      세상을 아름답게 사회를 건강하게!<br />
-                      The Sekang Hospital makes the world a beautiful and healthy society
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <BannerSection
+                backgroundImage="/images/about/about_fot_img.jpg"
+                title={[
+                  "세상을 아름답게 사회를 건강하게!",
+                  "The Sekang Hospital makes the world ",
+                  "a beautiful and healthy society"
+                ]}
+              />
 
               <YouTubeSection
                   videoId="VIDEO_ID"

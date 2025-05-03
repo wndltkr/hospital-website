@@ -75,15 +75,15 @@ const Menu = () => {
               <li key={index} className="group relative">
                 <button className="text-lg font-medium px-2 py-1 hover:text-[#4A90BE] transition-colors duration-200 relative">
                   {item.title}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#4A90BE] group-hover:w-full transition-all duration-300"></span>
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#4A90BE] group-hover:w-full transition-all duration-500"></span>
                 </button>
-                <div className="absolute invisible opacity-0 translate-y-[-10px] group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 -left-8 mt-1 min-w-[200px] bg-white text-gray-700 shadow-xl rounded-lg overflow-hidden border-t-2 border-[#4A90BE]">
+                <div className="absolute invisible opacity-0 translate-y-[-10px] group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 -left-8 mt-1 min-w-[200px] bg-white text-gray-700 shadow-xl rounded-lg overflow-hidden border-t-2 border-[#4A90BE] transition-all duration-500 ease-in-out">
                   <ul className="py-2">
                     {item.subItems.map((subItem, subIndex) => (
                       <li key={subIndex}>
                         <Link 
                           href={subItem.link} 
-                          className="block px-6 py-2.5 text-[15px] hover:bg-[#EDF5FA] hover:text-[#4A90BE] transition-colors duration-200 whitespace-nowrap"
+                          className="block px-6 py-2.5 text-[15px] hover:bg-[#EDF5FA] hover:text-[#4A90BE] transition-colors duration-500 whitespace-nowrap"
                         >
                           {subItem.name}
                         </Link>

@@ -1,6 +1,15 @@
 'use client';
 
+import { usePathname } from 'next/navigation';
+
 export default function ChatButton() {
+  const pathname = usePathname();
+
+  // Don't render the chat button on admin pages
+  if (pathname?.startsWith('/admin')) {
+    return null;
+  }
+
   return (
     <div className="fixed bottom-8 right-8 z-50">
       <button

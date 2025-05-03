@@ -20,7 +20,7 @@ export default function InfoSection({
   imagePosition = 'left',
 }: InfoSectionProps) {
   return (
-    <div className="w-full">
+    <div className="w-full py-16">
       <div className="container mx-auto px-4">
         <div className={`flex gap-8 ${imagePosition === 'right' ? 'flex-row-reverse' : ''}`}>
           <div className="flex-shrink-0">
@@ -32,6 +32,7 @@ export default function InfoSection({
                 height={300}
                 className="block"
                 priority
+                style={{ width: '400px', height: '300px', objectFit: 'cover' }}
               />
             </div>
           </div>

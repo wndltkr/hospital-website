@@ -9,6 +9,7 @@ import PageBanner from '@/components/PageBanner';
 import YouTubeSection from '@/components/YouTubeSection';
 import TabNavigation from '@/components/TabNavigation';
 import InfoSection from '@/components/InfoSection';
+import BannerSection from '@/components/BannerSection';
 
 export default function ClinicCenterPage() {
   const [activeTab, setActiveTab] = useState('gallbladder');
@@ -51,7 +52,7 @@ export default function ClinicCenterPage() {
         >
           {/* Tab content will be added here */}
           {activeTab === 'gallbladder' && (
-            <div className="container mx-auto px-4">
+            <div>
               <InfoSection
                   image="/images/centers/anus-img02.jpg"
                   alt="담석증"
@@ -64,27 +65,14 @@ export default function ClinicCenterPage() {
                 />
 
               {/* 담석증 증상 섹션 */}
-              <div className="relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] w-screen bg-[#1A4B8E] mt-32">
-                <div className="container mx-auto px-4">
-                  <div className="max-w-5xl mx-auto py-24">
-                    <div className="text-center">
-                      <p className="text-white/80 tracking-[0.2em] text-sm mb-4">SEKANG HOSPITAL</p>
-                      <h2 className="text-white text-4xl font-bold mb-12">담석증 증상</h2>
-                      <div className="text-white/90 text-lg leading-relaxed space-y-6">
-                        <p>
-                          담석증은 무증상인 경우도 있으나, 일반적으로 상복부의 심한 통증으로 시작하여 오른쪽 상복부에 가장 심하고 통증이 오른쪽 어깨까지 퍼지는 것이 특징입니다. 통증은 갑자기 나타나며 1~4시간 동안 지속되다가 갑자기 혹은 서서히 소실됩니다.
-                        </p>
-                        <p>
-                          오심, 구토가 흔히 동반되고 발열, 오한 등이 동반되는 경우 담낭염, 담관염 등이 합병증으로 발생한 것일 수도 있습니다. 총담관 담석증 등의 합병증이 동반된 경우 혈중 담즙 색소 수치가 높아져 황달 증상이 나타날 수 있습니다.
-                        </p>
-                        <p>
-                          무증상인 경우 소화불량, 체한 증상 등으로 나타나기도 합니다.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <BannerSection
+                backgroundImage="/images/about/about_fot_img.jpg"
+                title={[
+                  "담석증 증상"
+                ]}
+                description=
+                  "담석증은 무증상인 경우도 있으나, 일반적으로 상복부의 심한 통증으로 시작하여 오른쪽 상복부에 가장 심하고 통증이 오른쪽 어깨까지 퍼지는 것이 특징입니다. 통증은 갑자기 나타나며 1~4시간 동안 지속되다가 갑자기 혹은 서서히 소실됩니다. 오심, 구토가 흔히 동반되고 발열, 오한 등이 동반되는 경우 담낭염, 담관염 등이 합병증으로 발생한 것일 수도 있습니다. 총담관 담석증 등의 합병증이 동반된 경우 혈중 담즙 색소 수치가 높아져 황달 증상이 나타날 수 있습니다. 무증상인 경우 소화불량, 체한 증상 등으로 나타나기도 합니다."
+              />
 
               {/* 담석증 진단 및 검사 섹션 */}
               <div className="container mx-auto px-4 mt-32">
@@ -183,30 +171,17 @@ export default function ClinicCenterPage() {
                 />
 
               {/* 담낭염 원인 섹션 */}
-              <div className="relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] w-screen bg-[#1A4B8E] mt-32">
-                <div className="container mx-auto px-4">
-                  <div className="max-w-5xl mx-auto py-24">
-                    <div className="text-center">
-                      <p className="text-white/80 tracking-[0.2em] text-sm mb-4">SEKANG HOSPITAL</p>
-                      <h2 className="text-white text-4xl font-bold mb-12">담낭염 원인</h2>
-                      <div className="text-white/90 text-lg leading-relaxed space-y-6">
-                        <div className="flex items-start gap-3">
-                          <span className="text-[#4B9EFF] flex-shrink-0">✓</span>
-                          <p>만성 신부전의 원인은 지역 및 나이 등에 따라 다릅니다.</p>
-                        </div>
-                        <div className="flex items-start gap-3">
-                          <span className="text-[#4B9EFF] flex-shrink-0">✓</span>
-                          <p>한국에서의 주된 발병 원인은 당뇨병성 신장질환(41%), 고혈압(16%), 사구체신염(14%) 등으로 알려져 있습니다.</p>
-                        </div>
-                        <div className="flex items-start gap-3">
-                          <span className="text-[#4B9EFF] flex-shrink-0">✓</span>
-                          <p>그 밖의 원인으로는 다낭성 신장질환과 기타 요로질환이 있습니다.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <BannerSection
+                backgroundImage="/images/about/about_fot_img.jpg"
+                title={[
+                  "담낭염 원인"
+                ]}
+                description={[
+                  "만성 신부전의 원인은 지역 및 나이 등에 따라 다릅니다.",
+                  "한국에서의 주된 발병 원인은 당뇨병성 신장질환(41%), 고혈압(16%), 사구체신염(14%) 등으로 알려져 있습니다.",
+                  "그 밖의 원인으로는 다낭성 신장질환과 기타 요로질환이 있습니다."
+                ]}
+              />
 
               {/* 담낭염 증상 섹션 */}
               <div className="container mx-auto px-4 mt-32">
@@ -392,7 +367,7 @@ export default function ClinicCenterPage() {
             </div>
           )}
           {activeTab === 'brain' && (
-            <div className="container mx-auto px-4">
+            <div>
               {/* 목 디스크 및 목 관절의 질환 섹션 */}
               <InfoSection
                   image="/images/centers/anus-img02.jpg"
@@ -465,29 +440,16 @@ export default function ClinicCenterPage() {
               </div>
 
               {/* 목 디스크 및 목 관절 질환 진단 섹션 */}
-              <div className="relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] w-screen mt-32">
-                <div className="relative bg-[url('/images/centers/brain-bg1.jpg')] bg-cover bg-center">
-                  <div className="absolute inset-0 bg-black/50"></div>
-                  <div className="container mx-auto px-4 relative z-10">
-                    <div className="max-w-4xl mx-auto py-24">
-                      <div className="text-center">
-                        <p className="text-white/80 tracking-[0.2em] text-sm mb-4">SEKANG HOSPITAL</p>
-                        <h2 className="text-white text-4xl font-bold mb-12">목 디스크 및 목 관절 질환 진단</h2>
-                        <div className="space-y-6">
-                          <div className="flex items-start gap-3 text-white/90 text-lg leading-relaxed">
-                            <span className="text-[#4B9EFF] flex-shrink-0 mt-1">✓</span>
-                            <p>X-ray(엑스레이) 촬영으로 척추와 척추 사이의 간격, 후관절 쪽 굴곡 형성 유무 확인</p>
-                          </div>
-                          <div className="flex items-start gap-3 text-white/90 text-lg leading-relaxed">
-                            <span className="text-[#4B9EFF] flex-shrink-0 mt-1">✓</span>
-                            <p>척수 조영술, CT, MRI 등의 검사로 척수 신경 압박 정도, 척수 신경 내 변화 유무 관찰하여 진단</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <BannerSection
+                backgroundImage="/images/about/about_fot_img.jpg"
+                title={[
+                  "목 디스크 및 목 관절 질환 진단"
+                ]}
+                description={[
+                  "X-ray(엑스레이) 촬영으로 척추와 척추 사이의 간격, 후관절 쪽 굴곡 형성 유무 확인",
+                  "척수 조영술, CT, MRI 등의 검사로 척수 신경 압박 정도, 척수 신경 내 변화 유무 관찰하여 진단"
+                ]}
+              />
 
               {/* 목 디스크 및 목 관절 질환 치료 섹션 */}
               <div className="relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] w-screen bg-[#1A4B8E] mt-32">
@@ -538,7 +500,7 @@ export default function ClinicCenterPage() {
             </div>
           )}
           {activeTab === 'hernia' && (
-            <div className="container mx-auto px-4">
+            <div>
               {/* 탈장 소개 섹션 */}
               <InfoSection
                   image="/images/centers/anus-img02.jpg"
@@ -613,33 +575,17 @@ export default function ClinicCenterPage() {
               </div>
 
               {/* 탈장 진단 섹션 */}
-              <div className="relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] w-screen mt-32">
-                <div className="relative bg-[url('/images/centers/hernia-bg1.jpg')] bg-cover bg-center">
-                  <div className="absolute inset-0 bg-black/50"></div>
-                  <div className="container mx-auto px-4 relative z-10">
-                    <div className="max-w-4xl mx-auto py-24">
-                      <div className="text-center">
-                        <p className="text-white/80 tracking-[0.2em] text-sm mb-4">SEKANG HOSPITAL</p>
-                        <h2 className="text-white text-4xl font-bold mb-12">탈장 진단</h2>
-                        <div className="space-y-6">
-                          <div className="flex items-start gap-3 justify-center">
-                            <span className="text-[#4B9EFF] flex-shrink-0 mt-1">✓</span>
-                            <p className="text-white/90 text-lg leading-relaxed">손가락으로 부드럽고 둥근 덩어리 촉진</p>
-                          </div>
-                          <div className="flex items-start gap-3 justify-center">
-                            <span className="text-[#4B9EFF] flex-shrink-0 mt-1">✓</span>
-                            <p className="text-white/90 text-lg leading-relaxed">기침할 때 더 자세히 관찰 가능</p>
-                          </div>
-                          <div className="flex items-start gap-3 justify-center">
-                            <span className="text-[#4B9EFF] flex-shrink-0 mt-1">✓</span>
-                            <p className="text-white/90 text-lg leading-relaxed">진단이 모호한 경우 복부 초음파, CT 촬영 시행</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <BannerSection
+                backgroundImage="/images/about/about_fot_img.jpg"
+                title={[
+                  "목 디스크 및 목 관절 질환 진단"
+                ]}
+                description={[
+                  "손가락으로 부드럽고 둥근 덩어리 촉진",
+                  "기침할 때 더 자세히 관찰 가능",
+                  "진단이 모호한 경우 복부 초음파, CT 촬영 시행"
+                ]}
+              />
 
               {/* 탈장 치료 섹션 */}
               <div className="relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] w-screen bg-[#1A4B8E] mt-32">
@@ -687,7 +633,7 @@ export default function ClinicCenterPage() {
             </div>
           )}
           {activeTab === 'appendicitis' && (
-            <div className="container mx-auto px-4">
+            <div>
               {/* 충수염 소개 섹션 */}
               <InfoSection
                   image="/images/centers/anus-img02.jpg"
@@ -699,6 +645,18 @@ export default function ClinicCenterPage() {
                   ]}
                   imagePosition="left" // 또는 "right"
                 />
+              <BannerSection
+                backgroundImage="/images/about/about_fot_img.jpg"
+                title={[
+                  "급성 충수염 진단"
+                ]}
+                description={[
+                  "혈액검사",
+                  "소변검사",
+                  "단순복부 X-ray촬영",
+                  "복부초음파검사 혹은 복부CT검사"
+                ]}
+              />
 
               {/* 급성충수염 증상 섹션 */}
               <div className="relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] w-screen bg-[#1A4B8E] mt-32">

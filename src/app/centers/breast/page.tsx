@@ -9,6 +9,7 @@ import Menu from '@/components/Menu';
 import PageBanner from '@/components/PageBanner';
 import TabNavigation from '@/components/TabNavigation';
 import InfoSection from '@/components/InfoSection';
+import BannerSection from '@/components/BannerSection';
 
 export default function BreastCenterPage() {
   const [activeTab, setActiveTab] = useState('thyroid');
@@ -296,7 +297,7 @@ export default function BreastCenterPage() {
           )}
 
           {activeTab === 'breast' && (
-            <div className="container mx-auto px-4">
+            <div>
               <InfoSection
                   image="/images/centers/anus-img02.jpg"
                   alt="유방암"
@@ -367,85 +368,27 @@ export default function BreastCenterPage() {
                 </div>
               </div>
 
-              {/* 유방암의 증상 섹션 */}
-              <div className="mt-32">
-                <div className="container mx-auto px-4">
-                  <div className="text-center mb-16">
-                    <p className="text-[#1A4B8E] tracking-[0.2em] text-sm mb-1">S E K A N G   H O S P I T A L</p>
-                    <h2 className="text-[#1A1A1A] text-4xl font-bold">유방암의 증상</h2>
-                  </div>
-
-                  <div className="text-center mb-12">
-                    <p className="text-gray-700 text-lg leading-relaxed">
-                      유방암은 거의 대부분 초기에는 증상이 동반되지 않은채 발견되기 때문에 이미 증상이 악화되었을 가능성이 큽니다.<br />
-                      유방암이 가지온 수 있는 증상은 다음과 같습니다.
-                    </p>
-                  </div>
-
-                  <div className="max-w-[800px] mx-auto">
-                    <div className="space-y-6">
-                      <div className="flex items-center gap-6">
-                        <div className="w-10 h-10 rounded-full bg-[#0066CC] text-white flex items-center justify-center text-lg font-medium flex-shrink-0">
-                          1
-                        </div>
-                        <p className="text-gray-800 text-lg">통증 없이 가슴에서 멍울이 만져진다.</p>
-                      </div>
-                      <div className="flex items-center gap-6">
-                        <div className="w-10 h-10 rounded-full bg-[#0066CC] text-white flex items-center justify-center text-lg font-medium flex-shrink-0">
-                          2
-                        </div>
-                        <p className="text-gray-800 text-lg">멍울이 유방에 이어 겨드랑이에서도 만져진다.</p>
-                      </div>
-                      <div className="flex items-center gap-6">
-                        <div className="w-10 h-10 rounded-full bg-[#0066CC] text-white flex items-center justify-center text-lg font-medium flex-shrink-0">
-                          3
-                        </div>
-                        <p className="text-gray-800 text-lg">유두에서 피가 섞인 분비물이 나오거나 습진이 잘 낫지 않는다.</p>
-                      </div>
-                      <div className="flex items-center gap-6">
-                        <div className="w-10 h-10 rounded-full bg-[#0066CC] text-white flex items-center justify-center text-lg font-medium flex-shrink-0">
-                          4
-                        </div>
-                        <p className="text-gray-800 text-lg">유방의 피부가 속으로 들어가 움푹 패여 함몰유두가 된다.</p>
-                      </div>
-                      <div className="flex items-center gap-6">
-                        <div className="w-10 h-10 rounded-full bg-[#0066CC] text-white flex items-center justify-center text-lg font-medium flex-shrink-0">
-                          5
-                        </div>
-                        <p className="text-gray-800 text-lg">멍울 없이 피부가 빨갛게 붓고 통증, 열감이 느껴진다.</p>
-                      </div>
-                      <div className="flex items-center gap-6">
-                        <div className="w-10 h-10 rounded-full bg-[#0066CC] text-white flex items-center justify-center text-lg font-medium flex-shrink-0">
-                          6
-                        </div>
-                        <p className="text-gray-800 text-lg">유방 피부가 오렌지 껍질처럼 두꺼워진다.</p>
-                      </div>
-                      <div className="flex items-center gap-6">
-                        <div className="w-10 h-10 rounded-full bg-[#0066CC] text-white flex items-center justify-center text-lg font-medium flex-shrink-0">
-                          7
-                        </div>
-                        <p className="text-gray-800 text-lg">젖이 시 짐곳점이 커져 만져지기도 한다.</p>
-                      </div>
-                      <div className="flex items-center gap-6">
-                        <div className="w-10 h-10 rounded-full bg-[#0066CC] text-white flex items-center justify-center text-lg font-medium flex-shrink-0">
-                          8
-                        </div>
-                        <p className="text-gray-800 text-lg">유방암 진행 시 유방 형체가 거의 파괴되기도 한다.</p>
-                      </div>
-                      <div className="flex items-center gap-6">
-                        <div className="w-10 h-10 rounded-full bg-[#0066CC] text-white flex items-center justify-center text-lg font-medium flex-shrink-0">
-                          9
-                        </div>
-                        <p className="text-gray-800 text-lg">남성 유방암은 주로 고령자에게, 젖꼭지 밑에서 딱딱한 덩어리가 만져진다.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <BannerSection
+                backgroundImage="/images/about/about_fot_img.jpg"
+                title={[
+                  "유방암의 증상"
+                ]}
+                description={[
+                  "통증 없이 가슴에서 멍울이 만져진다.",
+                  "멍울이 유방에 이어 겨드랑이에서도 만져진다.",
+                  "유두에서 피가 섞인 분비물이 나오거나 습진이 잘 낫지 않는다.",
+                  "유방의 피부가 속으로 들어가 움푹 파여 함몰유두가 된다.",
+                  "멍울 없이 피부가 빨갛게 붓고 통증, 열감이 느껴진다.",
+                  "유방 피부가 오렌지 껍질처럼 두꺼워진다.",
+                  "전이 시 림프절이 커져 만져지기도 한다.",
+                  "유방암 진행 시 유방 형체가 거의 파괴되기도 한다.",
+                  "남성 유방암은 주로 고령자에게, 젖꼭지 밑에서 딱딱한 덩어리가 만져진다."
+                ]}
+              />
 
               {/* 유방암 검사방법 섹션 */}
               <div className="mt-32">
-                <div className="container mx-auto px-4">
+                <div>
                   <div className="flex justify-between items-start gap-16">
                     <div className="flex-1">
                       <div className="mb-12">
@@ -525,16 +468,23 @@ export default function BreastCenterPage() {
                         </div>
                       </div>
                     </div>
-
-                    <div className="w-[500px] h-[400px] relative flex-shrink-0">
-                      <Image
-                        src="/images/centers/breast-examination.jpg"
-                        alt="유방암 검사"
-                        fill
-                        className="object-cover rounded-lg"
-                      />
-                    </div>
                   </div>
+                  <BannerSection
+                backgroundImage="/images/about/about_fot_img.jpg"
+                title={[
+                  "유방암의 효율적 조기 검진법'3D 맘모그래피'"
+                ]}
+              />
+              <InfoSection
+                  image="/images/centers/anus-img02.jpg"
+                  alt="3D 맘모그래피"
+                  title="3D 맘모그래피"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "X선 투사 신호를 디지털 신호로 전환해 영상화하는 최신 고해상도 하이엔드급 3D 전용 대학병원급 장비로 유방암을 진단합니다. 2D 제품을 통한 검사에서 발견하기 어려웠던 암세포나 미세석회화를 명확하게 구별할 수 있습니다.",
+                  ]}
+                  imagePosition="left" // 또는 "right"
+                />
                 </div>
               </div>
 
@@ -593,13 +543,12 @@ export default function BreastCenterPage() {
               </div>
 
               {/* 정기 검진 배너 */}
-              <div className="relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] w-screen bg-[url('/images/centers/breast-banner.jpg')] bg-cover bg-center mt-32">
-                <div className="w-full h-[240px] flex items-center justify-center bg-black/40">
-                  <h2 className="text-white text-3xl font-medium tracking-wider">
-                    &quot;유방암은 치료 후에도 정기 검진이 필수입니다.&quot;
-                  </h2>
-                </div>
-              </div>
+              <BannerSection
+                backgroundImage="/images/about/about_fot_img.jpg"
+                title={[
+                  "유방암은 치료 후에도 정기 검진이 필수입니다."
+                ]}
+              />
 
               {/* 재발 유형 섹션 */}
               <div className="mt-32">
