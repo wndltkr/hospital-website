@@ -56,7 +56,7 @@ export default function InternalMedicineCenterPage() {
           {activeTab === 'hypertension' && (
             <div>
               <InfoSection
-                  image="/images/centers/anus-img02.jpg"
+                  image="/images/centers/internal-img01.jpg"
                   alt="고혈압"
                   title="고혈압"
                   subtitle="SEKANG HOSPITAL"
@@ -169,7 +169,7 @@ export default function InternalMedicineCenterPage() {
               {/* 고혈압 치료법 섹션 */}
               <div className="container mx-auto px-4 mt-32">
               <InfoSection
-                  image="/images/centers/anus-img02.jpg"
+                  image="/images/centers/internal-img02.jpg"
                   alt="고혈압 치료법"
                   title="고혈압 치료법"
                   subtitle="SEKANG HOSPITAL"
@@ -183,7 +183,7 @@ export default function InternalMedicineCenterPage() {
 
               {/* 고혈압 예방 수칙 섹션 */}
               <BannerSection
-                backgroundImage="/images/about/about_fot_img.jpg"
+                backgroundImage="/images/centers/colon-tester.jpg"
                 title={[
                   "고혈압 예방 수칙 7가지"
                 ]}
@@ -196,12 +196,14 @@ export default function InternalMedicineCenterPage() {
                   "스트레스를 피하고 평온한 마음을 유지합니다.",
                   "정기적으로 혈압을 측정하고 의사의 진찰을 생활화 합니다."
                 ]}
+                isRepeating={true}
+                textColor="black"
               />
 
               {/* 고지혈증 섹션 */}
               <div className="container mx-auto px-4 mt-32">
               <InfoSection
-                  image="/images/centers/anus-img02.jpg"
+                  image="/images/centers/internal-img03.jpg"
                       alt="고지혈증"
                   title="고지혈증"
                   subtitle="SEKANG HOSPITAL"
@@ -299,7 +301,7 @@ export default function InternalMedicineCenterPage() {
           {activeTab === 'diabetes' && (
             <div>
               <InfoSection
-                  image="/images/centers/anus-img02.jpg"
+                  image="/images/centers/diabetes-img01.jpg"
                     alt="당뇨병"
                   title="당뇨병"
                   subtitle="SEKANG HOSPITAL"
@@ -312,7 +314,7 @@ export default function InternalMedicineCenterPage() {
 
               {/* 당뇨병이란? 섹션 */}
               <BannerSection
-                backgroundImage="/images/about/about_fot_img.jpg"
+                backgroundImage="/images/centers/diabetes_bgimg.jpg"
                 title={[
                   "당뇨병이란?"
                 ]}
@@ -390,7 +392,7 @@ export default function InternalMedicineCenterPage() {
                   {/* 텍스트 섹션 */}
                   <div className="flex-1">
                   <InfoSection
-                  image="/images/centers/anus-img02.jpg"
+                  image="/images/centers/diabetes-img02.jpg"
                   alt="당뇨병 검사방법"
                   title="당뇨병 검사방법"
                   subtitle="SEKANG HOSPITAL"
@@ -398,7 +400,7 @@ export default function InternalMedicineCenterPage() {
                     "요당검사 소변에서 당의 존재를 알아보는 방법으로 검사 결과 양성으로 나오면 혈당 검사를 하여 정확한 진단을 받아야 합니다.",
                     "당뇨병의 진단에 있어 혈당치의 기준은 공복 혈당치 126mg/dl 이상, 식후 2시간 혈당치 200mg/dl이상이 기준입니다."
                   ]}
-                  imagePosition="left" // 또는 "right"
+                  imagePosition="right" // 또는 "right"
                 />
 
                     
@@ -438,7 +440,7 @@ export default function InternalMedicineCenterPage() {
 
               {/* 당뇨병 관리 섹션 */}
               <BannerSection
-                backgroundImage="/images/about/about_fot_img.jpg"
+                backgroundImage="/images/centers/diabetes_fot_img.jpg"
                 title={[
                   "당뇨병은 꾸준한 관리가 중요합니다."
                 ]}
@@ -457,7 +459,7 @@ export default function InternalMedicineCenterPage() {
           {activeTab === 'liver' && (
             <div>
               <InfoSection
-                  image="/images/centers/anus-img02.jpg"
+                  image="/images/centers/liver-img01.jpg"
                   alt="지방간"
                   title="지방간"
                   subtitle="SEKANG HOSPITAL"
@@ -574,19 +576,19 @@ export default function InternalMedicineCenterPage() {
 
               {/* 간염 섹션 */}
               <InfoSection
-                  image="/images/centers/anus-img02.jpg"
+                  image="/images/centers/liver-img05.jpg"
                   alt="간염"
                   title="간염"
                   subtitle="SEKANG HOSPITAL"
                   descriptions={[
                     "B형 간염은 B형 간염 바이러스에 감염되어 생기는 병입니다. 이 바이러스는 간에 주로 감염됩니다. B형 간염 바이러스는, 빠른 속도로 생명을 위협하고, 간의 염증을 일으키며 수도 있지만 대부분의 경우는 서서히 진행됩니다. 우리나라는 B형 간염의 유병률이 높고, 만성 B형 간염은 흔히 간경변증 혹은 간암을 야기할 수 있습니다."
                   ]}
-                  imagePosition="left" // 또는 "right"
+                  imagePosition="right" // 또는 "right"
                 />
 
               {/* 만성 B형 간염의 증상 및 특징 섹션 */}
               <BannerSection
-                backgroundImage="/images/about/about_fot_img.jpg"
+                backgroundImage="/images/centers/colon-tester.jpg"
                 title={[
                   "만성 B형 간염의 증상 및 특징"
                 ]}
@@ -597,11 +599,13 @@ export default function InternalMedicineCenterPage() {
                   "주산기 감염은 90%, 유년기 감염은 20%, 성인기 감염은 5% 미만 만성 간염으로 이어집니다.",
                   "급성 간염 회복 후 10년 후 B형 간염 바이러스가 검출되기도 합니다.(잠재 감염)"
                 ]}
+                isRepeating={true}
+                textColor="black"
               />
 
               {/* 만성 B형 간염 치료의 일반 원칙 섹션 */}
               <BannerSection
-                backgroundImage="/images/about/about_fot_img.jpg"
+                backgroundImage="/images/centers/liver_bgimg.jpg"
                 title={[
                   "만성 B형 간염의 일반 원칙"
                 ]}
@@ -614,7 +618,7 @@ export default function InternalMedicineCenterPage() {
 
               {/* 간경변증 섹션 */}
               <InfoSection
-                  image="/images/centers/anus-img02.jpg"
+                  image="/images/centers/liver-img06.jpg"
                   alt="간경변증"
                   title="간경변증"
                   subtitle="SEKANG HOSPITAL"
@@ -668,14 +672,14 @@ export default function InternalMedicineCenterPage() {
 
               {/* 간암 섹션 */}
               <InfoSection
-                  image="/images/centers/anus-img02.jpg"
+                  image="/images/centers/liver-img07.jpg"
                   alt="간암"
                   title="간암"
                   subtitle="SEKANG HOSPITAL"
                   descriptions={[
                     "간의 대부분을 차지하는 간 세포에서 기원하는 악성 종양을 말합니다. 간에 생기는 모든 종류의 악성 종양이나 다른 기관의 암이 간에 전이된 전이성 간암까지도 포함하지만, 간세포암종이 간암 중 가장 흔해 보통 간세포암종만을 의미합니다."
                   ]}
-                  imagePosition="left" // 또는 "right"
+                  imagePosition="right" // 또는 "right"
                 />
 
               {/* 간암의 주요 원인 섹션 */}
@@ -752,7 +756,7 @@ export default function InternalMedicineCenterPage() {
 
               {/* 간암의 치료 섹션 */}
               <BannerSection
-                backgroundImage="/images/about/about_fot_img.jpg"
+                backgroundImage="/images/centers/colon-tester.jpg"
                 title={[
                   "간암의 치료"
                 ]}
@@ -763,11 +767,13 @@ export default function InternalMedicineCenterPage() {
                   "고주파를 이용하여 간암을 태우는 고주파 열치료를 진행할 수 있습니다.",
                   "또한 의학 기술 발달로 간 기능이 나쁘거나 종양의 개수가 많아 수술적 절제가 어려운 경우 간 이식으로 완치도 기대할 수 있습니다. 한편 간암이 간 밖으로 전이된 경우나 진행된 경우에는 항암제 치료를 고려할 수 있습니다."
                 ]}
+                isRepeating={true}
+                textColor="black"
               />
 
               {/* 간암의 예방방법 섹션 */}
               <InfoSection
-                  image="/images/centers/anus-img02.jpg"
+                  image="/images/centers/liver-img08.jpg"
                   alt="간암의 예방방법"
                   title="간암의 예방방법"
                   subtitle="SEKANG HOSPITAL"
@@ -794,7 +800,7 @@ export default function InternalMedicineCenterPage() {
               {/* 신증후군 섹션 */}
             <div className="container mx-auto px-4">
             <InfoSection
-                  image="/images/centers/anus-img02.jpg"
+                  image="/images/centers/nephrotic-img01.jpg"
                   alt="신증후군"
                   title="신증후군"
                   subtitle="SEKANG HOSPITAL"
@@ -851,7 +857,7 @@ export default function InternalMedicineCenterPage() {
 
               {/* 신증후군 증상 섹션 */}
               <BannerSection
-                backgroundImage="/images/about/about_fot_img.jpg"
+                backgroundImage="/images/centers/nephrotic-bgimg1.jpg"
                 title={[
                   "신증후군 증상"
                 ]}
@@ -917,7 +923,7 @@ export default function InternalMedicineCenterPage() {
               <div className="container mx-auto px-4 mt-32">
                 {/* 이미지와 설명 */}
                 <InfoSection
-                  image="/images/centers/anus-img02.jpg"
+                  image="/images/centers/nephrotic-img02.jpg"
                   alt="만성 신부전"
                   title="만성 신부전"
                   subtitle="SEKANG HOSPITAL"
@@ -1377,7 +1383,7 @@ export default function InternalMedicineCenterPage() {
           {activeTab === 'lung' && (
             <div>
               <InfoSection
-                  image="/images/centers/anus-img02.jpg"
+                  image="/images/centers/asthma-img01.jpg"
                   alt="천식"
                   title="천식"
                   subtitle="SEKANG HOSPITAL"
@@ -1471,7 +1477,7 @@ export default function InternalMedicineCenterPage() {
 
               {/* 만성폐쇄성폐질환(COPD) 섹션 */}
               <InfoSection
-                  image="/images/centers/anus-img02.jpg"
+                  image="/images/centers/asthma-img04.jpg"
                   alt="만성폐쇄성폐질환(COPD)"
                   title="만성폐쇄성폐질환(COPD)"
                   subtitle="SEKANG HOSPITAL"
@@ -1483,7 +1489,7 @@ export default function InternalMedicineCenterPage() {
 
               {/* 만성폐쇄성폐질환(COPD) 주요증상 섹션 */}
               <BannerSection
-                backgroundImage="/images/about/about_fot_img.jpg"
+                backgroundImage="/images/centers/colon-tester.jpg"
                 title={[
                   "만성폐쇄성폐질환(COPD) 주요증상"
                 ]}
@@ -1494,43 +1500,26 @@ export default function InternalMedicineCenterPage() {
                   "호흡곤란 COPD와 관련된 장애 및 불안증의 주된 원인입니다. 호흡곤란은 지속적으로 진행하며 폐기능의 악화로 호흡곤란이 더욱 증가하게 됩니다.",
                   "천명음과 흉부 압박감 비교적 비특이적인 증상이며, 날마다 혹은 하루 중에 다양하게 나타납니다. 천명음이나 흉부 압박감이 없다고 해서 만성폐쇄성폐질환의 진단이 배제되는 것은 아닙니다."
                 ]}
+                isRepeating={true}
+                textColor="black"
               />
 
               {/* 만성폐쇄성폐질환(COPD) 치료 섹션 */}
-              <div className="relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] w-screen bg-[#1A4B8E] mt-32">
-                <div className="container mx-auto px-4">
-                  <div className="py-16">
-                    <div className="max-w-4xl mx-auto text-center">
-                      <p className="text-white tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
-                      <h2 className="text-white text-4xl font-bold mb-12">만성폐쇄성폐질환(COPD) 치료</h2>
-                      <div className="space-y-6">
-                        <div className="flex items-start gap-3">
-                          <span className="text-white text-xl">✓</span>
-                          <p className="text-white/90 text-lg leading-relaxed text-left">
-                            만성폐쇄성폐질환은 치료 자체가 상당히 어렵고 이미 파괴된 폐를 정상으로 되돌릴 수 없습니다.
-                          </p>
-                        </div>
-                        <div className="flex items-start gap-3">
-                          <span className="text-white text-xl">✓</span>
-                          <p className="text-white/90 text-lg leading-relaxed text-left">
-                            금연이 만성폐쇄성폐질환의 예방과 진행을 감소시키는 가장 효과적인 방법입니다.
-                          </p>
-                        </div>
-                        <div className="flex items-start gap-3">
-                          <span className="text-white text-xl">✓</span>
-                          <p className="text-white/90 text-lg leading-relaxed text-left">
-                            현재까지는 흡연을 계속하는 경우 폐 기능이 나빠지는 것을 치료할 수 있는 약제는 없습니다.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <BannerSection
+                backgroundImage="/images/centers/asthma-bgimg1.jpg"
+                title={[
+                  "만성폐쇄성폐질환(COPD) 치료"
+                ]}
+                description={[
+                  "✓ 만성폐쇄성폐질환은 치료 자체가 상당히 어렵고 이미 파괴된 폐를 정상으로 되돌릴 수 없습니다.",
+                  "✓ 금연이 만성폐쇄성폐질환의 예방과 진행을 감소시키는 가장 효과적인 방법입니다.",
+                  "✓ 현재까지는 흡연을 계속하는 경우 폐 기능이 나빠지는 것을 치료할 수 있는 약제는 없습니다.",
+                ]}
+              />
 
               {/* 폐결핵 섹션 */}
               <InfoSection
-                  image="/images/centers/anus-img02.jpg"
+                  image="/images/centers/asthma-img05.jpg"
                   alt="폐결핵"
                   title="폐결핵"
                   subtitle="SEKANG HOSPITAL"
@@ -1694,7 +1683,7 @@ export default function InternalMedicineCenterPage() {
 
               {/* 폐렴 섹션 */}
               <InfoSection
-                  image="/images/centers/anus-img02.jpg"
+                  image="/images/centers/asthma-img06.jpg"
                   alt="폐렴"
                   title="폐렴"
                   subtitle="SEKANG HOSPITAL"

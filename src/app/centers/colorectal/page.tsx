@@ -68,7 +68,7 @@ export default function ColorectalPage() {
 
               {/* 항문거근증후군 원인 섹션 */}
               <BannerSection
-          backgroundImage="/images/about/about_fot_img.jpg"
+          backgroundImage="/images/centers/anus_cause.jpg"
           title={[
             "항문거근증후군 원인"
           ]}
@@ -121,7 +121,7 @@ export default function ColorectalPage() {
 
               {/* 인용구 섹션 */}
               <BannerSection
-          backgroundImage="/images/about/about_fot_img.jpg"
+          backgroundImage="/images/centers/colon-img03.jpg"
           title={[
             "세강병원은 풍부한 임상경험을 갖춘 의료진이",
             "숙련된 실력과 노하우로 만족스러운 결과를 안겨드립니다."
@@ -141,7 +141,7 @@ export default function ColorectalPage() {
             <div className="space-y-0">
               {/* 치핵(치질) 설명 섹션 */}
               <InfoSection
-                image="/images/centers/anus-img02.jpg"
+                image="/images/centers/anus-img03.jpg"
                 alt="치핵(치질)"
                 title="치핵(치질)"
                 subtitle="SEKANG HOSPITAL"
@@ -251,7 +251,7 @@ export default function ColorectalPage() {
 
               {/* 치핵(치질) 치료 섹션 */}
               <InfoSection
-                image="/images/centers/anus-img02.jpg"
+                image="/images/centers/anus-img04.jpg"
                 alt="치핵(치질)의 치료"
                 title="치핵(치질)의 치료"
                 subtitle="SEKANG HOSPITAL"
@@ -259,12 +259,12 @@ export default function ColorectalPage() {
                   "임시치료 : 적외선 응고법, 밴드결찰술, 직류 혹은 교류 전기를 이용한 치핵소작술, 레이저를 이용한 소작술 이러한 치료들은 커진 덩어리를 어느 정도까지 줄일 수는 있지만 완벽하게 없앨 수 없으며, 근본적인 치료가 될 수 없어 재발하는 악순환 발생합니다.",
                   "근본치료 : 핵을 뿌리째 뽑는 유일한 방법은 의사가 눈으로 보면서 치핵 덩어리를 세밀히 절제해내는 것 입니다."
                 ]}
-                imagePosition="left" // 또는 "right"
+                imagePosition="right" // 또는 "right"
               />
 
               {/* 치핵수술 전문의 섹션 */}
               <BannerSection
-          backgroundImage="/images/about/about_fot_img.jpg"
+          backgroundImage="/images/centers/anus_expert.jpg"
           title={[
             "치핵수술을 대장항문 전문 의사에게 맡겨야 합니다."
           ]}
@@ -342,7 +342,7 @@ export default function ColorectalPage() {
               <div className="w-full">
                 <div className="container mx-auto px-4 py-20">
                 <InfoSection
-                  image="/images/centers/anus-img02.jpg"
+                  image="/images/centers/anus-img05.jpg"
                   alt="하이브리드 PPH 치질수술"
                   title="하이브리드 PPH 치질수술"
                   subtitle="SEKANG HOSPITAL"
@@ -379,7 +379,7 @@ export default function ColorectalPage() {
 
               {/* 하이브리드 PPH치질수술과 기존 치질 수술의 차이점 섹션 */}
               <InfoSection
-                  image="/images/centers/anus-img02.jpg"
+                  image="/images/centers/anus-img06.jpg"
                   alt="하이브리드 PPH치질수술과 기존 치질 수술의 차이점"
                   title="하이브리드 PPH치질수술과 기존 치질 수술의 차이점"
                   subtitle="SEKANG HOSPITAL"
@@ -430,7 +430,7 @@ export default function ColorectalPage() {
             <div className="space-y-0">
               {/* 항문주위농양 섹션 */}
               <InfoSection
-                  image="/images/centers/anus-img02.jpg"
+                  image="/images/centers/anus-img07.jpg"
                   alt="항문주위농양"
                   title="항문주위농양"
                   subtitle="SEKANG HOSPITAL"
@@ -443,7 +443,7 @@ export default function ColorectalPage() {
 
               {/* 치루 섹션 */}
               <InfoSection
-                  image="/images/centers/anus-img02.jpg"
+                  image="/images/centers/anus-img08.jpg"
                   alt="치루"
                   title="치루"
                   subtitle="SEKANG HOSPITAL"
@@ -456,7 +456,7 @@ export default function ColorectalPage() {
 
               {/* 치루 방법 섹션 */}
               <BannerSection
-          backgroundImage="/images/about/about_fot_img.jpg"
+          backgroundImage="/images/centers/anus_cause.jpg"
           title={[
             "치료방법"
           ]}
@@ -482,7 +482,7 @@ export default function ColorectalPage() {
             <div className="space-y-0">
               {/* 치열 설명 섹션 */}
               <InfoSection
-                  image="/images/centers/anus-img02.jpg"
+                  image="/images/centers/anus-img09.jpg"
                   alt="치열"
                   title="치열"
                   subtitle="SEKANG HOSPITAL"
@@ -495,7 +495,7 @@ export default function ColorectalPage() {
 
               {/* 치열의 치료 섹션 */}
               <BannerSection
-          backgroundImage="/images/about/about_fot_img.jpg"
+          backgroundImage="/images/centers/anus_cause.jpg"
           title={[
             "치열의 치료"
           ]}
@@ -537,67 +537,28 @@ export default function ColorectalPage() {
               </div>
 
               {/* 급성 치열 좌욕방법 섹션 */}
-              <div className="w-full">
-                <div className="container mx-auto px-4 py-20">
-                  <h2 className="text-[#0066CC] tracking-[0.2em] text-base">SEKANG HOSPITAL</h2>
-                  <h3 className="text-[32px] font-bold">급성 치열 좌욕방법</h3>
-                  
-                  <div className="mt-8 space-y-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">
-                        1
-                      </div>
-                      <span className="text-lg">너무 뜨겁지 않은 정도의 미지근한 물을 적욕가나 세수대야 등에 준비합니다.</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">
-                        2
-                      </div>
-                      <span className="text-lg">물을 꽉이거나 소독약을 물에 풀고 말고는 필요 없습니다.</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">
-                        3
-                      </div>
-                      <span className="text-lg">준비한 물에 약 3~5분간 항문부위를 담그고 있아 있습니다.</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">
-                        4
-                      </div>
-                      <span className="text-lg">사워기 등으로 항문을 씻는 것만으로는 충분한 효과를 얻을 수 없습니다.</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">
-                        5
-                      </div>
-                      <span className="text-lg">양변기의 뚜껑을 열고 그 위에 적욕기를 올려놓은 후 미지근한 물을 넣고서 사용합니다.</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">
-                        6
-                      </div>
-                      <span className="text-lg">직욕횟수는 항문출혈이나 부종이 생겨 직욕을 할 때는 하루 2~3번 합니다.</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">
-                        7
-                      </div>
-                      <span className="text-lg">항문 수술 직후에는 하루 3회 정도 합니다.</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">
-                        8
-                      </div>
-                      <span className="text-lg">배변 직후에는 꼭 직욕을 하십시오.</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <BannerSection
+          backgroundImage="/images/centers/colon-tester.jpg"
+          title={[
+            "급성 치열 좌욕방법"
+          ]}
+          description={[
+            "너무 뜨겁지 않는 정도의 미지근한 물을 좌욕기나 세수대야 등에 준비합니다.",
+            "물을 끓이거나 소독약을 풀어 멸균시킬 필요는 없습니다.",
+            "준비한 물에 약 3~5분간 항문부위를 담그고 앉아 있습니다.",
+            "샤워기 등으로 항문을 씻는 것만으로는 충분한 효과를 얻을 수 없습니다.",
+            "양변기의 뚜껑을 열고 그 위에 좌욕기를 올려놓은 후 미지근한 물을 넣고 앉아서 사용합니다.",
+            "좌욕횟수는 항문출혈이나 부종, 통증이 생겨 좌욕을 할 때는 하루 2~3번 합니다.",
+            "항문 수술 직후에는 하루 3회 정도 합니다.",
+            "배변 직후에는 꼭 좌욕을 하십시오."
+          ]}
+          isRepeating={true}
+          textColor="black"
+        />
 
               {/* 만성 치열 섹션 */}
               <InfoSection
-                  image="/images/centers/anus-img02.jpg"
+                  image="/images/centers/anus-img10.jpg"
                   alt="만성 치열"
                   title="만성 치열"
                   subtitle="SEKANG HOSPITAL"
@@ -605,7 +566,7 @@ export default function ColorectalPage() {
                     "이미 항문내괄약근의 변화가 와 있는 상태이기 때문에 근본적인 해결을 위해서 섬유화된 내괄약근의 부분절단이 필요합니다.",
                     <><span className="text-blue-600">※ 내괄약근 절단술 (섬유화되어 신전성(탄력)을 잃고 좁아져 있는 내괄약근을 부분적으로 잘라주는 방법)</span></>
                   ]}
-                  imagePosition="left" // 또는 "right"
+                  imagePosition="right" // 또는 "right"
                 />
 
               {/* 유튜브 섹션 */}

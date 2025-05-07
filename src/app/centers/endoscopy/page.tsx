@@ -53,7 +53,7 @@ export default function EndoscopyPage() {
             <div className="space-y-0">
               {/* 대장내시경 설명 섹션 */}
               <InfoSection
-                  image="/images/centers/anus-img02.jpg"
+                  image="/images/centers/intes-img01.jpg"
                   alt="대장 내시경"
                   title="대장 내시경"
                   subtitle="SEKANG HOSPITAL"
@@ -65,7 +65,7 @@ export default function EndoscopyPage() {
                 />
 
 <BannerSection
-          backgroundImage="/images/about/about_fot_img.jpg"
+          backgroundImage="/images/centers/colon-biopsy.jpg"
           title={[
             "대장내시경 검사가 필요한 경우"
           ]}
@@ -81,42 +81,24 @@ export default function EndoscopyPage() {
         />
 
               {/* 대장내시경 검사 전&후 주의사항 섹션 */}
-              <div className="w-full bg-white">
-                <div className="container mx-auto px-4 py-20">
-                  <h2 className="text-[#0066CC] tracking-[0.2em] text-base text-center">SEKANG HOSPITAL</h2>
-                  <h3 className="text-[32px] font-bold text-center mb-12">대장내시경 검사 전&후 주의사항</h3>
-                  <div className="grid grid-cols-1 gap-6 max-w-4xl mx-auto">
-                    <div className="flex items-start gap-4">
-                      <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">
-                        1
-                      </div>
-                      <p className="text-lg mt-1">수면 대장내시경 검사는 검사 전 날 잘재채이 필요해 당일 검사가 어렵습니다. 반드시 외래 진료 후 상담 및 예약하시기 바랍니다.</p>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">
-                        2
-                      </div>
-                      <p className="text-lg mt-1">검사 3일 전부터 직린 채소류(고구마 등), 해조류(김, 미역 등), 잡곡류(현미, 콩, 깨, 견과류 등), 씨가 있는 과일(참외, 포도, 수박, 키위, 딸기 등)은 절대 드시면 안 됩니다.</p>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">
-                        3
-                      </div>
-                      <p className="text-lg mt-1">복용하시는 약이 있다면 검사 전 반드시 주치의와 상의해야 합니다.</p>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">
-                        4
-                      </div>
-                      <p className="text-lg mt-1">용종 절제술이 필요한 경우 합병증 가능성이 있어 하루 정도 입원할 수 있습니다.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <BannerSection
+          backgroundImage="/images/centers/colon-tester.jpg"
+          title={[
+            "대장내시경 검사 전&후 주의사항"
+          ]}
+          description={[
+            "수면 대장내시경 검사는 검사 전 날 장세척이 필요해 당일 검사가 어렵습니다. 반드시 외래 진료 후 상담 및 예약하시기 바랍니다.",
+            "검사 3일 전부터 질긴 채소류(고사리 등), 해조류(김, 미역 등), 잡곡류(현미, 콩, 검은쌀 등), 씨가 있는 과일(참외, 포도, 수박, 키위, 딸기 등)은 절대 드시면 안 됩니다.",
+            "복용하시는 약이 있다면 검사 전 반드시 주치의와 상의해야 합니다.",
+            "용종 절제술이 필요한 경우 합병증 가능성이 있어 하루 정도 입원할 수 있습니다.",
+          ]}
+          textColor='black'
+          isRepeating={true}
+        />
 
               {/* CO2 무통 대장내시경 섹션 */}
               <InfoSection
-                  image="/images/centers/anus-img02.jpg"
+                  image="/images/centers/intes-img02.jpg"
                   alt="CO2를 이용한 무통 방식으로 진행 대장내시경"
                   title="CO2를 이용한 무통 방식으로 진행 대장내시경"
                   subtitle="SEKANG HOSPITAL"
@@ -128,7 +110,7 @@ export default function EndoscopyPage() {
 
               {/* CO2의 장점 섹션 */}
               <InfoSection
-                  image="/images/centers/anus-img02.jpg"
+                  image="/images/centers/intes-img03.jpg"
                   alt="의료용 이산화탄소(CO2)의 장점"
                   title="의료용 이산화탄소(CO2)의 장점"
                   subtitle="SEKANG HOSPITAL"
@@ -210,7 +192,7 @@ export default function EndoscopyPage() {
 
               {/* 용종 관련 인용구 섹션 */}
               <BannerSection
-                backgroundImage="/images/about/about_fot_img.jpg"
+                backgroundImage="/images/centers/colon-img03.jpg"
                 title={[
                   "용모상흑은 관상용모상 선종이나 톱니모양 선종이 확인 된 경우",
                   "최소 6개월에서 1년 뒤 다시 한 번 대장내시경 검사를 받아보시기 바랍니다."
@@ -278,7 +260,7 @@ export default function EndoscopyPage() {
 
               {/* 대장암 섹션 */}
               <InfoSection
-                  image="/images/centers/anus-img02.jpg"
+                  image="/images/centers/intes-img06.jpg"
                   alt="대장암"
                   title="대장암"
                   subtitle="SEKANG HOSPITAL"
@@ -364,7 +346,7 @@ export default function EndoscopyPage() {
 
               {/* 내시경 점막하 절제술 섹션 */}
               <InfoSection
-                  image="/images/centers/anus-img02.jpg"
+                  image="/images/centers/intes-img11.jpg"
                   alt="내시경 점막하 절제술"
                   title="내시경 점막하 절제술"
                   subtitle="SEKANG HOSPITAL"
@@ -389,7 +371,7 @@ export default function EndoscopyPage() {
             <div className="space-y-0">
               {/* 위내시경 설명 섹션 */}
               <InfoSection
-                  image="/images/centers/anus-img02.jpg"
+                  image="/images/centers/colon-img01.jpg"
                   alt="위내시경"
                   title="위내시경"
                   subtitle="SEKANG HOSPITAL"
@@ -460,7 +442,7 @@ export default function EndoscopyPage() {
 
               {/* 위내시경의 진단 - 치료내시경 섹션 */}
               <InfoSection
-                  image="/images/centers/anus-img02.jpg"
+                  image="/images/centers/colon-img02.jpg"
                   alt="위내시경의 진단 - 치료내시경"
                   title="위내시경의 진단 - 치료내시경"
                   subtitle="SEKANG HOSPITAL"
@@ -473,7 +455,7 @@ export default function EndoscopyPage() {
 
               {/* 인용구 섹션 */}
               <BannerSection
-                backgroundImage="/images/about/about_fot_img.jpg"
+                backgroundImage="/images/centers/colon-img03.jpg"
                 title={[
                   "세강병원은 풍부한 임상경험을 갖춘 의료진이",
                   "숙련된 실력과 노하우로 만족스러운 결과를 안겨드립니다."

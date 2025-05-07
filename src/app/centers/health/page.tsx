@@ -53,7 +53,7 @@ export default function HealthPage() {
           {activeTab === 'intro' && (
             <>
             <InfoSection
-              image="/images/centers/anus-img02.jpg"
+              image="/images/centers/check-img01.jpg"
               alt="건강증진센터"
               title="건강증진센터"
               subtitle="SEKANG HOSPITAL"
@@ -165,7 +165,7 @@ export default function HealthPage() {
               </div>
             </div>
             <BannerSection
-            backgroundImage="/images/about/about_fot_img.jpg"
+            backgroundImage="/images/centers/anus_expert.jpg"
             title={[
               "가장 건강할 때 받아야 하는 건강검진",
               "당신의 평생 건강, 세강병원이 함께합니다."
@@ -185,7 +185,7 @@ export default function HealthPage() {
           {activeTab === 'checkup' && (
             <>
             <InfoSection
-              image="/images/centers/anus-img02.jpg"
+              image="/images/centers/check-img02.jpg"
               alt="세강병원 종합검진"
               title="세강병원 종합검진"
               subtitle="SEKANG HOSPITAL"
@@ -645,7 +645,7 @@ export default function HealthPage() {
 
               <div>
               <InfoSection
-                image="/images/centers/anus-img02.jpg"
+                image="/images/centers/check-img03.jpg"
                 alt="종합검진 안내"
                 title="종합검진 안내"
                 subtitle="SEKANG HOSPITAL"
@@ -659,7 +659,7 @@ export default function HealthPage() {
               />
 
               <InfoSection
-                image="/images/centers/anus-img02.jpg"
+                image="/images/centers/check-img04.jpg"
                 alt="종합검진 시 주의사항"
                 title="종합검진 시 주의사항"
                 subtitle="SEKANG HOSPITAL"
@@ -673,7 +673,7 @@ export default function HealthPage() {
               />
 
               <InfoSection
-                image="/images/centers/anus-img02.jpg"
+                image="/images/centers/check-img05.jpg"
                 alt="검진결과 이상 시 관리사항"
                 title="검진결과 이상 시 관리사항"
                 subtitle="SEKANG HOSPITAL"
@@ -686,7 +686,7 @@ export default function HealthPage() {
               />
 
               <InfoSection
-                image="/images/centers/anus-img02.jpg"
+                image="/images/centers/check-img06.jpg"
                 alt="검진 결과 통보 및 상담"
                 title="검진 결과 통보 및 상담"
                 subtitle="SEKANG HOSPITAL"
@@ -699,12 +699,17 @@ export default function HealthPage() {
               />
 
               <BannerSection
-                backgroundImage="/images/about/about_fot_img.jpg"
+                backgroundImage="/images/centers/anus_expert.jpg"
                 title={[
                   "가장 건강할 때 받아야 하는 건강검진",
                   "당신의 평생 건강, 세강병원이 함께합니다."
                 ]}
               />
+              <YouTubeSection
+                  videoId="VIDEO_ID"
+                  title="건강증진센터 소개영상"
+                  sectionSubtitle="SEKANG HOSPITAL"
+                />
               </div>
             </>
           )}
@@ -712,7 +717,7 @@ export default function HealthPage() {
           {activeTab === 'custom' && (
             <div>
               <InfoSection
-                image="/images/centers/anus-img02.jpg"
+                image="/images/centers/check-img07.jpg"
                 alt="공무원, 교직원 특별 종합검진"
                 title="공무원, 교직원 특별 종합검진"
                 subtitle="SEKANG HOSPITAL"
@@ -723,7 +728,7 @@ export default function HealthPage() {
               />
 
               <InfoSection
-                image="/images/centers/anus-img02.jpg"
+                image="/images/centers/check-img08.jpg"
                 alt="기업임직원 맞춤형 검진"
                 title="기업임직원 맞춤형 검진"
                 subtitle="SEKANG HOSPITAL"
@@ -735,7 +740,7 @@ export default function HealthPage() {
               />
 
               <BannerSection
-                backgroundImage="/images/about/about_fot_img.jpg"
+                backgroundImage="/images/centers/anus_expert.jpg"
                 title={[
                   "가장 건강할 때 받아야 하는 건강검진",
                   "당신의 평생 건강, 세강병원이 함께합니다."
@@ -754,7 +759,7 @@ export default function HealthPage() {
           {activeTab === 'reservation' && (
             <div>
               <InfoSection
-                image="/images/centers/anus-img02.jpg"
+                image="/images/centers/check-img09.jpg"
                 alt="건강증진센터 예약안내"
                 title="건강증진센터 예약안내"
                 subtitle="SEKANG HOSPITAL"
@@ -768,66 +773,40 @@ export default function HealthPage() {
                 imagePosition="left" // 또는 "right"
               />
 
-              <div className="mt-20">
-                <div className="mb-8">
-                  <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">S E K A N G   H O S P I T A L</p>
-                  <h2 className="text-4xl font-bold">건강검진 검사전날 유의사항</h2>
-                </div>
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">1</div>
-                    <p className="text-gray-800 text-lg">저녁식사는 기름기 없는 음식으로 가볍게 드시고 저녁9시 이후에는 절대 금식하십시오.</p>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">2</div>
-                    <p className="text-gray-800 text-lg">복용중인 약이 있으면 주치의와 상의 후 복용을 중지하여 주시기 바랍니다.</p>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">3</div>
-                    <p className="text-gray-800 text-lg">침 치료, 물리치료, 파스, 연고 등을 금하십시오.</p>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">4</div>
-                    <p className="text-gray-800 text-lg">과음, 과로 및 과격한 운동 등을 금하시고 충분한 수면을 취하시기 바랍니다.</p>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">5</div>
-                    <p className="text-gray-800 text-lg">대변은 기급적 검사전날에 보시어서 채변통에 넣어 오십시오.(공알 크기)</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-20">
-                <div className="mb-8">
-                  <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">S E K A N G   H O S P I T A L</p>
-                  <h2 className="text-4xl font-bold">건강검진 검사당일 유의사항</h2>
-                </div>
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">1</div>
-                    <p className="text-gray-800 text-lg">예약시간을 지켜 주십시오.</p>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">2</div>
-                    <p className="text-gray-800 text-lg">아침식사는 아무것도 드시지 마십시오(물, 껌, 담배 포함).</p>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">3</div>
-                    <p className="text-gray-800 text-lg">가벼운 의치문동이나 양치질은 무방합니다.</p>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">4</div>
-                    <p className="text-gray-800 text-lg">평소에 안경(콘텍트렌즈 포함)을 착용하시던 분은 반드시 착용하여 주시기 바랍니다.</p>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">5</div>
-                    <p className="text-gray-800 text-lg">귀중품(예:목걸이, 귀걸이, 반지 등)은 가급적 착용하지 마십시오.</p>
-                  </div>
-                </div>
-              </div>
+              <BannerSection
+                backgroundImage="/images/centers/colon-tester.jpg"
+                title={[
+                  "건강검진 검사전날 유의사항"
+                ]}
+                description={[
+                  "저녁식사는 기름기 없는 음식으로 가볍게 드시고 저녁9시 이후에는 절대 금식하십시오.",
+                  "복용중인 약이 있으면 주치의와 상의 후 복용을 중지하여 주시기 바랍니다.",
+                  "침 치료, 물리치료, 파스, 연고 등을 금하십시오.",
+                  "과음, 과로 및 과격한 운동 등을 금하시고 충분한 수면을 취하시기 바랍니다.",
+                  "대변은 기급적 검사전날에 보시어서 채변통에 넣어 오십시오.(콩알 크기)"
+                ]}
+                textColor='black'
+                isRepeating={true}
+              />
 
               <BannerSection
-                backgroundImage="/images/about/about_fot_img.jpg"
+                backgroundImage="/images/centers/colon-tester.jpg"
+                title={[
+                  "건강검진 검사당일 유의사항"
+                ]}
+                description={[
+                  "예약시간을 지켜 주십시오",
+                  "아침식사는 아무것도 드시지 마십시요(물, 껌, 담배 포함)",
+                  "가벼운 아침운동이나 양치질은 무방합니다.",
+                  "평소에 안경(콘텍트렌즈 포함)을 착용하시던 분은 시력 검사시에도 반드시 착용하여 주시기 바랍니다.",
+                  "귀중품(예:목걸이, 귀걸이, 반지 등)은 가급적 착용하지 마십시오."
+                ]}
+                textColor='black'
+                isRepeating={true}
+              />
+
+              <BannerSection
+                backgroundImage="/images/centers/anus_expert.jpg"
                 title={[
                   "세상을 아름답게 사회를 건강하게!",
                   "The Sekang Hospital makes the world ",

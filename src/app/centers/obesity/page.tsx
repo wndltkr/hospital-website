@@ -51,7 +51,7 @@ export default function ObesityPage() {
           {activeTab === 'iv' && (
             <div className="container mx-auto px-4">
               <InfoSection
-                image="/images/centers/anus-img02.jpg"
+                image="/images/centers/sap-prg.jpg"
                 alt="수액 프로그램"
                 title="수액 프로그램"
                 subtitle="SEKANG HOSPITAL"
@@ -622,7 +622,7 @@ export default function ObesityPage() {
             <>
               <div className="container mx-auto px-4">
               <InfoSection
-                  image="/images/centers/anus-img02.jpg"
+                  image="/images/centers/medical04_2_img01.jpg"
                   alt="세로움 비만센터"
                   title="세로움 비만센터"
                   subtitle="SEKANG HOSPITAL"
@@ -855,7 +855,7 @@ export default function ObesityPage() {
                 <div className="space-y-16">
                   {/* 바이오 포톤 */}
                   <InfoSection
-                  image="/images/centers/anus-img02.jpg"
+                  image="/images/centers/medical04_2_img05.jpg"
                   alt="바이오 포톤(Bio photon) PDP 전신돔"
                   title="바이오 포톤(Bio photon) PDP 전신돔"
                   subtitle="SEKANG HOSPITAL"
@@ -869,7 +869,7 @@ export default function ObesityPage() {
 
                   {/* 저주파 SSondar Smaster */}
                   <InfoSection
-                  image="/images/centers/anus-img02.jpg"
+                  image="/images/centers/medical04_2_img06.jpg"
                   alt="저주파 SSondar Smaster"
                   title="저주파 SSondar Smaster"
                   subtitle="SEKANG HOSPITAL"
@@ -882,7 +882,7 @@ export default function ObesityPage() {
 
                   {/* 메조건 SSondar Meso2 */}
                   <InfoSection
-                  image="/images/centers/anus-img02.jpg"
+                  image="/images/centers/medical04_2_img07.jpg"
                   alt="메조건 SSondar Meso2"
                   title="메조건 SSondar Meso2"
                   subtitle="SEKANG HOSPITAL"
@@ -895,7 +895,7 @@ export default function ObesityPage() {
 
                   {/* 카복시 테라피 */}
                   <InfoSection
-                  image="/images/centers/anus-img02.jpg"
+                  image="/images/centers/medical04_2_img08.jpg"
                   alt="카복시 테라피"
                   title="카복시 테라피"
                   subtitle="SEKANG HOSPITAL"

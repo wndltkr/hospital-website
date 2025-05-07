@@ -49,9 +49,9 @@ export default function BreastCenterPage() {
           className="py-12"
         >
           {activeTab === 'thyroid' && (
-            <div className="container mx-auto px-4">
+            <div>
               <InfoSection
-                  image="/images/centers/anus-img02.jpg"
+                  image="/images/centers/thyroid-img01.jpg"
                   alt="갑상선"
                   title="갑상선"
                   subtitle="SEKANG HOSPITAL"
@@ -115,118 +115,35 @@ export default function BreastCenterPage() {
               </div>
 
               {/* 갑상선 질환 의심 증상 섹션 */}
-              <div className="relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] w-screen bg-[#F8F9FF] mt-32">
-                <div className="py-20">
-                  <div className="container mx-auto px-4">
-                    <div className="text-center mb-16">
-                      <p className="text-[#1A4B8E] tracking-[0.2em] text-sm mb-1">S E K A N G   H O S P I T A L</p>
-                      <h2 className="text-[#1A1A1A] text-4xl font-bold">갑상선 질환 의심 증상</h2>
-                    </div>
-
-                    <div className="max-w-[1000px] mx-auto">
-                      <div className="space-y-6">
-                        <div className="flex items-center gap-6">
-                          <div className="w-[32px] h-[32px] rounded-full bg-[#0066CC] text-white flex items-center justify-center text-base font-medium flex-shrink-0">
-                            1
-                          </div>
-                          <p className="text-gray-800 text-lg">식욕은 왕성하나 체중은 줄었다.</p>
-                        </div>
-                        <div className="flex items-center gap-6">
-                          <div className="w-[32px] h-[32px] rounded-full bg-[#0066CC] text-white flex items-center justify-center text-base font-medium flex-shrink-0">
-                            2
-                          </div>
-                          <p className="text-gray-800 text-lg">가슴이 두근거리고 불안 초조하다.</p>
-                        </div>
-                        <div className="flex items-center gap-6">
-                          <div className="w-[32px] h-[32px] rounded-full bg-[#0066CC] text-white flex items-center justify-center text-base font-medium flex-shrink-0">
-                            3
-                          </div>
-                          <p className="text-gray-800 text-lg">목에서 멍이 나고 더워를 잘기 힘들다.</p>
-                        </div>
-                        <div className="flex items-center gap-6">
-                          <div className="w-[32px] h-[32px] rounded-full bg-[#0066CC] text-white flex items-center justify-center text-base font-medium flex-shrink-0">
-                            4
-                          </div>
-                          <p className="text-gray-800 text-lg">대변을 자주보고 설사가 잦다.</p>
-                        </div>
-                        <div className="flex items-center gap-6">
-                          <div className="w-[32px] h-[32px] rounded-full bg-[#0066CC] text-white flex items-center justify-center text-base font-medium flex-shrink-0">
-                            5
-                          </div>
-                          <p className="text-gray-800 text-lg">목의 이물감이나 압박감이 있다.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <BannerSection
+          backgroundImage="/images/centers/colon-tester.jpg"
+          title={[
+            "갑상선 질환 의심 증상"
+          ]}
+          description={[
+            "식욕은 왕성하나 체중은 줄었다.",
+            "가슴이 두근거리고 불안 초조하다.",
+            "몸에서 열이 나고 더위를 참기 힘들다.",
+            "대변을 자주보고 설사가 잦다.",
+            "목의 이물감이나 압박감이 있다.",
+          ]}
+          isRepeating={true}
+          textColor="black"
+        />
 
               {/* 갑상선 질환 검사방법 섹션 */}
-              <div className="mt-32">
-                <div className="container mx-auto px-4">
-                  <div className="flex justify-between items-start gap-16">
-                    <div className="flex-1">
-                      <div className="mb-12">
-                        <p className="text-[#1A4B8E] tracking-[0.2em] text-sm mb-1">S E K A N G   H O S P I T A L</p>
-                        <h2 className="text-[#1A1A1A] text-4xl font-bold">갑상선 질환 검사방법</h2>
-                      </div>
-
-                      <div className="space-y-8">
-                        <div>
-                          <div className="flex items-center gap-2 mb-2">
-                            <div className="w-5 h-5 bg-[#1A4B8E] rounded flex items-center justify-center">
-                              <svg className="w-3 h-3 text-white" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M10 3L4.5 8.5L2 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                              </svg>
-                            </div>
-                            <span className="text-[#1A4B8E] font-medium text-lg">갑상선 기능검사</span>
-                          </div>
-                          <p className="text-gray-700 text-base leading-relaxed ml-7">
-                            혈액 검사 방법으로 혈중 갑상선 호르몬과 갑상선 자극 호르몬 등을 검사하여 갑상선 기능의 이상 유무를 확인하는 검사
-                          </p>
-                        </div>
-
-                        <div>
-                          <div className="flex items-center gap-2 mb-2">
-                            <div className="w-5 h-5 bg-[#1A4B8E] rounded flex items-center justify-center">
-                              <svg className="w-3 h-3 text-white" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M10 3L4.5 8.5L2 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                              </svg>
-                            </div>
-                            <span className="text-[#1A4B8E] font-medium text-lg">초음파 검사</span>
-                          </div>
-                          <p className="text-gray-700 text-base leading-relaxed ml-7">
-                            결절의 크기와 모양, 위치, 결절의 개수, 결절의 낭성 변화나 음욕을 확인하는 검사
-                          </p>
-                        </div>
-
-                        <div>
-                          <div className="flex items-center gap-2 mb-2">
-                            <div className="w-5 h-5 bg-[#1A4B8E] rounded flex items-center justify-center">
-                              <svg className="w-3 h-3 text-white" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M10 3L4.5 8.5L2 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                              </svg>
-                            </div>
-                            <span className="text-[#1A4B8E] font-medium text-lg">조직 검사(세침흡인 세포검사)</span>
-                          </div>
-                          <p className="text-gray-700 text-base leading-relaxed ml-7">
-                            미세침이 있는 주사기를 이용해 갑상선 결절 세포를 흡입하여 관찰하는 검사
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="w-[500px] h-[400px] relative flex-shrink-0">
-                      <Image
-                        src="/images/centers/thyroid-examination.jpg"
-                        alt="갑상선 검사"
-                        fill
-                        className="object-cover rounded-lg"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <InfoSection
+                  image="/images/centers/thyroid-img02.jpg"
+                  alt="갑상선 질환 검사방법"
+                  title="갑상선 질환 검사방법"
+                  subtitle="SEKANG HOSPITAL"
+                  descriptions={[
+                    "☑ 갑상선 기능검사 : 혈액 검사 방법으로 혈중 갑상선 호르몬과 갑상선 자극 호르몬 등을 검사하여 갑상선 기능의 이상 유무를 확인하는 검사",
+                    "☑ 초음파 검사 : 결절의 크기와 모양, 위치, 결절의 개수, 결절의 낭성 변화나 물혹을 확인하는 검사",
+                    "☑ 조직 검사(세침흡인 세포검사) : 미세침이 있는 주사기를 이용해 갑상선 결절 세포를 흡입하여 관찰하는 검사",
+                  ]}
+                  imagePosition="right" // 또는 "right"
+                />
 
               {/* 갑상선 질환의 치료 섹션 */}
               <div className="mt-32">
@@ -299,7 +216,7 @@ export default function BreastCenterPage() {
           {activeTab === 'breast' && (
             <div>
               <InfoSection
-                  image="/images/centers/anus-img02.jpg"
+                  image="/images/centers/breast-img01.jpg"
                   alt="유방암"
                   title="유방암"
                   subtitle="SEKANG HOSPITAL"
@@ -369,7 +286,7 @@ export default function BreastCenterPage() {
               </div>
 
               <BannerSection
-                backgroundImage="/images/about/about_fot_img.jpg"
+                backgroundImage="/images/centers/colon-tester.jpg"
                 title={[
                   "유방암의 증상"
                 ]}
@@ -384,6 +301,8 @@ export default function BreastCenterPage() {
                   "유방암 진행 시 유방 형체가 거의 파괴되기도 한다.",
                   "남성 유방암은 주로 고령자에게, 젖꼭지 밑에서 딱딱한 덩어리가 만져진다."
                 ]}
+                isRepeating={true}
+                textColor="black"
               />
 
               {/* 유방암 검사방법 섹션 */}
@@ -470,13 +389,13 @@ export default function BreastCenterPage() {
                     </div>
                   </div>
                   <BannerSection
-                backgroundImage="/images/about/about_fot_img.jpg"
+                backgroundImage="/images/centers/breast-mid_bg.jpg"
                 title={[
                   "유방암의 효율적 조기 검진법'3D 맘모그래피'"
                 ]}
               />
               <InfoSection
-                  image="/images/centers/anus-img02.jpg"
+                  image="/images/centers/breast-img04.jpg"
                   alt="3D 맘모그래피"
                   title="3D 맘모그래피"
                   subtitle="SEKANG HOSPITAL"
@@ -544,7 +463,7 @@ export default function BreastCenterPage() {
 
               {/* 정기 검진 배너 */}
               <BannerSection
-                backgroundImage="/images/about/about_fot_img.jpg"
+                backgroundImage="/images/centers/breast-mid2_bg.jpg"
                 title={[
                   "유방암은 치료 후에도 정기 검진이 필수입니다."
                 ]}

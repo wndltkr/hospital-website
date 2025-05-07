@@ -8,6 +8,7 @@ import SideMenu from '@/components/SideMenu';
 import { useState } from 'react';
 import PageBanner from '@/components/PageBanner';
 import InfoSection from '@/components/InfoSection';
+import BannerSection from '@/components/BannerSection';
 export default function CertificatePage() {
   const [activeTab, setActiveTab] = useState<'first' | 'cost'>('first');
 
@@ -28,9 +29,9 @@ export default function CertificatePage() {
       />
 
       {/* Main Content Section */}
-      <div className="container mx-auto px-4 py-16">
+      <div>
         {/* Tab Navigation */}
-        <div className="mb-12">
+        <div>
           <div className="flex justify-center gap-4">
             <button
               onClick={() => setActiveTab('first')}
@@ -68,7 +69,7 @@ export default function CertificatePage() {
         </div>
 
         {/* Tab Content */}
-        <div className="max-w-7xl mx-auto">
+        <div>
           {activeTab === 'first' ? (
             <div className="space-y-16">
               <InfoSection
@@ -82,78 +83,21 @@ export default function CertificatePage() {
                   imagePosition="right" // 또는 "right"
                 />
 
-              {/* Medical Record Copy Guide Section */}
-              <div className="bg-[#F8F9FF] rounded-2xl p-12">
-                <div className="max-w-4xl mx-auto">
-                  {/* Title Section */}
-                  <div className="text-center mb-12">
-                    <motion.p
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.65, delay: 0.1 }}
-                      className="text-[#0066CC] text-sm tracking-[0.2em] mb-4"
-                    >
-                      SEKANG HOSPITAL
-                    </motion.p>
-                    <motion.h3
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.65, delay: 0.2 }}
-                      className="text-3xl font-bold text-gray-900 mb-4"
-                    >
-                      의무기록 사본 발급 안내
-                    </motion.h3>
-                    <motion.p
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.65, delay: 0.3 }}
-                      className="text-gray-600"
-                    >
-                      사본발급시 필요한 서류 [의료법 제21조, 시행규칙 제 13조의2]
-                    </motion.p>
-                  </div>
-
-                  {/* List Section */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.65, delay: 0.4 }}
-                    className="space-y-6"
-                  >
-                    <div className="flex items-start gap-4">
-                      <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center">1</span>
-                      <p className="text-gray-700 mt-1">신분증 또는 신분증 사본은 반드시 사진이 있는 것이어야 함.</p>
-                    </div>
-
-                    <div className="flex items-start gap-4">
-                      <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center">2</span>
-                      <div className="text-gray-700 mt-1">
-                        <p className="mb-2">친족관계증명서는 환자 본인과의 관계가 명시된 것이어야 함.</p>
-                        <ul className="space-y-2 ml-4 text-gray-600">
-                          <li>- 건강보험증은 친족관계가 입증되지 않으므로 인정되지 않음.</li>
-                          <li>- 의무기록 사본발급일 기준 3개월 이내에 발급 받은 것만 인정함.</li>
-                        </ul>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-4">
-                      <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center">3</span>
-                      <p className="text-gray-700 mt-1">동의서 및 위임장의 자필서명은 도장 및 지장은 인정되지 않음. (반드시 서명이어야 함)</p>
-                    </div>
-
-                    <div className="flex items-start gap-4">
-                      <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center">4</span>
-                      <p className="text-gray-700 mt-1">동의서에는 사본발급 받는 범위(날짜, 기록지 범위 등)를 구체적으로 명기하도록 하여야 함.</p>
-                    </div>
-
-                    <div className="flex items-start gap-4">
-                      <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center">5</span>
-                      <p className="text-gray-700 mt-1">사망, 의식불명인자, 미성년자 등의 경우에는 법정 대리인이 대신할 수 있음.</p>
-                    </div>
-                  </motion.div>
-                </div>
-              </div>
-
+              <BannerSection
+                backgroundImage="/images/about/about_fot_img.jpg"
+                title={[
+                  "의무기록 사본 발급 안내",
+                  "사본발급시 필요한 서류 [의료법 제21조, 시행규칙 제13조의2]"
+                ]}
+                description={[
+                  "신분증 또는 신분증 사본은 반드시 사진이 있는 것이어야 함.",
+                  "친족관계증명서는 환자 본인과의 관계가 명시된 것이어야 함. 건강보험증은 친족관계가 입증되지 않으므로 인정되지 않음. 의무기록 사본발급일 기준 3개월 이내에 발급 받은 것만 인정함.",
+                  "동의서 및 위임장의 자필서명은 도장 및 지장은 인정되지 않음. (반드시 서명이어야 함)",
+                  "동의서에는 사본발급 받는 범위(날짜, 기록지 범위 등)를 구체적으로 명기하도록 하여야 함.",
+                  "사망, 의식불명인자, 미성년자 등의 경우에는 법정 대리인이 대신할 수 있음."
+                ]}
+              />
+              
               {/* Required Documents Table Section */}
               <div className="bg-white rounded-2xl p-12">
                 <div className="max-w-5xl mx-auto">

@@ -7,22 +7,46 @@ interface BannerSectionProps {
   backgroundImage: string;
   title: string[];
   description?: string | string[];
+  textColor?: 'white' | 'black';
+  isRepeating?: boolean;
 }
 
-const BannerSection = ({ backgroundImage, title, description }: BannerSectionProps) => {
+const BannerSection = ({ 
+  backgroundImage, 
+  title, 
+  description,
+  textColor = 'white',
+  isRepeating = false 
+}: BannerSectionProps) => {
   return (
     <div className="relative min-h-[400px] w-full pt-20 pb-12">
       {/* 배경 이미지 */}
       <div className="absolute inset-0 z-0">
-        <div className="relative w-full h-full">
-          <Image
-            src={backgroundImage}
-            alt="Banner background"
-            fill
-            className="object-cover"
-            priority
+        {isRepeating ? (
+          <div 
+            className="w-full h-full"
+            style={{
+              backgroundImage: `url(${backgroundImage})`,
+              backgroundPosition: 'left top',
+              backgroundSize: 'initial',
+              backgroundRepeat: 'repeat',
+              backgroundAttachment: 'initial',
+              backgroundOrigin: 'initial',
+              backgroundClip: 'initial',
+              backgroundColor: 'initial'
+            }}
           />
-        </div>
+        ) : (
+          <div className="relative w-full h-full">
+            <Image
+              src={backgroundImage}
+              alt="Banner background"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+        )}
       </div>
       
       {/* 컨텐츠 */}
@@ -32,7 +56,7 @@ const BannerSection = ({ backgroundImage, title, description }: BannerSectionPro
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-white text-center"
+            className={`text-${textColor} text-center`}
           >
             <motion.p
               initial={{ opacity: 0 }}
@@ -53,16 +77,17 @@ const BannerSection = ({ backgroundImage, title, description }: BannerSectionPro
                 {line}
               </motion.h1>
             ))}
+            
             {description && (
               Array.isArray(description) ? (
-                <div className="flex flex-col items-start max-w-3xl mx-auto space-y-4 mt-8">
+                <div className="flex flex-col items-start max-w-6xl mx-auto space-y-4 mt-8">
                   {description.map((desc, index) => (
                     <motion.div
                       key={index}
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ delay: 0.2 * (title.length + index + 1), duration: 0.8 }}
-                      className="flex items-start gap-4"
+                      className="flex items-start gap-4 w-full"
                     >
                       <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#87CEEB] flex items-center justify-center text-base">
                         {index + 1}
@@ -78,7 +103,7 @@ const BannerSection = ({ backgroundImage, title, description }: BannerSectionPro
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.2 * (title.length + 1), duration: 0.8 }}
-                  className="text-xl md:text-2xl font-normal mt-8"
+                  className="text-xl max-w-6xl mx-auto md:text-2xl font-normal mt-8"
                 >
                   {description}
                 </motion.p>

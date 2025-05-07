@@ -87,14 +87,14 @@ export default function FacilitiesPage() {
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
                   className="bg-white rounded-lg overflow-hidden border"
                 >
                   <motion.div 
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: 0.2 + index * 0.2 }}
+                    transition={{ duration: 0.3, delay: 0.1 + index * 0.1 }}
                     className="relative aspect-square"
                   >
                     <Image
@@ -108,7 +108,7 @@ export default function FacilitiesPage() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: 0.4 + index * 0.2 }}
+                    transition={{ duration: 0.3, delay: 0.2 + index * 0.1 }}
                     className="p-6"
                   >
                     <h3 className="text-xl font-bold text-center py-4 bg-[#F4A460] text-white mb-4">
