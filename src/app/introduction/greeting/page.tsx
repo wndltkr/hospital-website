@@ -3,7 +3,6 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import Header from '@/components/Header';
 import Menu from '@/components/Menu';
 import SideMenu from '@/components/SideMenu';
 import Footer from '@/components/Footer';
@@ -14,7 +13,6 @@ import BannerSection from '@/components/BannerSection';
 export default function GreetingPage() {
   return (
     <>
-      <Header />
       <Menu />
       <SideMenu />
       <main>

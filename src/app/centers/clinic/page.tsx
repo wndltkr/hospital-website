@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Menu from '@/components/Menu';
 import PageBanner from '@/components/PageBanner';
@@ -23,7 +22,6 @@ export default function ClinicCenterPage() {
 
   return (
     <>
-      <Header />
       <Menu />
       <div className="min-h-screen bg-white">
       <PageBanner

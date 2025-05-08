@@ -1,6 +1,5 @@
 'use client';
 
-import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Menu from '@/components/Menu';
 import SideMenu from '@/components/SideMenu';
@@ -60,7 +59,6 @@ export default function JobsPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <SideMenu />
-      <Header />
       <Menu />
       
       <PageBanner

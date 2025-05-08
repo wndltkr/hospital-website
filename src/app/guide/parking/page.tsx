@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Menu from '@/components/Menu';
 import SideMenu from '@/components/SideMenu';
@@ -10,7 +9,6 @@ import PageBanner from '@/components/PageBanner';
 export default function ParkingPage() {
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
       <Menu />
       <SideMenu />
       

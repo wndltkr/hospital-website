@@ -2,7 +2,11 @@ import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
-const Menu = () => {
+interface MenuProps {
+  solid?: boolean;
+}
+
+const Menu = ({ solid = false }: MenuProps) => {
   const menuItems = [
     {
       title: '병원소개',
@@ -62,41 +66,57 @@ const Menu = () => {
   ];
 
   return (
-    <motion.nav 
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="bg-gradient-to-r from-[#B8D8EB] to-[#9CC7E5] text-gray-700 sticky top-0 z-50 shadow-lg"
-    >
-      <div className="container mx-auto px-8">
-        <div className="max-w-5xl mx-auto">
-          <ul className="flex justify-center space-x-16 py-5">
-            {menuItems.map((item, index) => (
-              <li key={index} className="group relative">
-                <button className="text-lg font-medium px-2 py-1 hover:text-[#4A90BE] transition-colors duration-200 relative">
-                  {item.title}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#4A90BE] group-hover:w-full transition-all duration-500"></span>
-                </button>
-                <div className="absolute invisible opacity-0 translate-y-[-10px] group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 -left-8 mt-1 min-w-[200px] bg-white text-gray-700 shadow-xl rounded-lg overflow-hidden border-t-2 border-[#4A90BE] transition-all duration-500 ease-in-out">
-                  <ul className="py-2">
-                    {item.subItems.map((subItem, subIndex) => (
-                      <li key={subIndex}>
-                        <Link 
-                          href={subItem.link} 
-                          className="block px-6 py-2.5 text-[15px] hover:bg-[#EDF5FA] hover:text-[#4A90BE] transition-colors duration-500 whitespace-nowrap"
-                        >
-                          {subItem.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </li>
-            ))}
-          </ul>
+    <>
+
+      {/* Navigation Menu */}
+      <motion.nav 
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.5 }}
+        className={`${solid ? 'bg-gradient-to-r from-[#B8D8EB] to-[#9CC7E5] shadow-lg' : 'bg-transparent'} text-gray-700 sticky top-0 z-50`}
+      >
+      
+        <div className="container mx-auto px-8">
+          <div className="max-w-7xl mx-auto">
+            <ul className="flex justify-center space-x-16 py-5">
+            <div className="flex items-center">
+              <Link href="/" className="text-2xl font-bold text-[#4ABAFF]">
+                세강병원
+              </Link>
+            </div>
+            
+              {menuItems.map((item, index) => (
+                <li key={index} className="group relative">
+                  <button className="text-lg font-medium px-2 py-1 hover:text-[#4A90BE] transition-colors duration-200 relative">
+                    {item.title}
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#4A90BE] group-hover:w-full transition-all duration-500"></span>
+                  </button>
+                  <div className="absolute invisible opacity-0 translate-y-[-10px] group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 -left-8 mt-1 min-w-[200px] bg-white text-gray-700 shadow-xl rounded-lg overflow-hidden border-t-2 border-[#4A90BE] transition-all duration-500 ease-in-out">
+                    <ul className="py-2">
+                      {item.subItems.map((subItem, subIndex) => (
+                        <li key={subIndex}>
+                          <Link 
+                            href={subItem.link} 
+                            className="block px-6 py-2.5 text-[15px] hover:bg-[#EDF5FA] hover:text-[#4A90BE] transition-colors duration-500 whitespace-nowrap"
+                          >
+                            {subItem.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </li>
+              ))}
+              <div className="flex items-center">
+              <button className="px-4 py-2 bg-[#4ABAFF] text-white rounded-md hover:bg-blue-700 transition-colors duration-200">
+                로그인
+              </button>
+              </div>
+            </ul>
+          </div>
         </div>
-      </div>
-    </motion.nav>
+      </motion.nav>
+    </>
   );
 };
 

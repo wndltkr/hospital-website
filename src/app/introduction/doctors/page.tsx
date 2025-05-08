@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import Header from '@/components/Header';
 import Menu from '@/components/Menu';
 import SideMenu from '@/components/SideMenu';
 import Footer from '@/components/Footer';
@@ -90,7 +89,6 @@ export default function DoctorsPage() {
 
   return (
     <>
-      <Header />
       <Menu />
       <SideMenu />
       <main>

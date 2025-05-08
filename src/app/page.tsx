@@ -1,7 +1,6 @@
 "use client";
 
 import React from 'react';
-import Header from '@/components/Header';
 import Menu from '@/components/Menu';
 import SideMenu from '@/components/SideMenu';
 import Footer from '@/components/Footer';
@@ -16,7 +15,6 @@ import Image from 'next/image';
 export default function Home() {
   return (
     <main className="min-h-screen">
-      <Header />
       <Menu />
       <SideMenu />
 

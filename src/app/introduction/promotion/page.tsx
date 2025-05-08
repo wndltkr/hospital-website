@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import Header from '@/components/Header';
 import Menu from '@/components/Menu';
 import SideMenu from '@/components/SideMenu';
 import Footer from '@/components/Footer';
@@ -125,7 +124,6 @@ export default function PromotionPage() {
 
   return (
     <>
-      <Header />
       <Menu />
       <SideMenu />
       <main>

@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Menu from '@/components/Menu';
 import SideMenu from '@/components/SideMenu';
@@ -70,7 +69,6 @@ export default function NonCoveredPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <SideMenu />
-      <Header />
       <Menu />
       
       {/* Banner Section */}

@@ -1,7 +1,6 @@
 "use client";
 
 import React from 'react';
-import Header from '@/components/Header';
 import Menu from '@/components/Menu';
 import SideMenu from '@/components/SideMenu';
 import Footer from '@/components/Footer';
@@ -9,7 +8,6 @@ import Footer from '@/components/Footer';
 export default function TermsOfUse() {
   return (
     <main className="min-h-screen">
-      <Header />
       <Menu />
       <SideMenu />
 

@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Menu from '@/components/Menu';
 import PageBanner from '@/components/PageBanner';
@@ -25,7 +24,6 @@ export default function InternalMedicineCenterPage() {
 
   return (
     <>
-      <Header />
       <Menu />
       <div className="min-h-screen bg-white">
       <PageBanner
@@ -988,29 +986,17 @@ export default function InternalMedicineCenterPage() {
               </div>
 
               {/* 만성 신부전 원인 섹션 */}
-              <div className="relative w-full bg-[url('/images/centers/nephrotic-bg2.jpg')] bg-cover bg-center mt-32">
-                <div className="absolute inset-0 bg-[#1A4B8E]/90"></div>
-                <div className="relative container mx-auto px-4 py-24">
-                  <div className="max-w-3xl mx-auto text-center">
-                    <p className="text-white tracking-[0.2em] text-sm mb-2">SEKANG HOSPITAL</p>
-                    <h2 className="text-white text-4xl font-bold mb-12">만성 신부전 원인</h2>
-                    <div className="space-y-6 text-white/90 text-lg leading-relaxed">
-                      <p className="flex items-start justify-center gap-3">
-                        <span className="text-white flex-shrink-0">✓</span>
-                        <span>만성 신부전의 원인은 지역 및 나이 등에 따라 다릅니다.</span>
-                      </p>
-                      <p className="flex items-start justify-center gap-3">
-                        <span className="text-white flex-shrink-0">✓</span>
-                        <span>한국에서의 주된 발병 원인은 당뇨병성 신장질환(41%), 고혈압(16%), 사구체신염(14%) 등으로 알려져 있습니다.</span>
-                      </p>
-                      <p className="flex items-start justify-center gap-3">
-                        <span className="text-white flex-shrink-0">✓</span>
-                        <span>그 밖의 원인으로는 다낭성 신질환과 기타 요로질환이 있습니다.</span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <BannerSection
+                backgroundImage="/images/centers/nephrotic-bgimg1.jpg"
+                title={[
+                  "만성 신부전 원인"
+                ]}
+                description={[
+                  "단백뇨에 의해 소변에서 거품이 나타남",
+                  "저알부민혈증에 의해 부종 발생",
+                  "원인 질환에 따라 신장 기능이 급격히 혹은 천천히 감소함"
+                ]}
+              />
 
               {/* 만성 신부전 증상 섹션 */}
               <div className="relative w-full bg-[#1A4B8E] mt-32 py-24">
