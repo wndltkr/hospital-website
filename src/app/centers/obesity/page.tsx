@@ -618,7 +618,7 @@ export default function ObesityPage() {
 
           {activeTab === 'obesity' && (
             <>
-              <div className="container mx-auto px-4">
+              <div>
               <InfoSection
                   image="/images/centers/medical04_2_img01.jpg"
                   alt="세로움 비만센터"
@@ -632,17 +632,26 @@ export default function ObesityPage() {
                 />
 
                 {/* 비만 기준 섹션 */}
-                <div className="mt-20">
-                  <div className="mb-12">
-                    <p className="text-[#0066CC] tracking-[0.2em] text-sm mb-1">S E K A N G   H O S P I T A L</p>
-                    <h2 className="text-4xl font-bold">비만 기준</h2>
+                <div className="mt-20 relative">
+                  <div className="absolute inset-0 z-0">
+                    <Image
+                      src="/images/centers/anus_cause.jpg"
+                      alt="비만 기준 배경"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  
+                  <div className="mb-12 text-center relative z-10">
+                    <p className="text-white tracking-[0.2em] text-sm mb-1">S E K A N G   H O S P I T A L</p>
+                    <h2 className="text-4xl text-white font-bold">비만 기준</h2>
                   </div>
 
                   {/* 복부비만 기준 */}
                   <div className="bg-[#F8F9FF] p-4 rounded-lg mb-4">
                     <div className="flex items-center">
                       <span className="bg-[#0066CC] text-white px-4 py-1 rounded-md mr-4">복부비만 기준</span>
-                      <p>남성 : 허리둘레 90cm 이상 / 여성 : 허리둘레 85cm 이상</p>
+                      <p className="text-white">남성 : 허리둘레 90cm 이상 / 여성 : 허리둘레 85cm 이상</p>
                     </div>
                   </div>
 
@@ -650,7 +659,7 @@ export default function ObesityPage() {
                   <div className="bg-[#F8F9FF] p-4 rounded-lg mb-4">
                     <div className="flex items-center">
                       <span className="bg-[#0066CC] text-white px-4 py-1 rounded-md mr-4">체질량 지수와 비만 기준</span>
-                      <p>체중(kg) / 신장(m)2 = 체질량지수 (※ 발생 가능성이 높은 질병 중류와 결합 확률 예측 가능)</p>
+                      <p className="text-white">체중(kg) / 신장(m)2 = 체질량지수 (※ 발생 가능성이 높은 질병 중류와 결합 확률 예측 가능)</p>
                     </div>
                   </div>
 
@@ -797,7 +806,7 @@ export default function ObesityPage() {
                   <div className="relative">
                     <div className="aspect-[4/3] relative mb-4">
                       <Image
-                        src="/images/centers/obesity-facility-1.jpg"
+                        src="/images/centers/medical04_2_img02.jpg"
                         alt="비만센터 실내전경 1"
                         fill
                         className="object-cover rounded-lg"
@@ -813,7 +822,7 @@ export default function ObesityPage() {
                   <div className="relative">
                     <div className="aspect-[4/3] relative mb-4">
                       <Image
-                        src="/images/centers/obesity-facility-2.jpg"
+                        src="/images/centers/medical04_2_img03.jpg"
                         alt="비만센터 실내전경 2"
                         fill
                         className="object-cover rounded-lg"
@@ -829,7 +838,7 @@ export default function ObesityPage() {
                   <div className="relative">
                     <div className="aspect-[4/3] relative mb-4">
                       <Image
-                        src="/images/centers/obesity-facility-3.jpg"
+                        src="/images/centers/medical04_2_img04.jpg"
                         alt="비만센터 실내전경 3"
                         fill
                         className="object-cover rounded-lg"

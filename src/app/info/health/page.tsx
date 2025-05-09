@@ -1,171 +1,207 @@
 'use client';
 
-import Image from 'next/image';
 import Footer from '@/components/Footer';
 import Menu from '@/components/Menu';
 import SideMenu from '@/components/SideMenu';
+import SearchBar from '@/components/SearchBar';
+import Pagination from '@/components/Pagination';
+import VideoList from '@/components/VideoList';
 import { useState } from 'react';
 import PageBanner from '@/components/PageBanner';
 
 // 임시 데이터
-const healthVideos = [
+const healthItems: {
+  id: number;
+  title: string;
+  thumbnailUrl: string;
+  videoUrl: string;
+  duration: string;
+  date: string;
+  views?: number;
+}[] = [
   {
-    id: 1,
-    title: '올바른 자세로 예방하는 거북목 증후군',
-    thumbnail: '/images/health/health1.jpg',
+    id: 15,
+    title: '고혈압 예방과 관리 방법',
+    thumbnailUrl: '/images/health/health-1.jpg',
+    videoUrl: 'https://youtube.com/watch?v=example1',
+    duration: '15:30',
     date: '2024.03.15',
-    views: 245,
-    category: '자세교정'
+    views: 1245
   },
   {
-    id: 2,
-    title: '허리 건강을 위한 스트레칭 가이드',
-    thumbnail: '/images/health/health2.jpg',
+    id: 14,
+    title: '당뇨병 식이요법 가이드',
+    thumbnailUrl: '/images/health/health-2.jpg',
+    videoUrl: 'https://youtube.com/watch?v=example2',
+    duration: '12:45',
     date: '2024.03.10',
-    views: 312,
-    category: '운동'
+    views: 989
   },
   {
-    id: 3,
-    title: '목디스크 예방을 위한 생활 수칙',
-    thumbnail: '/images/health/health3.jpg',
+    id: 13,
+    title: '관절 건강을 위한 운동법',
+    thumbnailUrl: '/images/health/health-3.jpg',
+    videoUrl: 'https://youtube.com/watch?v=example3',
+    duration: '18:20',
     date: '2024.03.05',
-    views: 189,
-    category: '생활수칙'
+    views: 856
   },
   {
-    id: 4,
-    title: '척추 건강을 위한 올바른 걷기 방법',
-    thumbnail: '/images/health/health4.jpg',
+    id: 12,
+    title: '건강한 수면을 위한 팁',
+    thumbnailUrl: '/images/health/health-4.jpg',
+    videoUrl: 'https://youtube.com/watch?v=example4',
+    duration: '10:15',
     date: '2024.03.01',
-    views: 267,
-    category: '운동'
+    views: 778
   },
   {
-    id: 5,
-    title: '사무직 직장인을 위한 허리 스트레칭',
-    thumbnail: '/images/health/health5.jpg',
+    id: 11,
+    title: '스트레스 관리와 마음건강',
+    thumbnailUrl: '/images/health/health-5.jpg',
+    videoUrl: 'https://youtube.com/watch?v=example5',
+    duration: '14:50',
     date: '2024.02.28',
-    views: 198,
-    category: '운동'
+    views: 945
+  },
+  {
+    id: 10,
+    title: '건강한 식습관 만들기',
+    thumbnailUrl: '/images/health/health-6.jpg',
+    videoUrl: 'https://youtube.com/watch?v=example6',
+    duration: '16:30',
+    date: '2024.02.25',
+    views: 832
+  },
+  {
+    id: 9,
+    title: '노화 방지를 위한 생활습관',
+    thumbnailUrl: '/images/health/health-7.jpg',
+    videoUrl: 'https://youtube.com/watch?v=example7',
+    duration: '13:45',
+    date: '2024.02.20',
+    views: 767
+  },
+  {
+    id: 8,
+    title: '건강검진의 중요성',
+    thumbnailUrl: '/images/health/health-8.jpg',
+    videoUrl: 'https://youtube.com/watch?v=example8',
+    duration: '11:20',
+    date: '2024.02.15',
+    views: 623
+  },
+  {
+    id: 7,
+    title: '면역력 강화를 위한 방법',
+    thumbnailUrl: '/images/health/health-9.jpg',
+    videoUrl: 'https://youtube.com/watch?v=example9',
+    duration: '15:10',
+    date: '2024.02.10',
+    views: 745
   },
   {
     id: 6,
-    title: '수면 자세가 척추 건강에 미치는 영향',
-    thumbnail: '/images/health/health6.jpg',
-    date: '2024.02.25',
-    views: 276,
-    category: '생활수칙'
+    title: '건강한 다이어트 방법',
+    thumbnailUrl: '/images/health/health-10.jpg',
+    videoUrl: 'https://youtube.com/watch?v=example10',
+    duration: '17:25',
+    date: '2024.02.05',
+    views: 834
+  },
+  {
+    id: 5,
+    title: '뇌 건강을 위한 운동법',
+    thumbnailUrl: '/images/health/health-11.jpg',
+    videoUrl: 'https://youtube.com/watch?v=example11',
+    duration: '14:15',
+    date: '2024.02.01',
+    views: 756
+  },
+  {
+    id: 4,
+    title: '건강한 노화를 위한 준비',
+    thumbnailUrl: '/images/health/health-12.jpg',
+    videoUrl: 'https://youtube.com/watch?v=example12',
+    duration: '16:40',
+    date: '2024.01.25',
+    views: 623
   }
 ];
 
-export default function HealthInfoPage() {
+export default function HealthPage() {
   const [searchTerm, setSearchTerm] = useState('');
-  
-  const filteredVideos = healthVideos.filter(video =>
-    video.title.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const [searchType, setSearchType] = useState('title');
+  const [currentPage, setCurrentPage] = useState(1);
+  const [activeSearchTerm, setActiveSearchTerm] = useState('');
+  const itemsPerPage = 9; // 3x3 그리드를 위해 9개씩 표시
+
+  // 검색 실행 함수
+  const handleSearch = () => {
+    setActiveSearchTerm(searchTerm);
+    setCurrentPage(1);
+  };
+
+  // 검색 필터링
+  const filteredVideos = healthItems.filter(video => {
+    const searchLower = activeSearchTerm.toLowerCase();
+    return video.title.toLowerCase().includes(searchLower);
+  });
+
+  // 페이지네이션 계산
+  const totalPages = Math.ceil(filteredVideos.length / itemsPerPage);
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = filteredVideos.slice(indexOfFirstItem, indexOfLastItem);
+
+  // 페이지 변경 핸들러
+  const handlePageChange = (pageNumber: number) => {
+    setCurrentPage(pageNumber);
+  };
+
+  // 영상 클릭 핸들러
+  const handleVideoClick = (video: typeof healthItems[0]) => {
+    // TODO: 영상 재생 페이지로 이동 또는 모달로 재생
+    console.log('Video clicked:', video);
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
       <SideMenu />
       <Menu />
       
-      {/* Banner Section */}
       <PageBanner
         title="건강정보"
         description={[
-          "세강병원이 전하는 정보",
-          "궁금한 정보를 풀어드립니다"
+          "세강병원이 전하는",
+          "건강한 생활을 위한 정보"
         ]}
         backgroundImage="/images/info/info-vis.jpg"
       />
 
-      {/* Main Content Section */}
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-7xl mx-auto">
-          {/* Search Section */}
-          <div className="mb-8">
-            <div className="flex justify-between items-center mb-6">
-              <h2 className="text-2xl font-bold text-gray-900">건강정보 영상</h2>
-              <div className="relative">
-                <input
-                  type="text"
-                  placeholder="제목으로 검색"
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-4 pr-10 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                />
-                <svg
-                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400"
-                  width="20"
-                  height="20"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
+          <SearchBar
+            searchTerm={searchTerm}
+            searchType={searchType}
+            onSearchTermChange={setSearchTerm}
+            onSearchTypeChange={(value) => {
+              setSearchType(value);
+              setCurrentPage(1);
+            }}
+            onSearch={handleSearch}
+          />
 
-          {/* Video Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredVideos.map((video) => (
-              <div
-                key={video.id}
-                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
-              >
-                <div className="relative h-48">
-                  <Image
-                    src={video.thumbnail}
-                    alt={video.title}
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
-                    <svg
-                      className="w-16 h-16 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                  </div>
-                  <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 bg-blue-500 text-white text-sm rounded-full">
-                      {video.category}
-                    </span>
-                  </div>
-                </div>
-                <div className="p-4">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{video.title}</h3>
-                  <div className="flex justify-between text-sm text-gray-500">
-                    <span>{video.date}</span>
-                    <span>조회수 {video.views}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <VideoList
+            videos={currentItems}
+            onVideoClick={handleVideoClick}
+          />
+
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={handlePageChange}
+          />
 
           {/* Empty State */}
           {filteredVideos.length === 0 && (

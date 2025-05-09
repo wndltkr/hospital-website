@@ -3,37 +3,53 @@
 import Footer from '@/components/Footer';
 import Menu from '@/components/Menu';
 import SideMenu from '@/components/SideMenu';
+import SearchBar from '@/components/SearchBar';
+import Pagination from '@/components/Pagination';
+import NoticeList from '@/components/NoticeList';
 import { useState } from 'react';
 import PageBanner from '@/components/PageBanner';
 
 // 임시 데이터
 const noticeItems = [
-  { id: 15, title: '2024년 세강병원 건강검진 프로그램 안내', date: '2024.03.15' },
-  { id: 14, title: '3월 진료시간 변경 안내', date: '2024.03.10' },
-  { id: 13, title: '코로나19 예방접종 안내', date: '2024.03.05' },
-  { id: 12, title: '세강병원 주차장 이용 안내', date: '2024.03.01' },
-  { id: 11, title: '신규 의료진 소개', date: '2024.02.28' },
-  { id: 10, title: '병원 휴진 안내', date: '2024.02.25' },
-  { id: 9, title: '건강보험 검진 안내', date: '2024.02.20' },
-  { id: 8, title: '세강병원 홈페이지 리뉴얼 안내', date: '2024.02.15' },
-  { id: 7, title: '설 연휴 진료 일정 안내', date: '2024.02.10' },
-  { id: 6, title: '의료장비 정기점검 안내', date: '2024.02.05' },
-  { id: 5, title: '주말 진료시간 변경 안내', date: '2024.02.01' },
-  { id: 4, title: '건강검진 예약 방법 안내', date: '2024.01.25' },
-  { id: 3, title: '비급여 진료비용 안내', date: '2024.01.20' },
-  { id: 2, title: '주차장 공사 안내', date: '2024.01.15' },
-  { id: 1, title: '신년 진료 일정 안내', date: '2024.01.10' }
+  { id: 15, title: '2024년 세강병원 건강검진 프로그램 안내', content: '2024년 건강검진 프로그램이 시작됩니다. 자세한 내용은...', date: '2024.03.15' },
+  { id: 14, title: '3월 진료시간 변경 안내', content: '3월부터 진료시간이 변경됩니다. 평일 오전 9시부터...', date: '2024.03.10' },
+  { id: 13, title: '코로나19 예방접종 안내', content: '코로나19 예방접종이 시작됩니다. 접종 대상자는...', date: '2024.03.05' },
+  { id: 12, title: '세강병원 주차장 이용 안내', content: '주차장 이용 방법이 변경되었습니다. 지하 주차장...', date: '2024.03.01' },
+  { id: 11, title: '신규 의료진 소개', content: '새로운 의료진이 합류했습니다. 전문 분야는...', date: '2024.02.28' },
+  { id: 10, title: '병원 휴진 안내', content: '다음 주 월요일은 병원 휴진일입니다. 긴급 진료는...', date: '2024.02.25' },
+  { id: 9, title: '건강보험 검진 안내', content: '건강보험 검진이 시작됩니다. 검진 대상자는...', date: '2024.02.20' },
+  { id: 8, title: '세강병원 홈페이지 리뉴얼 안내', content: '홈페이지가 새롭게 개편되었습니다. 새로운 기능은...', date: '2024.02.15' },
+  { id: 7, title: '설 연휴 진료 일정 안내', content: '설 연휴 동안의 진료 일정을 안내드립니다. 응급실은...', date: '2024.02.10' },
+  { id: 6, title: '의료장비 정기점검 안내', content: '의료장비 정기점검이 실시됩니다. 점검 기간은...', date: '2024.02.05' },
+  { id: 5, title: '주말 진료시간 변경 안내', content: '주말 진료시간이 변경됩니다. 토요일 오전 9시부터...', date: '2024.02.01' },
+  { id: 4, title: '건강검진 예약 방법 안내', content: '건강검진 예약 방법이 변경되었습니다. 온라인 예약은...', date: '2024.01.25' },
+  { id: 3, title: '비급여 진료비용 안내', content: '비급여 진료비용이 변경되었습니다. 자세한 내용은...', date: '2024.01.20' },
+  { id: 2, title: '주차장 공사 안내', content: '주차장 공사가 시작됩니다. 공사 기간은...', date: '2024.01.15' },
+  { id: 1, title: '신년 진료 일정 안내', content: '신년 진료 일정을 안내드립니다. 1월 1일은...', date: '2024.01.10' }
 ];
 
 export default function NoticePage() {
   const [searchTerm, setSearchTerm] = useState('');
+  const [searchType, setSearchType] = useState('title');
   const [currentPage, setCurrentPage] = useState(1);
+  const [activeSearchTerm, setActiveSearchTerm] = useState('');
   const itemsPerPage = 10;
 
+  // 검색 실행 함수
+  const handleSearch = () => {
+    setActiveSearchTerm(searchTerm);
+    setCurrentPage(1);
+  };
+
   // 검색 필터링
-  const filteredNotices = noticeItems.filter(notice =>
-    notice.title.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredNotices = noticeItems.filter(notice => {
+    const searchLower = activeSearchTerm.toLowerCase();
+    if (searchType === 'title') {
+      return notice.title.toLowerCase().includes(searchLower);
+    } else {
+      return notice.content.toLowerCase().includes(searchLower);
+    }
+  });
 
   // 페이지네이션 계산
   const totalPages = Math.ceil(filteredNotices.length / itemsPerPage);
@@ -46,12 +62,17 @@ export default function NoticePage() {
     setCurrentPage(pageNumber);
   };
 
+  // 게시글 클릭 핸들러
+  const handleNoticeClick = (notice: typeof noticeItems[0]) => {
+    // TODO: 게시글 상세 페이지로 이동
+    console.log('Notice clicked:', notice);
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       <SideMenu />
       <Menu />
       
-      {/* Banner Section */}
       <PageBanner
         title="공지사항"
         description={[
@@ -61,99 +82,29 @@ export default function NoticePage() {
         backgroundImage="/images/info/info-vis.jpg"
       />
 
-      {/* Main Content Section */}
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-7xl mx-auto">
-          {/* Search Section */}
-          <div className="mb-8">
-            <div className="flex justify-between items-center mb-6">
-              <h2 className="text-2xl font-bold text-gray-900">공지사항</h2>
-              <div className="relative">
-                <input
-                  type="text"
-                  placeholder="제목으로 검색"
-                  value={searchTerm}
-                  onChange={(e) => {
-                    setSearchTerm(e.target.value);
-                    setCurrentPage(1); // 검색 시 첫 페이지로 이동
-                  }}
-                  className="pl-4 pr-10 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                />
-                <svg
-                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400"
-                  width="20"
-                  height="20"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
+          <SearchBar
+            searchTerm={searchTerm}
+            searchType={searchType}
+            onSearchTermChange={setSearchTerm}
+            onSearchTypeChange={(value) => {
+              setSearchType(value);
+              setCurrentPage(1);
+            }}
+            onSearch={handleSearch}
+          />
 
-          {/* Notice List */}
-          <div className="bg-white rounded-lg shadow overflow-hidden">
-            <table className="min-w-full">
-              <thead>
-                <tr className="bg-gray-50 border-b">
-                  <th className="px-6 py-4 text-center text-sm font-medium text-gray-500 w-24">번호</th>
-                  <th className="px-6 py-4 text-left text-sm font-medium text-gray-500">제목</th>
-                  <th className="px-6 py-4 text-center text-sm font-medium text-gray-500 w-32">등록일</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-200">
-                {currentItems.map((notice) => (
-                  <tr key={notice.id} className="hover:bg-gray-50 transition-colors">
-                    <td className="px-6 py-4 text-center text-sm text-gray-500">{notice.id}</td>
-                    <td className="px-6 py-4 text-sm text-gray-900">
-                      <button className="hover:text-blue-600 text-left">{notice.title}</button>
-                    </td>
-                    <td className="px-6 py-4 text-center text-sm text-gray-500">{notice.date}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <NoticeList
+            notices={currentItems}
+            onNoticeClick={handleNoticeClick}
+          />
 
-          {/* Pagination */}
-          <div className="mt-6 flex justify-center">
-            <nav className="flex items-center space-x-2">
-              <button
-                onClick={() => handlePageChange(currentPage - 1)}
-                disabled={currentPage === 1}
-                className="px-3 py-2 rounded-lg border text-sm font-medium disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50"
-              >
-                이전
-              </button>
-              {[...Array(totalPages)].map((_, index) => (
-                <button
-                  key={index + 1}
-                  onClick={() => handlePageChange(index + 1)}
-                  className={`px-3 py-2 rounded-lg text-sm font-medium ${
-                    currentPage === index + 1
-                      ? 'bg-blue-500 text-white'
-                      : 'text-gray-700 hover:bg-gray-50'
-                  }`}
-                >
-                  {index + 1}
-                </button>
-              ))}
-              <button
-                onClick={() => handlePageChange(currentPage + 1)}
-                disabled={currentPage === totalPages}
-                className="px-3 py-2 rounded-lg border text-sm font-medium disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50"
-              >
-                다음
-              </button>
-            </nav>
-          </div>
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={handlePageChange}
+          />
 
           {/* Empty State */}
           {filteredNotices.length === 0 && (

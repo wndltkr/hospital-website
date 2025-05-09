@@ -63,9 +63,9 @@ export default function HealthPage() {
             <div className="container mx-auto px-4 mt-20">
               <div className="space-y-16">
                 <div className="flex items-center gap-12">
-                  <div className="w-[240px] h-[240px] relative bg-[#F8F9FF] rounded-full flex-shrink-0">
+                  <div className="w-[300px] h-[300px] relative">
                     <Image
-                      src="/images/centers/feature-1.jpg"
+                      src="/images/centers/check-icon01.jpg"
                       alt="CT 검사"
                       fill
                       className="object-contain p-8"
@@ -79,9 +79,9 @@ export default function HealthPage() {
                 </div>
 
                 <div className="flex items-center gap-12">
-                  <div className="w-[240px] h-[240px] relative bg-[#F8F9FF] rounded-full flex-shrink-0">
+                <div className="w-[300px] h-[300px] relative">
                     <Image
-                      src="/images/centers/feature-2.jpg"
+                      src="/images/centers/check-icon02.jpg"
                       alt="One Day One Stop"
                       fill
                       className="object-contain p-8"
@@ -95,9 +95,9 @@ export default function HealthPage() {
                 </div>
 
                 <div className="flex items-center gap-12">
-                  <div className="w-[240px] h-[240px] relative bg-[#F8F9FF] rounded-full flex-shrink-0">
+                <div className="w-[300px] h-[300px] relative">
                     <Image
-                      src="/images/centers/feature-3.jpg"
+                      src="/images/centers/check-icon03.jpg"
                       alt="보건복지부 지정"
                       fill
                       className="object-contain p-8"
@@ -114,9 +114,9 @@ export default function HealthPage() {
             <div className="container mx-auto px-4 mt-20">
               <div className="space-y-16">
                 <div className="flex items-center gap-12">
-                  <div className="w-[240px] h-[240px] relative bg-[#F8F9FF] rounded-full flex-shrink-0">
+                <div className="w-[300px] h-[300px] relative">
                     <Image
-                      src="/images/centers/feature-4.jpg"
+                      src="/images/centers/check-icon04.jpg"
                       alt="내시경 검사"
                       fill
                       className="object-contain p-8"
@@ -130,9 +130,9 @@ export default function HealthPage() {
                 </div>
 
                 <div className="flex items-center gap-12">
-                  <div className="w-[240px] h-[240px] relative bg-[#F8F9FF] rounded-full flex-shrink-0">
+                <div className="w-[300px] h-[300px] relative">
                     <Image
-                      src="/images/centers/feature-5.jpg"
+                      src="/images/centers/check-icon05.jpg"
                       alt="협력 체결"
                       fill
                       className="object-contain p-8"
@@ -146,9 +146,9 @@ export default function HealthPage() {
                 </div>
 
                 <div className="flex items-center gap-12">
-                  <div className="w-[240px] h-[240px] relative bg-[#F8F9FF] rounded-full flex-shrink-0">
+                <div className="w-[300px] h-[300px] relative">
                     <Image
-                      src="/images/centers/feature-6.jpg"
+                      src="/images/centers/check-icon06.jpg"
                       alt="전문의"
                       fill
                       className="object-contain p-8"

@@ -509,12 +509,12 @@ export default function InternalMedicineCenterPage() {
                   <div className="bg-white">
                     <div className="flex items-center">
                       <div className="w-1/2 h-[400px] relative">
-                        <Image
+                    <Image
                           src="/images/centers/liver-lifestyle.jpg"
                           alt="생활습관 개선요법"
-                          fill
-                          className="object-cover"
-                        />
+                      fill
+                      className="object-cover"
+                    />
                       </div>
                       <div className="w-1/2 p-16">
                         <h3 className="text-[#1A4B8E] text-2xl font-medium mb-4">생활습관 개선요법</h3>
@@ -1552,7 +1552,7 @@ export default function InternalMedicineCenterPage() {
 
               {/* 폐결핵 전신 증상 섹션 */}
               <div className="relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] w-screen bg-[#1A4B8E] mt-32">
-                <div className="container mx-auto px-4">
+            <div className="container mx-auto px-4">
                   <div className="py-16">
                     <div className="text-center mb-12">
                       <p className="text-white tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>

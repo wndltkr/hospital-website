@@ -1,88 +1,126 @@
 'use client';
 
-import Image from 'next/image';
 import Footer from '@/components/Footer';
 import Menu from '@/components/Menu';
 import SideMenu from '@/components/SideMenu';
+import SearchBar from '@/components/SearchBar';
+import Pagination from '@/components/Pagination';
+import PhotoList from '@/components/PhotoList';
 import { useState } from 'react';
 import PageBanner from '@/components/PageBanner';
 
 // 임시 데이터
-const photoItems = [
+const photoItems: {
+  id: number;
+  title: string;
+  imageUrl: string;
+  date: string;
+  views?: number;
+}[] = [
   {
-    id: 1,
-    title: '세강병원 신년회 현장',
-    thumbnail: '/images/photos/photo1.jpg',
+    id: 15,
+    title: '2024년 신년 맞이 행사 현장',
+    imageUrl: '/images/photos/photo-1.jpg',
     date: '2024.03.15',
-    views: 128
+    views: 345
   },
   {
-    id: 2,
-    title: '의료진 정기 컨퍼런스',
-    thumbnail: '/images/photos/photo2.jpg',
+    id: 14,
+    title: '건강검진센터 리모델링 완료 기념식',
+    imageUrl: '/images/photos/photo-2.jpg',
     date: '2024.03.10',
-    views: 95
+    views: 289
   },
   {
-    id: 3,
-    title: '지역사회 의료봉사 활동',
-    thumbnail: '/images/photos/photo3.jpg',
+    id: 13,
+    title: '의료진 교육 프로그램 현장',
+    imageUrl: '/images/photos/photo-3.jpg',
     date: '2024.03.05',
-    views: 156
+    views: 256
   },
   {
-    id: 4,
-    title: '최신 의료장비 도입식',
-    thumbnail: '/images/photos/photo4.jpg',
+    id: 12,
+    title: '지역사회 건강증진 프로그램',
+    imageUrl: '/images/photos/photo-4.jpg',
     date: '2024.03.01',
-    views: 142
+    views: 278
   },
   {
-    id: 5,
-    title: '직원 교육 프로그램',
-    thumbnail: '/images/photos/photo5.jpg',
+    id: 11,
+    title: '소아청소년과 신설 기념식',
+    imageUrl: '/images/photos/photo-5.jpg',
     date: '2024.02.28',
-    views: 88
+    views: 245
   },
   {
-    id: 6,
-    title: '환자 안전 캠페인',
-    thumbnail: '/images/photos/photo6.jpg',
+    id: 10,
+    title: '의료기기 기부 행사 현장',
+    imageUrl: '/images/photos/photo-6.jpg',
     date: '2024.02.25',
-    views: 112
-  },
-  {
-    id: 7,
-    title: '병원 시설 리모델링',
-    thumbnail: '/images/photos/photo7.jpg',
-    date: '2024.02.20',
-    views: 134
-  },
-  {
-    id: 8,
-    title: '의료진 워크샵',
-    thumbnail: '/images/photos/photo8.jpg',
-    date: '2024.02.15',
-    views: 98
+    views: 232
   },
   {
     id: 9,
-    title: '환자 만족도 조사',
-    thumbnail: '/images/photos/photo9.jpg',
+    title: '건강보험심사평가원 우수기관 선정 기념식',
+    imageUrl: '/images/photos/photo-7.jpg',
+    date: '2024.02.20',
+    views: 267
+  },
+  {
+    id: 8,
+    title: '의료진 해외 연수 프로그램',
+    imageUrl: '/images/photos/photo-8.jpg',
+    date: '2024.02.15',
+    views: 223
+  },
+  {
+    id: 7,
+    title: '지역 내 의료기관 협력 체계 구축 회의',
+    imageUrl: '/images/photos/photo-9.jpg',
     date: '2024.02.10',
-    views: 76
+    views: 245
+  },
+  {
+    id: 6,
+    title: '의료진 연구 논문 발표회',
+    imageUrl: '/images/photos/photo-10.jpg',
+    date: '2024.02.05',
+    views: 234
+  },
+  {
+    id: 5,
+    title: '건강검진 프로그램 개편 설명회',
+    imageUrl: '/images/photos/photo-11.jpg',
+    date: '2024.02.01',
+    views: 256
+  },
+  {
+    id: 4,
+    title: '의료진 교육 프로그램 수료식',
+    imageUrl: '/images/photos/photo-12.jpg',
+    date: '2024.01.25',
+    views: 223
   }
 ];
 
 export default function PhotosPage() {
   const [searchTerm, setSearchTerm] = useState('');
+  const [searchType, setSearchType] = useState('title');
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 6;
+  const [activeSearchTerm, setActiveSearchTerm] = useState('');
+  const itemsPerPage = 9; // 3x3 그리드를 위해 9개씩 표시
 
-  // 검색어로 필터링
-  const filteredPhotos = photoItems.filter(item =>
-    item.title.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  // 검색 실행 함수
+  const handleSearch = () => {
+    setActiveSearchTerm(searchTerm);
+    setCurrentPage(1);
+  };
+
+  // 검색 필터링
+  const filteredPhotos = photoItems.filter(photo => {
+    const searchLower = activeSearchTerm.toLowerCase();
+    return photo.title.toLowerCase().includes(searchLower);
+  });
 
   // 페이지네이션 계산
   const totalPages = Math.ceil(filteredPhotos.length / itemsPerPage);
@@ -93,7 +131,12 @@ export default function PhotosPage() {
   // 페이지 변경 핸들러
   const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // 사진 클릭 핸들러
+  const handlePhotoClick = (photo: typeof photoItems[0]) => {
+    // TODO: 사진 상세 페이지로 이동
+    console.log('Photo clicked:', photo);
   };
 
   return (
@@ -101,120 +144,43 @@ export default function PhotosPage() {
       <SideMenu />
       <Menu />
       
-      {/* Banner Section */}
       <PageBanner
-        title="사진게시판"
+        title="병원 소식"
         description={[
-          "세강병원의 다양한",
-          "소식과 활동을 사진으로 만나보세요"
+          "세강병원의",
+          "다양한 소식과 행사 현장을 보여드립니다"
         ]}
         backgroundImage="/images/info/info-vis.jpg"
       />
 
-      {/* Main Content Section */}
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-7xl mx-auto">
-          {/* Search Section */}
-          <div className="mb-8">
-            <div className="flex justify-between items-center mb-6">
-              <h2 className="text-2xl font-bold text-gray-900">사진게시판</h2>
-              <div className="relative">
-                <input
-                  type="text"
-                  placeholder="제목으로 검색"
-                  value={searchTerm}
-                  onChange={(e) => {
-                    setSearchTerm(e.target.value);
-                    setCurrentPage(1); // 검색 시 첫 페이지로 이동
-                  }}
-                  className="pl-4 pr-10 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                />
-                <svg
-                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400"
-                  width="20"
-                  height="20"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
+          <SearchBar
+            searchTerm={searchTerm}
+            searchType={searchType}
+            onSearchTermChange={setSearchTerm}
+            onSearchTypeChange={(value) => {
+              setSearchType(value);
+              setCurrentPage(1);
+            }}
+            onSearch={handleSearch}
+          />
 
-          {/* Photos Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {currentItems.map((item) => (
-              <div
-                key={item.id}
-                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
-              >
-                <div className="relative h-64">
-                  <Image
-                    src={item.thumbnail}
-                    alt={item.title}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2 hover:text-blue-600 cursor-pointer">
-                    {item.title}
-                  </h3>
-                  <div className="flex justify-between items-center text-sm text-gray-500">
-                    <span>{item.date}</span>
-                    <span>조회수 {item.views}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <PhotoList
+            photos={currentItems}
+            onPhotoClick={handlePhotoClick}
+          />
+
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={handlePageChange}
+          />
 
           {/* Empty State */}
           {filteredPhotos.length === 0 && (
             <div className="text-center py-12">
               <p className="text-gray-500 text-lg">검색 결과가 없습니다.</p>
-            </div>
-          )}
-
-          {/* Pagination */}
-          {filteredPhotos.length > 0 && (
-            <div className="mt-12 flex justify-center">
-              <nav className="flex items-center space-x-2">
-                <button
-                  onClick={() => handlePageChange(currentPage - 1)}
-                  disabled={currentPage === 1}
-                  className="px-3 py-2 rounded-lg border border-gray-300 text-gray-500 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  이전
-                </button>
-                {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                  <button
-                    key={page}
-                    onClick={() => handlePageChange(page)}
-                    className={`px-4 py-2 rounded-lg ${
-                      currentPage === page
-                        ? 'bg-blue-500 text-white'
-                        : 'text-gray-500 hover:bg-gray-50'
-                    }`}
-                  >
-                    {page}
-                  </button>
-                ))}
-                <button
-                  onClick={() => handlePageChange(currentPage + 1)}
-                  disabled={currentPage === totalPages}
-                  className="px-3 py-2 rounded-lg border border-gray-300 text-gray-500 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  다음
-                </button>
-              </nav>
             </div>
           )}
         </div>

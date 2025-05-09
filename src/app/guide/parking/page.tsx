@@ -8,7 +8,7 @@ import PageBanner from '@/components/PageBanner';
 
 export default function ParkingPage() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div>
       <Menu />
       <SideMenu />
       
@@ -24,12 +24,10 @@ export default function ParkingPage() {
 
       {/* Main Content Section */}
       <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div>
+          <div>
 
-          {/* Main Content */}
-          <div className="lg:col-span-2">
-            {/* Parking Fee Section */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div>
               <div className="p-8">
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}

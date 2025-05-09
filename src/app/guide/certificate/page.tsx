@@ -8,6 +8,231 @@ import { useState } from 'react';
 import PageBanner from '@/components/PageBanner';
 import InfoSection from '@/components/InfoSection';
 import BannerSection from '@/components/BannerSection';
+import Table, { Column } from '@/components/Table';
+
+// 임시 데이터
+const certificateData = [
+  {
+    id: 1,
+    type: '일반진단서 (소견서)',
+    fee: '￦20,000',
+    note: ''
+  },
+  {
+    id: 2,
+    type: '건강 진단서',
+    fee: '￦20,000',
+    note: ''
+  },
+  {
+    id: 3,
+    type: '근로능력평가용 진단서',
+    fee: '￦10,000',
+    note: ''
+  },
+  {
+    id: 4,
+    type: '사망 진단서',
+    fee: '￦10,000',
+    note: '기본 2장'
+  },
+  {
+    id: 5,
+    type: '장애 진단서(신체적장애)',
+    fee: '￦15,000',
+    note: '장애등급판정기준에 따른 신체적장애'
+  },
+  {
+    id: 6,
+    type: '장애 진단서(정신적장애)',
+    fee: '￦40,000',
+    note: '장애등급판정기준에 따른 정신적장애'
+  },
+  {
+    id: 7,
+    type: '후유장애진단서',
+    fee: '￦100,000',
+    note: ''
+  },
+  {
+    id: 8,
+    type: '병무용 진단서',
+    fee: '￦20,000',
+    note: '사진3장(최근3개월이내 찍은 사진)'
+  },
+  {
+    id: 9,
+    type: '장애심사용진단서(국민연금용)',
+    fee: '￦15,000',
+    note: '연금용 용지지참'
+  },
+  {
+    id: 10,
+    type: '상해진단서',
+    fee: '￦100,000',
+    note: '상해진단기간이 3주 미만인 경우'
+  },
+  {
+    id: 11,
+    type: '상해진단서',
+    fee: '￦150,000',
+    note: '상해진단기간이 3주 이상인 경우'
+  },
+  {
+    id: 12,
+    type: '영문 일반진단서',
+    fee: '￦20,000',
+    note: ''
+  },
+  {
+    id: 13,
+    type: '입퇴원확인서',
+    fee: '￦3,000',
+    note: ''
+  },
+  {
+    id: 14,
+    type: '통원확인서',
+    fee: '￦3,000',
+    note: '통원 진료일자 기재'
+  },
+  {
+    id: 15,
+    type: '진료확인서',
+    fee: '￦3,000',
+    note: '통원 진료일자와 진료내역(상병)기재'
+  },
+  {
+    id: 16,
+    type: '출생증명서',
+    fee: '￦3,000',
+    note: ''
+  },
+  {
+    id: 17,
+    type: '시체검안서',
+    fee: '￦30,000',
+    note: '기본 6장\n검시, 출장료는 별도 산정'
+  },
+  {
+    id: 18,
+    type: '장애인증명서',
+    fee: '￦1,000',
+    note: '소득세법에 따른 증명서'
+  },
+  {
+    id: 19,
+    type: '채용 신체검사서 (영문) (요추추가시)',
+    fee: '￦35,000 ￦40,000￦45,000',
+    note: '증명사진2장\n재발급시 5천원'
+  },
+  {
+    id: 20,
+    type: '진료기록사본(1~5매)',
+    fee: '￦1,000',
+    note: '6매 이상시 추가 1매당 ￦100'
+  },
+  {
+    id: 21,
+    type: '진료기록영상(CD)',
+    fee: '￦10,000',
+    note: ''
+  },
+  {
+    id: 22,
+    type: '운전신체검사(신규,갱신) 총포류 신체검사',
+    fee: '￦5,000 ~ ￦6,000 ￦45,000',
+    note: '신규 : 사진2장\n갱신 : 사진1장, 운전면허증'
+  }
+];
+
+const columns = [
+  {
+    header: '순번',
+    accessor: 'id' as const,
+    width: '10%',
+    align: 'center' as const
+  },
+  {
+    header: '종류',
+    accessor: 'type' as const,
+    width: '30%',
+    align: 'center' as const
+  },
+  {
+    header: '수수료',
+    accessor: 'fee' as const,
+    width: '20%',
+    align: 'center' as const
+  },
+  {
+    header: '비고',
+    accessor: 'note' as const,
+    width: '40%',
+    align: 'left' as const
+  }
+];
+
+// 구비서류 데이터 정의
+interface RequiredDocument {
+  id: number;
+  applicant: string;
+  documents: string[];
+}
+
+const requiredDocumentsColumns: Column<RequiredDocument>[] = [
+  {
+    header: '신청인',
+    accessor: 'applicant',
+    width: '1/3',
+    render: (value) => (
+      <div className="font-medium text-gray-900">
+        {value}
+      </div>
+    )
+  },
+  {
+    header: '구비서류',
+    accessor: 'documents',
+    width: '2/3',
+    render: (value) => (
+      <div className="space-y-2">
+        {(value as string[]).map((doc, index) => (
+          <div key={index} className="flex items-center gap-2">
+            <span className="text-gray-600">•</span>
+            <span>{doc}</span>
+            {(doc === '위임장' || doc === '동의서') && (
+              <a
+                href="#"
+                className="text-blue-600 hover:text-blue-800 text-sm"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  // 다운로드 로직
+                }}
+              >
+                [양식 다운로드]
+              </a>
+            )}
+          </div>
+        ))}
+      </div>
+    )
+  }
+];
+
+const requiredDocumentsData: RequiredDocument[] = [
+  {
+    id: 1,
+    applicant: '진단의사',
+    documents: ['진단서', '소견서']
+  },
+  {
+    id: 2,
+    applicant: '진단의사',
+    documents: ['진료기록']
+  }
+];
+
 export default function CertificatePage() {
   const [activeTab, setActiveTab] = useState<'first' | 'cost'>('first');
 
@@ -100,67 +325,10 @@ export default function CertificatePage() {
               <div className="bg-white rounded-2xl p-12">
                 <div className="max-w-5xl mx-auto">
                   <div className="overflow-x-auto">
-                    <table className="w-full border-collapse">
-                      <caption className="sr-only">구비서류 안내</caption>
-                      <colgroup>
-                        <col className="w-[40%]" />
-                        <col className="w-[60%]" />
-                      </colgroup>
-                      <thead>
-                        <tr>
-                          <th className="py-4 px-6 bg-[#F8F9FF] text-[#0066CC] font-bold border text-center">신청자</th>
-                          <th className="py-4 px-6 bg-[#F8F9FF] text-[#0066CC] font-bold border text-center">구비서류</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td className="py-4 px-6 border text-center">환자본인 요청 시</td>
-                          <td className="py-4 px-6 border">
-                            본인임을 확인 할 수 있는 신분증 (주민등록증, 운전면허증 등)
-                          </td>
-                        </tr>
-                        <tr>
-                          <td className="py-4 px-6 border text-center">
-                            환자의 가족 요청 시<br />
-                            (환자의 배우자, 부모, 자녀)
-                          </td>
-                          <td className="py-4 px-6 border space-y-2">
-                            <p>1. 신청인의 신분증</p>
-                            <p>2. 환자의 신분증 및 사본</p>
-                            <p>3. 가족임을 확인 할 수 있는 서류(가족관계증명서, 주민등록등본 등)</p>
-                            <p>4. 환자가 자필 서명한 동의서</p>
-                            <p className="text-[#FF4444]">* 단, 17세미만환자의 부모가 요청 시 (부모신분증, 가족확인서류 지참)</p>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td className="py-4 px-6 border text-center">
-                            환자가 지정하는<br /> 대리인이 요청 시
-                          </td>
-                          <td className="py-4 px-6 border space-y-2">
-                            <p>1. 신청인의 신분증</p>
-                            <p>2. 환자의 신분증 및 사본</p>
-                            <p className="flex items-center gap-2">
-                              3. 환자가 자필 서명한 위임장
-                              <a 
-                                href="/download/attorney.hwp"
-                                className="inline-flex items-center justify-center px-3 py-1 bg-[#0066CC] text-white text-sm rounded hover:bg-[#0055AA] transition-colors"
-                              >
-                                다운로드
-                              </a>
-                            </p>
-                            <p className="flex items-center gap-2">
-                              4. 환자가 자필 서명한 동의서
-                              <a 
-                                href="/download/agreement.hwp"
-                                className="inline-flex items-center justify-center px-3 py-1 bg-[#0066CC] text-white text-sm rounded hover:bg-[#0055AA] transition-colors"
-                              >
-                                다운로드
-                              </a>
-                            </p>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
+                    <Table<RequiredDocument>
+                      columns={requiredDocumentsColumns}
+                      data={requiredDocumentsData}
+                    />
                   </div>
                 </div>
               </div>
@@ -182,165 +350,11 @@ export default function CertificatePage() {
               <div className="bg-white rounded-2xl p-12">
                 <div className="max-w-6xl mx-auto">
                   <div className="overflow-x-auto">
-                    <table className="w-full border-collapse">
-                      <caption className="sr-only">제증명서 발급비용 안내</caption>
-                      <colgroup>
-                        <col className="w-[10%]" />
-                        <col className="w-[30%]" />
-                        <col className="w-[20%]" />
-                        <col className="w-[40%]" />
-                      </colgroup>
-                      <thead>
-                        <tr>
-                          <th className="py-4 px-6 bg-[#F8F9FF] text-[#0066CC] font-bold border text-center">순번</th>
-                          <th className="py-4 px-6 bg-[#F8F9FF] text-[#0066CC] font-bold border text-center">종류</th>
-                          <th className="py-4 px-6 bg-[#F8F9FF] text-[#0066CC] font-bold border text-center">수수료</th>
-                          <th className="py-4 px-6 bg-[#F8F9FF] text-[#0066CC] font-bold border text-center">비고</th>
-                        </tr>
-                      </thead>
-                      <tbody className="text-gray-700">
-                        <tr className="hover:bg-gray-50">
-                          <td className="py-4 px-6 border text-center">1</td>
-                          <td className="py-4 px-6 border text-center">일반진단서 (소견서)</td>
-                          <td className="py-4 px-6 border text-center">￦20,000</td>
-                          <td className="py-4 px-6 border text-left"></td>
-                        </tr>
-                        <tr className="hover:bg-gray-50">
-                          <td className="py-4 px-6 border text-center">2</td>
-                          <td className="py-4 px-6 border text-center">건강 진단서</td>
-                          <td className="py-4 px-6 border text-center">￦20,000</td>
-                          <td className="py-4 px-6 border text-left"></td>
-                        </tr>
-                        <tr className="hover:bg-gray-50">
-                          <td className="py-4 px-6 border text-center">3</td>
-                          <td className="py-4 px-6 border text-center">근로능력평가용 진단서</td>
-                          <td className="py-4 px-6 border text-center">￦10,000</td>
-                          <td className="py-4 px-6 border text-left"></td>
-                        </tr>
-                        <tr className="hover:bg-gray-50">
-                          <td className="py-4 px-6 border text-center">4</td>
-                          <td className="py-4 px-6 border text-center">사망 진단서</td>
-                          <td className="py-4 px-6 border text-center">￦10,000</td>
-                          <td className="py-4 px-6 border text-left">기본 2장</td>
-                        </tr>
-                        <tr className="hover:bg-gray-50">
-                          <td className="py-4 px-6 border text-center">5</td>
-                          <td className="py-4 px-6 border text-center">장애 진단서(신체적장애)</td>
-                          <td className="py-4 px-6 border text-center">￦15,000</td>
-                          <td className="py-4 px-6 border text-left">장애등급판정기준에 따른 신체적장애</td>
-                        </tr>
-                        <tr className="hover:bg-gray-50">
-                          <td className="py-4 px-6 border text-center">6</td>
-                          <td className="py-4 px-6 border text-center">장애 진단서(정신적장애)</td>
-                          <td className="py-4 px-6 border text-center">￦40,000</td>
-                          <td className="py-4 px-6 border text-left">장애등급판정기준에 따른 정신적장애</td>
-                        </tr>
-                        <tr className="hover:bg-gray-50">
-                          <td className="py-4 px-6 border text-center">7</td>
-                          <td className="py-4 px-6 border text-center">후유장애진단서</td>
-                          <td className="py-4 px-6 border text-center">￦100,000</td>
-                          <td className="py-4 px-6 border text-left"></td>
-                        </tr>
-                        <tr className="hover:bg-gray-50">
-                          <td className="py-4 px-6 border text-center">8</td>
-                          <td className="py-4 px-6 border text-center">병무용 진단서</td>
-                          <td className="py-4 px-6 border text-center">￦20,000</td>
-                          <td className="py-4 px-6 border text-left">사진3장(최근3개월이내 찍은 사진)</td>
-                        </tr>
-                        <tr className="hover:bg-gray-50">
-                          <td className="py-4 px-6 border text-center">9</td>
-                          <td className="py-4 px-6 border text-center">장애심사용진단서(국민연금용)</td>
-                          <td className="py-4 px-6 border text-center">￦15,000</td>
-                          <td className="py-4 px-6 border text-left">연금용 용지지참</td>
-                        </tr>
-                        <tr className="hover:bg-gray-50">
-                          <td className="py-4 px-6 border text-center">10</td>
-                          <td className="py-4 px-6 border text-center">상해진단서</td>
-                          <td className="py-4 px-6 border text-center">￦100,000</td>
-                          <td className="py-4 px-6 border text-left">상해진단기간이 3주 미만인 경우</td>
-                        </tr>
-                        <tr className="hover:bg-gray-50">
-                          <td className="py-4 px-6 border text-center">11</td>
-                          <td className="py-4 px-6 border text-center">상해진단서</td>
-                          <td className="py-4 px-6 border text-center">￦150,000</td>
-                          <td className="py-4 px-6 border text-left">상해진단기간이 3주 이상인 경우</td>
-                        </tr>
-                        <tr className="hover:bg-gray-50">
-                          <td className="py-4 px-6 border text-center">12</td>
-                          <td className="py-4 px-6 border text-center">영문 일반진단서</td>
-                          <td className="py-4 px-6 border text-center">￦20,000</td>
-                          <td className="py-4 px-6 border text-left"></td>
-                        </tr>
-                        <tr className="hover:bg-gray-50">
-                          <td className="py-4 px-6 border text-center">13</td>
-                          <td className="py-4 px-6 border text-center">입퇴원확인서</td>
-                          <td className="py-4 px-6 border text-center">￦3,000</td>
-                          <td className="py-4 px-6 border text-left"></td>
-                        </tr>
-                        <tr className="hover:bg-gray-50">
-                          <td className="py-4 px-6 border text-center">14</td>
-                          <td className="py-4 px-6 border text-center">통원확인서</td>
-                          <td className="py-4 px-6 border text-center">￦3,000</td>
-                          <td className="py-4 px-6 border text-left">통원 진료일자 기재</td>
-                        </tr>
-                        <tr className="hover:bg-gray-50">
-                          <td className="py-4 px-6 border text-center">15</td>
-                          <td className="py-4 px-6 border text-center">진료확인서</td>
-                          <td className="py-4 px-6 border text-center">￦3,000</td>
-                          <td className="py-4 px-6 border text-left">통원 진료일자와 진료내역(상병)기재</td>
-                        </tr>
-                        <tr className="hover:bg-gray-50">
-                          <td className="py-4 px-6 border text-center">16</td>
-                          <td className="py-4 px-6 border text-center">출생증명서</td>
-                          <td className="py-4 px-6 border text-center">￦3,000</td>
-                          <td className="py-4 px-6 border text-left"></td>
-                        </tr>
-                        <tr className="hover:bg-gray-50">
-                          <td className="py-4 px-6 border text-center">17</td>
-                          <td className="py-4 px-6 border text-center">시체검안서</td>
-                          <td className="py-4 px-6 border text-center">￦30,000</td>
-                          <td className="py-4 px-6 border text-left">기본 6장<br />검시, 출장료는 별도 산정</td>
-                        </tr>
-                        <tr className="hover:bg-gray-50">
-                          <td className="py-4 px-6 border text-center">18</td>
-                          <td className="py-4 px-6 border text-center">장애인증명서</td>
-                          <td className="py-4 px-6 border text-center">￦1,000</td>
-                          <td className="py-4 px-6 border text-left">소득세법에 따른 증명서</td>
-                        </tr>
-                        <tr className="hover:bg-gray-50">
-                          <td className="py-4 px-6 border text-center">19</td>
-                          <td className="py-4 px-6 border text-center whitespace-pre-line">채용 신체검사서
-(영문)
-(요추추가시)</td>
-                          <td className="py-4 px-6 border text-center whitespace-pre-line">￦35,000
-￦40,000
-￦45,000</td>
-                          <td className="py-4 px-6 border text-left">증명사진2장<br />재발급시 5천원</td>
-                        </tr>
-                        <tr className="hover:bg-gray-50">
-                          <td className="py-4 px-6 border text-center">20</td>
-                          <td className="py-4 px-6 border text-center">진료기록사본(1~5매)</td>
-                          <td className="py-4 px-6 border text-center">￦1,000</td>
-                          <td className="py-4 px-6 border text-left">6매 이상시 추가 1매당 ￦100</td>
-                        </tr>
-                        <tr className="hover:bg-gray-50">
-                          <td className="py-4 px-6 border text-center">21</td>
-                          <td className="py-4 px-6 border text-center">진료기록영상(CD)</td>
-                          <td className="py-4 px-6 border text-center">￦10,000</td>
-                          <td className="py-4 px-6 border text-left"></td>
-                        </tr>
-                        <tr className="hover:bg-gray-50">
-                          <td className="py-4 px-6 border text-center">22</td>
-                          <td className="py-4 px-6 border text-center whitespace-pre-line">운전신체검사(신규,갱신)
-
-총포류 신체검사</td>
-                          <td className="py-4 px-6 border text-center whitespace-pre-line">￦5,000 ~
-￦6,000
-￦45,000</td>
-                          <td className="py-4 px-6 border text-left">신규 : 사진2장<br />갱신 : 사진1장, 운전면허증</td>
-                        </tr>
-                      </tbody>
-                    </table>
+                    <Table
+                      columns={columns}
+                      data={certificateData}
+                      caption="제증명서 발급비용 안내"
+                    />
                   </div>
                 </div>
               </div>

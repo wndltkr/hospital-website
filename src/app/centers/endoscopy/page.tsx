@@ -215,9 +215,9 @@ export default function EndoscopyPage() {
                           작은 전제로 용종을 잡은 후 뜯어내는 방법으로 용종 제거 목적보다는 일부 조직을 떼어내서 조직 검사를 하기 위한 목적으로 사용하는 경우가 많습니다.
                         </p>
                       </div>
-                      <div className="w-[400px] flex-shrink-0">
+                      <div className="w-[300px] h-[300px] flex-shrink-0">
                         <Image
-                          src="/images/centers/punch-polypectomy.jpg"
+                          src="/images/centers/intes-img04.jpg"
                           alt="겸자를 이용한 대장용종 절제술"
                           width={400}
                           height={300}
@@ -229,9 +229,9 @@ export default function EndoscopyPage() {
 
                     {/* 두 번째 방법 */}
                     <div className="flex gap-8 items-start">
-                      <div className="w-[400px] flex-shrink-0">
+                      <div className="w-[300px] h-[300px] flex-shrink-0">
                         <Image
-                          src="/images/centers/emr.jpg"
+                          src="/images/centers/intes-img05.jpg"
                           alt="내시경적 점막 절제술"
                           width={400}
                           height={300}
@@ -280,14 +280,14 @@ export default function EndoscopyPage() {
                     <p className="text-lg text-center mb-12">
                       대장암은 발견 시기에 따라 완치 여부가 결정될 정도로 조기 진단이 중요합니다. 조기 대장암은 개복 없이 내시경적 절제술(ESD)이 가능하지만 진행된 경우에는 개복 및 복강경 수술이 불가피합니다. 경우에 따라 항암요법, 방사선 치료를 병행하기도 합니다.
                     </p>
-                    <div className="grid grid-cols-2 gap-8">
+                    <div className="grid grid-cols-4 gap-8">
                       <div className="text-center">
                         <div className="mb-4">
                           <Image
-                            src="/images/centers/colon-treatment-1.jpg"
+                            src="/images/centers/intes-img07.jpg"
                             alt="암세포가 점막에 국한된 상태"
-                            width={400}
-                            height={300}
+                            width={200}
+                            height={200}
                             className="w-full rounded-lg"
                             priority
                           />
@@ -298,7 +298,7 @@ export default function EndoscopyPage() {
                       <div className="text-center">
                         <div className="mb-4">
                           <Image
-                            src="/images/centers/colon-treatment-2.jpg"
+                            src="/images/centers/intes-img08.jpg"
                             alt="암세포가 장벽 내에 머물러 있는 경우"
                             width={400}
                             height={300}
@@ -312,7 +312,7 @@ export default function EndoscopyPage() {
                       <div className="text-center">
                         <div className="mb-4">
                           <Image
-                            src="/images/centers/colon-treatment-3.jpg"
+                            src="/images/centers/intes-img09.jpg"
                             alt="암세포가 외로 나가고 림프절 전이가 있는 경우"
                             width={400}
                             height={300}
@@ -326,7 +326,7 @@ export default function EndoscopyPage() {
                       <div className="text-center">
                         <div className="mb-4">
                           <Image
-                            src="/images/centers/colon-treatment-4.jpg"
+                            src="/images/centers/intes-img10.jpg"
                             alt="간, 폐 등 원격전이가 있는 경우"
                             width={400}
                             height={300}
@@ -381,62 +381,24 @@ export default function EndoscopyPage() {
                 />
 
               {/* 위내시경 검사 전&후 주의사항 섹션 */}
-              <div className="w-full bg-[#F4F4F5]">
-                <div className="container mx-auto px-4 py-20">
-                  <h2 className="text-[#0066CC] tracking-[0.2em] text-base text-center">SEKANG HOSPITAL</h2>
-                  <h3 className="text-[32px] font-bold text-center mb-12">위내시경 검사 전&후 주의사항</h3>
-                  <div className="grid grid-cols-1 gap-6 max-w-6xl mx-auto">
-                    <div className="flex items-start gap-4">
-                      <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">
-                        1
-                      </div>
-                      <p className="text-lg mt-1">검사 진날, 저녁식사는 평소보다 가볍게 해야 합니다.</p>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">
-                        2
-                      </div>
-                      <p className="text-lg mt-1">검사 전 적어도 8시간 동안 금식해야 합니다.</p>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">
-                        3
-                      </div>
-                      <p className="text-lg mt-1">검사 당일에는 아침식사는 물론 물과 우유도 금식입니다.</p>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">
-                        4
-                      </div>
-                      <p className="text-lg mt-1">검사 당일, 혈압약이나 심장약을 복용해야 할 경우 최소한의 물로 복용하기 약 3~4시간 전 복용해야 합니다.</p>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">
-                        5
-                      </div>
-                      <p className="text-lg mt-1">당뇨가 있는 분은 검사 당일 인슐린 주사, 당뇨 약을 복용하면 안 됩니다. (저혈당 위험)</p>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">
-                        6
-                      </div>
-                      <p className="text-lg mt-1">평소 알레르기, 심장질환, 고혈압, 천식, 녹내장, 전립선비대증 등 만성질환이 있거나 약물 복용 중인 경우 검사 전 꼭 의료진에게 알려야 합니다.</p>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">
-                        7
-                      </div>
-                      <p className="text-lg mt-1">임신 가능성이 있거나 임신 중인 산모는 검사 전 꼭 의료진에게 알려야 합니다.</p>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <div className="w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center flex-shrink-0">
-                        8
-                      </div>
-                      <p className="text-lg mt-1">검사 중 필요에 따라 조직검사 및 기타 검사가 진행될 수 있으며 경우 추가 비용이 발생할 수 있습니다.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <BannerSection
+          backgroundImage="/images/centers/colon-tester.jpg"
+          title={[
+            "위내시경 검사 전&후 주의사항"
+          ]}
+          description={[
+            "검사 전날, 저녁식사는 평소보다 가볍게 해야 합니다.",
+            "검사 전 적어도 8시간 동안 금식해야 합니다.",
+            "검사 당일에는 아침식사는 물론 물과 우유도 금식입니다.",
+            "검사 당일, 혈압약이나 심장 약은 검사하기 약 3~4시간 전 복용해야 합니다.",
+            "당뇨가 있는 분은 검사 당일 인슐린 주사, 당뇨 약을 복용하면 안 됩니다. (저혈당 위험)",
+            "평소 알레르기, 심장질환, 고혈압, 천식, 녹내장, 전립선비대증 등 만성질환이 있거나 약물 복용 중인 경우 검사 전 꼭 의료진에게 알려야 합니다.",
+            "임신 가능성이 있거나 임신 중인 산모는 검사 전 꼭 의료진에게 알려야 합니다.",
+            "검사 중 필요에 따라 조직검사 및 기타 검사가 진행될 수 있으며 이 경우 추가 비용이 필요할 수 있습니다."
+          ]}
+          textColor='black'
+          isRepeating={true}
+        />
 
               {/* 위내시경의 진단 - 치료내시경 섹션 */}
               <InfoSection
@@ -477,9 +439,9 @@ export default function EndoscopyPage() {
                             점막 또는 점막하층까지 침범한 종양을 내시경을 이용하여 박리하고, 이를 절제하여 암을 완치할 수 있는 방법입니다.
                           </p>
                         </div>
-                        <div className="w-[400px] flex-shrink-0">
+                        <div className="w-[300px] flex-shrink-0">
                           <Image
-                            src="/images/centers/esd-1.jpg"
+                            src="/images/centers/colon-img04.jpg"
                             alt="위내시경 점막하 절제술 이미지 1"
                             width={400}
                             height={300}
@@ -490,9 +452,9 @@ export default function EndoscopyPage() {
                       </div>
 
                       <div className="flex gap-12 items-start">
-                        <div className="w-[400px] flex-shrink-0">
+                        <div className="w-[300px] flex-shrink-0">
                           <Image
-                            src="/images/centers/esd-2.jpg"
+                            src="/images/centers/colon-img05.jpg"
                             alt="위내시경 점막하 절제술 이미지 2"
                             width={400}
                             height={300}
