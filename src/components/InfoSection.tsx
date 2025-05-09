@@ -8,6 +8,7 @@ interface InfoSectionProps {
   subheading?: string;
   descriptions: (string | React.ReactNode)[];
   imagePosition?: 'left' | 'right';
+  textColor?: 'white';
 }
 
 export default function InfoSection({
@@ -18,7 +19,10 @@ export default function InfoSection({
   subheading,
   descriptions,
   imagePosition = 'left',
+  textColor,
 }: InfoSectionProps) {
+  const textClass = textColor === 'white' ? 'text-white' : '';
+  const subheadingClass = textColor === 'white' ? 'text-white' : 'text-gray-500';
   return (
     <div className="w-full py-16">
       <div className="container mx-auto px-4">
@@ -38,15 +42,15 @@ export default function InfoSection({
           </div>
           <div className="flex-1 flex flex-col justify-center" style={{ minHeight: 300 }}>
             {subtitle && (
-              <h2 className="text-[#0066CC] tracking-[0.2em] text-base">{subtitle}</h2>
+              <h2 className={`text-[#0066CC] tracking-[0.2em] text-base ${textClass}`}>{subtitle}</h2>
             )}
-            <h3 className="text-[40px] font-bold">{title}</h3>
+            <h3 className={`text-[40px] font-bold ${textClass}`}>{title}</h3>
             {subheading && (
-              <div className="text-base text-gray-500 font-medium mt-1">{subheading}</div>
+              <div className={`text-base font-medium mt-1 ${subheadingClass}`}>{subheading}</div>
             )}
             <div className="mt-4">
               {descriptions.map((desc, idx) => (
-                <p key={idx} className={`text-lg${idx > 0 ? ' mt-2' : ''}`}>{desc}</p>
+                <p key={idx} className={`text-lg${idx > 0 ? ' mt-2' : ''} ${textClass}`}>{desc}</p>
               ))}
             </div>
           </div>

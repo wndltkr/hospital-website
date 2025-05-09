@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Footer from '@/components/Footer';
 import Menu from '@/components/Menu';
@@ -222,67 +221,41 @@ export default function InternalMedicineCenterPage() {
                       <h2 className="text-white text-4xl font-bold">고지혈증의 원인</h2>
                     </div>
 
-                    <div className="space-y-8">
-                      {/* 음식물 */}
-                      <div className="bg-white rounded-lg overflow-hidden">
-                        <div className="flex items-center">
-                          <div className="w-1/2 h-[400px] relative">
-                            <Image
-                              src="/images/centers/hyperlipidemia-cause1.jpg"
-                              alt="음식물"
-                              fill
-                              className="object-cover"
-                            />
-                          </div>
-                          <div className="w-1/2 p-12">
-                            <h3 className="text-[#1A4B8E] text-2xl font-medium mb-6">음식물</h3>
-                            <p className="text-gray-700 text-lg leading-relaxed">
-                              음식물은 치료가 가능한 위험인자 중에서 가장 큰 원인이 됩니다. 콜레스테롤이 많이 함유된 음식을 자주 섭취하면서 혈액 내에 콜레스테롤이 많아집니다.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
+                    <InfoSection
+                      image="/images/centers/internal-img04.jpg"
+                          alt="음식물"
+                      title="음식물"
+                      subtitle="SEKANG HOSPITAL"
+                      descriptions={[
+                        "음식물은 치료가 가능한 위험인자 중에서 가장 큰 원인이 됩니다. 콜레스테롤이 많이 함유된 음식을 자주 섭취하면서 혈액 내에 콜레스테롤이 많아집니다.",
+                      ]}
+                      imagePosition="left" // 또는 "right"
+                      textColor="white"
+                    />
 
-                      {/* 유전적 요인 */}
-                      <div className="bg-white rounded-lg overflow-hidden">
-                        <div className="flex items-center">
-                          <div className="w-1/2 p-12">
-                            <h3 className="text-[#1A4B8E] text-2xl font-medium mb-6">유전적 요인</h3>
-                            <p className="text-gray-700 text-lg leading-relaxed">
-                              유전자는 혈중 지질 농도에 영향을 미치는 중요한 요인입니다. 가족력이 있는 경우 고지혈증이 발생할 확률이 높아집니다.
-                            </p>
-                          </div>
-                          <div className="w-1/2 h-[400px] relative">
-                            <Image
-                              src="/images/centers/hyperlipidemia-cause2.jpg"
-                              alt="유전적 요인"
-                              fill
-                              className="object-cover"
-                            />
-                          </div>
-                        </div>
-                      </div>
+                    <InfoSection
+                      image="/images/centers/internal-img05.jpg"
+                          alt="유전적 요인"
+                      title="유전적 요인"
+                      subtitle="SEKANG HOSPITAL"
+                      descriptions={[
+                        "유전자는 혈중 지질 농도에 영향을 미치는 중요한 요인입니다. 가족력이 있는 경우 고지혈증이 발생할 확률이 높아집니다.",
+                      ]}
+                      imagePosition="right" // 또는 "right"
+                      textColor="white"
+                    />
 
-                      {/* 나이와 성별 */}
-                      <div className="bg-white rounded-lg overflow-hidden">
-                        <div className="flex items-center">
-                          <div className="w-1/2 h-[400px] relative">
-                            <Image
-                              src="/images/centers/hyperlipidemia-cause3.jpg"
-                              alt="나이와 성별"
-                              fill
-                              className="object-cover"
-                            />
-                          </div>
-                          <div className="w-1/2 p-12">
-                            <h3 className="text-[#1A4B8E] text-2xl font-medium mb-6">나이와 성별</h3>
-                            <p className="text-gray-700 text-lg leading-relaxed">
-                              보통 남성은 20~50세까지 혈압이 상승하지만 그 이후부터는 약간 감소합니다. 여성은 20세부터 증가하지만 남성보다 낮은 수치로 폐경 후까지 유지됩니다.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <InfoSection
+                      image="/images/centers/internal-img06.jpg"
+                          alt="나이와 성별"
+                      title="나이와 성별"
+                      subtitle="SEKANG HOSPITAL"
+                      descriptions={[
+                        "보통 남성은 20~50세까지 혈압이 상승하지만 그 이후부터는 약간 감소합니다. 여성은 20세부터 증가하지만 남성보다 낮은 수치로 폐경 후까지 유지됩니다.",
+                      ]}
+                      imagePosition="left" // 또는 "right"
+                      textColor="white"
+                    />
                   </div>
                 </div>
               </div>
@@ -308,7 +281,7 @@ export default function InternalMedicineCenterPage() {
                     "인구·경화 등의 환경적인 요인이 당뇨병환자를 급격하게 증가시키고 있습니다. 당뇨병의 정확한 원인 이해가 당뇨병 예방의 첫걸음입니다."
                   ]}
                   imagePosition="left" // 또는 "right"
-                />
+              />
 
               {/* 당뇨병이란? 섹션 */}
               <BannerSection
@@ -504,71 +477,47 @@ export default function InternalMedicineCenterPage() {
                     <p className="text-white tracking-[0.2em] text-sm mb-1">SEKANG HOSPITAL</p>
                     <h2 className="text-white text-4xl font-bold">비알코올성 지방간 치료법</h2>
                   </div>
-
-                  {/* 생활습관 개선요법 */}
-                  <div className="bg-white">
-                    <div className="flex items-center">
-                      <div className="w-1/2 h-[400px] relative">
-                    <Image
-                          src="/images/centers/liver-lifestyle.jpg"
+                  <InfoSection
+                      image="/images/centers/liver-img02.jpg"
                           alt="생활습관 개선요법"
-                      fill
-                      className="object-cover"
+                      title="생활습관 개선요법"
+                      subtitle="SEKANG HOSPITAL"
+                      descriptions={[
+                        "지방간 환자 70~80%는 비만이고, 그 외에 상당수 환자는 과체중으로 알려져 있습니다. 체중감소는 인슐린 감수성을 향상시켜 지방간 호전에 도움을 줍니다. 체중은 6개월에 대략 현재 체중의 10% 감량을 목표로 합니다. 운동요법은 중간 강도의 운동을 주 3회 이상, 1회에 60~90분 정도를 권장합니다.",
+                        "식이요법으로는 고지방 음식(튀긴 음식, 기름기 많은 음식 등)을 피하고 경도 비만(체질량지수 25~29.9사이)의 경우 매일 500 kcal를, 중등도 비만(30~34.5사이)에는 500~1,000 kcal의 음식 섭취를 줄여 체중을 1주에 0.5 kg정도를 줄이도록 노력합니다."
+                      ]}
+                      imagePosition="left" // 또는 "right"
+                      textColor="white"
                     />
-                      </div>
-                      <div className="w-1/2 p-16">
-                        <h3 className="text-[#1A4B8E] text-2xl font-medium mb-4">생활습관 개선요법</h3>
-                        <p className="text-gray-700 text-lg leading-relaxed">
-                          지방간 환자 70~80%는 비만이고, 그 외에 상당수 환자는 과체중으로 알려져 있습니다. 체중감소는 일율된 감수성을 향상시켜 지방간 초기에 도움을 줍니다. 체중을 6개월에 대략 현재 체중의 10% 감량을 목표로 합니다. 운동요법은 중간 강도의 운동을 주 3회 이상, 1회에 60~90분 정도를 권장합니다.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* 수술적 치료법 */}
-                  <div className="bg-white">
-                    <div className="flex items-center">
-                      <div className="w-1/2 p-16">
-                        <h3 className="text-[#1A4B8E] text-2xl font-medium mb-4">수술적 치료법</h3>
-                        <p className="text-gray-700 text-lg leading-relaxed">
-                          비만수술요법은 고도비만(체질량 지수 {'>'}40Kg/m2)이거나 체질량지수 {'>'}35Kg/m2 이상이면서 당뇨나 고혈압 등 위험인자가 동반된 경우에 권장됩니다.<br/><br/>
-                          - 초기포만감을 유도하여 음식섭취를 줄이는 시술<br/>
-                          - 소장을 우회시켜 흡수 불량을 유도하는 시술<br/>
-                          - 위 두 가지 모두의 효과를 얻기 위한 시술<br/><br/>
-                          비만수술요법 후에 간 기능 수치의 호전과 간 내 지방의 감소는 대부분에서 보고되었으나, 염증과 섬유화의 호전에 대한 결과는 일정치 않습니다. 현재까지의 연구 중에서는 지방간 환자에서는 초기포만감을 유도하여 음식섭취를 줄이는 시술이 비교적 안전한 것으로 알려져 있습니다.
-                        </p>
-                      </div>
-                      <div className="w-1/2 h-[400px] relative">
-                        <Image
-                          src="/images/centers/liver-surgery.jpg"
+                    <InfoSection
+                      image="/images/centers/liver-img03.jpg"
                           alt="수술적 치료법"
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                    </div>
-                  </div>
+                      title="수술적 치료법"
+                      subtitle="SEKANG HOSPITAL"
+                      descriptions={[
+                        "비만수술요법은 고도비만(체질량 지수 > 40Kg/m2)이거나 체질량지수 >35Kg/m2 이상이면서 당뇨나 고혈압 등 위험인자가 동반된 경우에 권장됩니다.",
+                        "- 조기포만감을 유도하여 음식섭취를 줄이는 시술",
+                        "- 소장을 우회시켜 흡수 불량을 유도하는 시술",
+                        "- 위 두 가지 모두의 효과를 얻기 위한 시술",
+                        "비만수술요법 후에 간 기능 수치의 호전과 간 내 지방의 감소는 대부분에서 보고되었으나, 염증과 섬유화의 호전에 대한 결과는 일정치 않습니다. 현재까지의 연구 중에서는 지방간 환자에서는 조기포만감을 유도하여 음식섭취를 줄이는 시술이 비교적 안전한 것으로 알려져 있습니다."
+                      ]}
+                      imagePosition="right" // 또는 "right"
+                      textColor="white"
+                    />
 
-                  {/* 약물요법 */}
-                  <div className="bg-white">
-                    <div className="flex items-center">
-                      <div className="w-1/2 h-[400px] relative">
-                        <Image
-                          src="/images/centers/liver-medication.jpg"
-                          alt="약물요법"
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                      <div className="w-1/2 p-16">
-                        <h3 className="text-[#1A4B8E] text-2xl font-medium mb-4">약물요법(당뇨병 치료제 및 인슐린 저항성 개선 약물)</h3>
-                        <p className="text-gray-700 text-lg leading-relaxed">
-                          제2형(성인형) 당뇨병 치료제는 모두 효과가 있는 것으로 여겨집니다. 이 중 인슐린 주사와 인슐린 분비를 자극하는 늘들의 약은 당뇨병 치료제인 설포닐유레아 계열은 작용기전에서 인슐린 분비와 관련되어 효과가 적고, 메트포르민이나 치아졸리딘디온은 좋은 간 내에서 당 생성을 억제하고 인슐린 감수성을 개선시켜 효과가 좋은 것으로 알려져 있습니다.<br/><br/>
-                          그러나 아직까지 우리나라에서는 당뇨병이 없는 지방간 혹은 지방간염 환자에서는 의료보험으로 인정받지 못하여 약값이 비싼 단점이 있습니다.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+                    <InfoSection
+                      image="/images/centers/liver-img04.jpg"
+                          alt="수술적 치료법"
+                      title="수술적 치료법"
+                      subtitle="SEKANG HOSPITAL"
+                      descriptions={[
+                        "제2형(성인형) 당뇨병 치료제는 모두 효과가 있을 것으로 여겨집니다. 이 중 인슐린 주사와 인슐린 분비를 자극하는 보통의 먹는 당뇨병 치료제인 설포닌유레아 계열은 작용기전에서 인슐린 분비와 관련되어 효과가 적고, 메트포르민이나 최근에 개발된 티아졸리디네디온 등은 간 내에서 당 생성을 억제하고 인슐린 감수성을 개선시켜 효과가 좋은 것으로 알려져 있습니다.",
+                        "티아졸리디네디온은 포도당 수용체를 증가시켜 근육에서 당의 흡수를 촉진하고, 지방세포의 분화를 촉진하고 지방의 분산을 조절하여 중심비만을 감소시킵니다. 따라서 티아졸리디네디온은 체중의 변화없이 인슐린 저항성을 감소시키고 간내 지방 침착을 감소시켜 지방간 및 지방간염의 치료에 효과가 있는 것으로 봅니다.",
+                        "그러나 아직까지 우리나라에서는 당뇨병이 없는 지방간 혹은 지방간염 환자에서는 의료보험으로 인정받지 못하여 약값이 비싼 단점이 있습니다.",
+                      ]}
+                      imagePosition="left" // 또는 "right"
+                      textColor="white"
+                    />
                 </div>
               </div>
 
@@ -1006,61 +955,33 @@ export default function InternalMedicineCenterPage() {
                     <h2 className="text-white text-4xl font-bold">만성 신부전 증상</h2>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-8 max-w-6xl mx-auto">
-                    {/* 초기 증상 */}
-                    <div className="bg-white rounded-lg overflow-hidden">
-                      <div className="h-[300px] relative">
-                        <Image
-                          src="/images/centers/nephrotic-img03.jpg"
-                          alt="만성 신부전 초기 증상"
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                      <div className="p-8">
-                        <h3 className="text-[#1A4B8E] text-2xl font-bold mb-6">초기</h3>
-                        <div className="space-y-4">
-                          <p className="flex items-start gap-2 text-gray-700">
-                            <span className="text-[#1A4B8E] flex-shrink-0">☑</span>
-                            <span>별다른 이상 증상을 느끼지 못 함</span>
-                          </p>
-                          <p className="flex items-start gap-2 text-gray-700">
-                            <span className="text-[#1A4B8E] flex-shrink-0">☑</span>
-                            <span>신장 기능 저하에 따른 요독 증상 동반</span>
-                          </p>
-                          <p className="flex items-start gap-2 text-gray-700">
-                            <span className="text-[#1A4B8E] flex-shrink-0">☑</span>
-                            <span>피곤함, 가려움증, 식욕부진 등</span>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
+                  <InfoSection
+                      image="/images/centers/nephrotic-img03.jpg"
+                          alt="초기"
+                      title="초기"
+                      subtitle="SEKANG HOSPITAL"
+                      descriptions={[
+                        "☑ 별다른 이상 증상을 느끼지 못 함",
+                        "☑ 신장 기능 저하에 따른 요독 증상 동반",
+                        "☑ 피곤함, 가려움증, 식욕부진 등",
+                      ]}
+                      imagePosition="right" // 또는 "right"
+                      textColor="white"
+                    />
 
-                    {/* 말기 증상 */}
-                    <div className="bg-white rounded-lg overflow-hidden">
-                      <div className="h-[300px] relative">
-                        <Image
-                          src="/images/centers/nephrotic-img04.jpg"
-                          alt="만성 신부전 말기 증상"
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                      <div className="p-8">
-                        <h3 className="text-[#1A4B8E] text-2xl font-bold mb-6">말기</h3>
-                        <div className="space-y-4">
-                          <p className="flex items-start gap-2 text-gray-700">
-                            <span className="text-[#1A4B8E] flex-shrink-0">☑</span>
-                            <span>호흡곤란, 식욕부진, 구토 등이 심해짐</span>
-                          </p>
-                          <p className="flex items-start gap-2 text-gray-700">
-                            <span className="text-[#1A4B8E] flex-shrink-0">☑</span>
-                            <span>투석, 신장이식 치료 없이 정상 생활이 어려워짐</span>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                    <InfoSection
+                      image="/images/centers/nephrotic-img04.jpg"
+                          alt="말기"
+                      title="말기"
+                      subtitle="SEKANG HOSPITAL"
+                      descriptions={[
+                        "☑ 호흡곤란, 식욕부진, 구토 등이 심해짐",
+                        "☑ 투석, 신장이식 치료 없이 정상 생활이 어려워짐",
+                      ]}
+                      imagePosition="left" // 또는 "right"
+                      textColor="white"
+                    />
+                  
                 </div>
               </div>
 
@@ -1200,14 +1121,14 @@ export default function InternalMedicineCenterPage() {
 
               {/* 단백뇨 섹션 */}
               <InfoSection
-                  image="/images/centers/anus-img02.jpg"
+                  image="/images/centers/nephrotic-img05.jpg"
                   alt="단백뇨"
                   title="단백뇨"
                   subtitle="SEKANG HOSPITAL"
                   descriptions={[
                     "소변에 단백질이 섞여 나오는 것을 단백뇨라고 하는데, 정상 소변에도 어느 정도 단백이 포함될 수 있으므로, 성인인 경우 하루 500mg 이상, 소아는 1시간 동안 체표면적 1제곱미터당 4mg 이상의 단백질이 배설될 때 명백한 단백뇨라고 합니다.",
                   ]}
-                  imagePosition="right" // 또는 "right"
+                  imagePosition="left" // 또는 "right"
                 />
 
               {/* 다음 섹션 */}
@@ -1287,7 +1208,7 @@ export default function InternalMedicineCenterPage() {
 
               {/* 혈뇨 섹션 */}
               <InfoSection
-                  image="/images/centers/anus-img02.jpg"
+                  image="/images/centers/nephrotic-img06.jpg"
                   alt="혈뇨"
                   title="혈뇨"
                   subtitle="SEKANG HOSPITAL"
@@ -1388,75 +1309,35 @@ export default function InternalMedicineCenterPage() {
                       <h2 className="text-white text-4xl font-bold">천식 치료법</h2>
             </div>
 
-                    <div className="space-y-8">
-                      {/* 증상 완화제 */}
-                      <div className="bg-white rounded-lg overflow-hidden">
-                        <div className="flex items-center">
-                          <div className="w-1/2 h-[400px] relative">
-                            <Image
-                              src="/images/centers/asthma-img02.jpg"
-                              alt="증상 완화제"
-                              fill
-                              className="object-cover"
-                            />
-                          </div>
-                          <div className="w-1/2 p-12">
-                            <h3 className="text-[#1A4B8E] text-2xl font-medium mb-6">1. 증상 완화제</h3>
-                            <p className="text-gray-700 text-lg mb-6">
-                              기도 폐쇄의 증상을 수분 내에 완화시켜 천식 발작을 멈추게 합니다.
-                            </p>
-                            <div className="space-y-4">
-                              <div>
-                                <p className="text-[#F4B223] font-medium mb-1">☑ 속효성 β2 항진제 :</p>
-                                <p className="text-gray-700">교감신경을 항진시켜 기도를 확장시키는 역할을 하는 약물로, 기도로 직접 흡인하는 약제가 있습니다.</p>
-                              </div>
-                              <div>
-                                <p className="text-[#F4B223] font-medium mb-1">☑ 항콜린제 :</p>
-                                <p className="text-gray-700">부교감신경을 억제시켜 기도의 수축을 막는 역할을 합니다.</p>
-                              </div>
-                              <div>
-                                <p className="text-[#F4B223] font-medium mb-1">☑ 속효성 테오필린 :</p>
-                                <p className="text-gray-700">카페인과 비슷한 약물로 기도를 확장시키는 역할을 합니다.</p>
-                              </div>
-                              <div>
-                                <p className="text-[#F4B223] font-medium mb-1">☑ 경구 및 주사용 스테로이드 :</p>
-                                <p className="text-gray-700">부신피질호르몬이라고도 하는 약물로서 기도의 염증을 가라앉히는 역할을 합니다.</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                    <InfoSection
+                      image="/images/centers/asthma-img02.jpg"
+                          alt="증상 완화제"
+                      title="증상 완화제"
+                      subtitle="SEKANG HOSPITAL"
+                      descriptions={[
+                        "기도 폐쇄의 증상을 수분 내에 완화시켜 천식 발작을 멈추게 합니다.",
+                        "☑ 속효성 β2 항진제 : 교감신경을 항진시켜 기도를 확장시키는 역할을 하는 약물로, 기도로 직접 흡인하는 약제가 있습니다.",
+                        "☑ 항콜린제 : 부교감신경을 억제시켜 기도의 수축을 막는 역할을 합니다.",
+                        "☑ 속효성 테오필린 : 카페인과 비슷한 약물로 기도를 확장시키는 역할을 합니다.",
+                        "☑ 경구 및 주사용 스테로이드 : 부신피질호르몬이라고도 하는 약물로서 기도의 염증을 가라앉히는 역할을 합니다."
+                      ]}
+                      imagePosition="right" // 또는 "right"
+                      textColor="white"
+                    />
 
-                      {/* 예방 약제 */}
-                      <div className="bg-white rounded-lg overflow-hidden">
-                        <div className="flex items-center">
-                          <div className="w-1/2 p-12">
-                            <h3 className="text-[#1A4B8E] text-2xl font-medium mb-6">2. 예방 약제</h3>
-                            <p className="text-gray-700 text-lg mb-6">
-                              염증을 억제하여 천식 발작을 예방합니다.
-                            </p>
-                            <div className="space-y-4">
-                              <div>
-                                <p className="text-[#F4B223] font-medium mb-1">☑ 흡입용 스테로이드 :</p>
-                                <p className="text-gray-700">입을 통해 기관지로 흡입함으로써 기관지에 직접 작용하는 스테로이드 제제입니다.</p>
-                              </div>
-                              <div>
-                                <p className="text-[#F4B223] font-medium mb-1">☑ 지속성 기관지 확장제 :</p>
-                                <p className="text-gray-700">기관지 수축을 예방하고 확장시키는 역할을 하는 약제입니다.</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="w-1/2 h-[400px] relative">
-                            <Image
-                              src="/images/centers/asthma-img03.jpg"
-                              alt="예방 약제"
-                              fill
-                              className="object-cover"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <InfoSection
+                      image="/images/centers/asthma-img03.jpg"
+                          alt="예방 약제"
+                      title="예방 약제"
+                      subtitle="SEKANG HOSPITAL"
+                      descriptions={[
+                        "염증을 억제하여 천식 발작을 예방합니다.",
+                        "☑ 흡입용 스테로이드 : 입을 통해 기관지로 흡입함으로써 기관지에 직접 작용하는 스테로이드 제제입니다.",
+                        "☑ 지속성 기관지 확장제 : 기관지 수축을 예방하고 확장시키는 역할을 하는 약제입니다.",
+                      ]}
+                      imagePosition="left" // 또는 "right"
+                      textColor="white"
+                    />
                   </div>
                 </div>
               </div>

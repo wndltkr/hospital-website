@@ -5,6 +5,36 @@ import Footer from '@/components/Footer';
 import Menu from '@/components/Menu';
 import SideMenu from '@/components/SideMenu';
 import PageBanner from '@/components/PageBanner';
+import Table, { Column } from '@/components/Table';
+
+// 주차요금표 데이터 및 컬럼 정의
+interface ParkingFeeRow {
+  id: number;
+  type: string;
+  time: string;
+  fee: string;
+  note: string;
+}
+
+const parkingFeeData: ParkingFeeRow[] = [
+  { id: 1, type: '기본요금', time: '30분', fee: '800', note: '일반내원객' },
+  { id: 2, type: '추가요금', time: '10분당', fee: '300', note: '' },
+  { id: 3, type: '외래진료, 종합검진', time: '당일', fee: '무료', note: '1일 1회에 한함, 주차 도장 확인(원무과)' },
+  { id: 4, type: '입·퇴원(당일)', time: '8시간', fee: '무료', note: '입퇴원 당일에 한함' },
+  { id: 5, type: '입원환자', time: '1시간', fee: '무료', note: '입원시 등록 차량 1대에 한함\n(원무과에서 차량 스티커 발급)' },
+  { id: 6, type: '입원환자', time: '17:00 ~ 익일 08:00', fee: '무료', note: '' },
+  { id: 7, type: '응급실 진료', time: '당일', fee: '무료', note: '' },
+  { id: 8, type: '외래 환자 수술', time: '당일', fee: '무료', note: '' },
+  { id: 9, type: '장애인,국가유공자', time: '2시간', fee: '무료', note: '(수첩지참) 시간초과시 초과요금 50%' },
+  { id: 10, type: '1일 주차', time: '', fee: '5,000', note: '' },
+];
+
+const parkingFeeColumns: Column<ParkingFeeRow>[] = [
+  { header: '구분', accessor: 'type', align: 'center', width: '20%' },
+  { header: '주차시간', accessor: 'time', align: 'center', width: '20%' },
+  { header: '금액(원)', accessor: 'fee', align: 'center', width: '20%' },
+  { header: '비고', accessor: 'note', align: 'left', width: '40%', render: (value) => <span className="whitespace-pre-line">{value}</span> },
+];
 
 export default function ParkingPage() {
   return (
@@ -48,83 +78,11 @@ export default function ParkingPage() {
 
                 {/* Parking Fee Table */}
                 <div className="overflow-x-auto">
-                  <table className="w-full border-collapse">
-                    <caption className="sr-only">주차요금표</caption>
-                    <colgroup>
-                      <col style={{ width: '25%' }} />
-                      <col style={{ width: '25%' }} />
-                      <col style={{ width: '25%' }} />
-                      <col style={{ width: '25%' }} />
-                    </colgroup>
-                    <thead>
-                      <tr>
-                        <th className="py-4 px-6 bg-[#F8F9FF] text-[#0066CC] font-bold border">구분</th>
-                        <th className="py-4 px-6 bg-[#F8F9FF] text-[#0066CC] font-bold border">주차시간</th>
-                        <th className="py-4 px-6 bg-[#F8F9FF] text-[#0066CC] font-bold border">금액(원)</th>
-                        <th className="py-4 px-6 bg-[#F8F9FF] text-[#0066CC] font-bold border">비고</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td className="py-4 px-6 border text-center">기본요금</td>
-                        <td className="py-4 px-6 border text-center">30분</td>
-                        <td className="py-4 px-6 border text-center">800</td>
-                        <td className="py-4 px-6 border text-left">일반내원객</td>
-                      </tr>
-                      <tr>
-                        <td className="py-4 px-6 border text-center">추가요금</td>
-                        <td className="py-4 px-6 border text-center">10분당</td>
-                        <td className="py-4 px-6 border text-center">300</td>
-                        <td className="py-4 px-6 border text-left"></td>
-                      </tr>
-                      <tr>
-                        <td className="py-4 px-6 border text-center">외래진료, 종합검진</td>
-                        <td className="py-4 px-6 border text-center">당일</td>
-                        <td className="py-4 px-6 border text-center">무료</td>
-                        <td className="py-4 px-6 border text-left">1일 1회에 한함, 주차 도장 확인(원무과)</td>
-                      </tr>
-                      <tr>
-                        <td className="py-4 px-6 border text-center">입·퇴원(당일)</td>
-                        <td className="py-4 px-6 border text-center">8시간</td>
-                        <td className="py-4 px-6 border text-center">무료</td>
-                        <td className="py-4 px-6 border text-left">입퇴원 당일에 한함</td>
-                      </tr>
-                      <tr>
-                        <td className="py-4 px-6 border text-center" rowSpan={2}>입원환자</td>
-                        <td className="py-4 px-6 border text-center">1시간</td>
-                        <td className="py-4 px-6 border text-center">무료</td>
-                        <td className="py-4 px-6 border text-left" rowSpan={2}>입원시 등록 차량 1대에 한함<br />(원무과에서 차량 스티커 발급)</td>
-                      </tr>
-                      <tr>
-                        <td className="py-4 px-6 border text-center">17:00 ~ 익일 08:00</td>
-                        <td className="py-4 px-6 border text-center">무료</td>
-                      </tr>
-                      <tr>
-                        <td className="py-4 px-6 border text-center">응급실 진료</td>
-                        <td className="py-4 px-6 border text-center">당일</td>
-                        <td className="py-4 px-6 border text-center">무료</td>
-                        <td className="py-4 px-6 border text-left"></td>
-                      </tr>
-                      <tr>
-                        <td className="py-4 px-6 border text-center">외래 환자 수술</td>
-                        <td className="py-4 px-6 border text-center">당일</td>
-                        <td className="py-4 px-6 border text-center">무료</td>
-                        <td className="py-4 px-6 border text-left"></td>
-                      </tr>
-                      <tr>
-                        <td className="py-4 px-6 border text-center">장애인,국가유공자</td>
-                        <td className="py-4 px-6 border text-center">2시간</td>
-                        <td className="py-4 px-6 border text-center">무료</td>
-                        <td className="py-4 px-6 border text-left">(수첩지참) 시간초과시 초과요금 50%</td>
-                      </tr>
-                      <tr>
-                        <td className="py-4 px-6 border text-center">1일 주차</td>
-                        <td className="py-4 px-6 border text-center"></td>
-                        <td className="py-4 px-6 border text-center">5,000</td>
-                        <td className="py-4 px-6 border text-left"></td>
-                      </tr>
-                    </tbody>
-                  </table>
+                  <Table<ParkingFeeRow>
+                    columns={parkingFeeColumns}
+                    data={parkingFeeData}
+                    caption="주차요금표"
+                  />
                 </div>
               </div>
             </div>

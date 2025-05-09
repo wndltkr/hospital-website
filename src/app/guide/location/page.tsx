@@ -64,13 +64,10 @@ export default function LocationPage() {
         {/* Main Content Section */}
         <div className="container mx-auto px-4 py-16">
           <div className="flex gap-12">
-            {/* Side Menu */}
-            <div className="w-64 flex-shrink-0">
-            </div>
 
             {/* Main Content */}
             <div className="flex-1">
-              <div className="bg-white rounded-lg shadow-lg p-8">
+              <div>
                 <h2 className="text-3xl font-bold text-gray-800 mb-8">오시는 길</h2>
                 
                 {/* Map Section */}

@@ -7,7 +7,7 @@ export interface Column<T> {
   label?: string;
   width?: string;
   align?: 'left' | 'center' | 'right';
-  render?: (value: T[keyof T]) => React.ReactNode;
+  render?: (value: T[keyof T], row?: T) => React.ReactNode;
 }
 
 interface TableProps<T> {
@@ -25,14 +25,14 @@ function Table<T extends { id: number | string }>({
 }: TableProps<T>) {
   return (
     <div className="bg-white rounded-lg shadow overflow-hidden">
-      <table className="min-w-full">
+      <table className="min-w-full text-base">
         {caption && <caption className="sr-only">{caption}</caption>}
         <thead>
           <tr className="bg-gray-50 border-b">
             {columns.map((column, index) => (
               <th
                 key={index}
-                className={`px-6 py-4 text-${column.align || 'left'} text-sm font-medium text-gray-500 ${column.width ? `w-${column.width}` : ''}`}
+                className={`px-6 py-4 text-${column.align || 'left'} text-base font-medium text-gray-500 ${column.width ? `w-${column.width}` : ''}`}
               >
                 {column.header || column.label}
               </th>
@@ -51,12 +51,12 @@ function Table<T extends { id: number | string }>({
                 return (
                   <td
                     key={index}
-                    className={`px-6 py-4 text-${column.align || 'left'} text-sm ${
+                    className={`px-6 py-4 text-${column.align || 'left'} text-base ${
                       column.accessor === 'title' || column.key === 'title' ? 'text-gray-900' : 'text-gray-500'
                     }`}
                   >
                     {column.render ? (
-                      column.render(value)
+                      column.render(value, item)
                     ) : (
                       <div className="whitespace-pre-line">
                         {String(value)}

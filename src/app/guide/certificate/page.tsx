@@ -180,13 +180,44 @@ interface RequiredDocument {
   documents: string[];
 }
 
+const requiredDocumentsData: RequiredDocument[] = [
+  {
+    id: 1,
+    applicant: '환자본인 요청 시',
+    documents: [
+      '본인임을 확인 할 수 있는 신분증 (주민등록증, 운전면허증 등)'
+    ]
+  },
+  {
+    id: 2,
+    applicant: '환자의 가족 요청 시\n(환자의 배우자, 부모, 자녀)',
+    documents: [
+      '1. 신청인의 신분증',
+      '2. 환자의 신분증 및 사본',
+      '3. 가족임을 확인 할 수 있는 서류(가족관계증명서, 주민등록등본 등)',
+      '4. 환자가 자필 서명한 동의서',
+      '* 단, 17세미만환자의 부모가 요청 시 (부모신분증, 가족확인서류 지참)'
+    ]
+  },
+  {
+    id: 3,
+    applicant: '환자가 지정하는\n대리인이 요청 시',
+    documents: [
+      '1. 신청인의 신분증',
+      '2. 환자의 신분증 및 사본',
+      '3. 환자가 자필 서명한 위임장',
+      '4. 환자가 자필 서명한 동의서'
+    ]
+  }
+];
+
 const requiredDocumentsColumns: Column<RequiredDocument>[] = [
   {
-    header: '신청인',
+    header: '신청자',
     accessor: 'applicant',
     width: '1/3',
     render: (value) => (
-      <div className="font-medium text-gray-900">
+      <div className="whitespace-pre-line font-medium text-gray-900">
         {value}
       </div>
     )
@@ -195,41 +226,39 @@ const requiredDocumentsColumns: Column<RequiredDocument>[] = [
     header: '구비서류',
     accessor: 'documents',
     width: '2/3',
-    render: (value) => (
-      <div className="space-y-2">
-        {(value as string[]).map((doc, index) => (
-          <div key={index} className="flex items-center gap-2">
-            <span className="text-gray-600">•</span>
-            <span>{doc}</span>
-            {(doc === '위임장' || doc === '동의서') && (
-              <a
-                href="#"
-                className="text-blue-600 hover:text-blue-800 text-sm"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  // 다운로드 로직
-                }}
-              >
-                [양식 다운로드]
-              </a>
-            )}
-          </div>
-        ))}
-      </div>
-    )
-  }
-];
-
-const requiredDocumentsData: RequiredDocument[] = [
-  {
-    id: 1,
-    applicant: '진단의사',
-    documents: ['진단서', '소견서']
-  },
-  {
-    id: 2,
-    applicant: '진단의사',
-    documents: ['진료기록']
+    render: (value, row) => {
+      // value: string[]
+      // row: RequiredDocument
+      // 마지막 행(대리인)만 다운로드 버튼
+      const isDelegate = !!row && row.applicant.includes('대리인');
+      return (
+        <div className="space-y-1">
+          {(value as string[]).map((doc, idx) => (
+            <div key={idx} className="flex items-center gap-2">
+              <span>{doc}</span>
+              {isDelegate && doc.includes('위임장') && (
+                <a
+                  href="/download/attorney.hwp"
+                  className="ml-2 px-2 py-1 bg-blue-600 text-white text-xs rounded hover:bg-blue-700 transition-colors"
+                  download
+                >
+                  위임장 다운로드
+                </a>
+              )}
+              {isDelegate && doc.includes('동의서') && (
+                <a
+                  href="/download/agreement.hwp"
+                  className="ml-2 px-2 py-1 bg-blue-600 text-white text-xs rounded hover:bg-blue-700 transition-colors"
+                  download
+                >
+                  동의서 다운로드
+                </a>
+              )}
+            </div>
+          ))}
+        </div>
+      );
+    }
   }
 ];
 
@@ -296,7 +325,7 @@ export default function CertificatePage() {
           {activeTab === 'first' ? (
             <div className="space-y-16">
               <InfoSection
-                  image="/images/centers/anus-img02.jpg"
+                  image="/images/guide/record-img01.jpg"
                   alt="제증명/의무기록 사본 발급 안내"
                   title="제증명/의무기록 사본 발급 안내"
                   subtitle="SEKANG HOSPITAL"
@@ -307,7 +336,7 @@ export default function CertificatePage() {
                 />
 
               <BannerSection
-                backgroundImage="/images/about/about_fot_img.jpg"
+          backgroundImage="/images/centers/colon-tester.jpg"
                 title={[
                   "의무기록 사본 발급 안내",
                   "사본발급시 필요한 서류 [의료법 제21조, 시행규칙 제13조의2]"
@@ -319,11 +348,14 @@ export default function CertificatePage() {
                   "동의서에는 사본발급 받는 범위(날짜, 기록지 범위 등)를 구체적으로 명기하도록 하여야 함.",
                   "사망, 의식불명인자, 미성년자 등의 경우에는 법정 대리인이 대신할 수 있음."
                 ]}
+                isRepeating={true}
+                textColor="black"
               />
+              
               
               {/* Required Documents Table Section */}
               <div className="bg-white rounded-2xl p-12">
-                <div className="max-w-5xl mx-auto">
+                <div className="max-w-6xl mx-auto">
                   <div className="overflow-x-auto">
                     <Table<RequiredDocument>
                       columns={requiredDocumentsColumns}
@@ -336,7 +368,7 @@ export default function CertificatePage() {
           ) : (
             <div className="space-y-16">
               <InfoSection
-                  image="/images/centers/anus-img02.jpg"
+                  image="/images/guide/record-img02.jpg"
                   alt="증명서 발급 수수료"
                   title="증명서 발급 수수료"
                   subtitle="SEKANG HOSPITAL"
