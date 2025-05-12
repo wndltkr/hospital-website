@@ -107,11 +107,7 @@ const Menu = ({ solid = false }: MenuProps) => {
                   </div>
                 </li>
               ))}
-              <div className="flex items-center">
-              <button className="px-4 py-2 bg-[#4ABAFF] text-white rounded-md hover:bg-blue-700 transition-colors duration-200">
-                로그인
-              </button>
-              </div>
+              
             </ul>
           </div>
         </div>
