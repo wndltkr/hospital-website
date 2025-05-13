@@ -27,7 +27,7 @@ export default function NoticePage() {
   useEffect(() => {
     const fetchNotices = async () => {
       try {
-        const response = await fetch('/api/notice');
+        const response = await fetch('/api/info/notice');
         const data = await response.json();
         setNoticeItems(data);
       } catch (error) {

@@ -6,14 +6,11 @@ import { usePathname } from 'next/navigation';
 import {
   FaChartLine,
   FaClipboardList,
-  FaUsers,
   FaMoneyBillWave,
-  FaBars,
-  FaTimes,
 } from 'react-icons/fa';
 
 const AdminLayout = ({ children }: { children: React.ReactNode }) => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isSidebarOpen] = useState(true);
   const pathname = usePathname();
 
   // Set document title on client side
@@ -25,7 +22,6 @@ const AdminLayout = ({ children }: { children: React.ReactNode }) => {
     { name: '대시보드', path: '/admin', icon: <FaChartLine /> },
     { name: '접속통계', path: '/admin/statistics', icon: <FaChartLine /> },
     { name: '게시판 관리', path: '/admin/boards', icon: <FaClipboardList /> },
-    { name: '회원 관리', path: '/admin/users', icon: <FaUsers /> },
     { name: '비급여 관리', path: '/admin/non-insured', icon: <FaMoneyBillWave /> },
   ];
 
@@ -33,12 +29,6 @@ const AdminLayout = ({ children }: { children: React.ReactNode }) => {
     <html lang="ko">
       <body className="min-h-screen bg-gray-100">
         {/* Sidebar Toggle Button */}
-        <button
-          onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-          className="fixed top-4 left-4 z-50 p-2 rounded-lg bg-white shadow-md"
-        >
-          {isSidebarOpen ? <FaTimes /> : <FaBars />}
-        </button>
 
         {/* Sidebar */}
         <aside

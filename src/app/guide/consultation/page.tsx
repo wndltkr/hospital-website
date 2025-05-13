@@ -6,35 +6,39 @@ import SideMenu from '@/components/SideMenu';
 import SearchBar from '@/components/SearchBar';
 import Pagination from '@/components/Pagination';
 import NoticeList from '@/components/NoticeList';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import PageBanner from '@/components/PageBanner';
 import YouTubeSection from '@/components/YouTubeSection';
 
 // 임시 데이터
-const consultationItems = [
-  { id: 15, title: '2024년 상담 예약 방법 안내', content: '2024년 상담 예약 방법이 변경되었습니다. 자세한 내용은...', date: '2024.03.15' },
-  { id: 14, title: '심리상담 프로그램 안내', content: '새로운 심리상담 프로그램이 시작됩니다. 프로그램 내용은...', date: '2024.03.10' },
-  { id: 13, title: '온라인 상담 서비스 안내', content: '온라인 상담 서비스가 시작됩니다. 이용 방법은...', date: '2024.03.05' },
-  { id: 12, title: '상담 예약 취소 정책 안내', content: '상담 예약 취소 정책이 변경되었습니다. 취소 수수료는...', date: '2024.03.01' },
-  { id: 11, title: '전문 상담사 소개', content: '새로운 전문 상담사가 합류했습니다. 전문 분야는...', date: '2024.02.28' },
-  { id: 10, title: '상담 시간 변경 안내', content: '상담 시간이 변경되었습니다. 평일 오전 9시부터...', date: '2024.02.25' },
-  { id: 9, title: '그룹 상담 프로그램 안내', content: '그룹 상담 프로그램이 시작됩니다. 참가 방법은...', date: '2024.02.20' },
-  { id: 8, title: '상담 비용 안내', content: '상담 비용이 변경되었습니다. 자세한 내용은...', date: '2024.02.15' },
-  { id: 7, title: '상담 예약 방법 안내', content: '상담 예약 방법이 변경되었습니다. 온라인 예약은...', date: '2024.02.10' },
-  { id: 6, title: '상담 후기 작성 안내', content: '상담 후기 작성 방법을 안내드립니다. 후기 작성은...', date: '2024.02.05' },
-  { id: 5, title: '상담 FAQ 안내', content: '자주 묻는 상담 관련 질문과 답변을 안내드립니다...', date: '2024.02.01' },
-  { id: 4, title: '상담 예약 변경 안내', content: '상담 예약 변경 방법이 변경되었습니다. 변경 방법은...', date: '2024.01.25' },
-  { id: 3, title: '상담 프로그램 소개', content: '다양한 상담 프로그램을 소개합니다. 프로그램 내용은...', date: '2024.01.20' },
-  { id: 2, title: '상담 예약 시스템 점검 안내', content: '상담 예약 시스템 점검이 실시됩니다. 점검 기간은...', date: '2024.01.15' },
-  { id: 1, title: '신년 상담 프로그램 안내', content: '신년 상담 프로그램을 안내드립니다. 프로그램 내용은...', date: '2024.01.10' }
-];
+interface consultationItems {
+  id: number;
+  title: string;
+  content: string;
+  date: string;
+};
 
 export default function ConsultationPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchType, setSearchType] = useState('title');
   const [currentPage, setCurrentPage] = useState(1);
   const [activeSearchTerm, setActiveSearchTerm] = useState('');
+  const [consultationItems, setconsultationItems] = useState<consultationItems[]>([]);
   const itemsPerPage = 10;
+
+  useEffect(() => {
+    const fetchNotices = async () => {
+      try {
+        const response = await fetch('/api/guide/consultation');
+        const data = await response.json();
+        setconsultationItems(data);
+      } catch (error) {
+        console.error('Failed to fetch notices:', error);
+      }
+    };
+
+    fetchNotices();
+  }, []);
 
   // 검색 실행 함수
   const handleSearch = () => {
@@ -75,10 +79,10 @@ export default function ConsultationPage() {
       <Menu />
       
       <PageBanner
-        title="상담안내"
+        title="진료상담"
         description={[
           "세강병원의",
-          "상담 서비스를 안내드립니다"
+          "진료상담"
         ]}
         backgroundImage="/images/guide/guide-vis.jpg"
       />

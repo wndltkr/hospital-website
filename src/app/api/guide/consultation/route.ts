@@ -5,7 +5,7 @@ export const dynamic = 'force-dynamic';
 
 export async function GET() {
   try {
-    const [rows] = await db.query('SELECT * FROM notice ORDER BY date DESC');
+    const [rows] = await db.query('SELECT * FROM notice ORDER BY id DESC');
     return NextResponse.json(rows);
   } catch (error) {
     console.error('Database error:', error);
