@@ -10,30 +10,42 @@ import { useEffect, useState } from 'react';
 import PageBanner from '@/components/PageBanner';
 import YouTubeSection from '@/components/YouTubeSection';
 
-// 임시 데이터
-interface consultationItems {
+interface ConsultationItem {
   id: number;
   title: string;
   content: string;
   date: string;
-};
+}
 
 export default function ConsultationPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchType, setSearchType] = useState('title');
   const [currentPage, setCurrentPage] = useState(1);
   const [activeSearchTerm, setActiveSearchTerm] = useState('');
-  const [consultationItems, setconsultationItems] = useState<consultationItems[]>([]);
+  const [consultationItems, setConsultationItems] = useState<ConsultationItem[]>([]);
+  const [error, setError] = useState<string | null>(null);
   const itemsPerPage = 10;
 
   useEffect(() => {
     const fetchNotices = async () => {
       try {
         const response = await fetch('/api/guide/consultation');
+        if (!response.ok) {
+          throw new Error('Failed to fetch notices');
+        }
         const data = await response.json();
-        setconsultationItems(data);
+        // Ensure data is an array
+        if (Array.isArray(data)) {
+          setConsultationItems(data);
+        } else {
+          console.error('Invalid data format:', data);
+          setConsultationItems([]);
+          setError('데이터 형식이 올바르지 않습니다.');
+        }
       } catch (error) {
-        console.error('Failed to fetch notices:', error);
+        console.error('Failed to fetch consultation:', error);
+        setConsultationItems([]);
+        setError('데이터를 불러오는데 실패했습니다.');
       }
     };
 
@@ -68,7 +80,7 @@ export default function ConsultationPage() {
   };
 
   // 게시글 클릭 핸들러
-  const handleConsultationClick = (consultation: typeof consultationItems[0]) => {
+  const handleConsultationClick = (consultation: ConsultationItem) => {
     // TODO: 상담 상세 페이지로 이동
     console.log('Consultation clicked:', consultation);
   };
@@ -89,6 +101,12 @@ export default function ConsultationPage() {
 
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-7xl mx-auto">
+          {error && (
+            <div className="mb-4 p-4 bg-red-100 text-red-700 rounded">
+              {error}
+            </div>
+          )}
+
           <SearchBar
             searchTerm={searchTerm}
             searchType={searchType}
@@ -112,17 +130,17 @@ export default function ConsultationPage() {
           />
 
           {/* Empty State */}
-          {filteredConsultations.length === 0 && (
+          {filteredConsultations.length === 0 && !error && (
             <div className="text-center py-12">
               <p className="text-gray-500 text-lg">검색 결과가 없습니다.</p>
             </div>
           )}
         </div>
         <YouTubeSection
-                  videoId="VIDEO_ID"
-                  title="건강증진센터 소개영상"
-                  sectionSubtitle="SEKANG HOSPITAL"
-                />
+          videoId="VIDEO_ID"
+          title="건강증진센터 소개영상"
+          sectionSubtitle="SEKANG HOSPITAL"
+        />
       </div>
 
       <Footer />

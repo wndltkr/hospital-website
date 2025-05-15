@@ -7,6 +7,7 @@ import {
   FaChartLine,
   FaClipboardList,
   FaMoneyBillWave,
+  FaUserMd,
 } from 'react-icons/fa';
 
 const AdminLayout = ({ children }: { children: React.ReactNode }) => {
@@ -22,6 +23,7 @@ const AdminLayout = ({ children }: { children: React.ReactNode }) => {
     { name: '대시보드', path: '/admin', icon: <FaChartLine /> },
     { name: '접속통계', path: '/admin/statistics', icon: <FaChartLine /> },
     { name: '게시판 관리', path: '/admin/boards', icon: <FaClipboardList /> },
+    { name: '의료진 관리', path: '/admin/doctors', icon: <FaUserMd /> },
     { name: '비급여 관리', path: '/admin/non-insured', icon: <FaMoneyBillWave /> },
   ];
 

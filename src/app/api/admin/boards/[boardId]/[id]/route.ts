@@ -1,68 +1,138 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { db } from '@/app/lib/db';
-import { unlink } from 'fs/promises';
-import { join } from 'path';
+import { ResultSetHeader, RowDataPacket } from 'mysql2';
 
 export const dynamic = 'force-dynamic';
 
-interface Post {
+interface Post extends RowDataPacket {
+  id: number;
+  title: string;
+  content: string;
+  date: string;
+  boardId: number;
   fileId: number | null;
-  url: string | null;
+  youtubeUrl: string | null;
+  username: string;
+  imageUrl: string | null;
 }
+
+type RouteContext = {
+  params: {
+    boardId: string;
+    id: string;
+  };
+};
 
 export async function DELETE(
   request: NextRequest,
-  context: { params: Promise<{ boardId: string; id: string }> }
+  context: RouteContext
 ) {
   try {
-    const params = await context.params;
-    const id = parseInt(params.id, 10);
-    
-    if (isNaN(id)) {
-      return NextResponse.json(
-        { error: 'Invalid ID format' },
-        { status: 400 }
-      );
-    }
-
-    // 게시글 정보 가져오기
-    const [rows] = await db.query(
-      'SELECT b.fileId, f.url FROM board b LEFT JOIN files f ON b.fileId = f.id WHERE b.id = ? AND b.boardId = ?',
-      [id, params.boardId]
+    await db.query<ResultSetHeader>(
+      'DELETE FROM board WHERE boardId = ? AND id = ?',
+      [context.params.boardId, context.params.id]
     );
 
-    if (!Array.isArray(rows) || rows.length === 0) {
+    return NextResponse.json({ message: '게시글이 삭제되었습니다.' });
+  } catch (error) {
+    console.error('Error deleting post:', error);
+    return NextResponse.json(
+      { error: '게시글 삭제에 실패했습니다.' },
+      { status: 500 }
+    );
+  }
+}
+
+export async function GET(
+  request: NextRequest,
+  context: RouteContext
+) {
+  try {
+    const [posts] = await db.query<Post[]>(`
+      SELECT 
+        p.*,
+        f.url as imageUrl
+      FROM board p
+      LEFT JOIN files f ON p.fileId = f.id
+      WHERE p.boardId = ? AND p.id = ?
+    `, [context.params.boardId, context.params.id]);
+
+    if (!posts || posts.length === 0) {
       return NextResponse.json(
-        { error: 'Post not found' },
+        { error: '게시글을 찾을 수 없습니다.' },
         { status: 404 }
       );
     }
 
-    const post = rows[0] as Post;
-    
-    // 이미지 파일이 있는 경우 삭제
-    if (post.fileId && post.url) {
-      const filePath = join(process.cwd(), 'public', post.url);
-      try {
-        await unlink(filePath);
-        // files 테이블에서도 삭제
-        await db.query('DELETE FROM files WHERE id = ?', [post.fileId]);
-      } catch (error) {
-        console.error('Error deleting file from filesystem:', error);
-      }
+    return NextResponse.json(posts[0]);
+  } catch (error) {
+    console.error('Error fetching post:', error);
+    return NextResponse.json(
+      { error: '게시글을 가져오는데 실패했습니다.' },
+      { status: 500 }
+    );
+  }
+}
+
+export async function PUT(
+  request: NextRequest,
+  context: RouteContext
+) {
+  try {
+    const formData = await request.formData();
+    const title = formData.get('title') as string;
+    const content = formData.get('content') as string;
+    const fileId = formData.get('fileId') ? parseInt(formData.get('fileId') as string) : null;
+    const youtubeUrl = formData.get('youtubeUrl') as string | null;
+    const username = formData.get('username') as string;
+
+    // 필수 필드 검증
+    if (!title || !content || !username) {
+      return NextResponse.json(
+        { error: '필수 정보가 누락되었습니다.' },
+        { status: 400 }
+      );
     }
 
-    // DB에서 게시글 삭제
-    await db.query(
-      'DELETE FROM board WHERE id = ? AND boardId = ?',
-      [id, params.boardId]
-    );
+    // 게시글 수정
+    await db.query<ResultSetHeader>(`
+      UPDATE board
+      SET
+        title = ?,
+        content = ?,
+        fileId = ?,
+        youtubeUrl = ?,
+        username = ?
+      WHERE boardId = ? AND id = ?
+    `, [
+      title,
+      content,
+      fileId,
+      youtubeUrl,
+      username,
+      context.params.boardId,
+      context.params.id
+    ]);
 
-    return NextResponse.json({ success: true });
+    // 수정된 게시글 조회
+    const [updatedPosts] = await db.query<Post[]>(`
+      SELECT 
+        p.*,
+        f.url as imageUrl
+      FROM board p
+      LEFT JOIN files f ON p.fileId = f.id
+      WHERE p.boardId = ? AND p.id = ?
+    `, [context.params.boardId, context.params.id]);
+
+    if (!updatedPosts || updatedPosts.length === 0) {
+      throw new Error('수정된 게시글을 찾을 수 없습니다.');
+    }
+
+    return NextResponse.json(updatedPosts[0]);
   } catch (error) {
-    console.error('Error deleting post:', error);
+    console.error('Error updating post:', error);
     return NextResponse.json(
-      { error: 'Error deleting post' },
+      { error: '게시글 수정에 실패했습니다.' },
       { status: 500 }
     );
   }
